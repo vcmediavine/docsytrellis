@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Goldydocs"
+title = "Mediavine Trellis Developer Reference"
 
 # Language settings
 contentDir = "content/en"
@@ -11,7 +11,7 @@ enableMissingTranslationPlaceholders = true
 enableRobotsTXT = true
 
 # Will give values to .Lastmod etc.
-enableGitInfo = true
+enableGitInfo = false
 
 # Comment out to enable taxonomies in Docsy
 # disableKinds = ["taxonomy", "taxonomyTerm"]
@@ -45,6 +45,13 @@ pygmentsStyle = "tango"
 [permalinks]
 blog = "/:section/:year/:month/:day/:slug/"
 
+## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = true
+angledQuotes = false
+latexDashes = true
+
 # Image processing configuration.
 [imaging]
 resampleFilter = "CatmullRom"
@@ -60,26 +67,11 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
+title = "Mediavine Trellis"
+description = "Developer Reference Site"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.no]
-title = "Goldydocs"
-description = "Docsy er operativsystem for skyen"
-languageName ="Norsk"
-contentDir = "content/no"
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
-
-[languages.fa]
-title = "اسناد گلدی"
-description = "یک نمونه برای پوسته داکسی"
-languageName ="فارسی"
-contentDir = "content/fa"
-time_format_default = "2006.01.02"
-time_format_blog = "2006.01.02"
 
 [markup]
   [markup.goldmark]
@@ -87,19 +79,22 @@ time_format_blog = "2006.01.02"
       unsafe = true
   [markup.highlight]
     # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
-    style = "tango"
+    style = "monokailight"
     # Uncomment if you want your chosen highlight style used for code blocks without a specified language
     # guessSyntax = "true"
 
 # Everything below this are Site Params
 
 # Comment out if you don't want the "print entire section" link enabled.
-[outputs]
-section = ["HTML", "print", "RSS"]
+# [outputs]
+# section = ["HTML", "print", "RSS"]
 
 [params]
-copyright = "The Docsy Authors"
-privacy_policy = "https://policies.google.com/privacy"
+copyright = "Mediavine"
+# privacy_policy = "https://policies.google.com/privacy"
+
+# Disable RSS
+disableKinds = ["RSS"]
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
@@ -135,13 +130,13 @@ github_project_repo = "https://github.com/google/docsy"
 github_branch= "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "d72aa9b2712488cc3"
+# gcs_engine_id = "d72aa9b2712488cc3"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
@@ -151,15 +146,16 @@ prism_syntax_highlighting = false
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
 # Set to true to disable the About link in the site footer
-footer_about_disable = false
+footer_about_disable = true
 # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
 navbar_logo = true
 # Set to true if you don't want the top navbar to be translucent when over a `block/cover`, like on the homepage.
 navbar_translucent_over_cover_disable = false
 # Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = false
+sidebar_menu_compact = true
+# sidebar_menu_foldable = true
 # Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = false
+sidebar_search_disable = true
 
 # Adds a H2 section titled "Feedback" to the bottom of each doc. The responses are sent to Google Analytics as events.
 # This feature depends on [services.googleAnalytics] and will be disabled if "services.googleAnalytics.id" is not set.
@@ -168,8 +164,8 @@ sidebar_search_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
+yes = 'Thanks for your feedback!'
+no = 'Sorry to hear that. Please contact Trellis Support at <a href="mailto:trellis@mediavine.com">trellis@mediavine.com</a> if you need additional help.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page, 
