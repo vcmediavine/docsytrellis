@@ -1,0 +1,559 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/docsytrellis/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/docsytrellis/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
+<title>Example Page | Mediavine Trellis</title>
+<meta name=description content="An optional short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+">
+<meta property="og:title" content="Example Page">
+<meta property="og:description" content="An optional short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/example-page/"><meta property="article:section" content="advanced-topics">
+<meta property="article:published_time" content="2022-10-04T00:00:00+00:00">
+<meta property="article:modified_time" content="2022-10-04T00:00:00+00:00"><meta property="og:site_name" content="Mediavine Trellis">
+<meta itemprop=name content="Example Page">
+<meta itemprop=description content="An optional short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+"><meta itemprop=datePublished content="2022-10-04T00:00:00+00:00">
+<meta itemprop=dateModified content="2022-10-04T00:00:00+00:00">
+<meta itemprop=wordCount content="1212">
+<meta itemprop=keywords content="test,sample,docs,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Example Page">
+<meta name=twitter:description content="An optional short lead description about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+">
+<link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
+<link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+<script src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/docsytrellis/>
+<span class=navbar-logo><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1e3 1e3" style="enable-background:new 0 0 1000 1000"><style>.st0{fill:#41a4a9}.st1{fill:#67b6ba}.st2{fill:#a3dbdf}.st3{fill:#247272}.st4{fill:#8dc8cb}</style><g><g><path class="st0" d="M753.93 64.88c2.16.0 4.24.02 6.25.06.19 11.19-.16 24.94-1.83 39.78-3.36 29.93-12.97 71.18-39.67 97.79-35.86 35.78-97.72 41.12-131.4 41.12-2.15.0-4.23-.02-6.23-.06-.19-11.18.16-24.93 1.82-39.77 3.36-29.93 12.96-71.19 39.64-97.79 35.89-35.79 97.74-41.13 131.42-41.13m0-64.88C705.59.0 627.92 8.99 576.7 60.07c-77.41 77.13-58.89 214.92-58.07 220.75l3.1 21.9 21.89 3.16c1.97.28 18.99 2.62 43.66 2.62 48.34.0 126.03-8.99 177.22-60.07 77.43-77.15 58.92-214.93 58.09-220.75l-3.1-21.9L797.6 2.63C795.64 2.34 778.6.0 753.93.0z"/></g><g><path class="st1" d="M521.73 648.47l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 648.47z"/></g><g><path class="st2" d="M521.73 994.22l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 994.22z"/></g><g><path class="st3" d="M477.61 476.01l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 476.01z"/></g><g><path class="st4" d="M477.61 821.75l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 821.75z"/></g></g></svg></span><span class=font-weight-bold>Mediavine Trellis</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/overview/><span>Overview</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/getting-started/><span>Getting Started</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/docsytrellis/advanced-topics/><span class=active>Advanced Topics</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/faqs/><span>FAQ</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/reference/><span>Reference</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/changelogs/><span>Changelogs</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.a3b4c1394c64f6fb06a475e9ac0d6db9.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<div id=content-mobile>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.a3b4c1394c64f6fb06a475e9ac0d6db9.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+</div>
+<div id=content-desktop></div>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsytrellisadvanced-topics-li>
+<a href=/docsytrellis/advanced-topics/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docsytrellisadvanced-topics><span>Advanced Topics</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsytrellisadvanced-topicsexample-page-li>
+<a href=/docsytrellis/advanced-topics/example-page/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsexample-page><span class=td-sidebar-nav-active-item>Example Page</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/google/docsy-example/tree/master/content/en/advanced-topics/example-page.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/google/docsy-example/edit/master/content/en/advanced-topics/example-page.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/new/master/content/en/advanced-topics/example-page.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Example%20Page" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/google/docsy/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+</div>
+<div class=td-toc>
+<h4>Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#headers>Headers</a></li>
+<li><a href=#header-2>Header 2</a>
+<ul>
+<li><a href=#header-3>Header 3</a></li>
+</ul>
+</li>
+<li><a href=#banner>Banner</a></li>
+<li><a href=#block-quote>Block Quote</a></li>
+<li><a href=#callouts>Callouts</a></li>
+<li><a href=#cards>Cards</a></li>
+<li><a href=#code>Code</a></li>
+<li><a href=#horizontal-rule>Horizontal Rule</a></li>
+<li><a href=#images>Images</a></li>
+<li><a href=#lists>Lists</a></li>
+<li><a href=#tables>Tables</a></li>
+</ul>
+</nav>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-tags">
+<h5 class=taxonomy-title>Tag Cloud</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/docs/ data-taxonomy-term=docs><span class=taxonomy-label>docs</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/sample/ data-taxonomy-term=sample><span class=taxonomy-label>sample</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/test/ data-taxonomy-term=test><span class=taxonomy-label>test</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-categories">
+<h5 class=taxonomy-title>Categories</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/categories/examples/ data-taxonomy-term=examples><span class=taxonomy-label>Examples</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/example-page/>Example Page</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Example Page</h1>
+<div class=lead>An optional short lead description about this content page. It can be <strong>bold</strong> or <em>italic</em> and can be split over multiple paragraphs.</div>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+<h5 class=taxonomy-title>Tags:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/test/ data-taxonomy-term=test><span class=taxonomy-label>test</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/sample/ data-taxonomy-term=sample><span class=taxonomy-label>sample</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/docs/ data-taxonomy-term=docs><span class=taxonomy-label>docs</span></a></li>
+</ul>
+</div>
+<div class="taxonomy taxonomy-terms-article taxo-categories">
+<h5 class=taxonomy-title>Categories:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/categories/examples/ data-taxonomy-term=examples><span class=taxonomy-label>Examples</span></a></li>
+</ul>
+</div>
+</header>
+<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>. <a href=https://gohugo.io>Links</a> should be colored with no underlines.</p>
+<p>There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.</p>
+<p>90&rsquo;s four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps <strong>kale chips</strong>.</p>
+<h2 id=headers>Headers</h2>
+<p>This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier <strong>craft beer</strong>. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven&rsquo;t heard of them copper mug, crucifix green juice vape <em>single-origin coffee</em> brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay! <strong>I love this life we live in</strong></p>
+<h2 id=header-2>Header 2</h2>
+<p>This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier <strong>craft beer</strong>. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic.</p>
+<p>On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.</p>
+<h3 id=header-3>Header 3</h3>
+<pre tabindex=0><code>This is a code block following a header.
+</code></pre><p>Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.</p>
+<h4 id=header-4>Header 4</h4>
+<ul>
+<li>This is an unordered list following a header.</li>
+<li>This is an unordered list following a header.</li>
+<li>This is an unordered list following a header.</li>
+</ul>
+<h5 id=header-5>Header 5</h5>
+<ol>
+<li>This is an ordered list following a header.</li>
+<li>This is an ordered list following a header.</li>
+<li>This is an ordered list following a header.</li>
+</ol>
+<h6 id=header-6>Header 6</h6>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Follows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A table</td>
+<td>A header</td>
+</tr>
+<tr>
+<td>A table</td>
+<td>A header</td>
+</tr>
+<tr>
+<td>A table</td>
+<td>A header</td>
+</tr>
+</tbody>
+</table>
+<h2 id=banner>Banner</h2>
+<div class="pageinfo pageinfo-primary">
+<p>This is a placeholder page. Replace it with your own content.</p>
+</div>
+<h2 id=block-quote>Block Quote</h2>
+<blockquote>
+<p>There should be no margin above this first sentence.</p>
+<p>Blockquotes should be a lighter gray with a border along the left side in the secondary color.</p>
+<p>There should be no margin below this final sentence.</p>
+</blockquote>
+<h2 id=callouts>Callouts</h2>
+<p>
+<div class="alert alert-primary" role=alert>
+This is a standard callout.
+</div>
+<div class="alert alert-success" role=alert>
+This is a plain success callout.
+</div>
+<div class="alert alert-warning" role=alert>
+This is a plain warning callout.
+</div>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+This is a standard callout with a title and <strong>Markdown</strong>.
+</div>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Warning</h4>
+This is a warning callout with a title.
+</div>
+</p>
+<h2 id=cards>Cards</h2>
+<div class="card mb-4">
+<div class=card-header>
+<strong>Imagine</strong>
+</div>
+<div class=card-body>
+<h5 class=card-title>
+Artist and songwriter: John Lennon
+</h5>
+<h6 class="card-title mb-2 text-muted">
+Co-writer: Yoko Ono
+</h6>
+<p class=card-text>
+Imagine there&rsquo;s no heaven, It&rsquo;s easy if you try<br>
+No hell below us, above us only sky<br>
+Imagine all the people living for today&mldr;
+&mldr;
+</p>
+</div>
+<div class=card-footer>
+<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Firma_de_John_Lennon.svg/320px-Firma_de_John_Lennon.svg.png alt=SignatureJohnLennon title="Signature John Lennon">
+</div>
+</div>
+<h2 id=code>Code</h2>
+<p>These are some code-formatting examples:</p>
+<p>Code snippets like <code>var foo = "bar";</code> can be shown inline.</p>
+<p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
+<p>Code can also be shown in a block element.</p>
+<pre tabindex=0><code>foo := &quot;bar&quot;;
+bar := &quot;foo&quot;;
+</code></pre><p>Code can also use syntax highlighting.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_copyright_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><pre tabindex=0><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+</code></pre><p>Inline code inside table cells should still be distinguishable.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Javascript</td>
+<td><code>var foo = "bar";</code></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td><code>foo = "bar"{</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id=horizontal-rule>Horizontal Rule</h2>
+<hr>
+<p>There&rsquo;s a horizontal rule above and below this.</p>
+<hr>
+<h2 id=images>Images</h2>
+<p>Small images should be shown at their actual size.</p>
+<p><img src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg alt></p>
+<p>Large images should always scale down and fit in the content container.</p>
+<p><img src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg alt></p>
+<p><em>The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA.</em></p>
+<h2 id=lists>Lists</h2>
+<p>Here is an unconventional list:</p>
+<ol>
+<li>Some stuff
+<div class="alert alert-primary" role=alert>
+This is an alert with <strong>Markdown</strong>.
+</div>
+</li>
+<li>Some stuff</li>
+<li>Some stuff</li>
+</ol>
+<p>Here is an unordered list:</p>
+<ul>
+<li>Liverpool F.C.</li>
+<li>Chelsea F.C.</li>
+<li>Manchester United F.C.</li>
+</ul>
+<p>And an ordered list:</p>
+<ol>
+<li>Michael Brecker</li>
+<li>Seamus Blake</li>
+<li>Branford Marsalis</li>
+</ol>
+<p>And an unordered task list:</p>
+<ul>
+<li><input checked disabled type=checkbox> Create a Hugo theme</li>
+<li><input checked disabled type=checkbox> Add task lists to it</li>
+<li><input disabled type=checkbox> Take a vacation</li>
+</ul>
+<p>And a &ldquo;mixed&rdquo; task list:</p>
+<ul>
+<li><input disabled type=checkbox> Pack bags</li>
+<li>?</li>
+<li><input disabled type=checkbox> Travel!</li>
+</ul>
+<p>And a nested list:</p>
+<ul>
+<li>Jackson 5
+<ul>
+<li>Michael</li>
+<li>Tito</li>
+<li>Jackie</li>
+<li>Marlon</li>
+<li>Jermaine</li>
+</ul>
+</li>
+<li>TMNT
+<ul>
+<li>Leonardo</li>
+<li>Michelangelo</li>
+<li>Donatello</li>
+<li>Raphael</li>
+</ul>
+</li>
+</ul>
+<p>Definition lists can be used with Markdown syntax. Definition headers are bold.</p>
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+<hr>
+<h2 id=tables>Tables</h2>
+<p>Tables should have bold headings and alternating shaded rows.</p>
+<table>
+<thead>
+<tr>
+<th>Default</th>
+<th>Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>* The HTML link to the Trellis Framework, currently <a href="https://mediavine.com/'">https://mediavine.com/</a>.</td>
+<td>$output <code>string</code> HTML output of the shortcode. <br><br> $atts <code>array</code> List of shortcode attributes.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Artist</th>
+<th>Album</th>
+<th>Year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Michael Jackson</td>
+<td>Thriller</td>
+<td>1982</td>
+</tr>
+<tr>
+<td>Prince</td>
+<td>Purple Rain</td>
+<td>1984</td>
+</tr>
+<tr>
+<td>Beastie Boys</td>
+<td>License to Ill</td>
+<td>1986</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Artist</th>
+<th>Album</th>
+<th>Year</th>
+<th>Label</th>
+<th>Awards</th>
+<th>Songs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Michael Jackson</td>
+<td>Thriller</td>
+<td>1982</td>
+<td>Epic Records</td>
+<td>Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical</td>
+<td>Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life</td>
+</tr>
+<tr>
+<td>Prince</td>
+<td>Purple Rain</td>
+<td>1984</td>
+<td>Warner Brothers Records</td>
+<td>Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal</td>
+<td>Let&rsquo;s Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I&rsquo;m a Star, Purple Rain</td>
+</tr>
+<tr>
+<td>Beastie Boys</td>
+<td>License to Ill</td>
+<td>1986</td>
+<td>Mercury Records</td>
+<td>noawardsbutthistablecelliswide</td>
+<td>Rhymin & Stealin, The New Style, She&rsquo;s Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Code snippets like <code>var foo = "bar";</code> can be shown inline.</p>
+<p>Also, <code>this should vertically align</code> <del><code>with this</code></del> <del>and this</del>.</p>
+<p>Code can also be shown in a block element.</p>
+<pre tabindex=0><code>foo := &quot;bar&quot;;
+bar := &quot;foo&quot;;
+</code></pre><p>Code can also use syntax highlighting.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#00a8c8>func</span> <span style=color:#75af00>main</span><span style=color:#111>()</span> <span style=color:#111>{</span>
+  <span style=color:#75af00>input</span> <span style=color:#f92672>:=</span> <span style=color:#d88200>`var foo = &#34;bar&#34;;`</span>
+
+  <span style=color:#75af00>lexer</span> <span style=color:#f92672>:=</span> <span style=color:#75af00>lexers</span><span style=color:#111>.</span><span style=color:#75af00>Get</span><span style=color:#111>(</span><span style=color:#d88200>&#34;javascript&#34;</span><span style=color:#111>)</span>
+  <span style=color:#75af00>iterator</span><span style=color:#111>,</span> <span style=color:#75af00>_</span> <span style=color:#f92672>:=</span> <span style=color:#75af00>lexer</span><span style=color:#111>.</span><span style=color:#75af00>Tokenise</span><span style=color:#111>(</span><span style=color:#00a8c8>nil</span><span style=color:#111>,</span> <span style=color:#75af00>input</span><span style=color:#111>)</span>
+  <span style=color:#75af00>style</span> <span style=color:#f92672>:=</span> <span style=color:#75af00>styles</span><span style=color:#111>.</span><span style=color:#75af00>Get</span><span style=color:#111>(</span><span style=color:#d88200>&#34;github&#34;</span><span style=color:#111>)</span>
+  <span style=color:#75af00>formatter</span> <span style=color:#f92672>:=</span> <span style=color:#75af00>html</span><span style=color:#111>.</span><span style=color:#75af00>New</span><span style=color:#111>(</span><span style=color:#75af00>html</span><span style=color:#111>.</span><span style=color:#75af00>WithLineNumbers</span><span style=color:#111>())</span>
+
+  <span style=color:#00a8c8>var</span> <span style=color:#75af00>buff</span> <span style=color:#75af00>bytes</span><span style=color:#111>.</span><span style=color:#75af00>Buffer</span>
+  <span style=color:#75af00>formatter</span><span style=color:#111>.</span><span style=color:#75af00>Format</span><span style=color:#111>(</span><span style=color:#f92672>&amp;</span><span style=color:#75af00>buff</span><span style=color:#111>,</span> <span style=color:#75af00>style</span><span style=color:#111>,</span> <span style=color:#75af00>iterator</span><span style=color:#111>)</span>
+
+  <span style=color:#75af00>fmt</span><span style=color:#111>.</span><span style=color:#75af00>Println</span><span style=color:#111>(</span><span style=color:#75af00>buff</span><span style=color:#111>.</span><span style=color:#75af00>String</span><span style=color:#111>())</span>
+<span style=color:#111>}</span>
+</code></pre></div><pre tabindex=0><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+</code></pre>
+<style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
+<br>
+<hr>
+<div class=d-print-none>
+<h2 class=feedback--title>Feedback</h2>
+<p class=feedback--question>Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+Thanks for your feedback!
+</p>
+<p class="feedback--response feedback--response-no">
+Sorry to hear that. Please contact Trellis Support at <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> if you need additional help.
+</p>
+</div>
+<script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
+<br>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="User mailing list" aria-label="User mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="User mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://example.org/twitter aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Stack Overflow" aria-label="Stack Overflow">
+<a class=text-white target=_blank rel=noopener href=https://example.org/stack aria-label="Stack Overflow">
+<i class="fab fa-stack-overflow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/google/docsy aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Slack aria-label=Slack>
+<a class=text-white target=_blank rel=noopener href=https://example.org/slack aria-label=Slack>
+<i class="fab fa-slack"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Developer mailing list" aria-label="Developer mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="Developer mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2022 Mediavine All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/docsytrellis/js/tabpane-persist.js></script>
+<script src=/docsytrellis/js/main.min.8ab8f81ff7e1454d30024cd6f956d4d341c3a97e2a673f988065f2ee4e147922.js integrity="sha256-irj4H/fhRU0wAkzW+VbU00HDqX4qZz+YgGXy7k4UeSI=" crossorigin=anonymous></script>
+</body>
+</html>

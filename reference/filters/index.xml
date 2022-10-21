@@ -1,0 +1,75 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – Filters</title><link>https://vcmediavine.github.io/docsytrellis/reference/filters/</link><description>Recent content in Filters on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vcmediavine.github.io/docsytrellis/reference/filters/index.xml" rel="self" type="application/rss+xml"/><item><title>Reference: Filters Summary</title><link>https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/</guid><description>
+&lt;h3 id="mvt_processing_css_status_timeoutfilters-detailmvt_processing_css_status_timeout">&lt;a href="../filters-detail#mvt_processing_css_status_timeout">mvt_processing_css_status_timeout&lt;/a>&lt;/h3>
+&lt;p>Sets the timeout period for the Processing state in Critical CSS.&lt;/p>
+&lt;hr>
+&lt;h3 id="mvt_requires_default_wp_fieldsfilters-detailmvt_requires_default_wp_fields">&lt;a href="../filters-detail#mvt_requires_default_wp_fields">mvt_requires_default_wp_fields&lt;/a>&lt;/h3>
+&lt;p>Determines whether default WordPress comment fields should be used in the &lt;code>comments_form&lt;/code> call in comments.php. If Trellis Comments are enabled, WordPress comment fields are not used.&lt;/p>
+&lt;hr>
+&lt;h3 id="mv_trellis_about_widget_image_heightfilters-detailmv_trellis_about_widget_image_height">&lt;a href="../filters-detail#mv_trellis_about_widget_image_height">mv_trellis_about_widget_image_height&lt;/a>&lt;/h3>
+&lt;p>Applied to the height attribute on the About Widget IMG tag.&lt;/p>
+&lt;hr>
+&lt;h3 id="mv_trellis_about_widget_image_widthfilters-detailmv_trellis_about_widget_image_width">&lt;a href="../filters-detail#mv_trellis_about_widget_image_width">mv_trellis_about_widget_image_width&lt;/a>&lt;/h3>
+&lt;p>Applied to the width attribute on the About Widget IMG tag.&lt;/p>
+&lt;hr>
+&lt;h3 id="mv_trellis_about_widget_image_sizefilters-detailmv_trellis_about_widget_image_size">&lt;a href="../filters-detail#mv_trellis_about_widget_image_size">mv_trellis_about_widget_image_size&lt;/a>&lt;/h3>
+&lt;p>The registered size to be used for the About Widget image. This can be a Trellis image size, a WordPress image size, or a custom size.&lt;/p></description></item><item><title>Reference: Filters Detail</title><link>https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/</guid><description>
+&lt;h3 id="mvt_processing_css_status_timeout">mvt_processing_css_status_timeout&lt;/h3>
+&lt;p>Sets the timeout period for the Processing state in Critical CSS.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mvt_processing_css_status_timeout&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">int&lt;/span> &lt;span style="color:#111">$value&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>7200 seconds (2 hours) from current time&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$value &lt;code>int&lt;/code> The amount of time measured in seconds since the Unix Epoch (January 1 1970 00:00:00 GMT).&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mvt_requires_default_wp_fields">mvt_requires_default_wp_fields&lt;/h3>
+&lt;p>&lt;strong>Description&lt;/strong>&lt;/p>
+&lt;p>Determines whether default WordPress comment fields should be used in the &lt;code>comments_form&lt;/code> call in comments.php. If Trellis Comments are enabled, WordPress comment fields are not used.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;mvt_requires_default_wp_fields&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">bool&lt;/span> &lt;span style="color:#111">$value&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>False if Trellis Comments are enabled, True if Trellis Comments are disabled.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$value &lt;code>bool&lt;/code> Whether to use default WordPress comment fields.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mv_trellis_about_widget_image_height">mv_trellis_about_widget_image_height&lt;/h3>
+&lt;p>Applied to the height attribute on the About Widget IMG tag.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;mv_trellis_about_widget_image_height&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">int&lt;/span> &lt;span style="color:#111">$height&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>100&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$height: &lt;code>int&lt;/code> The height of the About Widget image in pixels.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mv_trellis_about_widget_image_width">mv_trellis_about_widget_image_width&lt;/h3>
+&lt;p>Applied to the width attribute on the About Widget IMG tag.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mv_trellis_about_widget_image_width&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">int&lt;/span> &lt;span style="color:#111">$width&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>100&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$width &lt;code>int&lt;/code> The width of the About Widget image in pixels. VERIFY pixels&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mv_trellis_about_widget_image_size">mv_trellis_about_widget_image_size&lt;/h3>
+&lt;p>The registered size to be used for the About Widget image. This can be a Trellis image size, a WordPress image size, or a custom size.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;mv_trellis_about_widget_image_size&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">string&lt;/span> &lt;span style="color:#111">$img_size&lt;/span>&lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>mv_trellis_1x1_low_res&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$img_size &lt;code>string&lt;/code> The registered image size.&lt;/li>
+&lt;/ul></description></item></channel></rss>
