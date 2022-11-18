@@ -54,7 +54,7 @@ Multiple `add_theme_support()` methods can be added to the function.
 
 Trellis’ default CSS stylesheet incorporates all the settings shown in the table. If you want to make use of a setting color or font in a different part of your theme, you’ll need to reference a Trellis CSS variable.
 
-{{% alert color="warning" title="Warning" %}}
+{{% alert color="warning" title="Important" %}}
 Do not redeclare any Trellis CSS variables. Doing so will break Trellis functionality.
 {{% /alert %}}
 
