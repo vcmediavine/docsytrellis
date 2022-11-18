@@ -15,23 +15,23 @@
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
 <title>Creating Your Child Theme | Mediavine Trellis</title>
-<meta name=description content="Placeholder description. 
+<meta name=description content="Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.
 ">
 <meta property="og:title" content="Creating Your Child Theme">
-<meta property="og:description" content="Placeholder description. 
+<meta property="og:description" content="Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/getting-started/create-your-child-theme/"><meta property="article:section" content="getting-started">
 <meta property="article:published_time" content="2022-10-04T00:00:00+00:00">
 <meta property="article:modified_time" content="2022-10-04T00:00:00+00:00"><meta property="og:site_name" content="Mediavine Trellis">
 <meta itemprop=name content="Creating Your Child Theme">
-<meta itemprop=description content="Placeholder description. 
+<meta itemprop=description content="Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.
 "><meta itemprop=datePublished content="2022-10-04T00:00:00+00:00">
 <meta itemprop=dateModified content="2022-10-04T00:00:00+00:00">
-<meta itemprop=wordCount content="6">
+<meta itemprop=wordCount content="1260">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Creating Your Child Theme">
-<meta name=twitter:description content="Placeholder description. 
+<meta name=twitter:description content="Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.
 ">
 <link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
 <link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.cb9c767c8247a832867ef53fd7445d37.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.1fc87fac9681798cd40951b852a714d6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -79,7 +79,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.cb9c767c8247a832867ef53fd7445d37.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.1fc87fac9681798cd40951b852a714d6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -121,6 +121,26 @@
 <h4>Contents</h4>
 <nav id=TableOfContents>
 <ul>
+<li><a href=#child-theme-file-structure>Child Theme File Structure</a></li>
+<li><a href=#add-css-files>Add CSS Files</a>
+<ul>
+<li><a href=#create-a-stylecss-file>Create a Style.css File</a></li>
+<li><a href=#add-custom-css-files>Add Custom CSS Files</a></li>
+</ul>
+</li>
+<li><a href=#add-a-functionsphp-file>Add a Functions.php File</a>
+<ul>
+<li><a href=#set-basic-definitions>Set Basic Definitions</a></li>
+<li><a href=#optional-add-theme-support-options>(Optional) Add Theme Support Options</a></li>
+</ul>
+</li>
+<li><a href=#create-template-files>Create Template Files</a>
+<ul>
+<li><a href=#built-in-trellis-core-templates>Built-In Trellis Core Templates</a></li>
+<li><a href=#bamboo-birch-and-wisteria-child-themes>Bamboo, Birch, and Wisteria Child Themes</a></li>
+<li><a href=#trellis-template-markup>Trellis Template Markup</a></li>
+</ul>
+</li>
 <li><a href=#whats-next>What’s Next?</a></li>
 </ul>
 </nav>
@@ -128,10 +148,14 @@
 <div class="taxonomy taxonomy-terms-cloud taxo-tags">
 <h5 class=taxonomy-title>Tag Cloud</h5>
 <ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/docs/ data-taxonomy-term=docs><span class=taxonomy-label>docs</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/sample/ data-taxonomy-term=sample><span class=taxonomy-label>sample</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/test/ data-taxonomy-term=test><span class=taxonomy-label>test</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span><span class=taxonomy-count>1</span></a></li>
 </ul>
 </div>
 <div class="taxonomy taxonomy-terms-cloud taxo-categories">
@@ -154,13 +178,226 @@
 </nav>
 <div class=td-content>
 <h1>Creating Your Child Theme</h1>
-<div class=lead>Placeholder description.</div>
+<div class=lead>Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.</div>
 <header class=article-meta>
 </header>
-<p>Placeholder text.</p>
+<p>This document will walk you through the pieces and parts of a Trellis child theme.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Trellis child themes follow the same basic structure as any WordPress child theme. You can refer to the <a href=https://developer.wordpress.org/themes/advanced-topics/child-themes/>WordPress Theme Handbook</a> for detailed information on how child themes operate.
+</div>
+<h2 id=child-theme-file-structure>Child Theme File Structure</h2>
+<ol>
+<li>Create a new folder for your child theme in your WordPress themes folder.</li>
+<li>Create the following folder structure inside of your child theme folder:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Subfolders</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assets</td>
+<td>(optional)</td>
+<td>A place to store your child theme’s images, CSS, and JavaScript files.</td>
+</tr>
+<tr>
+<td>template-parts</td>
+<td>article<br>content<br>header</td>
+<td>A location to store parts of templates that will be used when serving content. Trellis will cache the location of these template parts to serve content faster.</td>
+</tr>
+</tbody>
+</table>
+<ol start=3>
+<li>Add a 1200 x 900px screenshot.png file in your child theme folder. This screenshot will be shown on the <strong>Appearance > Themes</strong> page in your WordPress dashboard.</li>
+</ol>
+<h2 id=add-css-files>Add CSS Files</h2>
+<h3 id=create-a-stylecss-file>Create a Style.css File</h3>
+<ol>
+<li>Create a new file called style.css in your child theme folder.</li>
+<li>Add the following code, replacing the boilerplate text with your own content:</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#75715e>/*
+</span><span style=color:#75715e>Theme Name: &lt;Your Child Theme Name&gt;
+</span><span style=color:#75715e>Template: mediavine-trellis
+</span><span style=color:#75715e>Theme URI: &lt;URL to your child theme&#39;s documentation.&gt;
+</span><span style=color:#75715e>Author: &lt;Your Name or Company Name&gt;
+</span><span style=color:#75715e>Author URI: &lt;URL to your personal or company website.&gt;
+</span><span style=color:#75715e>Description: &lt;A short description of your child theme.&gt;
+</span><span style=color:#75715e>Requires at least: 5.2.0
+</span><span style=color:#75715e>Version: &lt;Your Child Theme Version (e.g. 0.0.1)&gt;
+</span><span style=color:#75715e>Text Domain: mediavine
+</span><span style=color:#75715e>*/</span>
+</code></pre></div><p>The fields are used in the following ways:</p>
+<h3 id=add-custom-css-files>Add Custom CSS Files</h3>
+<p>You can choose to add your custom CSS to the style.css file or you can create separate CSS files for inclusion in your child theme.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+We recommend having separate CSS files that are stored in your child theme’s assets folder as a best practice.
+</div>
+<p>Your custom CSS file can be any name you choose, but we recommend including the child theme version number in the name. This ensures that any CSS changes you make will refresh the browser cache whenever the child theme is upgraded. You’ll define the name and location of your CSS file in your child theme’s functions.php file.</p>
+<ol>
+<li>Add a custom CSS file to your child theme’s assets folder.</li>
+</ol>
+<pre tabindex=0><code>wp-content/themes/my-child-theme-name/assets/
+</code></pre><ol>
+<li>Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file index.0.0.1.css.</li>
+</ol>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see CSS Variables in Advanced Topics.
+</div>
+<h2 id=add-a-functionsphp-file>Add a Functions.php File</h2>
+<p>Your child theme’s functions.php file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.</p>
+<h3 id=set-basic-definitions>Set Basic Definitions</h3>
+<ol>
+<li>Add a functions.php file to your child theme folder.</li>
+<li>Add the following code to the functions.php, replacing the boilerplate text with your own values:</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;?</span><span style=color:#75af00>php</span>
+
+<span style=color:#d88200>/** Basic Definitions **
+</span><span style=color:#d88200> * Use mv_trellis_child_set_options() to define the child theme version and other necessary settings. .
+</span><span style=color:#d88200> * Options::set_multiple will enqueue stylesheets and scripts.
+</span><span style=color:#d88200> * 
+</span><span style=color:#d88200> * To learn more about functions available to Trellis child themes, see: https://mediavine.github.io/trellis-docs/docs/functions-php/
+</span><span style=color:#d88200> * To learn more about settings available to Trellis child themes, see: https://mediavine.github.io/trellis-docs/docs/settings/
+</span><span style=color:#d88200> */</span>
+
+<span style=color:#00a8c8>function</span> <span style=color:#75af00>mv_trellis_child_set_options</span><span style=color:#111>()</span> <span style=color:#111>{</span>
+    <span style=color:#111>$child_version</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;&lt;replace with your child theme version number&gt;&#39;</span><span style=color:#111>;</span>
+
+    <span style=color:#75af00>\Mediavine\Trellis\Options</span><span style=color:#f92672>::</span><span style=color:#75af00>set_multiple</span><span style=color:#111>(</span>
+        <span style=color:#111>[</span>
+            <span style=color:#d88200>&#39;child_name&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&lt;replace with your child theme name&gt;&#39;</span><span style=color:#111>,</span>
+            <span style=color:#d88200>&#39;child_version&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#111>$child_version</span><span style=color:#111>,</span>
+            <span style=color:#d88200>&#39;child_css&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>get_stylesheet_directory_uri</span><span style=color:#111>()</span> <span style=color:#f92672>.</span> <span style=color:#d88200>&#34;/assets/index.</span><span style=color:#d88200>$child_version</span><span style=color:#d88200>.css&#34;</span><span style=color:#111>,</span>
+        <span style=color:#111>]</span>
+    <span style=color:#111>);</span>
+
+<span style=color:#75af00>add_action</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_parent_loaded&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mv_trellis_child_set_options&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><p>The <code>$child_version</code> variable represents the version number of your child theme. We recommend defining it in a variable so that you can reuse it in other places of your child theme code.</p>
+<p>The other options you set are described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Theme Name</td>
+<td>The name of your child theme. This is shown on the Appearance > Themes page in your WordPress dashboard and also in Theme Details.</td>
+</tr>
+<tr>
+<td>Template</td>
+<td>The parent theme directory associated with your child theme. To be a Trellis child theme, this must be set to mediavine-trellis.</td>
+</tr>
+<tr>
+<td>Theme URI</td>
+<td>A web address for more information about your theme or for documentation.</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>The name of the author or company that created the child theme. This is shown on the Theme Details page.</td>
+</tr>
+<tr>
+<td>Author URI</td>
+<td>A web address for more information about you or the company that created the child theme.</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>A short description of the child theme. This is shown on the Theme Details page.</td>
+</tr>
+<tr>
+<td>Requires at least</td>
+<td>The minimum WordPress version required to use the child theme. This should be no earlier than 5.2.0, as this is the oldest version of WordPress supported by Trellis.</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>The version number used to identify the iteration of your child theme.</td>
+</tr>
+<tr>
+<td>Text Domain</td>
+<td>Used to support translations. Normally this is set to mediavine. If you use your own text domain, be sure to follow the instructions in WordPress’ Child Theme Internationalization documentation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=optional-add-theme-support-options>(Optional) Add Theme Support Options</h3>
+<p>Add the following code after <code>Options::set_multiple</code> to allow the publisher to set accent colors and heading styles using the Mediavine Trellis Dashboard. See Trellis Settings for information on how to connect your code to the settings in your child theme.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/** Accent Color and Headings Support **
+</span><span style=color:#d88200> * Use add_theme_support to use accent colors and heading options defined in Trellis Settings.
+</span><span style=color:#d88200> */</span>
+
+  <span style=color:#75af00>add_theme_support</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_background_accent_color&#39;</span> <span style=color:#111>);</span>
+  <span style=color:#75af00>add_theme_support</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_headings_control&#39;</span> <span style=color:#111>);</span>
+<span style=color:#111>}</span>
+</code></pre></div><h2 id=create-template-files>Create Template Files</h2>
+<p>While Trellis supports the WordPress <a href=https://developer.wordpress.org/themes/basics/template-hierarchy/>Template Hierarchy</a>, page load time can be reduced through the use of template parts. Template parts are reusable blocks of code that can be called from different page templates. This allows them to serve up special coding for things like category templates, author templates, and more. Think of template parts as more sophisticated versions of <code>get_header()</code> and <code>get_footer()</code>.</p>
+<p>WordPress has a built-in function for template parts, but Trellis offers a faster function called <code>mv_trellis_get_template_part()</code><strong>.</strong> This custom function caches your template parts and serves them much faster than WordPress’ built-in function. You can see it in use in the Trellis Core and Bamboo, Birch, and Wisteria child themes. See Functions in Reference for more information.</p>
+<h3 id=built-in-trellis-core-templates>Built-In Trellis Core Templates</h3>
+<p>Any template placed in your child-theme’s folder will follow the WordPress Template Hierarchy and override a template in the Trellis parent theme folder. However, we recommend using a similar structure of template parts for your own theme files in order to get the biggest speed boost.</p>
+<p>Trellis Core provides the following templates out of the box:</p>
+<ul>
+<li>comments.php</li>
+<li>footer.php</li>
+<li>header.php</li>
+<li>index.php</li>
+<li>page-full-width.php</li>
+<li>searchform.php</li>
+<li>sidebar.php</li>
+<li>template-parts (directory)
+<ul>
+<li>article (directory)
+<ul>
+<li>article-excerpt.php</li>
+<li>article-meta-footer.php</li>
+<li>article-meta-head.php</li>
+<li>article-navigation.php</li>
+</ul>
+</li>
+<li>content (directory)
+<ul>
+<li>content-article.php</li>
+<li>content-none.php</li>
+<li>content.php</li>
+</ul>
+</li>
+<li>header (directory)
+<ul>
+<li>header-content-author.php</li>
+<li>header-content-front-page.php</li>
+<li>header-content-home.php</li>
+<li>header-content-singular.php</li>
+<li>header-content.php</li>
+<li>header-featured.php</li>
+<li>header.php</li>
+<li>navigation.php</li>
+<li>search-form.php</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id=bamboo-birch-and-wisteria-child-themes>Bamboo, Birch, and Wisteria Child Themes</h3>
+<p>If you’ve installed the Bamboo, Birch, and Wisteria child themes, you’ll find that each one builds upon Trellis Core’s default templates and stylesheets. Some of the child themes have support for accent colors and heading settings, while others don’t. Be sure to activate and look through these child themes for ideas on how to create your own child theme.</p>
+<h3 id=trellis-template-markup>Trellis Template Markup</h3>
+<p>Trellis also receives higher SEO scores by using <a href=https://www.w3schools.com/html/html5_semantic_elements.asp>semantic HTML markup</a> in all of its templates. While there’s traditional markup mixed in, large blocks are coded with semantic HTML. Semantic HTML makes it easier for Google’s bots to index your site. It also increases web page accessibility.</p>
+<p>Here are some resources to help you understand Trellis’ default markup:</p>
+<ul>
+<li>Visual Trellis Markup Overview</li>
+<li>Visual Trellis Markup Detail</li>
+</ul>
 <h2 id=whats-next>What’s Next?</h2>
 <ul>
-<li>Placeholder link</li>
+<li>Learn how to test your Trellis child theme</li>
+<li>Read more about Trellis Hooks</li>
+<li>Read more about Trellis Filters</li>
 </ul>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <br>

@@ -1,0 +1,389 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/docsytrellis/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/docsytrellis/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
+<title>Critical CSS | Mediavine Trellis</title>
+<meta name=description content="Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals. 
+">
+<meta property="og:title" content="Critical CSS">
+<meta property="og:description" content="Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals. 
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/critical-css/"><meta property="article:section" content="advanced-topics">
+<meta property="og:site_name" content="Mediavine Trellis">
+<meta itemprop=name content="Critical CSS">
+<meta itemprop=description content="Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals. 
+">
+<meta itemprop=wordCount content="1424">
+<meta itemprop=keywords content="critical css,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Critical CSS">
+<meta name=twitter:description content="Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals. 
+">
+<link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
+<link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+<script src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/docsytrellis/>
+<span class=navbar-logo><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1e3 1e3" style="enable-background:new 0 0 1000 1000"><style>.st0{fill:#41a4a9}.st1{fill:#67b6ba}.st2{fill:#a3dbdf}.st3{fill:#247272}.st4{fill:#8dc8cb}</style><g><g><path class="st0" d="M753.93 64.88c2.16.0 4.24.02 6.25.06.19 11.19-.16 24.94-1.83 39.78-3.36 29.93-12.97 71.18-39.67 97.79-35.86 35.78-97.72 41.12-131.4 41.12-2.15.0-4.23-.02-6.23-.06-.19-11.18.16-24.93 1.82-39.77 3.36-29.93 12.96-71.19 39.64-97.79 35.89-35.79 97.74-41.13 131.42-41.13m0-64.88C705.59.0 627.92 8.99 576.7 60.07c-77.41 77.13-58.89 214.92-58.07 220.75l3.1 21.9 21.89 3.16c1.97.28 18.99 2.62 43.66 2.62 48.34.0 126.03-8.99 177.22-60.07 77.43-77.15 58.92-214.93 58.09-220.75l-3.1-21.9L797.6 2.63C795.64 2.34 778.6.0 753.93.0z"/></g><g><path class="st1" d="M521.73 648.47l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 648.47z"/></g><g><path class="st2" d="M521.73 994.22l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 994.22z"/></g><g><path class="st3" d="M477.61 476.01l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 476.01z"/></g><g><path class="st4" d="M477.61 821.75l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 821.75z"/></g></g></svg></span><span class=font-weight-bold>Mediavine Trellis</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/overview/><span>Overview</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/getting-started/><span>Getting Started</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/docsytrellis/advanced-topics/><span class=active>Advanced Topics</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/faqs/><span>FAQ</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/reference/><span>Reference</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/changelogs/><span>Changelogs</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.1fc87fac9681798cd40951b852a714d6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<div id=content-mobile>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.1fc87fac9681798cd40951b852a714d6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+</div>
+<div id=content-desktop></div>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsytrellisadvanced-topics-li>
+<a href=/docsytrellis/advanced-topics/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docsytrellisadvanced-topics><span>Advanced Topics</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsytrellisadvanced-topicscritical-css-li>
+<a href=/docsytrellis/advanced-topics/critical-css/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicscritical-css><span class=td-sidebar-nav-active-item>Critical CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicsimage-delivery-li>
+<a href=/docsytrellis/advanced-topics/image-delivery/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsimage-delivery><span>Image Delivery and Optimizations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicsexample-page-li>
+<a href=/docsytrellis/advanced-topics/example-page/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsexample-page><span>Example Page</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/google/docsy-example/tree/master/content/en/advanced-topics/critical-css.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/google/docsy-example/edit/master/content/en/advanced-topics/critical-css.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/new/master/content/en/advanced-topics/critical-css.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Critical%20CSS" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/google/docsy/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+</div>
+<div class=td-toc>
+<h4>Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#how-is-critical-css-generated>How Is Critical CSS Generated?</a></li>
+<li><a href=#how-to-determine-the-critical-css-status-of-a-page>How To Determine the Critical CSS Status of a Page</a></li>
+<li><a href=#when-does-critical-css-get-refreshed>When Does Critical CSS Get Refreshed?</a></li>
+<li><a href=#advanced-functionality>Advanced Functionality</a>
+<ul>
+<li><a href=#adding-css-to-the-critical-css-file>Adding CSS to the Critical CSS File</a></li>
+<li><a href=#adding-css-to-the-non-critical-css-file>Adding CSS to the Non-Critical CSS File</a></li>
+</ul>
+</li>
+<li><a href=#issues-with-critical-css>Issues with Critical CSS</a></li>
+</ul>
+</nav>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-tags">
+<h5 class=taxonomy-title>Tag Cloud</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/docs/ data-taxonomy-term=docs><span class=taxonomy-label>docs</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/sample/ data-taxonomy-term=sample><span class=taxonomy-label>sample</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/test/ data-taxonomy-term=test><span class=taxonomy-label>test</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-categories">
+<h5 class=taxonomy-title>Categories</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/categories/examples/ data-taxonomy-term=examples><span class=taxonomy-label>Examples</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/critical-css/>Critical CSS</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Critical CSS</h1>
+<div class=lead>Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals.</div>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+<h5 class=taxonomy-title>Tags:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span></a></li>
+</ul>
+</div>
+</header>
+<p>Critical CSS reduces load time by generating two optimized CSS files: one for content styling that appears in the initial viewport for a page, and another for content styling for the rest of the page. Trellis creates these files for each page of your WordPress site.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+In this article, a page refers to either a post or an actual page in WordPress. It’s whatever gets served to your reader when they visit your site in a browser.
+</div>
+<h2 id=how-is-critical-css-generated>How Is Critical CSS Generated?</h2>
+<ol>
+<li>When a page is first visited by a reader, your Trellis instance submits it to the Trellis API hosted by Mediavine (access to this service is included in your license).</li>
+<li>The page is rendered in a browser with a 1300 x 900px viewport and its CSS stylesheet is audited.</li>
+<li>Any CSS styles that affect content in this viewport are saved into a minified primary Critical CSS file.</li>
+<li>Any CSS styles that fall outside of this viewport are saved into a minified secondary Non-Critical CSS file. CSS styles that are not referenced by elements on the page are completely left out.</li>
+<li>When the Critical and Non-Critical files are complete, the Trellis API notifies your Trellis instance to download them. These files are saved into your WordPress installation (specifically the <code>/wp-content/mvt-critical/</code> directory).</li>
+<li>The next time the page is visited, the Critical and Non-Critical CSS files are served to the reader.</li>
+</ol>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+The primary Critical CSS file is loaded as inline styles when the page loads. The secondary Non-Critical CSS file is loaded as an external stylesheet. This renders initial page views much more quickly, as the site includes the most important CSS (the Critical CSS styles) in the page markup.
+</div>
+<h2 id=how-to-determine-the-critical-css-status-of-a-page>How To Determine the Critical CSS Status of a Page</h2>
+<p>When logged in, a Critical CSS Status will appear in the admin bar when you view a page on your site (See Changes to WordPress for more information). The status tells you where Trellis is in the Critical CSS generation process:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disabled</td>
+<td>Critical CSS generation has been disabled for the post or page.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>The page encountered an error while generating the Critical CSS files. Email <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> for help resolving the issue.</td>
+</tr>
+<tr>
+<td>None</td>
+<td>The page has not attempted to generate Critical CSS yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis API after two hours.</td>
+</tr>
+<tr>
+<td>Processing</td>
+<td>The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis API, but the files haven’t been saved to the site yet.</td>
+</tr>
+<tr>
+<td>Success</td>
+<td>The page successfully generated Critical CSS files.</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Important</h4>
+When you visit a page while logged in, Trellis <strong>does not</strong> submit it for Critical CSS generation. Automatic generation only happens when a reader visits the page.
+</div>
+<h2 id=when-does-critical-css-get-refreshed>When Does Critical CSS Get Refreshed?</h2>
+<p>Knowing that Critical CSS files are only generated when a visitor reads a page, it’s natural to wonder when Trellis will trigger an update to those files. Here are the events that prompt Critical CSS to purge its existing files:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automatic Updates</td>
+<td>Whenever Wordpress is automatically updated.</td>
+</tr>
+<tr>
+<td>Custom functions</td>
+<td>The functions mv_trellis_purge_all_critical_css() and mv_trellis_purge_page_critical_css() will prompt a refresh of Critical CSS files. See Functions in the Reference section for more information.</td>
+</tr>
+<tr>
+<td>Plugin changes</td>
+<td>Activating or deactivating a plugin will prompt Trellis to regenerate existing Critical CSS files.</td>
+</tr>
+<tr>
+<td>Critical CSS commands</td>
+<td>When logged in, the Manage Trellis JS/CSS menu on the admin bar gives you options to purge Critical CSS for the current page or all pages on the site.</td>
+</tr>
+<tr>
+<td>Sidebar widget changes</td>
+<td>If you add, remove, change position, or change settings on a sidebar widget.</td>
+</tr>
+<tr>
+<td>Switching themes</td>
+<td>Whenever you activate Trellis or a Trellis child theme.</td>
+</tr>
+</tbody>
+</table>
+<p>Trellis will continue serving existing Critical CSS files for a page until new ones have been generated and downloaded.</p>
+<p>If you’ve made a significant change to your theme’s design or functionality, you may want to tell Trellis to discard all existing Critical CSS files and rebuild them from scratch. For more information on when to use Purge, please read <a href=https://product-help.mediavine.com/en/articles/4964387-critical-css-in-the-admin-bar>Critical CSS in the Admin Bar</a> in the Help Center.</p>
+<h2 id=advanced-functionality>Advanced Functionality</h2>
+<p>There are instances where you might want to alter Critical CSS functionality because you intend to use your child-theme with other plugins. You might also use JavaScript to alter the styling of page elements after page load. In these scenarios, Critical CSS’ default functionality might give you unexpected results. For dynamically altered elements that appear in the initial viewport, you’ll want to consider adding their selectors to the Critical CSS file. If those elements appear outside of the initial viewport, add their selectors to the Non-Critical CSS file.</p>
+<h3 id=adding-css-to-the-critical-css-file>Adding CSS to the Critical CSS File</h3>
+<p>By default, if a CSS selector doesn’t match an element in the initial 1300 x 900px viewport of a page, it gets saved to that page’s Non-Critical CSS file. This might not be the desired behavior. It&rsquo;s possible that you need some styles to be present at page load to prevent a layout shift or stop a flash of unstyled content for elements close to the viewport, but not in it.</p>
+<p>While publishers can add CSS selectors manually to the Force Keep list with the Mediavine Trellis Dashboard, you can include them programmatically by adding code to your child theme’s functions.php file.</p>
+<p>In the example below, selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An <code>add_filter</code> is then used to add the matching selectors to Trellis’ Force Keep Critical CSS list. When a page gets submitted to the Trellis API, any matching CSS selectors are added to the Critical CSS file.</p>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Important</h4>
+If you add selectors to the Force Keep Critical CSS list, be sure to check your pages in a Google Page Speed Insights report during testing. Adding selectors to the Force Keep list may cause an &ldquo;Unused CSS&rdquo; warning to appear if the selectors are not specific enough or only appear outside of the initial viewport.
+</div>
+<p><strong>Example</strong></p>
+<p>In the example below, a site uses WP Recipe Maker and wants all styles included in the primary Critical CSS file. Since all WP Recipe Maker styles begin with the suffix “wprm,” Trellis will add all of the matching styles.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#00a8c8>function</span> <span style=color:#75af00>theme_forced_styles</span><span style=color:#111>(</span> <span style=color:#111>$selectors</span> <span style=color:#111>)</span> <span style=color:#111>{</span>
+    <span style=color:#111>$selectors</span><span style=color:#111>[]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;wprm&#39;</span><span style=color:#111>;</span>
+    <span style=color:#00a8c8>return</span> <span style=color:#111>$selectors</span><span style=color:#111>;</span>
+<span style=color:#111>}</span>
+
+<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_css_force_keep&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;theme_forced_styles&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><p>You can add multiple styles to the array by using an <code>array_merge()</code>:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>array_merge</span><span style=color:#111>(</span> <span style=color:#111>$selectors</span><span style=color:#111>,</span> <span style=color:#111>[</span> <span style=color:#d88200>&#39;wprm&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;blue&#39;</span> <span style=color:#111>]</span> <span style=color:#111>)</span>
+</code></pre></div><p>You can also add them individually by using multiple lines:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$selectors</span><span style=color:#111>[]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;wprm&#39;</span><span style=color:#111>;</span>
+<span style=color:#111>$selectors</span><span style=color:#111>[]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;blue&#39;</span><span style=color:#111>;</span>
+</code></pre></div>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Styles added programmatically will not appear in the Mediavine Trellis Dashboard.
+</div>
+<h3 id=adding-css-to-the-non-critical-css-file>Adding CSS to the Non-Critical CSS File</h3>
+<p>When creating the secondary Non-Critical CSS file, Trellis leaves out any CSS styles that don&rsquo;t apply to elements on the page. This can create issues if elements are added to the page markup after the initial page load. The Trellis API does not execute JavaScript at runtime, so styles for these added elements would not be included in the Non-Critical CSS file.</p>
+<p>Publishers can add these style selectors manually by using the Mediavine Trellis Dashboard, but if you design your child theme to work with a third-party plugin (or are adding your own JavaScript that impacts content styling) you may want to include selectors programmatically. You do this by adding code to your child theme’s functions.php file.</p>
+<p>Just like with Force Keep, the example below shows a custom function where selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An <code>add_filter</code> is then used to add the matching selectors to Trellis’ Allowlist. Any CSS styles that match the expression will get added to the Non-Critical CSS file.</p>
+<p><strong>Example</strong></p>
+<p>In the example below, dynamic page elements marked with “pop-up” are styled via JavaScript after page load. Specifying “pop-up” will add all matching styles.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#00a8c8>function</span> <span style=color:#75af00>theme_allowlist_styles</span><span style=color:#111>(</span> <span style=color:#111>$selectors</span> <span style=color:#111>)</span> <span style=color:#111>{</span>
+    <span style=color:#111>$selectors</span><span style=color:#111>[]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;pop-up&#39;</span><span style=color:#111>;</span>
+    <span style=color:#00a8c8>return</span> <span style=color:#111>$selectors</span><span style=color:#111>;</span>
+<span style=color:#111>}</span>
+
+<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_css_allowlist&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;theme_allowlist_styles&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><p>You can add multiple styles to the array by using an <code>array_merge()</code>:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>array_merge</span><span style=color:#111>(</span> <span style=color:#111>$selectors</span><span style=color:#111>,</span> <span style=color:#111>[</span> <span style=color:#d88200>&#39;pop-up&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;red&#39;</span> <span style=color:#111>]</span> <span style=color:#111>)</span>
+</code></pre></div><p>You can also add them individually by using multiple lines:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$selectors</span><span style=color:#111>[]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;pop-up&#39;</span><span style=color:#111>;</span>
+<span style=color:#111>$selectors</span><span style=color:#111>[]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;red&#39;</span><span style=color:#111>;</span>
+</code></pre></div>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Styles added programmatically will not appear in the Mediavine Trellis Dashboard.
+</div>
+<h2 id=issues-with-critical-css>Issues with Critical CSS</h2>
+<p>If you encounter problems using Critical CSS during development, refer to Troubleshooting. If you don’t find a solution there, please contact us at <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a>.</p>
+<style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
+<br>
+<hr>
+<div class=d-print-none>
+<h2 class=feedback--title>Feedback</h2>
+<p class=feedback--question>Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+Thanks for your feedback!
+</p>
+<p class="feedback--response feedback--response-no">
+Sorry to hear that. Please contact Trellis Support at <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> if you need additional help.
+</p>
+</div>
+<script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
+<br>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="User mailing list" aria-label="User mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="User mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://example.org/twitter aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Stack Overflow" aria-label="Stack Overflow">
+<a class=text-white target=_blank rel=noopener href=https://example.org/stack aria-label="Stack Overflow">
+<i class="fab fa-stack-overflow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/google/docsy aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Slack aria-label=Slack>
+<a class=text-white target=_blank rel=noopener href=https://example.org/slack aria-label=Slack>
+<i class="fab fa-slack"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Developer mailing list" aria-label="Developer mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="Developer mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2022 Mediavine All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/docsytrellis/js/tabpane-persist.js></script>
+<script src=/docsytrellis/js/main.min.8ab8f81ff7e1454d30024cd6f956d4d341c3a97e2a673f988065f2ee4e147922.js integrity="sha256-irj4H/fhRU0wAkzW+VbU00HDqX4qZz+YgGXy7k4UeSI=" crossorigin=anonymous></script>
+</body>
+</html>

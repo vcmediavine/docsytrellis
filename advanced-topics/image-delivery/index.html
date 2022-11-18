@@ -1,0 +1,636 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/docsytrellis/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/docsytrellis/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
+<title>Image Delivery and Optimizations | Mediavine Trellis</title>
+<meta name=description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+">
+<meta property="og:title" content="Image Delivery and Optimizations">
+<meta property="og:description" content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/"><meta property="article:section" content="advanced-topics">
+<meta property="og:site_name" content="Mediavine Trellis">
+<meta itemprop=name content="Image Delivery and Optimizations">
+<meta itemprop=description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+">
+<meta itemprop=wordCount content="1253">
+<meta itemprop=keywords content="image sizes,lazy loading,WebP,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Image Delivery and Optimizations">
+<meta name=twitter:description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+">
+<link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
+<link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+<script src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/docsytrellis/>
+<span class=navbar-logo><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1e3 1e3" style="enable-background:new 0 0 1000 1000"><style>.st0{fill:#41a4a9}.st1{fill:#67b6ba}.st2{fill:#a3dbdf}.st3{fill:#247272}.st4{fill:#8dc8cb}</style><g><g><path class="st0" d="M753.93 64.88c2.16.0 4.24.02 6.25.06.19 11.19-.16 24.94-1.83 39.78-3.36 29.93-12.97 71.18-39.67 97.79-35.86 35.78-97.72 41.12-131.4 41.12-2.15.0-4.23-.02-6.23-.06-.19-11.18.16-24.93 1.82-39.77 3.36-29.93 12.96-71.19 39.64-97.79 35.89-35.79 97.74-41.13 131.42-41.13m0-64.88C705.59.0 627.92 8.99 576.7 60.07c-77.41 77.13-58.89 214.92-58.07 220.75l3.1 21.9 21.89 3.16c1.97.28 18.99 2.62 43.66 2.62 48.34.0 126.03-8.99 177.22-60.07 77.43-77.15 58.92-214.93 58.09-220.75l-3.1-21.9L797.6 2.63C795.64 2.34 778.6.0 753.93.0z"/></g><g><path class="st1" d="M521.73 648.47l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 648.47z"/></g><g><path class="st2" d="M521.73 994.22l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 994.22z"/></g><g><path class="st3" d="M477.61 476.01l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 476.01z"/></g><g><path class="st4" d="M477.61 821.75l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 821.75z"/></g></g></svg></span><span class=font-weight-bold>Mediavine Trellis</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/overview/><span>Overview</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/getting-started/><span>Getting Started</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/docsytrellis/advanced-topics/><span class=active>Advanced Topics</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/faqs/><span>FAQ</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/reference/><span>Reference</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/changelogs/><span>Changelogs</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.1fc87fac9681798cd40951b852a714d6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<div id=content-mobile>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.1fc87fac9681798cd40951b852a714d6.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+</div>
+<div id=content-desktop></div>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsytrellisadvanced-topics-li>
+<a href=/docsytrellis/advanced-topics/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docsytrellisadvanced-topics><span>Advanced Topics</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicscritical-css-li>
+<a href=/docsytrellis/advanced-topics/critical-css/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicscritical-css><span>Critical CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsytrellisadvanced-topicsimage-delivery-li>
+<a href=/docsytrellis/advanced-topics/image-delivery/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsimage-delivery><span class=td-sidebar-nav-active-item>Image Delivery and Optimizations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicsexample-page-li>
+<a href=/docsytrellis/advanced-topics/example-page/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsexample-page><span>Example Page</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/google/docsy-example/tree/master/content/en/advanced-topics/image-delivery.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/google/docsy-example/edit/master/content/en/advanced-topics/image-delivery.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/new/master/content/en/advanced-topics/image-delivery.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Image%20Delivery%20and%20Optimizations" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/google/docsy/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+</div>
+<div class=td-toc>
+<h4>Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#lazy-loading-delivery>Lazy Loading Delivery</a>
+<ul>
+<li><a href=#disabling-lazy-loading-across-the-site>Disabling Lazy Loading Across the Site</a></li>
+<li><a href=#disabling-lazy-loading-per-image>Disabling Lazy Loading Per Image</a></li>
+<li><a href=#applying-eager-loading-to-an-image>Applying Eager-Loading to an Image</a></li>
+</ul>
+</li>
+<li><a href=#image-size-optimization>Image Size Optimization</a></li>
+<li><a href=#image-sizes-chart>Image Sizes Chart</a>
+<ul>
+<li><a href=#trellis-square-1x1>Trellis: Square (1x1)</a></li>
+<li><a href=#trellis-3x4>Trellis: 3x4</a></li>
+<li><a href=#trellis-4x3-trellis-default>Trellis: 4x3 (Trellis Default)</a></li>
+<li><a href=#trellis-16x9>Trellis: 16x9</a></li>
+<li><a href=#wp-core-sizes>WP Core Sizes</a></li>
+</ul>
+</li>
+<li><a href=#useful-filters-and-functions>Useful Filters and Functions</a>
+<ul>
+<li><a href=#filters>Filters</a></li>
+<li><a href=#functions>Functions</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-tags">
+<h5 class=taxonomy-title>Tag Cloud</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/docs/ data-taxonomy-term=docs><span class=taxonomy-label>docs</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/sample/ data-taxonomy-term=sample><span class=taxonomy-label>sample</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/test/ data-taxonomy-term=test><span class=taxonomy-label>test</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-categories">
+<h5 class=taxonomy-title>Categories</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/categories/examples/ data-taxonomy-term=examples><span class=taxonomy-label>Examples</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/>Image Delivery and Optimizations</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Image Delivery and Optimizations</h1>
+<div class=lead>Trellis offers lazy loading, thumbnail optimization, and optional image formatting features.</div>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+<h5 class=taxonomy-title>Tags:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span></a></li>
+</ul>
+</div>
+</header>
+<h1 id=image-delivery-and-optimizations>Image Delivery and Optimizations</h1>
+<p>When using Trellis, several image-specific features are available to make your pages load faster and improve your site’s Google Core Web Vitals score. These include:</p>
+<ul>
+<li><strong>Image delivery enhancement via lazy loading.</strong> For older browsers that don’t natively support lazy loading, Trellis uses a JavaScript solution. Developers can also disable lazy loading per image, across the site, or specify eager loading. Lazy loading is also applied to iframe content.</li>
+<li><strong>Image thumbnail size optimizations.</strong> Trellis instructs WordPress to create additional image sizes for uploaded images based on the Featured Image size setting. Existing images can be retroactively processed via a Regenerate Featured Images button or Regenerate All Images button in the Mediavine Trellis Dashboard.</li>
+<li><strong>(Optional) Image formatting optimizations.</strong> If the optional Trellis Images plugin is installed, Trellis will generate WebP versions of legacy image formats when visitors go to a page.</li>
+</ul>
+<h2 id=lazy-loading-delivery>Lazy Loading Delivery</h2>
+<p>Lazy loading is the practice of delaying the load or initialization of objects until they’re needed by the browser. When Trellis is active, a <code>loading="lazy"</code> attribute is automatically added to images and iframes found within Trellis content and sidebars. This allows modern browsers to use their native lazy loading functions. If a browser doesn’t natively support lazy loading, Trellis falls back to using a JavaScript solution to accomplish it.</p>
+<p>Once the page is loaded, Trellis inserts the correct image or iframe content just before it enters the viewport. An image within a <code>noscript</code> tag is also added to provide compatibility for scenarios where JavaScript is not available.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Lazy loading is also automatically applied to iframe content. The instructions for disabling lazy loading per image (or enabling eager loading) also applies to iframes.
+</div>
+<h3 id=disabling-lazy-loading-across-the-site>Disabling Lazy Loading Across the Site</h3>
+<p>If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s functions.php file:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
+</span><span style=color:#d88200>  * Disable Trellis lazy loading
+</span><span style=color:#d88200>*/</span>
+<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enable_lazy_load&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__return_false&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><h3 id=disabling-lazy-loading-per-image>Disabling Lazy Loading Per Image</h3>
+<p>If you want to disable lazy loading on a specific image or to disable Trellis’ lazy loading JavaScript fallback, you can apply a class to an <code>&lt;img></code> or <code>&lt;iframe></code> tag or block.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>no-lazyload</td>
+<td>This class stops Trellis from adding the loading=&ldquo;lazy&rdquo; attribute. The element will be served as-is.</td>
+</tr>
+<tr>
+<td>native-lazyload</td>
+<td>This class allows Trellis to add the loading=&ldquo;lazy&rdquo; attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=applying-eager-loading-to-an-image>Applying Eager-Loading to an Image</h3>
+<p>Eager loading is the opposite of lazy loading. Eager loading initializes or loads a resource as soon as the code is executed. This is useful when you need to have image or iframe resources immediately available — for example, if shown as part of a “Loading” screen.</p>
+<p>Eager loading can be applied as a class on an <code>&lt;img></code> or <code>&lt;iframe></code> tag.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eager-load</td>
+<td>This class stops Trellis from adding the loading=&ldquo;lazy&rdquo; attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a loading=&ldquo;eager&rdquo; attribute (provided one doesn’t already exist).<br><br><strong>Note:</strong> This feature is only available as of Trellis 0.15.3.</td>
+</tr>
+</tbody>
+</table>
+<h2 id=image-size-optimization>Image Size Optimization</h2>
+<p>WordPress has a predefined set of image sizes it creates when a new image is uploaded. When active, Trellis modifies this set to add more sizes that are frequently used in publisher sites. This helps prevent the <a href=https://web.dev/uses-responsive-images/>“Properly Sized Image Warning” in Google Pagespeed Insights</a>.</p>
+<p>Publishers can choose a desired featured image thumbnail size and ratio in the <strong>Display</strong> tab of the Mediavine Trellis Dashboard. Depending on the size selected, additional sizes (as listed in the Image Sizes chart) will be created by WordPress whenever an image is uploaded or on post save when the featured image size is changed.</p>
+<p>The <strong>Regenerate Featured Images</strong> button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images>Trellis Featured Images</a> in the Help Center for more information.</p>
+<pre><code>&lt;img src=&quot;/images/display-featured-image.png&quot; alt=&quot;Regenerate featured images.&quot; width=&quot;200px&quot;/&gt;
+</code></pre>
+<p>If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the <strong>Advanced</strong> tab of the Mediavine Trellis Dashboard and use the <strong>Regenerate All Images</strong> button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis>How to Regenerate Your Image Sizes in Trellis</a> in the Help Center for more information.</p>
+<pre><code>&lt;img src=&quot;/images/regenerate-all-images.png&quot; alt=&quot;Regenerate all images.&quot; width=&quot;200px&quot;/&gt;
+</code></pre>
+<h2 id=image-sizes-chart>Image Sizes Chart</h2>
+<p>By default, Trellis will generate all image sizes for the selected Featured Image Size and a high res size for all other sizes not selected. Image sizes are grouped by setting.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Trellis never alters original images. The additional images it creates will, however, be cropped accordingly and take up space in the site’s upload directory.
+</div>
+<h3 id=trellis-square-1x1>Trellis: Square (1x1)</h3>
+<table>
+<thead>
+<tr>
+<th>Image Size Slug</th>
+<th>Dimensions</th>
+<th>Cropping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mv_trellis_1x1 (also mv_trellis_1x1_high_res)</td>
+<td>728x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_1x1_med_high_res</td>
+<td>480x480</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_1x1_med_res</td>
+<td>320x320</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_1x1_low_res</td>
+<td>200x200</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_3x4</td>
+<td>546x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_4x3</td>
+<td>728x546</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_16x9</td>
+<td>728x410</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_960</td>
+<td>960x960</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_1080</td>
+<td>1080x1080</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=trellis-3x4>Trellis: 3x4</h3>
+<table>
+<thead>
+<tr>
+<th>Image Size Slug</th>
+<th>Dimensions</th>
+<th>Cropping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mv_trellis_3x4 (also mv_trellis_3x4_high_res)</td>
+<td>546x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_3x4_med_res</td>
+<td>360x480</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_3x4_low_res</td>
+<td>240x320</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_1x1</td>
+<td>728x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_4x3</td>
+<td>728x546</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_16x9</td>
+<td>728x410</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_960</td>
+<td>960x960</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_1080</td>
+<td>1080x1080</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=trellis-4x3-trellis-default>Trellis: 4x3 (Trellis Default)</h3>
+<table>
+<thead>
+<tr>
+<th>Image Size Slug</th>
+<th>Dimensions</th>
+<th>Cropping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mv_trellis_4x3 (also mv_trellis_4x3_high_res)</td>
+<td>728x546</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_4x3_med_res</td>
+<td>480x360</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_4x3_low_res</td>
+<td>320x240</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_1x1</td>
+<td>728x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_3x4</td>
+<td>546x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_16x9</td>
+<td>728x410</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_960</td>
+<td>960x960</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_1080</td>
+<td>1080x1080</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=trellis-16x9>Trellis: 16x9</h3>
+<table>
+<thead>
+<tr>
+<th>Image Size Slug</th>
+<th>Dimensions</th>
+<th>Cropping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mv_trellis_16x9 (also mv_trellis_16x9_high_res)</td>
+<td>728x410</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_16x9_med_res</td>
+<td>480x270</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_16x9_low_res</td>
+<td>320x180</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_1x1</td>
+<td>728x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_3x4</td>
+<td>546x728</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_4x3</td>
+<td>728x546</td>
+<td>Cropped to fit.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_960</td>
+<td>960x960</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+<tr>
+<td>mv_trellis_srcset_1080</td>
+<td>1080x1080</td>
+<td>Proportionally resized to fit inside dimensions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=wp-core-sizes>WP Core Sizes</h3>
+<p>While most WP Core sizes are unaffected, Trellis does make changes to the 1200 x 1200 and post-thumbnail sizes.</p>
+<table>
+<thead>
+<tr>
+<th>Image Size Slug</th>
+<th>Dimensions</th>
+<th>Cropping</th>
+<th>Modifications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>thumbnail</td>
+<td>150x150</td>
+<td>Cropped to fit</td>
+<td>None. This size is provided by WP Core.</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>300x300</td>
+<td>Proportionally resized to fit inside dimensions</td>
+<td>None. This size is provided by WP Core.</td>
+</tr>
+<tr>
+<td>medium_large</td>
+<td>768x0</td>
+<td>Proportionally resized to fit inside dimensions</td>
+<td>None. This size is provided by WP Core.</td>
+</tr>
+<tr>
+<td>large</td>
+<td>1024x1024</td>
+<td>Proportionally resized to fit inside dimensions</td>
+<td>None. This size is provided by WP Core.</td>
+</tr>
+<tr>
+<td>1200x1200</td>
+<td>1200x1200</td>
+<td>Proportionally resized to fit inside dimensions</td>
+<td>Trellis replaces the WP Core 1536x1536 size with this one.</td>
+</tr>
+<tr>
+<td>2048x2048</td>
+<td>2048x2048</td>
+<td>Proportionally resized to fit inside dimensions</td>
+<td>None. This size is provided by WP Core.</td>
+</tr>
+<tr>
+<td>post-thumbnail</td>
+<td>Depends</td>
+<td>Uses the default image size of the selected Trellis Featured Image size. Since it uses Trellis’ size, no additional post-thumbnail file is generated.</td>
+<td>Provided by WP Core, but the dimensions are controlled by Trellis.</td>
+</tr>
+</tbody>
+</table>
+<h2 id=useful-filters-and-functions>Useful Filters and Functions</h2>
+<p>The following image filters and functions can be used in Trellis child theme code. For more information on them, see Filters or Functions in the Reference section.</p>
+<h3 id=filters>Filters</h3>
+<ul>
+<li>mv_trellis_article_nav_image_orientation</li>
+<li>mv_trellis_article_nav_image_res</li>
+<li>mv_trellis_default_featured_image_size</li>
+<li>mv_trellis_disable_convert_image_to_lazyload_when_enabled</li>
+<li>mv_trellis_disable_lazy_load_classes</li>
+<li>mv_trellis_disable_process_images</li>
+<li>mv_trellis_disable_set_image_cls_aspect_styles</li>
+<li>mv_trellis_disable_set_image_dimensions</li>
+<li>mv_trellis_enable_lazy_load</li>
+<li>mv_trellis_excerpt_image_res</li>
+<li>mv_trellis_excerpt_image_sizes</li>
+<li>mv_trellis_featured_post_image_res</li>
+<li>mv_trellis_featured_post_image_sizes</li>
+<li>mv_trellis_image_orientation</li>
+<li>mv_trellis_image_sizes</li>
+<li>mv_trellis_image_sizes_attribute</li>
+<li>mv_trellis_match_image_dimensions</li>
+<li>mv_trellis_post_link_featured_image_sizes</li>
+<li>mv_trellis_resolution_sizes</li>
+</ul>
+<h3 id=functions>Functions</h3>
+<ul>
+<li>mv_trellis_get_attachment_image_tag</li>
+<li>mv_trellis_the_attachment_image_tag</li>
+<li>mvt_adjust_excerpt_image_orientation_res</li>
+<li>mvt_adjust_featured_post_image_orientation_res</li>
+<li>mvt_adjust_excerpt_image_sizes</li>
+<li>mvt_adjust_featured_post_image_sizes</li>
+<li>mvt_get_image_orientation_res</li>
+<li>mv_trellis_get_featured_image_tag</li>
+</ul>
+<style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
+<br>
+<hr>
+<div class=d-print-none>
+<h2 class=feedback--title>Feedback</h2>
+<p class=feedback--question>Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+Thanks for your feedback!
+</p>
+<p class="feedback--response feedback--response-no">
+Sorry to hear that. Please contact Trellis Support at <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> if you need additional help.
+</p>
+</div>
+<script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
+<br>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="User mailing list" aria-label="User mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="User mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://example.org/twitter aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Stack Overflow" aria-label="Stack Overflow">
+<a class=text-white target=_blank rel=noopener href=https://example.org/stack aria-label="Stack Overflow">
+<i class="fab fa-stack-overflow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/google/docsy aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Slack aria-label=Slack>
+<a class=text-white target=_blank rel=noopener href=https://example.org/slack aria-label=Slack>
+<i class="fab fa-slack"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Developer mailing list" aria-label="Developer mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="Developer mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2022 Mediavine All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/docsytrellis/js/tabpane-persist.js></script>
+<script src=/docsytrellis/js/main.min.8ab8f81ff7e1454d30024cd6f956d4d341c3a97e2a673f988065f2ee4e147922.js integrity="sha256-irj4H/fhRU0wAkzW+VbU00HDqX4qZz+YgGXy7k4UeSI=" crossorigin=anonymous></script>
+</body>
+</html>
