@@ -7,8 +7,6 @@ weight: 2
 description: >
   Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
 ---
-# Image Delivery and Optimizations
-
 When using Trellis, several image-specific features are available to make your pages load faster and improve your site’s Google Core Web Vitals score. These include:
 
 - **Image delivery enhancement via lazy loading.** For older browsers that don’t natively support lazy loading, Trellis uses a JavaScript solution. Developers can also disable lazy loading per image, across the site, or specify eager loading. Lazy loading is also applied to iframe content.
