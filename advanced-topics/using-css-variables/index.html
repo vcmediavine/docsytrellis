@@ -1,9 +1,8 @@
-<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js>
+<!doctype html><html lang=en class=no-js>
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=generator content="Hugo 0.91.2">
-<link rel=alternate type=application/rss+xml href=https://vcmediavine.github.io/docsytrellis/advanced-topics/index.xml>
 <meta name=robots content="index, follow">
 <link rel="shortcut icon" href=/docsytrellis/favicons/favicon.ico>
 <link rel=apple-touch-icon href=/docsytrellis/favicons/apple-touch-icon-180x180.png sizes=180x180>
@@ -15,16 +14,23 @@
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
-<title>Advanced Topics | Mediavine Trellis</title>
-<meta name=description content="This section is where the user documentation for your project lives - all the information your users need to understand and successfully use your …">
-<meta property="og:title" content="Advanced Topics">
-<meta property="og:description" content="Developer Reference Site">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/"><meta property="og:site_name" content="Mediavine Trellis">
-<meta itemprop=name content="Advanced Topics">
-<meta itemprop=description content="Developer Reference Site"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Advanced Topics">
-<meta name=twitter:description content="Developer Reference Site">
+<title>Using CSS Variables | Mediavine Trellis</title>
+<meta name=description content="Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes. 
+">
+<meta property="og:title" content="Using CSS Variables">
+<meta property="og:description" content="Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes. 
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/using-css-variables/"><meta property="article:section" content="advanced-topics">
+<meta property="og:site_name" content="Mediavine Trellis">
+<meta itemprop=name content="Using CSS Variables">
+<meta itemprop=description content="Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes. 
+">
+<meta itemprop=wordCount content="825">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Using CSS Variables">
+<meta name=twitter:description content="Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes. 
+">
 <link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
 <link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
 <script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
@@ -32,7 +38,7 @@
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
-<body class=td-section>
+<body class=td-page>
 <header>
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
 <a class=navbar-brand href=/docsytrellis/>
@@ -80,7 +86,7 @@
 <nav class="collapse td-sidebar-nav" id=td-section-nav>
 <ul class="td-sidebar-nav__section pr-md-3 ul-0">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsytrellisadvanced-topics-li>
-<a href=/docsytrellis/advanced-topics/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section tree-root" id=m-docsytrellisadvanced-topics><span class=td-sidebar-nav-active-item>Advanced Topics</span></a>
+<a href=/docsytrellis/advanced-topics/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docsytrellisadvanced-topics><span>Advanced Topics</span></a>
 <ul class=ul-1>
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicscritical-css-li>
 <a href=/docsytrellis/advanced-topics/critical-css/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicscritical-css><span>Critical CSS</span></a>
@@ -88,8 +94,8 @@
 <a href=/docsytrellis/advanced-topics/image-delivery/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsimage-delivery><span>Image Delivery and Optimizations</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicspost-meta-output-li>
 <a href=/docsytrellis/advanced-topics/post-meta-output/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicspost-meta-output><span>Post Meta Output</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicsusing-css-variables-li>
-<a href=/docsytrellis/advanced-topics/using-css-variables/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsusing-css-variables><span>Using CSS Variables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsytrellisadvanced-topicsusing-css-variables-li>
+<a href=/docsytrellis/advanced-topics/using-css-variables/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsusing-css-variables><span class=td-sidebar-nav-active-item>Using CSS Variables</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicstrellis-comments-li>
 <a href=/docsytrellis/advanced-topics/trellis-comments/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicstrellis-comments><span>Trellis Comments</span></a>
 </li>
@@ -101,11 +107,21 @@
 </aside>
 <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href=https://github.com/google/docsy-example/tree/master/content/en/advanced-topics/_index.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-<a href=https://github.com/google/docsy-example/edit/master/content/en/advanced-topics/_index.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/google/docsy-example/new/master/content/en/advanced-topics/_index.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
-<a href="https://github.com/google/docsy-example/issues/new?title=Advanced%20Topics" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/google/docsy-example/tree/master/content/en/advanced-topics/using-css-variables.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/google/docsy-example/edit/master/content/en/advanced-topics/using-css-variables.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/new/master/content/en/advanced-topics/using-css-variables.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Using%20CSS%20Variables" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href=https://github.com/google/docsy/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+</div>
+<div class=td-toc>
+<h4>Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#how-css-variables-work>How CSS Variables Work</a></li>
+<li><a href=#list-of-trellis-css-variables>List of Trellis CSS Variables</a></li>
+<li><a href=#disabling-all-trellis-css-styling>Disabling All Trellis CSS Styling</a></li>
+</ul>
+</nav>
 </div>
 <div class="taxonomy taxonomy-terms-cloud taxo-tags">
 <h5 class=taxonomy-title>Tag Cloud</h5>
@@ -120,54 +136,187 @@
 </div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
-<nav aria-label=breadcrumb class="td-breadcrumbs td-breadcrumbs__single">
+<nav aria-label=breadcrumb class=td-breadcrumbs>
 <ol class=breadcrumb>
-<li class="breadcrumb-item active" aria-current=page>
+<li class=breadcrumb-item>
 <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/using-css-variables/>Using CSS Variables</a>
 </li>
 </ol>
 </nav>
 <div class=td-content>
-<h1>Advanced Topics</h1>
+<h1>Using CSS Variables</h1>
+<div class=lead>Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes.</div>
 <header class=article-meta>
 </header>
-<p>This section is where the user documentation for your project lives - all the information your users need to understand and successfully use your project.</p>
-<p>For large documentation sets we recommend adding content under the headings in this section, though if some or all of them don’t apply to your project feel free to remove them or add your own. You can see an example of a smaller Docsy documentation site in the <a href=https://docsy.dev/docs/>Docsy User Guide</a>, which lives in the <a href=https://github.com/google/docsy/tree/master/userguide>Docsy theme repo</a> if you&rsquo;d like to copy its docs section.</p>
-<p>Find out how to use the Docsy theme in the <a href=https://docsy.dev/docs/>Docsy User Guide</a>. You can learn more about how to organize your documentation (and how we organized this site) in <a href=https://docsy.dev/docs/best-practices/organizing-content/>Organizing Your Content</a>.</p>
-<h2 id=whats-in-this-section>What&rsquo;s in This Section?</h2>
-<div class=section-index>
-<hr class=panel-line>
-<div class=entry>
-<h5>
-<a href=/docsytrellis/advanced-topics/critical-css/>Critical CSS</a>
-</h5>
-<p>Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals.</p>
+<p>By using CSS variables in your own child theme, you can make it easy for publishers to update CSS styles using the Mediavine Trellis Dashboard.</p>
+<h2 id=how-css-variables-work>How CSS Variables Work</h2>
+<p>Trellis’ default CSS stylesheet incorporates all of the settings shown in the table below. If you want to make use of a setting color or font in a different part of your theme, you’ll need to reference a Trellis CSS variable.</p>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Important</h4>
+Do not redeclare any Trellis CSS variables. Doing so will break Trellis functionality.
 </div>
-<div class=entry>
-<h5>
-<a href=/docsytrellis/advanced-topics/image-delivery/>Image Delivery and Optimizations</a>
-</h5>
-<p>Trellis offers lazy loading, thumbnail optimization, and optional image formatting features.</p>
+<p>The syntax to use a CSS variable is:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#f92672>var</span><span style=color:#f92672>(</span><span style=color:#f92672>--trellis-variable-name</span><span style=color:#f92672>,</span> <span style=color:#111>#</span><span style=color:#111>optional-fallback-value</span><span style=color:#f92672>)</span>
+</code></pre></div><p>For example, if using the Trellis Primary color as the background for a div element (with a fallback value of white), you would use:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#f92672>div</span> <span style=color:#111>{</span> <span style=color:#00a8c8>background-color</span><span style=color:#111>:</span> <span style=color:#75af00>var</span><span style=color:#111>(</span><span style=color:#f92672>--</span><span style=color:#111>mv</span><span style=color:#f92672>-</span><span style=color:#111>trellis</span><span style=color:#f92672>-</span><span style=color:#00a8c8>color</span><span style=color:#f92672>-</span><span style=color:#111>primary</span><span style=color:#111>,</span> <span style=color:#ae81ff>#ffffff</span><span style=color:#111>);</span> <span style=color:#111>}</span>
+</code></pre></div>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+A <a href=https://sass-lang.com/>Sass</a> mixin is included in Trellis Core and Mediavine child themes. This mixin will provide fallback for browsers that don’t support CSS variables. For a complete list of browsers that support CSS variables, see <a href=https://www.lambdatest.com/web-technologies/css-variables>https://www.lambdatest.com/web-technologies/css-variables</a>.
 </div>
-<div class=entry>
-<h5>
-<a href=/docsytrellis/advanced-topics/post-meta-output/>Post Meta Output</a>
-</h5>
-<p>Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes.</p>
+<h2 id=list-of-trellis-css-variables>List of Trellis CSS Variables</h2>
+<p>This table represents a full list of CSS variables available in Trellis.</p>
+<table>
+<thead>
+<tr>
+<th>CSS Variable</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--mv-trellis-color-heading</code></td>
+<td>Applied to Site Title text when there’s not a logo.</td>
+<td>#243746</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-color-link</code></td>
+<td>Applied to:<br>- Link text default color<br>- Link icon default fill color<br>- Button default background color</td>
+<td><code>--mv-trellis-color-primary</code></td>
+</tr>
+<tr>
+<td><code>--mv-trellis-color-link-hover</code></td>
+<td>Applied to:<br>- Link text default hover color<br>- Link icon default hover fill cover<br>- Button default hover background color</td>
+<td><code>--mv-trellis-color-secondary</code></td>
+</tr>
+<tr>
+<td><code>--mv-trellis-color-primary</code></td>
+<td>Sets a main color for use in child themes. Trellis defaults to using this color for links, buttons, and other elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo.</td>
+<td>#243746</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-color-secondary</code></td>
+<td>Sets an alternate color for use in child themes. Trellis defaults to using this color for hover effects, alternate buttons, and other secondary elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo.</td>
+<td>#243745</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-color-background-accent</code></td>
+<td>Sets the background color of some elements like page and post headers in the Trellis Core theme and in Birch and Wisteria. <br><br>This setting is not used in the Bamboo child theme.<br><br>Theme support parameter:<br><code>mv_trellis_background_accent_color</code></td>
+<td>#fafafa</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-font-body</code></td>
+<td>Sets the font of the body element. Select a Web Safe font for best performance.</td>
+<td>System Default (Web Safe)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-font-heading</code></td>
+<td>Sets the font for all headings. Select a Web Safe font for best performance.</td>
+<td>System Default (Web Safe)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-font-size</code></td>
+<td>Sets the font size for the body element.</td>
+<td>Medium (18px)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-font-size-ex-sm</code></td>
+<td>A font size derived from mv-trellis-font-size.</td>
+<td>font-size * 0.667</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-font-size-lg</code></td>
+<td>A font size derived from mv-trellis-font-size.</td>
+<td>font-size * 1.125</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-font-size-sm</code></td>
+<td>A font size derived from mv-trellis-font-size.</td>
+<td>font-size * 0.875</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-gutter</code></td>
+<td>Adjusts the margins between key layout elements like the primary content, sidebar, and widgets. The following defaults are used:<br><br>Compact = 10px<br>Comfortable = 20px</td>
+<td>Comfortable</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-gutter-double</code></td>
+<td>A gutter value derived from mv-trellis-gutter.</td>
+<td>gutter * 2</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-gutter-large</code></td>
+<td>A gutter value derived from mv-trellis-gutter.</td>
+<td>gutter * 2.5</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-gutter-small</code></td>
+<td>A gutter value derived from mv-trellis-gutter.</td>
+<td>floor(gutter/2)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h1-font-color</code></td>
+<td>Sets the color of all H1 headings in the Trellis Core theme and Bamboo.<br><br>This setting is not used in the Wisteria and Birch child themes.<br><br>Theme support parameter:<br><code>mv_trellis_headings_control</code></td>
+<td>#000</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h1-font-size</code></td>
+<td>Sets the default size for H1 headings.<br><br>Full options include:<br>- Small: 24px<br>- Medium: 36px<br>- Large: 42px<br>- X-Large: 56px<br><br>Theme support parameter: <br><code>mv_trellis_headings_control</code></td>
+<td>Medium (36px)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h2-font-size</code></td>
+<td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:<br><br>Theme support parameter: <br> <code>mv_trellis_headings_control</code></td>
+<td>H1 size * 0.75 (rem)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h3-font-size</code></td>
+<td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:<br><br>Theme support parameter: <br> <code>mv_trellis_headings_control</code></td>
+<td>H1 size * 0.67 (rem)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h4-font-size</code></td>
+<td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:<br><br>Theme support parameter: <br> <code>mv_trellis_headings_control</code></td>
+<td>H1 size * 0.63 (rem)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h5-font-size</code></td>
+<td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:<br><br>Theme support parameter: <br> <code>mv_trellis_headings_control</code></td>
+<td>H1 size * 0.56 (rem)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-h6-font-size</code></td>
+<td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:<br><br>Theme support parameter: <br> <code>mv_trellis_headings_control</code></td>
+<td>H1 size * 0.5 (rem)</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-heading-font-color</code></td>
+<td>Sets the color of all H2 to H6 elements to match the H1 color setting in the Trellis Core theme and Bamboo.<br><br>This setting is not used in the Wisteria and Birch child themes.<br><br>Theme support parameter: <br><code>mv_trellis_headings_control</code></td>
+<td>#000</td>
+</tr>
+<tr>
+<td><code>--mv-trellis-max-logo-size</code></td>
+<td>Sets the max logo height value that can be shown in the header.<br><br>Full options include:<br>- Small (50px)<br>- Medium (75px)<br>- Large (100px)<br>- Extra Large (150px)</td>
+<td>Extra Large (150px)</td>
+</tr>
+</tbody>
+</table>
+<h2 id=disabling-all-trellis-css-styling>Disabling All Trellis CSS Styling</h2>
+<p>If you’d like to start from scratch and discard all default Trellis Core CSS styling, add the following code:</p>
+<div class="alert alert-warning" role=alert>
+<h4 class=alert-heading>Important</h4>
+Disabling the default Trellis CSS styles will require you to define all layout and styling in your own CSS files.
 </div>
-<div class=entry>
-<h5>
-<a href=/docsytrellis/advanced-topics/using-css-variables/>Using CSS Variables</a>
-</h5>
-<p>Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes.</p>
-</div>
-<div class=entry>
-<h5>
-<a href=/docsytrellis/advanced-topics/trellis-comments/>Trellis Comments</a>
-</h5>
-<p>Trellis offers a comments feature that improves site performance by rendering only the first five top-level comments of a post.</p>
-</div>
-</div>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/** Turn Off Trellis Parent Theme CSS **
+</span><span style=color:#d88200> * Use add_filter to remove all Trellis parent theme CSS definitions.
+</span><span style=color:#d88200>*/</span>
+
+ <span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enqueue_main_style&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__return_false&#39;</span> <span style=color:#111>);</span>
+</code></pre></div>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <br>
 <hr>

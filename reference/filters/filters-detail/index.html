@@ -26,7 +26,7 @@
 <meta itemprop=name content="Filters Detail">
 <meta itemprop=description content="A detailed list of available filters in Trellis showing the filter name, description, syntax, default values, and arguments.
 ">
-<meta itemprop=wordCount content="197">
+<meta itemprop=wordCount content="4285">
 <meta itemprop=keywords content="filters,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Filters Detail">
 <meta name=twitter:description content="A detailed list of available filters in Trellis showing the filter name, description, syntax, default values, and arguments.
@@ -66,7 +66,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.561492eea5adc0df2091d89a1fbb63d4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -77,7 +77,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.561492eea5adc0df2091d89a1fbb63d4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -124,19 +124,11 @@
 <h5 class=taxonomy-title>Tag Cloud</h5>
 <ul class=taxonomy-terms>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span><span class=taxonomy-count>1</span></a></li>
-<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/docs/ data-taxonomy-term=docs><span class=taxonomy-label>docs</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span><span class=taxonomy-count>1</span></a></li>
-<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/sample/ data-taxonomy-term=sample><span class=taxonomy-label>sample</span><span class=taxonomy-count>1</span></a></li>
-<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/test/ data-taxonomy-term=test><span class=taxonomy-label>test</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/post-meta/ data-taxonomy-term=post-meta><span class=taxonomy-label>post meta</span><span class=taxonomy-count>1</span></a></li>
 <li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span><span class=taxonomy-count>1</span></a></li>
-</ul>
-</div>
-<div class="taxonomy taxonomy-terms-cloud taxo-categories">
-<h5 class=taxonomy-title>Categories</h5>
-<ul class=taxonomy-terms>
-<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/categories/examples/ data-taxonomy-term=examples><span class=taxonomy-label>Examples</span><span class=taxonomy-count>1</span></a></li>
 </ul>
 </div>
 </aside>
@@ -165,16 +157,22 @@
 </ul>
 </div>
 </header>
+<p>Trellis provides a number of filters that can be used to modify data or functionality in a child theme. You’ll find the filter’s name, description, syntax, default value, and any arguments it accepts in the list below.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+While the syntax is shown using the <code>apply_filters()</code> function, these filters can also be used with <code>add_filter()</code>.
+</div>
+<hr>
 <h3 id=mvt_processing_css_status_timeout>mvt_processing_css_status_timeout</h3>
 <p>Sets the timeout period for the Processing state in Critical CSS.</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mvt_processing_css_status_timeout&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>int</span> <span style=color:#111>$value</span><span style=color:#111>)</span>
 </code></pre></div><p><strong>Default</strong></p>
 <ul>
-<li>7200 seconds (2 hours) from current time</li>
+<li>7200 seconds (2 hours) from the current time.</li>
 </ul>
 <p><strong>Arguments</strong></p>
 <ul>
-<li>$value <code>int</code> The amount of time measured in seconds since the Unix Epoch (January 1 1970 00:00:00 GMT).</li>
+<li>$value <code>int</code> The amount of time measured in seconds since the Unix Epoch (January 1, 1970 00:00:00 GMT).</li>
 </ul>
 <hr>
 <h3 id=mvt_requires_default_wp_fields>mvt_requires_default_wp_fields</h3>
@@ -191,7 +189,7 @@
 </ul>
 <hr>
 <h3 id=mv_trellis_about_widget_image_height>mv_trellis_about_widget_image_height</h3>
-<p>Applied to the height attribute on the About Widget IMG tag.</p>
+<p>Applied to the height attribute on the About Widget <code>&lt;img></code> tag.</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span><span style=color:#d88200>&#39;mv_trellis_about_widget_image_height&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>int</span> <span style=color:#111>$height</span><span style=color:#111>)</span>
 </code></pre></div><p><strong>Default</strong></p>
 <ul>
@@ -199,11 +197,11 @@
 </ul>
 <p><strong>Arguments</strong></p>
 <ul>
-<li>$height: <code>int</code> The height of the About Widget image in pixels.</li>
+<li>$height <code>int</code> The height of the About Widget image in pixels.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_about_widget_image_width>mv_trellis_about_widget_image_width</h3>
-<p>Applied to the width attribute on the About Widget IMG tag.</p>
+<p>Applied to the width attribute on the About Widget <code>&lt;img></code> tag.</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_about_widget_image_width&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>int</span> <span style=color:#111>$width</span><span style=color:#111>)</span>
 </code></pre></div><p><strong>Default</strong></p>
 <ul>
@@ -211,7 +209,7 @@
 </ul>
 <p><strong>Arguments</strong></p>
 <ul>
-<li>$width <code>int</code> The width of the About Widget image in pixels. VERIFY pixels</li>
+<li>$width <code>int</code> The width of the About Widget image in pixels.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_about_widget_image_size>mv_trellis_about_widget_image_size</h3>
@@ -224,6 +222,1160 @@
 <p><strong>Arguments</strong></p>
 <ul>
 <li>$img_size <code>string</code> The registered image size.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_about_widget_image_sizes>mv_trellis_about_widget_image_sizes</h3>
+<p>Applied to the sizes attribute value for the About Widget thumbnail.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span><span style=color:#d88200>&#39;mv_trellis_about_widget_image_sizes&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sizes</span><span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>100px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$sizes <code>string</code> The value of the About Widget thumbnail sizes attribute.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_admin_runtime_dependencies>mv_trellis_admin_runtime_dependencies</h3>
+<p>Lists the registered dependencies needed for the mv-trellis/runtime script.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span><span style=color:#d88200>&#39;mv_trellis_admin_runtime_dependencies&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$list</span><span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$list <code>array</code> A list of registered dependencies.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_allowed_google_fonts>mv_trellis_allowed_google_fonts</h3>
+<p>Returns a list of allowed Google Fonts to be supplied to Body Font and Heading Font settings. Array keys are the labels provided to the settings and the values are the CSS values.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span><span style=color:#d88200>&#39;mv_trellis_allowed_google_fonts&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$list</span><span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>&#39;Abril Fatface&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Abril Fatface&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Amatic SC&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Amatic SC&#34;,cursive,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Crimson Text&#39;</span>      <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Crimson Text&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Great Vibes&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Great Vibes&#34;,cursive,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Inconsolata&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Inconsolata,monospace&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Libre Baskerville&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Libre Baskerville&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Lato&#39;</span>              <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Lato,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Lora&#39;</span>              <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Lora,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Merriweather&#39;</span>      <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Merriweather,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Mr De Haviland&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Mr De Haviland&#34;,cursive,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Noto Serif&#39;</span>        <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Noto Serif&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Open Sans&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Open Sans&#34;,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Poppins&#39;</span>           <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Poppins,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Playball&#39;</span>          <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Playball&#34;,fantasy,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Playfair Display&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Playfair Display&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Raleway&#39;</span>           <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Raleway,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Roboto Slab&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Roboto Slab&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Tangerine&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Tangerine,cursive,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Work Sans&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Work Sans&#34;,sans-serif&#39;</span><span style=color:#111>,</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$list <code>array</code> Key/value list of allowed Google Fonts.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_allowed_non_google_fonts>mv_trellis_allowed_non_google_fonts</h3>
+<p>Returns a list of web safe fonts to be supplied to Body Font and Heading Font settings. Array keys are the labels provided to the settings and the values are the CSS values.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span><span style=color:#d88200>&#39;mv_trellis_allowed_non_google_fonts&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$list</span><span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>&#39;Arial (Web Safe)&#39;</span>           <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Arial,&#34;Helvetica Neue&#34;,Helvetica,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Baskerville (Web Safe)&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Baskerville,&#34;Baskerville Old Face&#34;,&#34;Hoefler Text&#34;,Garamond,&#34;Times New Roman&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Book Antiqua (Web Safe)&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Book Antiqua&#34;,Palatino,&#34;Palatino Linotype&#34;,&#34;Palatino LT STD&#34;,Georgia,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Calibri (Web Safe)&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Calibri,Candara,Segoe,&#34;Segoe UI&#34;,Optima,Arial,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Cambria (Web Safe)&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Cambria,Georgia,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Century Gothic (Web Safe)&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Century Gothic&#34;,CenturyGothic,AppleGothic,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Constantia (Web Safe)&#39;</span>      <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Constantia,&#34;Lucida Bright&#34;,Lucidabright,&#34;Lucida Serif&#34;,Lucida,&#34;DejaVu Serif&#34;,&#34;Bitstream Vera Serif&#34;,&#34;Liberation Serif&#34;,Georgia,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Courier New (Web Safe)&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Courier New&#34;,Courier,&#34;Lucida Sans Typewriter&#34;,&#34;Lucida Typewriter&#34;,monospace&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Franklin Gothic (Web Safe)&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Franklin Gothic Medium&#34;,&#34;Franklin Gothic&#34;,&#34;ITC Franklin Gothic&#34;,Arial,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Futura (Web Safe)&#39;</span>          <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Futura,&#34;Trebuchet MS&#34;,Arial,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Garamond (Web Safe)&#39;</span>        <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Garamond,Baskerville,&#34;Baskerville Old Face&#34;,&#34;Hoefler Text&#34;,&#34;Times New Roman&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Georgia (Web Safe)&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Georgia,Times,&#34;Times New Roman&#34;,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Gill Sans (Web Safe)&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Gill Sans&#34;,&#34;Gill Sans MT&#34;,Calibri,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Lucida Bright (Web Safe)&#39;</span>   <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Lucida Bright&#34;,Georgia,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Palatino (Web Safe)&#39;</span>        <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Palatino,&#34;Palatino Linotype&#34;,&#34;Palatino LT STD&#34;,&#34;Book Antiqua&#34;,Georgia,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;System Default (Web Safe)&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;system,-apple-system,&#34;.SFNSText-Regular&#34;,&#34;San Francisco&#34;,&#34;Roboto&#34;,&#34;Segoe UI&#34;,&#34;Helvetica Neue&#34;,&#34;Lucida Grande&#34;,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Tahoma (Web Safe)&#39;</span>          <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Tahoma,Verdana,Segoe,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Times New Roman (Web Safe)&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;TimesNewRoman,&#34;Times New Roman&#34;,Times,Baskerville,Georgia,serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Trebuchet (Web Safe)&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#34;Trebuchet MS&#34;,&#34;Lucida Grande&#34;,&#34;Lucida Sans Unicode&#34;,&#34;Lucida Sans&#34;,Tahoma,sans-serif&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;Verdana (Web Safe)&#39;</span>         <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;Verdana,Geneva,sans-serif&#39;</span><span style=color:#111>,</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$list <code>array</code> Key/value list of allowed Non-Google fonts.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_always_scan_template_files>mv_trellis_always_scan_template_files</h3>
+<p>Determines if the Trellis template part files should be scanned on every page load. When set to False, Trellis will only scan template part files upon activation, update, or when clearing the Trellis cache.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_always_scan_template_files&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to scan on every page load.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_article_nav_image_orientation>mv_trellis_article_nav_image_orientation</h3>
+<p>Applies the image orientation for post navigation images.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_article_nav_image_orientation&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$orientation</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>mv_trellis_4x3</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$orientation <code>string</code> The image orientation as set by the Featured Image Size setting in the Mediavine Trellis Dashboard. Default options include mv_trellis_1x1, mv_trellis_3x4, mv_trellis_4x3, mv_trellis_16x9, and full.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_article_nav_image_res>mv_trellis_article_nav_image_res</h3>
+<p>Applies the resolution to be used for the post navigation image size.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_article_nav_image_res&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>low</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>string</code> The image resolution to use for the post navigation size. Default options include high, med_high, med, and low.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_async_styles_ignore>mv_trellis_async_styles_ignore</h3>
+<p>A list of filepaths to ignore from asynchronous stylesheet loading on the site’s front-end.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_async_styles_ignore&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$list</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$list <code>array</code> List of filepaths to ignore.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_base_gutters>mv_trellis_base_gutters</h3>
+<p>Applies to the base gutter sizes used for layout spacing. A value (in pixels) represents the amount of space to apply between layout elements. Uses the Layout Space setting in the Mediavine Trellis Dashboard. Defaults to Comfortable. These values impact the base padding and margin values used by Trellis CSS variables:</p>
+<ul>
+<li>gutter-small = base/2</li>
+<li>gutter = base</li>
+<li>gutter-double = base * 2</li>
+<li>gutter-large = base * 2.5</li>
+</ul>
+<p>The return value should match one of the specified keys.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_base_gutters&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$base_gutters</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[ &lsquo;Compact&rsquo; => 10, &lsquo;Comfortable&rsquo; => 20 ]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$base_gutters <code>array</code> The base values for Compact and Comfortable spacing.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_before_update_settingslug>mv_trellis_before_update_{$setting[’slug’]}</h3>
+<p>Filters a Trellis setting before updating it in the options table. This provides a way to trigger an action before the value is saved.</p>
+<p>For example, when changing the featured image size, a developer might want to make sure all of the image sizes used in the srcset are generated.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_before_update_&#39;</span> <span style=color:#f92672>.</span> <span style=color:#111>$setting</span><span style=color:#111>[</span><span style=color:#d88200>&#39;slug&#39;</span><span style=color:#111>],</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$setting</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Array of all the Trellis setting data.</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$setting <code>array</code> The specified setting data.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_childtheme_link_shortcode>mv_trellis_childtheme_link_shortcode</h3>
+<p>Applies the HTML string for the link to the child theme. If the Hide Footer Links setting is off, Trellis will display a link to the child theme in the footer.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_childtheme_link_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>The HTML link to the Trellis Framework, currently <a href="https://mediavine.com/'">https://mediavine.com/</a>.</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$output <code>string</code> HTML output of the shortcode.</li>
+<li>$atts <code>array</code> List of shortcode attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_comments_template>mv_trellis_comments_template</h3>
+<p>The path to the comments template file. Defaults to an empty string so that the comments.php file from the theme is loaded.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_comments_template&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$comments_template_file</span> <span style=color:#111>);</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$comments_template_file <code>string</code> The location of the comments template file.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_copyright_shortcode>mv_trellis_copyright_shortcode</h3>
+<p>HTML string for the copyright information shown in the footer.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_copyright_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Copyright © {current_year} {site_title}</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$output <code>string</code> HTML copyright output of the shortcode.</li>
+<li>$atts <code>array</code> List of shortcode attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_crit_css_min_file_size>mv_trellis_crit_css_min_file_size</h3>
+<p>Specifies the minimum size (in bytes) required to save a Critical CSS file. If the generated Critical CSS for a post or page is below this threshold, Trellis will not create a Critical CSS file.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span><span style=color:#d88200>&#39;mv_trellis_crit_css_min_file_size&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>int</span> <span style=color:#111>$min_crit_css_size</span>	<span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>2048</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$min_crit_css_size <code>int</code> Minimum size in bytes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_critical_css_rate_limit_in_seconds>mv_trellis_critical_css_rate_limit_in_seconds</h3>
+<p>Applies the rate (in seconds) of calls to the Trellis Critical CSS API when generating critical CSS files.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_critical_css_rate_limit_in_seconds&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>int</span><span style=color:#f92672>|</span><span style=color:#75af00>bool</span> <span style=color:#111>$critical_css_rate_limit_in_seconds</span> <span style=color:#111>);</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>30</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$critical_css_rate_limit_in_seconds <code>int|bool</code> Rate limit in seconds. Set to False to disable critical CSS rate limiting.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_critical_css_timeout_in_seconds>mv_trellis_critical_css_timeout_in_seconds</h3>
+<p>Applies the Critical CSS request timeout duration. After this time, if a request has not been answered, it will timeout.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_critical_css_timeout_in_seconds&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>int</span><span style=color:#f92672>|</span><span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>172800 ( two days)</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$critical_css_timeout_in_seconds <code>int|bool</code> Timeout duration in seconds. Set to False to allow Critical CSS requests indefinitely.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_css_allowlist>mv_trellis_css_allowlist</h3>
+<p>Applies a list of CSS selectors that will be kept in the Non-Critical CSS file. Partial selector names can be passed in the array to designate multiple selectors.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_css_allowlist&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$bypass_settings</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$bypass_settings <code>array</code> List of CSS selectors that will be kept in the secondary Non-Critical CSS file.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_css_force_keep>mv_trellis_css_force_keep</h3>
+<p>Applies a list of CSS selectors to be kept in the Critical CSS file. Partial selector names can be passed in the array to designate multiple selectors.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_css_force_keep&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$force_keep_settings</span> <span style=color:#111>);</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$force_keep_settings <code>array</code> List of CSS selectors to be kept in the primary Critical CSS file.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_css_vars>mv_trellis_css_vars</h3>
+<p>Applies the available CSS variables for styling. Returns an array of CSS variables in ‘name’ => &lsquo;value&rsquo; format.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_css_vars&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$css_vars</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$css_options</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<p>Variable values are those set in the Mediavine Trellis Dashboard.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>&#39;color-body&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#111>$css_options</span><span style=color:#111>[</span><span style=color:#d88200>&#39;color_body&#39;</span><span style=color:#111>],</span>
+<span style=color:#d88200>&#39;color-link&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#111>$css_options</span><span style=color:#111>[</span><span style=color:#d88200>&#39;color_link&#39;</span><span style=color:#111>],</span>
+<span style=color:#d88200>&#39;color-link-hover&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#111>$css_options</span><span style=color:#111>[</span><span style=color:#d88200>&#39;color_link_hover&#39;</span><span style=color:#111>],</span>
+<span style=color:#d88200>&#39;font-body&#39;</span>        <span style=color:#f92672>=&gt;</span> <span style=color:#111>$css_options</span><span style=color:#111>[</span><span style=color:#d88200>&#39;google_font_body&#39;</span><span style=color:#111>],</span>
+<span style=color:#d88200>&#39;font-heading&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#111>$css_options</span><span style=color:#111>[</span><span style=color:#d88200>&#39;google_font_heading&#39;</span><span style=color:#111>],</span>
+<span style=color:#d88200>&#39;font-size-ex-sm&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#111>$base_font_fl</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.667</span> <span style=color:#f92672>.</span> <span style=color:#d88200>&#39;rem&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;font-size-sm&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#111>$base_font_fl</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.875</span> <span style=color:#f92672>.</span> <span style=color:#d88200>&#39;rem&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;font-size&#39;</span>        <span style=color:#f92672>=&gt;</span> <span style=color:#111>$css_options</span><span style=color:#111>[</span><span style=color:#d88200>&#39;font_size&#39;</span><span style=color:#111>],</span>
+<span style=color:#d88200>&#39;font-size-lg&#39;</span>     <span style=color:#f92672>=&gt;</span> <span style=color:#111>$base_font_fl</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1.125</span> <span style=color:#f92672>.</span> <span style=color:#d88200>&#39;rem&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;color-primary&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;#&#39;</span> <span style=color:#f92672>.</span> <span style=color:#75af00>str_replace</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;#&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;&#39;</span><span style=color:#111>,</span> <span style=color:#111>$primary_color</span> <span style=color:#111>),</span>
+<span style=color:#d88200>&#39;color-link&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;var(--mv-trellis-color-primary)&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;color-secondary&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;#&#39;</span> <span style=color:#f92672>.</span> <span style=color:#75af00>str_replace</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;#&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;&#39;</span><span style=color:#111>,</span> <span style=color:#111>$secondary_color</span> <span style=color:#111>),</span>
+<span style=color:#d88200>&#39;color-link-hover&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;var(--mv-trellis-color-secondary)&#39;</span><span style=color:#111>,</span>
+<span style=color:#d88200>&#39;max-logo-size&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#111>$max_logo_size</span><span style=color:#111>;</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$css_vars <code>array</code> List of CSS variables in &lsquo;name&rsquo; => &lsquo;value&rsquo; format.</li>
+<li>$css_options <code>array</code> CSS variable options set in the theme&rsquo;s functions.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_default_featured_image_size>mv_trellis_default_featured_image_size</h3>
+<p>Applies the slug of the image size to be used as the featured image size. Defaults to the value of the Featured Image Size setting in the Mediavine Trellis Dashboard.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_default_featured_image_size&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$default</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>mv_trellis_4x3</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$default <code>array</code> The default image size to use, including optional resolution sizes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_add_async_attribute>mv_trellis_disable_add_async_attribute</h3>
+<p>Disables asynchronous loading on all enqueued scripts.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_add_async_attribute&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable asynchronous loading of scripts.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_convert_iframe_to_lazyload_when_enabled>mv_trellis_disable_convert_iframe_to_lazyload_when_enabled</h3>
+<p>Disables adding “loading=lazy” attribute to iframes.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_convert_iframe_to_lazyload_when_enabled&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable adding “loading=lazy” attribute to iframes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_convert_image_to_lazyload_when_enabled>mv_trellis_disable_convert_image_to_lazyload_when_enabled</h3>
+<p>Disables adding “loading=lazy” attribute to images.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_convert_image_to_lazyload_when_enabled&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable adding “loading=lazy” attribute to images.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_lazy_load_classes>mv_trellis_disable_lazy_load_classes</h3>
+<p>An array of class names on image tags that will disable lazy loading for an image.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_lazy_load_classes&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$values</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[&lsquo;no-lazyload&rsquo;]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$values <code>array</code> List of classes that will not be lazy loaded.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_og_plugin_slugs>mv_trellis_disable_og_plugin_slugs</h3>
+<p>An array of plugin slugs that will disable Trellis Open Graph output if any are active.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_og_plugin_slugs&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$disable_og_plugin_slugs</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[&lsquo;wordpress-seo’]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$disable_og_plugin_slugs <code>array</code> A list of plugin slugs that disable Trellis Open Graph output.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_process_images>mv_trellis_disable_process_images</h3>
+<p>Disables processing of all image optimizations.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_process_images&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable image processing on all images.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_this-slug_compatibility>mv_trellis_disable_{$this->slug}_compatibility</h3>
+<p>Disables compatibility code for the specified plugin slug. Compatibility code is written by Mediavine and corresponds to plugins listed in Trellis’ compatibility directory (mediavine-trellis/inc/compatibility).</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#34;mv_trellis_disable_</span><span style=color:#d88200>{</span><span style=color:#111>$this</span><span style=color:#f92672>-&gt;</span><span style=color:#75af00>slug</span><span style=color:#d88200>}</span><span style=color:#d88200>_compatibility&#34;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable compatibility code for the specified plugin slug.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_set_image_cls_aspect_styles>mv_trellis_disable_set_image_cls_aspect_styles</h3>
+<p>Disables adding inline aspect ratio styles.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_set_image_cls_aspect_styles&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable adding inline aspect ratio styles.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_set_image_data_pin_attribute>mv_trellis_disable_set_image_data_pin_attribute</h3>
+<p>Disables adding data-pin-media attribute to images. Allows specifying an alternate version of an image for Pinterest.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_set_image_data_pin_attribute&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p>Arguments</p>
+<ul>
+<li>$value <code>bool</code> Whether to disable adding data-pin-media attribute.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_set_image_dimensions>mv_trellis_disable_set_image_dimensions</h3>
+<p>Disables setting image width and height attributes on all images.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_set_image_dimensions&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable setting image dimension attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_enable_lazy_load>mv_trellis_enable_lazy_load</h3>
+<p>Determines whether lazy loading is enabled for images and iframes.</p>
+<aside>
+✏️ **Note:** Mediavine recommends keeping lazy loading on for the best performance.
+</aside>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enable_lazy_load&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>True</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether lazy loading is enabled or disabled.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_enqueue_child_style>mv_trellis_enqueue_child_style</h3>
+<p>Determines whether the child theme style should be enqueued.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enqueue_child_style&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>True</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether the child style is enqueued or not.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_enable_js_optimizations>mv_trellis_enable_js_optimizations</h3>
+<p>Determines if JavaScript optimizations are enabled. This is used by compatibility classes for JavaScript optimization plugins. Defaults to True but will read the value of the Trellis setting in the Mediavine Trellis Dashboard.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enable_js_optimizations&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>True</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether JavaScript optimizations should be enabled.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_entry_content_classes>mv_trellis_entry_content_classes</h3>
+<p>List of CSS classes added to the entry-content <code>&lt;div></code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_entry_content_classes&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$class</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$class <code>array</code> List of classes added to entry-content.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_excerpt_image_res>mv_trellis_excerpt_image_res</h3>
+<p>The resolution to be applied when getting the excerpt image size. Trellis includes the options of high, med_high, med, and low.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_excerpt_image_res&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$image_res</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>low</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$image_res <code>string</code> The image resolution.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_excerpt_image_sizes>mv_trellis_excerpt_image_sizes</h3>
+<p>Applies the sizes attribute to excerpt thumbnail images.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_excerpt_image_sizes&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sizes</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>(max-width: 599px) 300px, 270px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$sizes <code>string</code> The sizes attribute value of excerpt thumbnail images.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_featured_post_image_res>mv_trellis_featured_post_image_res</h3>
+<p>The resolution to be used when getting the featured post thumbnail image. Trellis includes the options of high, med_high, med, and low.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$image_res</span> <span style=color:#f92672>=</span> <span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_featured_post_image_res&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$image_res</span> <span style=color:#111>);</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>med</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$image_res <code>string</code> The featured post thumbnail image resolution.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_featured_post_image_sizes>mv_trellis_featured_post_image_sizes</h3>
+<p>The featured post image sizes attribute.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_featured_post_image_sizes&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sizes</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>(max-width: 340px) calc(100vw - 40px), (max-width: 450px) calc(100vw - 100px), (max-width: 959px) 350px, (max-width: 1134px) 275px, 350px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$sizes <code>string</code> The value of the sizes attribute for featured post images.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_filter_localized_font_types>mv_trellis_filter_localized_font_types</h3>
+<p>Specifies which font types/formats are allowed to be localized.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_filter_localized_font_types&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$font_types</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[ &lsquo;woff2&rsquo;]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$font_types <code>array</code> List of types/formats of fonts to localize.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_flags>mv_trellis_flags</h3>
+<p>An array of flags that Trellis will look for in the submitted URL. Uses the <code>mvt_flags</code> query parameter.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_flags&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$flags</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$flags <code>array</code> List of Trellis URL flags.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_force_disable_critical_css>mv_trellis_force_disable_critical_css</h3>
+<p>Stops Critical CSS requests.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_force_disable_critical_css&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable Critical CSS processing.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_footer_copy_text>mv_trellis_footer_copy_text</h3>
+<p>Sets the footer copyright text before being passed to <code>mv_trellis_copyright_shortcode</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_footer_copy_text&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$copy_text</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Copyright and footer links text.</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$copy_text <code>string</code> Contents of the copyright text.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_get_post_type_meta_fields>mv_trellis_get_{$post_type}_meta_fields</h3>
+<p>Applies the Trellis meta fields for a specific post type.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_get_&#39;</span> <span style=color:#f92672>.</span> <span style=color:#75af00>string</span> <span style=color:#111>$post_type</span> <span style=color:#f92672>.</span> <span style=color:#d88200>&#39;_meta_fields&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$fields</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$fields <code>array</code> Trellis-specific meta fields and their attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_google_font_style_font_type_default>mv_trellis_google_font_style_{$font_type}_default</h3>
+<p>Applies the default font styles to use for a particular type of Google Font.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#34;mv_trellis_google_font_style_</span><span style=color:#d88200>{</span><span style=color:#111>$font_type</span><span style=color:#d88200>}</span><span style=color:#d88200>_default&#34;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$google_font_style</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[ &lsquo;400&rsquo;, &lsquo;400i&rsquo;, &lsquo;700&rsquo;, &lsquo;700i&rsquo; ]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$google_font_style <code>array</code> A list of styles to load.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_google_font_style_font_type_sanitized_font_name>mv_trellis_google_font_style_{$font_type}_{$sanitized_font_name}</h3>
+<p>Applies the font styles for a specific Google font.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#34;mv_trellis_google_font_style_</span><span style=color:#d88200>{</span><span style=color:#111>$font_type</span><span style=color:#d88200>}</span><span style=color:#d88200>_</span><span style=color:#d88200>{</span><span style=color:#111>$sanitized_font_name</span><span style=color:#d88200>}</span><span style=color:#d88200>&#34;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$google_font_style</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[ &lsquo;400&rsquo;, &lsquo;400i&rsquo;, &lsquo;700&rsquo;, &lsquo;700i&rsquo; ]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$google_font_style <code>array</code> A list of styles to load for a particular font.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_grow_sidebar_compatibility_styles>mv_trellis_grow_sidebar_compatibility_styles</h3>
+<p>Used to add to or replace custom styles for Grow Social when the plugin is active.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_grow_sidebar_compatibility_styles&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$grow_sidebar_styles</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#111>@</span><span style=color:#00a8c8>media</span> <span style=color:#f92672>only</span> <span style=color:#f92672>screen</span> <span style=color:#f92672>and</span> <span style=color:#f92672>(</span><span style=color:#f92672>min-width</span><span style=color:#f92672>:</span> <span style=color:#d88200>&#39; . $media_query_min_width . &#39;</span><span style=color:#f92672>)</span> <span style=color:#f92672>and</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#f92672>:</span> <span style=color:#d88200>&#39; . $media_query_max_width . &#39;</span><span style=color:#f92672>)</span>
+<span style=color:#111>{</span>
+    <span style=color:#111>.</span><span style=color:#75af00>has-grow-sidebar</span> <span style=color:#111>.</span><span style=color:#75af00>content</span> <span style=color:#f92672>&gt;</span> <span style=color:#111>.</span><span style=color:#75af00>wrapper</span><span style=color:#f92672>,</span><span style=color:#111>.</span><span style=color:#75af00>has-grow-sidebar</span> <span style=color:#111>.</span><span style=color:#75af00>footer</span> <span style=color:#f92672>&gt;</span> <span style=color:#111>.</span><span style=color:#75af00>wrapper</span>
+    <span style=color:#111>{</span><span style=color:#960050;background-color:#1e0010>&#39;</span> <span style=color:#960050;background-color:#1e0010>.</span> <span style=color:#960050;background-color:#1e0010>$sidebar_margin_css</span> <span style=color:#960050;background-color:#1e0010>.</span> <span style=color:#960050;background-color:#1e0010>&#39;</span><span style=color:#111>}</span>
+    <span style=color:#111>.</span><span style=color:#75af00>has-grow-sidebar</span> <span style=color:#111>.</span><span style=color:#75af00>wrapper-content</span>
+      <span style=color:#111>{</span><span style=color:#00a8c8>padding-left</span><span style=color:#111>:</span><span style=color:#ae81ff>10</span><span style=color:#00a8c8>px</span><span style=color:#111>;</span><span style=color:#00a8c8>padding-right</span><span style=color:#111>:</span><span style=color:#ae81ff>10</span><span style=color:#00a8c8>px</span><span style=color:#111>;}</span>
+<span style=color:#111>}</span>
+<span style=color:#111>@</span><span style=color:#00a8c8>media</span> <span style=color:#f92672>only</span> <span style=color:#f92672>screen</span> <span style=color:#f92672>and</span> <span style=color:#f92672>(</span><span style=color:#f92672>max-width</span><span style=color:#111>:</span><span style=color:#75af00>1184px</span><span style=color:#f92672>)</span>
+<span style=color:#111>{</span>
+    <span style=color:#111>.</span><span style=color:#75af00>has-grow-sidebar</span> <span style=color:#111>.</span><span style=color:#75af00>widget-container</span><span style=color:#111>.</span><span style=color:#75af00>mv_trellis_mobile_hide</span><span style=color:#111>{</span><span style=color:#00a8c8>display</span><span style=color:#111>:</span><span style=color:#00a8c8>none</span><span style=color:#111>;}</span>
+    <span style=color:#111>.</span><span style=color:#75af00>has-grow-sidebar</span> <span style=color:#111>.</span><span style=color:#75af00>wrapper-content</span><span style=color:#111>{</span><span style=color:#00a8c8>display</span><span style=color:#111>:</span><span style=color:#00a8c8>block</span><span style=color:#111>;}</span>
+<span style=color:#111>}</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$grow_sidebar_styles <code>string</code> CSS styles to adjust the display of the Grow Social floating sidebar when it’s active.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_grow_sidebar_margin_space>mv_trellis_grow_sidebar_margin_space</h3>
+<p>Adjusts the sidebar margin space for the Grow Social sticky sidebar when the plugin is active. Helps to prevent Grow Social from covering content.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_grow_sidebar_margin_space&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>60px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>string</code> The margin to be used (in pixels).</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_grow_sidebar_media_query_min_width>mv_trellis_grow_sidebar_media_query_min_width</h3>
+<p>Allows child themes to adjust the minimum viewport width for when the Grow Social styles are active.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_grow_sidebar_media_query_min_width&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>721px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>string</code> Specifies the min width that these styles are applied.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_grow_sidebar_media_query_max_width>mv_trellis_grow_sidebar_media_query_max_width</h3>
+<p>Allows child themes to adjust the maximum viewport width for when the Grow Social styles are active.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_grow_sidebar_media_query_max_width&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>1350px</li>
+</ul>
+<p>Arguments</p>
+<ul>
+<li>$value <code>string</code> Specifies the max width that these styles are applied.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_hierarchy>mv_trellis_hierarchy</h3>
+<p>The array of file names to use when searching for template parts, in hierarchy of search order.</p>
+<p><strong>Default</strong></p>
+<aside>
+✏️ **Note:** This list shows the default name and order of template parts to search in plain text, but an array must be passed as an argument to the filter.
+</aside>
+<pre tabindex=0><code>1. {$slug}-front-page-{$theme_style}.php
+2. {$slug}-front-page.php
+3. {$slug}-home-{$theme_style}.php
+4. {$slug}-home.php
+5. {$slug}-author-{$theme_style}.php
+6. {$slug}-author.php
+7. {$slug}-category-{$theme_style}.php
+8. {$slug}-category.php
+9. {$slug}-archive-{$post_type}-{$theme_style}.php
+10. {$slug}-archive-{$post_type}.php
+11. {$slug}-taxonomy-{$theme_style}.php
+12. {$slug}-taxonomy.php
+13. {$slug}-date-{$theme_style}.php
+14. {$slug}-date.php
+15. {$slug}-tag-{$theme_style}.php
+16. {$slug}-tag.php
+17. {$slug}-archive-{$theme_style}.php
+18. {$slug}-archive.php
+19. {$slug}-{$post_type}-{$theme_style}.php
+20. {$slug}-{$post_type}.php
+21. {$slug}-singular-{$theme_style}.php
+22. {$slug}-singular.php
+23. {$slug}-search-{$theme_style}.php
+24. {$slug}-search.php
+25. {$slug}-404-{$theme_style}.php
+26. {$slug}-404.php
+27. {$slug}-{$theme_style}.php
+28. {$slug}.php
+</code></pre><p><strong>Arguments</strong></p>
+<ul>
+<li>$parts_to_search <code>array</code> List of template parts in the file search order.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_image_orientation>mv_trellis_image_orientation</h3>
+<p>Specifies the article nav image orientation. This is the image size passed to <code>mv_trellis_get_attachment_image_tag</code>. Defaults to the value of the Featured Image Size setting in the Mediavine Trellis Dashboard.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_image_orientation&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$orientation</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>mv_trellis_4x3</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$orientation <code>string</code> The slug of the image orientation.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_image_sizes>mv_trellis_image_sizes</h3>
+<p>A list of theme images sizes in a key/value format. These options are passed to the Featured Image Size setting in the Mediavine Trelllis Dashboard. The array should contain a label key with the value shown in the user interface, and a value key with the slug.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_image_sizes&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$options</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Array of Trellis custom image sizes in <code>slug => name</code> format.</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$options <code>array</code> Theme image sizes in a key/value format.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_image_sizes_attribute>mv_trellis_image_sizes_attribute</h3>
+<p>Adjusts the Trellis sizes attribute for an image.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_image_sizes_attribute&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sizes</span><span style=color:#111>,</span> <span style=color:#75af00>string</span><span style=color:#f92672>|</span><span style=color:#00a8c8>array</span> <span style=color:#111>$size</span><span style=color:#111>,</span> <span style=color:#75af00>string</span><span style=color:#f92672>|</span><span style=color:#00a8c8>null</span> <span style=color:#111>$image_src</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span><span style=color:#f92672>|</span><span style=color:#00a8c8>null</span> <span style=color:#111>$image_meta</span><span style=color:#111>,</span> <span style=color:#75af00>int</span> <span style=color:#111>$attachment_id</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>(max-width: 760px) calc(100vw - ' . $css_gutter_double . &lsquo;), 720px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$sizes <code>string</code> A source size value for use in a sizes attribute.</li>
+<li>$size <code>string|array</code> The requested image size. It can be any registered image size name or an array of width and height values in pixels (in that order).</li>
+<li>$image_src <code>string|null</code> The URL to the image file or null.</li>
+<li>$image_meta <code>array|null</code> The image metadata as returned by <code>wp_get_attachment_metadata</code> or null.</li>
+<li>$attachment_id <code>int</code> The image attachment ID of the original image or 0. If set to 0, only $image_meta is used.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_js_plugin_name>mv_trellis_js_plugin_name</h3>
+<p>Displays the plugin name responsible for disabling JavaScript optimizations.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_js_plugin_name&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>string</code> The plugin name.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_license_required_settings>mv_trellis_license_required_settings</h3>
+<p>An array of settings dependent on a Trellis license.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_license_required_settings&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$license_dependent</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$license_dependent</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span>
+        <span style=color:#d88200>&#39;google_font_body&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;google_font_heading&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;featured_image_size&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;google_analytics_delay&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;hide_footer_links&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;enable_pwa&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;site_logo&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;primary_css_color&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;secondary_css_color&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;background_accent_css_color&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;max_logo_size&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;el_comfort_level&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;pwa_short_name&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;pwa_theme_color&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;site_icon&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;js_optimizations&#39;</span><span style=color:#111>,</span>
+      <span style=color:#111>];</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$license_dependent <code>array</code> List of slugs for settings that are dependent on a license.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_link_shortcode>mv_trellis_link_shortcode</h3>
+<p>HTML string for the link to the Trellis homepage that appears in the site footer.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_link_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#111>&lt;</span><span style=color:#f92672>a</span> <span style=color:#75af00>href</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;https://mediavine.com/&#34;</span> <span style=color:#75af00>target</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;_blank&#34;</span> <span style=color:#75af00>rel</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;noopener nofollow&#34;</span><span style=color:#111>&gt;</span>Trellis Framework<span style=color:#111>&lt;/</span><span style=color:#f92672>a</span><span style=color:#111>&gt;</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$output <code>string</code> HTML Trellis link output.</li>
+<li>$atts <code>array</code> Trellis link shortcode attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_local_script_model>mv_trellis_local_script_model</h3>
+<p>Allows overriding of the Mediavine Control Panel (MCP) ad settings for the script wrapper.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_local_script_model&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$local_model_default_values</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$local_model_default_values</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span>
+        <span style=color:#d88200>&#39;optimize_mobile_pagespeed&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#00a8c8>true</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;optimize_desktop_pagespeed&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#00a8c8>true</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;content_selector&#39;</span>           <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;.mvt-content&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;footer_selector&#39;</span>            <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;footer.footer&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;content_selector_mobile&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;.mvt-content&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;comments_selector&#39;</span>          <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;sidebar_atf_selector&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;.sidebar-primary .widget-container:nth-last-child(3)&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;sidebar_atf_position&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;afterend&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;sidebar_btf_selector&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;.mv-sticky-slot&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;sidebar_btf_position&#39;</span>       <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;beforeend&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;content_stop_selector&#39;</span>      <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;sidebar_btf_stop_selector&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;footer.footer&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;custom_css&#39;</span>                 <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;&#39;</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;ad_box&#39;</span>                     <span style=color:#f92672>=&gt;</span> <span style=color:#00a8c8>true</span><span style=color:#111>,</span>
+        <span style=color:#d88200>/**
+</span><span style=color:#d88200>         * Filters the value added to the model for the sidebar breakpoint. Default is 1135.
+</span><span style=color:#d88200>         * (Advanced use)
+</span><span style=color:#d88200>         *
+</span><span style=color:#d88200>         * @param string The last pixel width that the sidebar is viewable
+</span><span style=color:#d88200>         */</span>
+        <span style=color:#d88200>&#39;sidebar_minimum_width&#39;</span>      <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_model_sidebar_breakpoint&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;1135&#39;</span> <span style=color:#111>),</span>
+      <span style=color:#111>];</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$local_model_values <code>array</code> Key/value pairs to override.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_logo_sources>mv_trellis_logo_sources</h3>
+<p>Allows Trellis Images to offer an optimized image version via source tags.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_logo_sources&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$img_html</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$img_html</span> <span style=color:#f92672>=</span> <span style=color:#75af00>mv_trellis_get_attachment_image_tag</span><span style=color:#111>(</span>
+      <span style=color:#111>$logo_id</span><span style=color:#111>,</span>
+      <span style=color:#d88200>&#39;full&#39;</span><span style=color:#111>,</span>
+      <span style=color:#111>[</span>
+        <span style=color:#d88200>&#39;class&#39;</span>          <span style=color:#f92672>=&gt;</span> <span style=color:#111>$image_classes</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;alt&#39;</span>            <span style=color:#f92672>=&gt;</span> <span style=color:#111>$alt_text</span><span style=color:#111>,</span>
+        <span style=color:#d88200>&#39;data-pin-nopin&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#d88200>&#39;true&#39;</span><span style=color:#111>,</span>
+      <span style=color:#111>],</span>
+      <span style=color:#00a8c8>null</span><span style=color:#111>,</span>
+      <span style=color:#00a8c8>false</span>
+    <span style=color:#111>);</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$img_html <code>array</code> Arguments for getting logo sources.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_match_image_dimensions>mv_trellis_match_image_dimensions</h3>
+<p>Determines if Trellis should check that dimensions match the registered image size.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_match_image_dimensions&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span><span style=color:#111>,</span> <span style=color:#75af00>int</span> <span style=color:#111>$img_id</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$img_size</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether the image dimensions should match.</li>
+<li>$img_id <code>int</code> The ID of the image.</li>
+<li>$img_size <code>string</code> The size of the image.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_mediavine_link_shortcode>mv_trellis_mediavine_link_shortcode</h3>
+<p>HTML string for the link to the Mediavine homepage in the site footer.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_mediavine_link_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#111>&lt;</span><span style=color:#f92672>a</span> <span style=color:#75af00>href</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;https://www.mediavine.com/&#34;</span> <span style=color:#75af00>target</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;_blank&#34;</span> <span style=color:#75af00>rel</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;noopener nofollow&#34;</span><span style=color:#111>&gt;</span>Mediavine<span style=color:#111>&lt;/</span><span style=color:#f92672>a</span><span style=color:#111>&gt;</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$output <code>string</code> Mediavine link output.</li>
+<li>$atts <code>array</code> Mediavine link shortcode attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_memory_exceeded>mv_trellis_memory_exceeded</h3>
+<p>Returns whether Trellis has exceeded its memory limit. Returns False if the memory limit has not been reached. Memory limit is set via <code>mv_trellis_memory_limit_percent</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_memory_exceeded&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$return</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$return <code>bool</code> Whether Trellis has exceeded its memory limit.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_memory_limit_percent>mv_trellis_memory_limit_percent</h3>
+<p>Sets the percentage of available WordPress memory as a decimal. Trellis uses this amount to determine if there is enough memory available for its batch processes.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_memory_limit_percent&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>float</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>0.9</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$percent_of_memory <code>float</code> The percentage of available WordPress memory Trellis can use.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_model_sidebar_breakpoint>mv_trellis_model_sidebar_breakpoint</h3>
+<p>Adjusts the value added for the sidebar breakpoint. This is used by the Mediavine ad script wrapper so that ads are not served when the sidebar is pushed below the content.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_model_sidebar_breakpoint&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>1135</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>string</code> The last pixel width that the sidebar is viewable.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_nonasync_js_handles>mv_trellis_nonasync_js_handles</h3>
+<p>List of handles where Trellis should not load scripts asynchronously. Should match handles passed to <code>wp_register_script</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_nonasync_js_handles&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$disallowed_handles</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$disallowed_handles <code>array</code> List of handles to be compared against.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_nonasync_js_urls>mv_trellis_nonasync_js_urls</h3>
+<p>List of script source URLs that Trellis should not load asynchronously.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_nonasync_js_urls&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$disallowed_urls</span><span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$disallowed_urls <code>array</code> List of URLs to be compared against.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_nonasync_js_prefixes>mv_trellis_nonasync_js_prefixes</h3>
+<p>List of handle prefixes where Trellis should not load scripts asynchronously. Prefixes should be at the start of the handles passed to <code>wp_register_script</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_nonasync_js_prefixes&#39;</span><span style=color:#111>,</span> <span style=color:#111>$disallowed_prefixes</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$disallowed_prefixes <code>array</code> List of handle prefixes to be compared against.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_pages_pagination_args>mv_trellis_pages_pagination_args</h3>
+<p>Arguments to be passed to <code>the_posts_pagination</code>. Available arguments are described on the <a href=https://developer.wordpress.org/reference/functions/paginate_links/>WordPress paginate_links function page</a><strong>.</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_pages_pagination_args&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$posts_pagination_args</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$posts_pagination_args <code>array</code> Arguments for displaying pagination links.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_post_link_featured_image_sizes>mv_trellis_post_link_featured_image_sizes</h3>
+<p>Outputs the sizes attribute in featured image post links.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_post_link_featured_image_sizes&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sizes</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>(max-width: 599px) 320px, (max-width: 700px) calc(50vw - 30px), 320px</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$sizes <code>string</code> Contents of the sizes attribute for featured images in post links.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_process_content>mv_trellis_process_content</h3>
+<p>Returns the DOM document to make changes before it’s output to the browser.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_process_content&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>\DOMDocument</span> <span style=color:#111>$content_dom</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>DOMDocument of the content being processed (the_content or primary sidebar).</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$content_dom <code>\DOMDocument</code> The DOMDocument content.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_resolution_sizes>mv_trellis_resolution_sizes</h3>
+<p>List of resolution sizes to associate with image sizes.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_resolution_sizes&#39;</span><span style=color:#111>,</span>  <span style=color:#00a8c8>array</span> <span style=color:#111>$resolution_sizes</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$custom_image_sizes</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[ &lsquo;high&rsquo;, &lsquo;med_high&rsquo;, &lsquo;med&rsquo;, &lsquo;low&rsquo; ]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$resolution_sizes <code>array</code> List of allowed resolution sizes.</li>
+<li>$custom_image_sizes <code>array</code> Custom image sizes to be added through the theme.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_settings>mv_trellis_settings</h3>
+<p>Used to add or modify theme settings whenever the settings are being built or rebuilt. A Flags key can be used to force a value update to the default.</p>
+<p>For example, &lsquo;flags&rsquo; => [ &lsquo;force_default&rsquo; => &lsquo;parent_1.0.0&rsquo; ] where 1.0.0 is the parent version number or &lsquo;flags&rsquo; => [ &lsquo;force_default&rsquo; => &lsquo;child_1.0.0&rsquo; ] where 1.0.0 is the child version number.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_settings&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$theme_settings</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$theme_settings <code>array</code> Theme settings to be added to the Trellis Settings page.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_settings_groups>mv_trellis_settings_groups</h3>
+<p>Used to add or modify theme setting groups or tabs.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_settings_groups&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$default_groups</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$groups</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span>
+        <span style=color:#d88200>&#39;issues&#39;</span>   <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>__</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;Issues&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mediavine&#39;</span> <span style=color:#111>),</span>
+        <span style=color:#d88200>&#39;hooks&#39;</span>    <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>__</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;Hooks&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mediavine&#39;</span> <span style=color:#111>),</span>
+        <span style=color:#d88200>&#39;license&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>__</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;License&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mediavine&#39;</span> <span style=color:#111>),</span>
+        <span style=color:#d88200>&#39;pwa&#39;</span>      <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>__</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;PWA&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mediavine&#39;</span> <span style=color:#111>),</span>
+        <span style=color:#d88200>&#39;advanced&#39;</span> <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>__</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;Advanced&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mediavine&#39;</span> <span style=color:#111>),</span>
+        <span style=color:#d88200>&#39;display&#39;</span>  <span style=color:#f92672>=&gt;</span> <span style=color:#75af00>__</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;Display&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mediavine&#39;</span> <span style=color:#111>),</span>
+      <span style=color:#111>];</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$default_groups <code>array</code> Key/value pair of setting group slugs and display names. These should correspond to the group column of the settings table.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_settings_update>mv_trellis_settings_update</h3>
+<p>Used to specify which settings to update.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_settings_update&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$theme_settings</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>self::get_theme_settings()</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$theme_settings <code>array</code> Theme settings to be added or updated on the settings page.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_sidebar_content>mv_trellis_sidebar_content</h3>
+<p>HTML string for the sidebar. Used internally to apply lazy loading attributes to images.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_sidebar_content&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sidebar_html</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$sidebar_id</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>HTML output of the sidebar.</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$sidebar_html <code>string</code> The sidebar HTML.</li>
+<li>$sidebar_id <code>string</code> The sidebar ID.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_site_title_logo_alt_text>mv_trellis_site_title_logo_alt_text</h3>
+<p>Alt text used by the site logo. Defaults to the site name.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_site_title_logo_alt_text&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$site_name</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li><code>get_bloginfo( 'name' )</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$site_name <code>string</code> Site name.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_site_title_logo_classes>mv_trellis_site_title_logo_classes</h3>
+<p>Class names to be added to site logo <code>&lt;img></code>tag.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_site_title_logo_classes&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$image_classes</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$link</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li><code>['header-logo-img', 'ggnoads']</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$image_classes <code>array</code> List of classes to be added to the logo source markup.</li>
+<li>$link <code>bool</code> Whether site title/logo output should be wrapped in a link.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_site_title_shortcode>mv_trellis_site_title_shortcode</h3>
+<p>Adjusts the HTML string for the site title displayed in the site footer. Defaults to the site name.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_site_title_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li><code>get_bloginfo( 'name' )</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$output <code>string</code> Site title output.</li>
+<li>$atts <code>array</code> Site title shortcode attributes.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_site_title_text_classes>mv_trellis_site_title_text_classes</h3>
+<p>Adjusts classes for the site title markup.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_site_title_text_classes&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$value</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$link</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>[ &lsquo;header-logo-text&rsquo;]</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>array</code> Classes to be added to the site title markup.</li>
+<li>$link <code>bool</code> If the site title/logo output should be wrapped in a link.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_sw_ignore>mv_trellis_sw_ignore</h3>
+<p>Lists the paths to be ignored by the PWA service worker.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_sw_ignore&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$ignore_paths</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>Empty array</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$ignore_paths <code>array</code> List of file paths to ignore.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_the_title>mv_trellis_the_title</h3>
+<p>Adjusts the current page/post title.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_the_title&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$title</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$before</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$after</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>The current page/post/archive/cpt title.</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$title <code>string</code> The current page/post/archive title.</li>
+<li>$before <code>string</code> Content to be added to the front of the title, usually in some form of markup.</li>
+<li>$after <code>string</code> Content to be added to the end of the title, usually in some form of markup.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_top_breadcrumbs_placement>mv_trellis_top_breadcrumbs_placement</h3>
+<p>Adjusts the hook targeted to output YOAST SEO breadcrumbs.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_top_breadcrumbs_placement&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$default_header_breadcrumb_hook</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>tha_aside_before_entry_content</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$default_header_breadcrumb_hook <code>string</code> The hook to fire on.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_web_stories_compatibility_styles>mv_trellis_web_stories_compatibility_styles</h3>
+<p>Adjusts the CSS styles applied to the Web Story archive pages.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_web_stories_compatibility_styles&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$story_archive_styles</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>excerpt</span> <span style=color:#111>{</span><span style=color:#00a8c8>flex</span><span style=color:#111>:</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>360</span><span style=color:#00a8c8>px</span><span style=color:#111>;</span> <span style=color:#00a8c8>margin</span><span style=color:#111>:</span> <span style=color:#ae81ff>0</span><span style=color:#00a8c8>px</span> <span style=color:#00a8c8>auto</span><span style=color:#111>;</span> <span style=color:#00a8c8>max-width</span><span style=color:#111>:</span> <span style=color:#ae81ff>360</span><span style=color:#00a8c8>px</span><span style=color:#111>;}</span>
+<span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>mv-trellis-feed-unit</span><span style=color:#111>{</span><span style=color:#00a8c8>flex</span><span style=color:#111>:</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>100</span><span style=color:#00a8c8>%</span><span style=color:#111>;}</span>
+<span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>pagination</span><span style=color:#111>{</span><span style=color:#00a8c8>flex</span><span style=color:#111>:</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>100</span><span style=color:#00a8c8>%</span><span style=color:#111>;}</span>
+<span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>excerpt-container</span><span style=color:#f92672>,</span><span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>excerpt-post-data</span><span style=color:#111>{</span><span style=color:#00a8c8>display</span><span style=color:#111>:</span> <span style=color:#00a8c8>block</span><span style=color:#111>;}</span>
+<span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>excerpt-post-data</span><span style=color:#111>{</span><span style=color:#00a8c8>text-align</span><span style=color:#111>:</span><span style=color:#00a8c8>center</span><span style=color:#111>;}</span>
+<span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>wp-block-embed__wrapper</span> <span style=color:#111>{</span><span style=color:#00a8c8>margin</span><span style=color:#111>:</span><span style=color:#ae81ff>0</span> <span style=color:#00a8c8>auto</span><span style=color:#111>;}</span>
+<span style=color:#111>.</span><span style=color:#75af00>post-type-archive-web-story</span> <span style=color:#111>.</span><span style=color:#75af00>excerpt-photo</span> <span style=color:#111>{</span><span style=color:#00a8c8>display</span><span style=color:#111>:</span> <span style=color:#00a8c8>none</span><span style=color:#111>;}</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$story_archive_styles <code>string</code> CSS styles applied to Web Story archive pages.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_wordpress_link_shortcode>mv_trellis_wordpress_link_shortcode</h3>
+<p>Adjusts the HTML string for the link to WordPress in the site footer.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_wordpress_link_shortcode&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>string</span> <span style=color:#111>$output</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$atts</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#111>&lt;</span><span style=color:#f92672>a</span> <span style=color:#75af00>href</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;https://wordpress.org/&#34;</span> <span style=color:#75af00>target</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;_blank&#34;</span> <span style=color:#75af00>rel</span><span style=color:#f92672>=</span><span style=color:#d88200>&#34;noopener nofollow&#34;</span><span style=color:#111>&gt;</span>WordPress<span style=color:#111>&lt;/</span><span style=color:#f92672>a</span><span style=color:#111>&gt;</span>
+</code></pre></div><p><strong>Arguments</strong></p>
+<ul>
+<li>$output <code>string</code> WordPress link output.</li>
+<li>$atts <code>array</code> WordPress link shortcode attributes.</li>
 </ul>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <br>

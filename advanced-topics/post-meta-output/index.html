@@ -1,0 +1,360 @@
+<!doctype html><html lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/docsytrellis/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/docsytrellis/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/docsytrellis/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
+<title>Post Meta Output | Mediavine Trellis</title>
+<meta name=description content="Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes. 
+">
+<meta property="og:title" content="Post Meta Output">
+<meta property="og:description" content="Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes. 
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/post-meta-output/"><meta property="article:section" content="advanced-topics">
+<meta property="og:site_name" content="Mediavine Trellis">
+<meta itemprop=name content="Post Meta Output">
+<meta itemprop=description content="Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes. 
+">
+<meta itemprop=wordCount content="807">
+<meta itemprop=keywords content="post meta,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Post Meta Output">
+<meta name=twitter:description content="Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes. 
+">
+<link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
+<link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+<script src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-00000000-0','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body class=td-page>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/docsytrellis/>
+<span class=navbar-logo><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1e3 1e3" style="enable-background:new 0 0 1000 1000"><style>.st0{fill:#41a4a9}.st1{fill:#67b6ba}.st2{fill:#a3dbdf}.st3{fill:#247272}.st4{fill:#8dc8cb}</style><g><g><path class="st0" d="M753.93 64.88c2.16.0 4.24.02 6.25.06.19 11.19-.16 24.94-1.83 39.78-3.36 29.93-12.97 71.18-39.67 97.79-35.86 35.78-97.72 41.12-131.4 41.12-2.15.0-4.23-.02-6.23-.06-.19-11.18.16-24.93 1.82-39.77 3.36-29.93 12.96-71.19 39.64-97.79 35.89-35.79 97.74-41.13 131.42-41.13m0-64.88C705.59.0 627.92 8.99 576.7 60.07c-77.41 77.13-58.89 214.92-58.07 220.75l3.1 21.9 21.89 3.16c1.97.28 18.99 2.62 43.66 2.62 48.34.0 126.03-8.99 177.22-60.07 77.43-77.15 58.92-214.93 58.09-220.75l-3.1-21.9L797.6 2.63C795.64 2.34 778.6.0 753.93.0z"/></g><g><path class="st1" d="M521.73 648.47l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 648.47z"/></g><g><path class="st2" d="M521.73 994.22l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 994.22z"/></g><g><path class="st3" d="M477.61 476.01l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 476.01z"/></g><g><path class="st4" d="M477.61 821.75l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 821.75z"/></g></g></svg></span><span class=font-weight-bold>Mediavine Trellis</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/overview/><span>Overview</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/getting-started/><span>Getting Started</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/docsytrellis/advanced-topics/><span class=active>Advanced Topics</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/faqs/><span>FAQ</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/reference/><span>Reference</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/docsytrellis/changelogs/><span>Changelogs</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<div id=content-mobile>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+</div>
+<div id=content-desktop></div>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-docsytrellisadvanced-topics-li>
+<a href=/docsytrellis/advanced-topics/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-docsytrellisadvanced-topics><span>Advanced Topics</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicscritical-css-li>
+<a href=/docsytrellis/advanced-topics/critical-css/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicscritical-css><span>Critical CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicsimage-delivery-li>
+<a href=/docsytrellis/advanced-topics/image-delivery/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsimage-delivery><span>Image Delivery and Optimizations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-docsytrellisadvanced-topicspost-meta-output-li>
+<a href=/docsytrellis/advanced-topics/post-meta-output/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicspost-meta-output><span class=td-sidebar-nav-active-item>Post Meta Output</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicsusing-css-variables-li>
+<a href=/docsytrellis/advanced-topics/using-css-variables/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicsusing-css-variables><span>Using CSS Variables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsytrellisadvanced-topicstrellis-comments-li>
+<a href=/docsytrellis/advanced-topics/trellis-comments/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsytrellisadvanced-topicstrellis-comments><span>Trellis Comments</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/google/docsy-example/tree/master/content/en/advanced-topics/post-meta-output.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/google/docsy-example/edit/master/content/en/advanced-topics/post-meta-output.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/new/master/content/en/advanced-topics/post-meta-output.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Post%20Meta%20Output" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/google/docsy/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+</div>
+<div class=td-toc>
+<h4>Contents</h4>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#settings>Settings</a></li>
+<li><a href=#functions>Functions</a></li>
+<li><a href=#useful-filters>Useful Filters</a></li>
+<li><a href=#additional-information>Additional Information</a>
+<ul>
+<li><a href=#moving-the-comment-count>Moving the Comment Count</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-tags">
+<h5 class=taxonomy-title>Tag Cloud</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/post-meta/ data-taxonomy-term=post-meta><span class=taxonomy-label>post meta</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/post-meta-output/>Post Meta Output</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Post Meta Output</h1>
+<div class=lead>Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes.</div>
+<header class=article-meta>
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+<h5 class=taxonomy-title>Tags:</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://vcmediavine.github.io/docsytrellis/tags/post-meta/ data-taxonomy-term=post-meta><span class=taxonomy-label>post meta</span></a></li>
+</ul>
+</div>
+</header>
+<p>Publishers can control Post Meta settings using the Mediavine Trellis Dashboard, selecting what information appears. Available meta information includes: Author, Breadcrumbs (if the Yoast SEO plugin is active), Categories, Comment Count, and Date (Published, Modified, or both).</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Trellis templates provided by Mediavine limit Comment Count to the top of a post. If you’d like to add the Comment Count to the bottom of a post, refer to the code in the Additional Information section.
+</div>
+<p>The image below shows the default Post Meta information as rendered by the Trellis Core theme with Yoast SEO installed.</p>
+<img src=/docsytrellis/images/article-top.png alt="Regenerate all images." width=600px>
+<img src=/docsytrellis/images/article-bottom-v3.png alt="Regenerate all images." width=600px>
+<h2 id=settings>Settings</h2>
+<p>Publishers can control the Post Meta information and where it gets displayed via the Mediavine Trellis Dashboard. These settings store values that can be accessed by various filters and functions. Template parts contain logic to render the information.</p>
+<img src=/docsytrellis/images/settings-post-meta.png alt="Regenerate all images." width=600px>
+<table>
+<thead>
+<tr>
+<th>Setting Name</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post Meta Display - Top</td>
+<td>Select which post meta to display in the post header. Options include: Comment Count, Author, Date, and Categories.<br><br>If Yoast SEO is installed, you can show Yoast breadcrumbs.</td>
+<td>Refer to the article-meta-header template part in Trellis Core to see how this is implemented.<br><br>Location: mediavine-trellis/template-parts/article/article-meta-header.php</td>
+</tr>
+<tr>
+<td>Post Meta Display - Bottom</td>
+<td>Select which post meta to display in the post footer. Options include: Author, Date, and Categories.<br><br>If Yoast SEO is installed, you can show Yoast breadcrumbs.</td>
+<td>Refer to the article-meta-footer template part in Trellis Core to see how this is implemented.<br><br>Location: mediavine-trellis/template-parts/article/article-meta-footer.php</td>
+</tr>
+<tr>
+<td>Post Meta Date Display</td>
+<td>Determine the date to display in the post header. Options include: Display Modified, Display Published, or Display Both.</td>
+<td>Created by the mv_trellis_entry_date() function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference.</td>
+</tr>
+</tbody>
+</table>
+<h2 id=functions>Functions</h2>
+<p>The selected settings in the Mediavine Trellis Dashboard can be accessed via the <code>mv_trellis_is_meta_item_enabled()</code> function. Individual options are queried by their slug to determine if the publisher has them set. Available Post Meta slugs include:</p>
+<ul>
+<li>author</li>
+<li>breadcrumbs (only available if Yoast SEO is installed)</li>
+<li>categories</li>
+<li>comment_count</li>
+<li>date</li>
+</ul>
+<p>The function also specifies a location, which can be:</p>
+<ul>
+<li>post_meta_top</li>
+<li>post_meta_bottom</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>In the following example, the <code>$display_author</code> variable will be set to <code>true</code> or <code>false</code> depending on (1) if the post type supports an author, and (2) if the Trellis Post Meta Author setting is enabled and set to the top of the post.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#111>$display_author</span> <span style=color:#f92672>=</span> <span style=color:#111>(</span> <span style=color:#75af00>post_type_supports</span><span style=color:#111>(</span> <span style=color:#75af00>get_post_type</span><span style=color:#111>(</span> <span style=color:#111>$post_id</span> <span style=color:#111>),</span> <span style=color:#d88200>&#39;author&#39;</span> <span style=color:#111>)</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#75af00>mv_trellis_is_meta_item_enabled</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;author&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;post_meta_top&#39;</span> <span style=color:#111>)</span> <span style=color:#111>);</span>
+</code></pre></div><p>If a Post Meta item is available, other functions are used to output its value.</p>
+<ul>
+<li>author: <code>mv_trellis_entry_author()</code></li>
+<li>date: <code>mv_trellis_entry_date()</code></li>
+<li>comment_count: Calculated in the article_meta_header template</li>
+<li>categories: <code>mv_trellis_entry_taxonomies</code></li>
+<li>breadcrumbs: Assembled from an internal class and posted to the hook specified by the <code>mv_trellis_top_breadcrumbs_placement</code> filter.</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following example shows how the post’s Author meta information is output in article-meta-header.php.</p>
+<pre tabindex=0><code>if ( $display_author ) {
+		?&gt;
+		&lt;p class=&quot;author-meta post-author meta-wrapper&quot;&gt;
+			&lt;?php
+				echo esc_html__( 'By: ', 'mediavine' );
+				mv_trellis_entry_author();
+			?&gt;
+		&lt;/p&gt;
+		&lt;?php
+	}
+</code></pre><h2 id=useful-filters>Useful Filters</h2>
+<p>One filter is available to adjust breadcrumb placement if Yoast SEO is installed:</p>
+<ul>
+<li><code>mv_trellis_top_breadcrumbs_placement</code>: Specifies the hook where the Post Meta breadcrumbs value is placed. The default is <code>tha_aside_before_entry_content</code>, which is output by <code>mvt_entry_before()</code> in the Trellis Core templates. See Hooks in the Reference section for a list of all available hooks.</li>
+</ul>
+<h2 id=additional-information>Additional Information</h2>
+<p>To best understand how Post Meta information is displayed, refer to the article-meta-header.php and article-meta-footer.php template parts in Trellis Core.</p>
+<h3 id=moving-the-comment-count>Moving the Comment Count</h3>
+<p>If you’d like to display the Comment Count at the bottom of a post, you’ll need to add code to your child theme’s functions.php file as well as modifying the article-meta-footer.php template part.</p>
+<p><strong>Functions.php</strong></p>
+<p>This code will add the Comment Count as an option to the Post Meta setting in the Mediavine Trellis Dashboard:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
+</span><span style=color:#d88200> * Allows the Comment Count to be used at the bottom of Post Meta.
+</span><span style=color:#d88200> */</span>
+ 
+ <span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_before_update_post_meta_bottom&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;mv_add_comments_option_to_post_meta_bottom&#39;</span> <span style=color:#111>);</span>
+ 
+ <span style=color:#00a8c8>function</span> <span style=color:#75af00>mv_add_comments_option_to_post_meta_bottom</span><span style=color:#111>(</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$setting</span> <span style=color:#111>)</span> <span style=color:#111>{</span>
+     <span style=color:#111>$setting</span><span style=color:#111>[</span><span style=color:#d88200>&#39;data&#39;</span><span style=color:#111>][</span><span style=color:#d88200>&#39;options&#39;</span><span style=color:#111>][</span><span style=color:#d88200>&#39;comment_count&#39;</span><span style=color:#111>]</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;Comment Count&#39;</span><span style=color:#111>;</span>
+ 
+     <span style=color:#00a8c8>return</span> <span style=color:#111>$setting</span><span style=color:#111>;</span>
+ <span style=color:#111>}</span>
+</code></pre></div><p><strong>Article-meta-footer.php</strong></p>
+<p>You’ll need to add code to three places in the article-meta-footer.php template part. First, you’ll want to check if the Comment Count has been enabled for the footer:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>// Check if the Comment Count is set for the bottom of Post Meta
+</span><span style=color:#75715e></span><span style=color:#111>$mv_trellis_display_comment_count</span> <span style=color:#f92672>=</span> <span style=color:#111>(</span> <span style=color:#111>(</span> <span style=color:#75af00>comments_open</span><span style=color:#111>(</span> <span style=color:#111>$mv_trellis_post_id</span> <span style=color:#111>)</span> <span style=color:#f92672>||</span> <span style=color:#75af00>get_comments_number</span><span style=color:#111>()</span> <span style=color:#111>)</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span> <span style=color:#75af00>post_password_required</span><span style=color:#111>()</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#75af00>mv_trellis_is_meta_item_enabled</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;comment_count&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;post_meta_bottom&#39;</span> <span style=color:#111>)</span> <span style=color:#111>);</span>
+</code></pre></div><p>Next, you’ll want to modify the post’s check for meta output to include the Comment Count:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>// If we don&#39;t have any meta output, get out
+</span><span style=color:#75715e></span><span style=color:#00a8c8>if</span> <span style=color:#111>(</span> <span style=color:#f92672>!</span> <span style=color:#111>$mv_trellis_display_author</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span> <span style=color:#111>$mv_trellis_display_date</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span> <span style=color:#111>$mv_trellis_display_comment_count</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span> <span style=color:#111>$mv_trellis_display_categories</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span> <span style=color:#111>$mv_trellis_display_breadcrumbs</span> <span style=color:#111>)</span> <span style=color:#111>{</span>
+	<span style=color:#00a8c8>return</span><span style=color:#111>;</span>
+<span style=color:#111>}</span>
+</code></pre></div><p>Finally, enter code to render the Comment Count:</p>
+<pre tabindex=0><code>// Comments.
+	if ( $display_comment_count ) {
+		?&gt;
+		&lt;div id=&quot;comment-count&quot; class=&quot;meta-element meta-wrapper&quot;&gt;
+			&lt;div&gt;
+				&lt;?php mv_trellis_get_template_part( 'template-parts/svg/comment-bubble' ); ?&gt;
+				&lt;?php
+				/* translators: %s: number of comments for the post */
+				echo esc_html( sprintf( _n( '%s Comment', '%s Comments', get_comments_number(), 'mediavine' ), number_format_i18n( get_comments_number() ) ) );
+				?&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;?php
+	}
+</code></pre>
+<style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
+<br>
+<hr>
+<div class=d-print-none>
+<h2 class=feedback--title>Feedback</h2>
+<p class=feedback--question>Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+Thanks for your feedback!
+</p>
+<p class="feedback--response feedback--response-no">
+Sorry to hear that. Please contact Trellis Support at <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> if you need additional help.
+</p>
+</div>
+<script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
+<br>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="User mailing list" aria-label="User mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="User mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://example.org/twitter aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Stack Overflow" aria-label="Stack Overflow">
+<a class=text-white target=_blank rel=noopener href=https://example.org/stack aria-label="Stack Overflow">
+<i class="fab fa-stack-overflow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
+<a class=text-white target=_blank rel=noopener href=https://github.com/google/docsy aria-label=GitHub>
+<i class="fab fa-github"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Slack aria-label=Slack>
+<a class=text-white target=_blank rel=noopener href=https://example.org/slack aria-label=Slack>
+<i class="fab fa-slack"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Developer mailing list" aria-label="Developer mailing list">
+<a class=text-white target=_blank rel=noopener href=https://example.org/mail aria-label="Developer mailing list">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2022 Mediavine All Rights Reserved</small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/docsytrellis/js/tabpane-persist.js></script>
+<script src=/docsytrellis/js/main.min.8ab8f81ff7e1454d30024cd6f956d4d341c3a97e2a673f988065f2ee4e147922.js integrity="sha256-irj4H/fhRU0wAkzW+VbU00HDqX4qZz+YgGXy7k4UeSI=" crossorigin=anonymous></script>
+</body>
+</html>
