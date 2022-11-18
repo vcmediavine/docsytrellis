@@ -61,11 +61,11 @@ Publishers can choose a desired featured image thumbnail size and ratio in the *
 
 The **Regenerate Featured Images** button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See [Trellis Featured Images](https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images) in the Help Center for more information.
 
-<img src="/images/display-featured-image.png" alt="Regenerate featured images." width="200px"/>
+<img src="/docsytrellis/images/display-featured-image.png" alt="Regenerate featured images." width="600px"/>
 
 If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the **Advanced** tab of the Mediavine Trellis Dashboard and use the **Regenerate All Images** button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See [How to Regenerate Your Image Sizes in Trellis](https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis) in the Help Center for more information.
 
-<img src="/images/regenerate-all-images.png" alt="Regenerate all images." width="200px"/>
+<img src="/docsytrellis/images/regenerate-all-images.png" alt="Regenerate all images." width="600px"/>
 
 ## Image Sizes Chart
 
