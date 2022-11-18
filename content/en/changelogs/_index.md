@@ -1,7 +1,7 @@
 
 ---
 title: "Changelogs"
-type: docs
+type: no_toc
 linkTitle: "Changelogs"
 weight: 60
 menu:

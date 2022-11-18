@@ -1,7 +1,7 @@
 
 ---
 title: "Reference"
-type: docs
+type: no_toc
 linkTitle: "Reference"
 weight: 50
 menu:

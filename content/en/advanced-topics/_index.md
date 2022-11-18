@@ -1,7 +1,7 @@
 
 ---
 title: "Advanced Topics"
-type: docs
+type: no_toc
 linkTitle: "Advanced Topics"
 weight: 30
 menu:
