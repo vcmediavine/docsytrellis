@@ -3,8 +3,10 @@ title: "Functions"
 linkTitle: "Functions"
 type: no_toc
 weight: 20
+description: >
+  Trellis provides public functions for child theme developers. You can use them to modify data or functionality in a child theme.
 ---
-Trellis provides public functions for child theme developers. You can use them to modify data or functionality in a child theme. You’ll find the function’s name, description, and other pertinent information in the list below.
+You’ll find the function’s name, description, and other pertinent information in the list below.
 
 {{% alert title="Note" %}}
 To view the complete function, look for it within Trellis Core’s functions.php file, located in mediavine-trellis/inc/functions.php.

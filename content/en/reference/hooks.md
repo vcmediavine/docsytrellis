@@ -3,8 +3,10 @@ title: "Hooks"
 linkTitle: "Hooks"
 type: no_toc
 weight: 30
+description: >
+  Trellis provides a number of action hooks that web developers can use in their child themes.
 ---
-Trellis provides a number of action hooks that web developers can use in their child themes. In addition to custom Mediavine hooks, Trellis uses the [Theme Hook Alliance (THA)](https://github.com/zamoose/themehookalliance) standards, offering a consistent set of entry points for easy customization and altering of functionality. Where applicable, this documentation references which THA hooks are called as part of a Mediavine hook.
+In addition to custom Mediavine hooks, Trellis uses the [Theme Hook Alliance (THA)](https://github.com/zamoose/themehookalliance) standards, offering a consistent set of entry points for easy customization and altering of functionality. Where applicable, this documentation references which THA hooks are called as part of a Mediavine hook.
 
 {{% alert color="warning" title="Important" %}}
 If you add custom templates to your child theme, it’s expected that you’ll include the appropriate hooks in your template files. This ensures compatibility with future versions of Trellis that rely on these hooks.
