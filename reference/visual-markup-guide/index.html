@@ -15,23 +15,23 @@
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
 <title>Visual Markup Guide | Mediavine Trellis</title>
-<meta name=description content="Placeholder description. 
+<meta name=description content="The Visual Markup Guide contains diagrams showing how Trellis Core templates render pages in a WordPress site.  
 ">
 <meta property="og:title" content="Visual Markup Guide">
-<meta property="og:description" content="Placeholder description. 
+<meta property="og:description" content="The Visual Markup Guide contains diagrams showing how Trellis Core templates render pages in a WordPress site.  
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/reference/visual-markup-guide/"><meta property="article:section" content="reference">
 <meta property="article:published_time" content="2022-10-04T00:00:00+00:00">
 <meta property="article:modified_time" content="2022-10-04T00:00:00+00:00"><meta property="og:site_name" content="Mediavine Trellis">
 <meta itemprop=name content="Visual Markup Guide">
-<meta itemprop=description content="Placeholder description. 
+<meta itemprop=description content="The Visual Markup Guide contains diagrams showing how Trellis Core templates render pages in a WordPress site.  
 "><meta itemprop=datePublished content="2022-10-04T00:00:00+00:00">
 <meta itemprop=dateModified content="2022-10-04T00:00:00+00:00">
-<meta itemprop=wordCount content="6">
+<meta itemprop=wordCount content="119">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Visual Markup Guide">
-<meta name=twitter:description content="Placeholder description. 
+<meta name=twitter:description content="The Visual Markup Guide contains diagrams showing how Trellis Core templates render pages in a WordPress site.  
 ">
 <link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
 <link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.4754f4b80f11cc83072db68dbfe0b2bd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -79,7 +79,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.4754f4b80f11cc83072db68dbfe0b2bd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -126,6 +126,8 @@
 <h4>Contents</h4>
 <nav id=TableOfContents>
 <ul>
+<li><a href=#helpful-information>Helpful Information</a></li>
+<li><a href=#diagrams>Diagrams</a></li>
 <li><a href=#whats-next>What’s Next?</a></li>
 </ul>
 </nav>
@@ -155,13 +157,30 @@
 </nav>
 <div class=td-content>
 <h1>Visual Markup Guide</h1>
-<div class=lead>Placeholder description.</div>
+<div class=lead>The Visual Markup Guide contains diagrams showing how Trellis Core templates render pages in a WordPress site.</div>
 <header class=article-meta>
 </header>
-<p>Placeholder text.</p>
+<p>Use this guide to see how major block elements are arranged and where class attributes are applied.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+These markup diagrams show the layout and classes applied from the Trellis Core theme. Other themes (such as Bamboo, Birch, and Wisteria) may vary from these diagrams.
+</div>
+<h2 id=helpful-information>Helpful Information</h2>
+<ul>
+<li>Semantic elements such as <code>&lt;header></code>, <code>&lt;main></code>, <code>&lt;article></code>, <code>&lt;aside></code>, and <code>&lt;footer></code> have colors applied.</li>
+<li>Top-level elements such as <code>&lt;html></code>, <code>&lt;head></code>, and <code>&lt;body></code> are not shown. All of the markup in the diagrams are contained within the <code>&lt;body></code> element.</li>
+</ul>
+<h2 id=diagrams>Diagrams</h2>
+<p>Click on a link to view the diagram.</p>
+<ul>
+<li><a href=/docsytrellis/images/Trellis-Visual-Markup-Guide-Latest-Posts.png>Home-Latest Posts Page</a></li>
+<li><a href=/docsytrellis/images/Trellis-Visual-Markup-Guide-Feed.png>Feed Page (Category/Archive)</a></li>
+<li><a href=/docsytrellis/images/Trellis-Visual-Markup-Guide-Single.png>Single Page/Post</a></li>
+<li><a href=/docsytrellis/images/Trellis-Visual-Markup-Guide-Full-Width-Page.png>Full-Width Page</a></li>
+</ul>
 <h2 id=whats-next>What’s Next?</h2>
 <ul>
-<li>Placeholder link</li>
+<li>See the Visual Hooks Guide to see where Trellis hooks appear within page layouts.</li>
 </ul>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <br>

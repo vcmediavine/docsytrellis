@@ -15,23 +15,23 @@
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
 <title>Testing Your Child Theme | Mediavine Trellis</title>
-<meta name=description content="Placeholder description. 
+<meta name=description content="Learn best practices on how to test your Trellis child theme. 
 ">
 <meta property="og:title" content="Testing Your Child Theme">
-<meta property="og:description" content="Placeholder description. 
+<meta property="og:description" content="Learn best practices on how to test your Trellis child theme. 
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/getting-started/testing-your-child-theme/"><meta property="article:section" content="getting-started">
 <meta property="article:published_time" content="2022-10-04T00:00:00+00:00">
 <meta property="article:modified_time" content="2022-10-04T00:00:00+00:00"><meta property="og:site_name" content="Mediavine Trellis">
 <meta itemprop=name content="Testing Your Child Theme">
-<meta itemprop=description content="Placeholder description. 
+<meta itemprop=description content="Learn best practices on how to test your Trellis child theme. 
 "><meta itemprop=datePublished content="2022-10-04T00:00:00+00:00">
 <meta itemprop=dateModified content="2022-10-04T00:00:00+00:00">
-<meta itemprop=wordCount content="6">
+<meta itemprop=wordCount content="621">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Testing Your Child Theme">
-<meta name=twitter:description content="Placeholder description. 
+<meta name=twitter:description content="Learn best practices on how to test your Trellis child theme. 
 ">
 <link rel=preload href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css as=style>
 <link href=/docsytrellis/scss/main.min.03c1cfa187ad86e64c765bc3d09f2b2963ead688409c81ced728e1e26a0cf3a0.css rel=stylesheet integrity>
@@ -68,7 +68,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.4754f4b80f11cc83072db68dbfe0b2bd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -79,7 +79,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0549b45f4d1335b8a8fda772d20950c3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.4754f4b80f11cc83072db68dbfe0b2bd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -121,6 +121,13 @@
 <h4>Contents</h4>
 <nav id=TableOfContents>
 <ul>
+<li><a href=#testing-on-a-staging-server>Testing on a Staging Server</a></li>
+<li><a href=#theme-unit-testing>Theme Unit Testing</a>
+<ul>
+<li><a href=#import-the-wordpress-theme-test>Import the WordPress Theme Test</a></li>
+</ul>
+</li>
+<li><a href=#testing-site-speed>Testing Site Speed</a></li>
 <li><a href=#whats-next>What’s Next?</a></li>
 </ul>
 </nav>
@@ -150,13 +157,51 @@
 </nav>
 <div class=td-content>
 <h1>Testing Your Child Theme</h1>
-<div class=lead>Placeholder description.</div>
+<div class=lead>Learn best practices on how to test your Trellis child theme.</div>
 <header class=article-meta>
 </header>
-<p>Placeholder text.</p>
+<p>As a web developer, you may already be familiar with the concept of testing your code prior to launch. When developing a child theme for Trellis, it’s especially important to not skip this step, as Trellis’ caching, optimizations, and other features make testing vital to ensure speed boosts and improvements to Core Web Vitals scores work as intended.</p>
+<p>The WordPress Codex has an extensive list of steps you can take to make sure your child theme is functioning properly. See the <a href=https://codex.wordpress.org/Theme_Development#Theme_Testing_Process>Theme Testing</a> section of the Codex for more information.</p>
+<h2 id=testing-on-a-staging-server>Testing on a Staging Server</h2>
+<p>You should always test your child theme on a staging site prior to making it live. This will let you make sure things are working properly without impacting your live site.</p>
+<p>That being said, if you’re testing your Trellis child theme on a local environment or in a sandbox with a strict firewall configuration, here are some important things to know:</p>
+<ul>
+<li><strong>Critical CSS requires an SSL certificate and a firewall configured to let Trellis communicate with the Trellis API.</strong> See Troubleshooting for more information on bots and firewall issues if you receive Critical CSS errors.</li>
+<li><strong>You may experience license issues on a staging site.</strong> Unless you’ve purchased Trellis for multiple sites, remember that a Trellis license defaults to only one WordPress installation. You can move a Trellis license from one site to another, if needed. See Troubleshooting for more information if you experience license errors.</li>
+</ul>
+<p>For more information on Trellis and staging sites, see <a href=https://product-help.mediavine.com/en/articles/5964310-working-with-trellis-on-a-staging-site>Working With Trellis on a Staging Site</a> in our Help Center.</p>
+<h2 id=theme-unit-testing>Theme Unit Testing</h2>
+<p>The WordPress Theme Unit Test Data is a special import designed to simulate a site that’s been online for several years. The import file creates a number of pages, different types of posts, several menu items, and more. Make use of this test data to ensure your child theme behaves as expected.</p>
+<h3 id=import-the-wordpress-theme-test>Import the WordPress Theme Test</h3>
+<ol>
+<li>Download the <a href=https://github.com/WPTT/theme-test-data>theme test data</a> from GitHub.</li>
+<li>Go to <strong>Tools > Import WordPress</strong>.</li>
+<li>Click <strong>Run Importer</strong>.</li>
+</ol>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+You may need to install the WordPress importer first. An Install link will let you install the importer before you run it.
+</div>
+<ol start=4>
+<li>Click <strong>Choose File</strong> and select the themeunittestdata.wordpress.xml file.</li>
+<li>Click <strong>Upload File and Import</strong>.</li>
+<li>Select Authors from your site for the imported data (you can choose to create new authors during import as well).</li>
+<li>Select <strong>Download and import file attachments</strong> to make sure images and other attachments are also imported.</li>
+<li>Click <strong>Submit</strong>.</li>
+<li>Review the different pages and posts to see how the imported content renders.</li>
+</ol>
+<h2 id=testing-site-speed>Testing Site Speed</h2>
+<p>While the other parts of this document focus on steps to take prior to launch, this part advises you to <strong>not</strong> do something: testing site speed.</p>
+<p>It’s a natural thing to do when switching to a new framework that promises you increased speed and Core Web Vitals scores. But while you may be tempted to test your site’s performance ahead of time, keep these things in mind:</p>
+<ul>
+<li>If you’re using a staging site, speed tests in Google PageSpeed Insights, or other tools, may not give you accurate results.</li>
+<li>Trellis’ biggest impact to site speed is through the use of Critical CSS. If Critical CSS can’t connect to the Trellis API, then Critical CSS will be disabled. Also, Critical CSS files are only generated when a site visitor views a page.</li>
+</ul>
+<p>When you’re ready to test your site speed, only do it twenty-four hours after you’ve activated Trellis on your live site, and test it on a page or post other than your home page. Waiting twenty-four hours will give your site time for visitors to trigger Critical CSS generation on the most-visited pages.</p>
 <h2 id=whats-next>What’s Next?</h2>
 <ul>
-<li>Placeholder link</li>
+<li>Read more about Trellis Hooks</li>
+<li>Read more about Trellis Filters</li>
 </ul>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
 <br>
