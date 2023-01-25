@@ -15,6 +15,8 @@ When logged in, the WordPress Admin bar will contain a menu for controlling Trel
 
 ### Manage Trellis JS/CSS Menu
 
+![image](/docsytrellis/images/additions-to-admin-bar.png)
+
 <img src="/images/additions-to-admin-bar.png" alt="Additions to the Admin Bar" width="600px"/>
 
 This menu provides options for rebuilding, resetting, and purging Critical CSS files (for the entire site or for the displayed page) and for regenerating the Trellis minified Javascript file. The specific commands are explained in the table below.

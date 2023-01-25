@@ -1,4 +1,5 @@
-baseURL = "https://vcmediavine.github.io/docsytrellis"
+baseURL = "https://vcmediavine.github.io/docsytrellis/"
+# baseURL = "https://vcmediavine.github.io/docsytrellis"
 title = "Mediavine Trellis Developer Reference"
 
 # Language settings

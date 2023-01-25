@@ -19,5 +19,5 @@ When you purchase Trellis, you’ll get access to the following:
 
 ## What’s Next?
 
-- Learn more about [Trellis’ Benefits](https://www.notion.so/Overview-Trellis-Benefits-59ca0534742c4743a858fcb52d5d5ab9)
-- See what [Add-Ons](https://www.notion.so/Overview-Add-Ons-c9144d81655647698a018cd361fc4780) come with Trellis
+- Learn more about [Trellis’ Benefits]({{< ref "trellis-benefits" >}})
+- See what [Add-Ons]({{< ref "add-ons" >}}) come with Trellis

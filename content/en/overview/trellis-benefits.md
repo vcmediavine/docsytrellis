@@ -28,6 +28,6 @@ Trellis and its helper plugins can replace image generators, HTML/CSS/JavaScript
 
 ## What’s Next?
 
-- See what [Add-Ons](https://www.notion.so/Overview-Add-Ons-c9144d81655647698a018cd361fc4780) come with Trellis
-- Get started creating a Trellis child theme
-- Implement Trellis’ features in your own code in the Advanced Topics section
+- See what [Add-Ons]({{< ref "add-ons" >}}) come with Trellis
+- [Get started]({{< ref "/getting-started" >}}) creating a Trellis child theme
+- Implement Trellis’ features in your own code in the [Advanced Topics]({{< ref "/advanced-topics" >}}) section

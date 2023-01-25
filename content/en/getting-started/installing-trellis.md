@@ -11,7 +11,7 @@ description: >
 
 - **Determine your development environment:** You can choose to develop your child theme on your local computer or in a hosted environment that’s running WordPress. When developing on a local computer, Critical CSS and REST API warnings might appear, depending on your configuration. See the SSL certificate item below for more information.
 
-- **Check your WordPress and PHP versions:** To install Trellis, you must be using WordPress 5.2 or higher and have PHP 7.2 installed.
+- **Check your WordPress and PHP versions:** To install Trellis, you must be using WordPress 5.2 or higher and have PHP 7.3 installed.
 - **(Optional for development) Install an SSL certificate:** An SSL certificate allows Trellis to create optimized CSS files for faster performance. If you don’t have an SSL certificate installed, you’ll see a Critical CSS error in the WP Dashboard and in Trellis Settings. You can ignore this warning while developing your child theme.
 - **Purchase a License:** Go to the [Mediavine Marketplace](https://marketplace.mediavine.com/trellis/) to purchase a Trellis license and download the installation files.
 
@@ -66,6 +66,6 @@ Trellis comes with three child themes: Bamboo, Birch, and Wisteria, each availab
 
 ## What’s Next?
 
-- Learn about Trellis’ Changes to WordPress
-- Get to know the available options in Trellis Settings
-- Get started creating a Trellis child theme
+- Learn about [Trellis’ Changes to WordPress]({{< ref "changes-to-wordpress" >}})
+- Get to know the available options in [Trellis Settings]({{< ref "trellis-settings" >}})
+- [Get started]({{< ref "create-your-child-theme" >}}) creating a Trellis child theme

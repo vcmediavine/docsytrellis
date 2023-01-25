@@ -18,5 +18,5 @@ The next time a visitor lands on the page, they’ll be served the WebP version 
 
   ## What’s Next?
 
-  - Get started creating a Trellis child theme
-  - Implement Trellis’ features in your own code in the Advanced Topics section
+- [Get started]({{< ref "/getting-started" >}}) creating a Trellis child theme
+- Implement Trellis’ features in your own code in the [Advanced Topics]({{< ref "/advanced-topics" >}}) section
