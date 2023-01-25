@@ -5,11 +5,11 @@
 Trellis templates provided by Mediavine limit Comment Count to the top of a post. If you’d like to add the Comment Count to the bottom of a post, refer to the code in the Additional Information section.
 &lt;/div>
 &lt;p>The image below shows the default Post Meta information as rendered by the Trellis Core theme with Yoast SEO installed.&lt;/p>
-&lt;img src="https://vcmediavine.github.io/docsytrellis/docsytrellis/images/article-top.png" alt="Regenerate all images." width="600px"/>
-&lt;img src="https://vcmediavine.github.io/docsytrellis/docsytrellis/images/article-bottom-v3.png" alt="Regenerate all images." width="600px"/>
+&lt;img src="article-top.png" alt="Post Meta article top." width="600px"/>
+&lt;img src="article-bottom-v3.png" alt="Post Meta article bottom." width="600px"/>
 &lt;h2 id="settings">Settings&lt;/h2>
 &lt;p>Publishers can control the Post Meta information and where it gets displayed via the Mediavine Trellis Dashboard. These settings store values that can be accessed by various filters and functions. Template parts contain logic to render the information.&lt;/p>
-&lt;img src="https://vcmediavine.github.io/docsytrellis/docsytrellis/images/settings-post-meta.png" alt="Regenerate all images." width="600px"/>
+&lt;img src="settings-post-meta.png" alt="Post Meta options in Trellis Settings." width="600px"/>
 &lt;table>
 &lt;thead>
 &lt;tr>

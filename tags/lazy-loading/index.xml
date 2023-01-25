@@ -1,4 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – lazy loading</title><link>https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/</link><description>Recent content in lazy loading on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced-Topics: Image Delivery and Optimizations</title><link>https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/</guid><description>
+&lt;img src="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/display-featured-image_hu8042e33ad2267bbdf54a1c4031ea1c38_187230_640x0_resize_catmullrom_3.png" width="640" height="245"/>
 &lt;p>When using Trellis, several image-specific features are available to make your pages load faster and improve your site’s Google Core Web Vitals score. These include:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Image delivery enhancement via lazy loading.&lt;/strong> For older browsers that don’t natively support lazy loading, Trellis uses a JavaScript solution. Developers can also disable lazy loading per image, across the site, or specify eager loading. Lazy loading is also applied to iframe content.&lt;/li>
@@ -59,9 +60,9 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 &lt;p>WordPress has a predefined set of image sizes it creates when a new image is uploaded. When active, Trellis modifies this set to add more sizes that are frequently used in publisher sites. This helps prevent the &lt;a href="https://web.dev/uses-responsive-images/">“Properly Sized Image Warning” in Google Pagespeed Insights&lt;/a>.&lt;/p>
 &lt;p>Publishers can choose a desired featured image thumbnail size and ratio in the &lt;strong>Display&lt;/strong> tab of the Mediavine Trellis Dashboard. Depending on the size selected, additional sizes (as listed in the Image Sizes chart) will be created by WordPress whenever an image is uploaded or on post save when the featured image size is changed.&lt;/p>
 &lt;p>The &lt;strong>Regenerate Featured Images&lt;/strong> button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See &lt;a href="https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images">Trellis Featured Images&lt;/a> in the Help Center for more information.&lt;/p>
-&lt;img src="https://vcmediavine.github.io/docsytrellis/docsytrellis/images/display-featured-image.png" alt="Regenerate featured images." width="600px"/>
+&lt;img src="display-featured-image.png" alt="Regenerate featured images." width="600px"/>
 &lt;p>If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the &lt;strong>Advanced&lt;/strong> tab of the Mediavine Trellis Dashboard and use the &lt;strong>Regenerate All Images&lt;/strong> button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See &lt;a href="https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis">How to Regenerate Your Image Sizes in Trellis&lt;/a> in the Help Center for more information.&lt;/p>
-&lt;img src="https://vcmediavine.github.io/docsytrellis/docsytrellis/images/regenerate-all-images.png" alt="Regenerate all images." width="600px"/>
+&lt;img src="regenerate-all-images.png" alt="Regenerate all images." width="600px"/>
 &lt;h2 id="image-sizes-chart">Image Sizes Chart&lt;/h2>
 &lt;p>By default, Trellis will generate all image sizes for the selected Featured Image Size and a high res size for all other sizes not selected. Image sizes are grouped by setting.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
@@ -338,7 +339,7 @@ Trellis never alters original images. The additional images it creates will, how
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="useful-filters-and-functions">Useful Filters and Functions&lt;/h2>
-&lt;p>The following image filters and functions can be used in Trellis child theme code. For more information on them, see Filters or Functions in the Reference section.&lt;/p>
+&lt;p>The following image filters and functions can be used in Trellis child theme code. For more information on them, see &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/">Filters&lt;/a> or &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/functions/">Functions&lt;/a> in the Reference section.&lt;/p>
 &lt;h3 id="filters">Filters&lt;/h3>
 &lt;ul>
 &lt;li>mv_trellis_article_nav_image_orientation&lt;/li>
