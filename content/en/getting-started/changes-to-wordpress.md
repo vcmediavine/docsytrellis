@@ -1,9 +1,7 @@
 ---
 title: "Changes to WordPress"
-linkTitle: "Changes to WordPress"
 type: docs
-date: 2022-10-04
-weight: 2
+weight: 20
 description: >
   When Trellis is activated, additional controls are added to different parts of the WordPress interface.
 ---

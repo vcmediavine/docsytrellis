@@ -1,9 +1,7 @@
 ---
 title: "Installing Trellis"
-linkTitle: "Installing Trellis"
 type: docs
-date: 2022-10-04
-weight: 1
+weight: 10
 description: >
   Follow these steps to ensure a successful Trellis installation.
 ---

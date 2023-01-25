@@ -1,9 +1,7 @@
 ---
 title: "Add-Ons"
-linkTitle: "Add-Ons"
 type: docs
-date: 2022-10-04
-weight: 3
+weight: 30
 description: >
   When you purchase Trellis, you’ll also get add-ons that can replace existing plugins on your site or help optimize performance.
 ---

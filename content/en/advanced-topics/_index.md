@@ -2,7 +2,6 @@
 ---
 title: "Advanced Topics"
 type: no_toc
-linkTitle: "Advanced Topics"
 weight: 30
 menu:
   main:

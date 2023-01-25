@@ -1,9 +1,8 @@
 ---
 tags: ["critical css"]
 title: "Critical CSS"
-linkTitle: "Critical CSS"
 type: docs
-weight: 1
+weight: 10
 description: >
   Critical CSS is one of Trellis’ most important features and has a big impact on Google’s Core Web Vitals. 
 ---

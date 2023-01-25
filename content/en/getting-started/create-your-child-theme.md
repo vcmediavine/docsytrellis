@@ -1,9 +1,7 @@
 ---
 title: "Creating Your Child Theme"
-linkTitle: "Creating Your Child Theme"
 type: docs
-date: 2022-10-04
-weight: 4
+weight: 40
 description: >
   Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.
 ---
@@ -17,7 +15,7 @@ Trellis child themes follow the same basic structure as any WordPress child them
 
 1. Create a new folder for your child theme in your WordPress themes folder.
 2. Create the following folder structure inside of your child theme folder:
-      
+   
 | Folder | Subfolders | Description |
 | --- | --- | --- |
 | assets | (optional) | A place to store your child theme’s images, CSS, and JavaScript files. |

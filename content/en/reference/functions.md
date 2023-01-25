@@ -1,6 +1,5 @@
 ---
 title: "Functions"
-linkTitle: "Functions"
 type: no_toc
 weight: 20
 description: >

@@ -2,7 +2,6 @@
 ---
 title: "Filters"
 type: docs
-linkTitle: "Filters"
 weight: 10
 description: >
   This section shows available filters for Trellis child theme templates.

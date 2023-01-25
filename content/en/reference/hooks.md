@@ -1,6 +1,5 @@
 ---
 title: "Hooks"
-linkTitle: "Hooks"
 type: no_toc
 weight: 30
 description: >

@@ -1,9 +1,8 @@
 ---
 tags: ["post meta"]
 title: "Post Meta Output"
-linkTitle: "Post Meta Output"
 type: docs
-weight: 3
+weight: 30
 description: >
   Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes. 
 ---

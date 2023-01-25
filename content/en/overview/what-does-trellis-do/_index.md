@@ -1,9 +1,7 @@
 ---
 title: "What Does Trellis Do?"
-linkTitle: "What Does Trellis Do?"
 type: docs
-date: 2022-10-04
-weight: 1
+weight: 10
 description: >
   Trellis is a [WordPress theme framework](https://codex.wordpress.org/Theme_Frameworks) built with modern web technologies. It’s designed to boost site speed and optimize ad revenue and provides three custom-built child themes.
 ---

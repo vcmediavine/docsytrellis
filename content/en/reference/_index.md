@@ -2,7 +2,6 @@
 ---
 title: "Reference"
 type: no_toc
-linkTitle: "Reference"
 weight: 50
 menu:
   main:

@@ -1,9 +1,7 @@
 ---
 title: "Trellis Settings"
-linkTitle: "Trellis Settings"
 type: docs
-date: 2022-10-04
-weight: 3
+weight: 30
 description: >
   When you activate Trellis, a new menu becomes available under Appearance in the WordPress Admin Dashboard. 
 ---

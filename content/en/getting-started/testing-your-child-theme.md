@@ -1,9 +1,7 @@
 ---
 title: "Testing Your Child Theme"
-linkTitle: "Testing Your Child Theme"
 type: docs
-date: 2022-10-04
-weight: 5
+weight: 50
 description: >
   Learn best practices on how to test your Trellis child theme. 
 ---

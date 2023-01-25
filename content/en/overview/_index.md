@@ -2,10 +2,8 @@
 ---
 title: "Overview"
 type: docs
-linkTitle: "Overview"
 type: no_toc
 weight: 10
-date: 2022-10-04
 menu:
   main:
     weight: 10

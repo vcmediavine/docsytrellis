@@ -1,9 +1,7 @@
 ---
 title: "Trellis Benefits"
-linkTitle: "Trellis Benefits"
 type: docs
-date: 2022-10-04
-weight: 2
+weight: 20
 description: >
   Improve Core Web Vitals metrics, offer Progressive Web Apps (PWAs), and more when you use Trellis as your theme framework.
 ---

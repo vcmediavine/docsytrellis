@@ -2,7 +2,6 @@
 ---
 title: "FAQ"
 type: no_toc
-linkTitle: "FAQ"
 weight: 40
 menu:
   main:

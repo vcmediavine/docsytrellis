@@ -1,8 +1,7 @@
 ---
 title: "Using CSS Variables"
-linkTitle: "Using CSS Variables"
 type: docs
-weight: 4
+weight: 40
 description: >
   Trellis uses CSS variables to control how font, color, and layout spacing settings are applied to the Trellis Core and Bamboo, Birch, and Wisteria child themes. 
 ---

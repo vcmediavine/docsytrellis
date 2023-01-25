@@ -1,7 +1,6 @@
 ---
 tags: ["filters"]
 title: "Filters Summary"
-linkTitle: "Filters Summary"
 weight: 20
 type: no_toc
 description: >

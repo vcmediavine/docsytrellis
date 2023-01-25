@@ -1,8 +1,7 @@
 ---
 title: "Trellis Comments"
-linkTitle: "Trellis Comments"
 type: docs
-weight: 6
+weight: 60
 description: >
   Trellis offers a comments feature that improves site performance by rendering only the first five top-level comments of a post. 
 ---

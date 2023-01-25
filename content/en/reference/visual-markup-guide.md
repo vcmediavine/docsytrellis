@@ -1,8 +1,6 @@
 ---
 title: "Visual Markup Guide"
-linkTitle: "Visual Markup Guide"
 type: docs
-date: 2022-10-04
 weight: 50
 description: >
   The Visual Markup Guide contains diagrams showing how Trellis Core templates render pages in a WordPress site.  

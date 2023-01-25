@@ -9,7 +9,6 @@ type: no_toc
 
 - NEW: Trellis 0.17.0 now requires PHP version 7.3 or higher.
 - NEW: Critical CSS settings and features are now available in a separate Critical CSS tab in the Mediavine Trellis Dashboard. Publishers can enable/disable Critical CSS, purge Critical CSS files, add or remove selectors from the Critical and Non-Critical CSS files, and see any Critical CSS issues that have been identified by Trellis. 
-   ![image](trellis-0.17.0-settings-final-v2.png)
 - NEW: The Critical CSS tab now features a Post/Page Exclusion table showing any posts or pages where Critical CSS has been disabled. Publishers can re-enable Critical CSS for individual posts or pages using an Enable button.
 - NEW: A Purge All Critical CSS button is now available in the Critical CSS tab. This button removes all existing Critical CSS files. New Critical CSS files will be generated as readers visit the site’s pages.
 - NEW: A status indicator is now shown on the Trellis icon (Block editor only) and more descriptive text in the Trellis Settings sidebar in the WordPress Editor. This informs publishers if there are any detected Critical CSS issues.

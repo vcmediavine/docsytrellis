@@ -1,8 +1,6 @@
 ---
 title: "Visual Hooks Guide"
-linkTitle: "Visual Hooks Guide"
 type: docs
-date: 2022-10-04
 weight: 40
 description: >
   The Visual Hooks Guide contains diagrams showing where Trellis hooks appear within the Trellis Core templates.

@@ -2,7 +2,6 @@
 ---
 title: "Changelogs"
 type: no_toc
-linkTitle: "Changelogs"
 weight: 60
 menu:
   main:

@@ -2,7 +2,6 @@
 ---
 title: "Getting Started"
 type: docs
-linkTitle: "Getting Started"
 weight: 20
 menu:
   main:

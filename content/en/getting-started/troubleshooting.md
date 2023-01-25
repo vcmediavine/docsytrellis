@@ -1,9 +1,7 @@
 ---
 title: "Troubleshooting"
-linkTitle: "Troubleshooting"
 type: docs
-date: 2022-10-04
-weight: 6
+weight: 60
 description: >
   If you’re having trouble using Trellis’ features, learn more about some common situations and how to troubleshoot them. 
 ---

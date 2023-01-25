@@ -1,9 +1,8 @@
 ---
 tags: ["image sizes", "lazy loading", "WebP"]
 title: "Image Delivery and Optimizations"
-linkTitle: "Image Delivery and Optimizations"
 type: docs
-weight: 2
+weight: 20
 description: >
   Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
 ---
