@@ -11,7 +11,7 @@ Trellis defers the loading of the remaining comments (which can be a huge part o
 
 Trellis Comments are enabled by default. Publishers can access the setting that controls them by going to **Appearance >** **Mediavine Trellis  > Display** under the **Layout** section.
 
-<img src="/docsytrellis/images/trellis-settings-display-comments.png" alt="Trellis Comments in Settings." width="600px"/>
+<img src="trellis-settings-display-comments.png" alt="Trellis Comments toggle in Trellis Settings." width="600px"/>
 
 ## How Trellis Comments Work
 

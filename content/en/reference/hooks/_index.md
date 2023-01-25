@@ -17,7 +17,7 @@ Publishers can add content to a subset of these hooks by going to the **Mediavin
 
 As a child theme developer, you can add content by calling the hook in your child theme’s functions.php file. 
 
-<img src="/docsytrellis/images/ref-hooks.png" alt="Hooks section in Settings." width="600px"/>
+<img src="ref-hooks.png" alt="Hooks section in Settings." width="600px"/>
 
 ## Sections
 

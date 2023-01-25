@@ -65,4 +65,4 @@ Trellis comes with three child themes: Bamboo, Birch, and Wisteria, each availab
 
 - Learn about [Trellis’ Changes to WordPress]({{< ref "changes-to-wordpress" >}})
 - Get to know the available options in [Trellis Settings]({{< ref "trellis-settings" >}})
-- [Get started]({{< ref "create-your-child-theme" >}}) creating a Trellis child theme
+- [Get started]({{< ref "creating-your-child-theme" >}}) creating a Trellis child theme

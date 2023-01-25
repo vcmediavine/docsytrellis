@@ -54,5 +54,5 @@ When you’re ready to test your site speed, only do it twenty-four hours after 
 
 ## What’s Next?
 
-- Read more about Trellis Hooks
-- Read more about Trellis Filters
+- Read more about [Trellis Hooks]({{< ref "hooks" >}})
+- Read more about [Trellis Filters]({{< ref "filters-summary" >}})

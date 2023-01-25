@@ -14,15 +14,15 @@ Trellis templates provided by Mediavine limit Comment Count to the top of a post
 
 The image below shows the default Post Meta information as rendered by the Trellis Core theme with Yoast SEO installed.
 
-<img src="/docsytrellis/images/article-top.png" alt="Regenerate all images." width="600px"/>
+<img src="article-top.png" alt="Post Meta article top." width="600px"/>
 
-<img src="/docsytrellis/images/article-bottom-v3.png" alt="Regenerate all images." width="600px"/>
+<img src="article-bottom-v3.png" alt="Post Meta article bottom." width="600px"/>
 
 ## Settings
 
 Publishers can control the Post Meta information and where it gets displayed via the Mediavine Trellis Dashboard. These settings store values that can be accessed by various filters and functions. Template parts contain logic to render the information.
 
-<img src="/docsytrellis/images/settings-post-meta.png" alt="Regenerate all images." width="600px"/>
+<img src="settings-post-meta.png" alt="Post Meta options in Trellis Settings." width="600px"/>
 
 | Setting Name | Description | Usage |
 | --- | --- | --- |

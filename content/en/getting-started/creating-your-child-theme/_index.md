@@ -182,11 +182,10 @@ Trellis also receives higher SEO scores by using [semantic HTML markup](https://
 
 Here are some resources to help you understand Trellis’ default markup:
 
-- Visual Trellis Markup Overview
-- Visual Trellis Markup Detail
+- [Trellis Visual Markup Guide]({{< ref "visual-markup-guide" >}})
 
 ## What’s Next?
 
-- Learn how to test your Trellis child theme
-- Read more about Trellis Hooks
-- Read more about Trellis Filters
+- Learn how to [test your Trellis child theme]({{< ref "testing-your-child-theme" >}})
+- Read more about [Trellis Hooks]({{< ref "hooks" >}})
+- Read more about [Trellis Filters]({{< ref "filters-summary" >}})

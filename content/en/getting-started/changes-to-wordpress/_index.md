@@ -90,5 +90,5 @@ More information is available on the Trellis Settings page, which discusses each
 
 ## What’s Next?
 
-- Get to know the available options in Trellis Settings
-- Get started creating a Trellis child theme
+- Get to know the available options in [Trellis Settings]({{< ref "trellis-settings" >}})
+- Get started [creating a Trellis child theme]({{< ref "creating-your-child-theme" >}})

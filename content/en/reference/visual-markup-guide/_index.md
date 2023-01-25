@@ -20,11 +20,11 @@ These markup diagrams show the layout and classes applied from the Trellis Core 
 
 Click on a link to view the diagram.
 
-- [Home-Latest Posts Page](/docsytrellis/images/Trellis-Visual-Markup-Guide-Latest-Posts.png)
-- [Feed Page (Category/Archive)](/docsytrellis/images/Trellis-Visual-Markup-Guide-Feed.png)
-- [Single Page/Post](/docsytrellis/images/Trellis-Visual-Markup-Guide-Single.png)
-- [Full-Width Page](/docsytrellis/images/Trellis-Visual-Markup-Guide-Full-Width-Page.png)
+- [Home-Latest Posts Page](Trellis-Visual-Markup-Guide-Latest-Posts.png)
+- [Feed Page (Category/Archive)](Trellis-Visual-Markup-Guide-Feed.png)
+- [Single Page/Post](Trellis-Visual-Markup-Guide-Single.png)
+- [Full-Width Page](Trellis-Visual-Markup-Guide-Full-Width-Page.png)
 
 ## What’s Next?
 
-- See the Visual Hooks Guide to see where Trellis hooks appear within page layouts.
+- See the [Visual Hooks Guide]({{< ref "visual-hooks-guide" >}}) to see where Trellis hooks appear within page layouts.

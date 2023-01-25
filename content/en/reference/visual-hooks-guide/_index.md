@@ -20,20 +20,20 @@ These diagrams show the hooks as coded in the Trellis Core theme. Other themes (
 
 ### Header Area
 
-- [Header Hooks](/docsytrellis/images/Trellis-Visual-Hooks-Guide-Header.png)
+- [Header Hooks](Trellis-Visual-Hooks-Guide-Header.png)
 
 ### Content Area 
 
-- [Content-Latest Posts Page Hooks](/docsytrellis/images/Trellis-Visual-Hooks-Guide-Content-Latest-Posts.png)
-- [Content-Feed Page Hooks](/docsytrellis/images/Trellis-Visual-Hooks-Guide-Content-Feed.png)
-- [Content-Single Page Hooks](/docsytrellis/images/Trellis-Visual-Hooks-Guide-Content-Single.png)
-- [Content-Full-Width Page Hooks](/docsytrellis/images/Trellis-Visual-Hooks-Guide-Content-Full-Width-Page.png)
+- [Content-Latest Posts Page Hooks](Trellis-Visual-Hooks-Guide-Content-Latest-Posts.png)
+- [Content-Feed Page Hooks](Trellis-Visual-Hooks-Guide-Content-Feed.png)
+- [Content-Single Page Hooks](Trellis-Visual-Hooks-Guide-Content-Single.png)
+- [Content-Full-Width Page Hooks](Trellis-Visual-Hooks-Guide-Content-Full-Width-Page.png)
 
 ### Footer Area
 
-- [Footer Hooks](/docsytrellis/images/Trellis-Visual-Hooks-Guide-Footer.png)
+- [Footer Hooks](Trellis-Visual-Hooks-Guide-Footer.png)
 
 ## What’s Next?
 
-- See the Visual Markup Guide to see Trellis Core page layouts without the hooks.
-- Read about all available Trellis hooks in the Hooks article.
+- See the [Visual Markup Guide]({{< ref "visual-markup-guide" >}}) to see Trellis Core page layouts without the hooks.
+- Read about all available Trellis hooks in the [Hooks]({{< ref "hooks" >}}) article.

@@ -534,3 +534,4 @@ Adjusts the CSS styles applied to the Web Story archive pages.
 ### [mv_trellis_wordpress_link_shortcode](../filters-detail#mv_trellis_wordpress_link_shortcode)
 
 Adjusts the HTML string for the link to WordPress in the site footer.
+
