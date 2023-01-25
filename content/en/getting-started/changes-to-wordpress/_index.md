@@ -13,9 +13,7 @@ When logged in, the WordPress Admin bar will contain a menu for controlling Trel
 
 ### Manage Trellis JS/CSS Menu
 
-![image](/docsytrellis/images/additions-to-admin-bar.png)
-
-<img src="/images/additions-to-admin-bar.png" alt="Additions to the Admin Bar" width="600px"/>
+<img src="additions-to-admin-bar.png" alt="Additions to the Admin Bar" width="600px"/>
 
 This menu provides options for rebuilding, resetting, and purging Critical CSS files (for the entire site or for the displayed page) and for regenerating the Trellis minified Javascript file. The specific commands are explained in the table below.
 
@@ -48,7 +46,7 @@ When viewing pages on your site, a Critical CSS Status bar shows where Trellis i
 
 Trellis adds two new widgets to WordPress: a Mediavine Sidebar Ad Hint widget and an About Widget.
 
-<img src="/images/additions-widgets.png" alt="Trellis Widgets" width="300px"/>
+<img src="additions-widgets.png" alt="Trellis Widgets" width="300px"/>
 
 | Widget | Description |
 | --- | --- |
@@ -61,11 +59,11 @@ When editing posts or pages, Trellis Settings let publishers configure individua
 
 *Gutenberg Editor (Post Settings)*
 
-<img src="/images/Trellis-settings-menu.png" alt="Trellis Post settings in the Gutenberg editor." width="600px"/>
+<img src="Trellis-settings-menu.png" alt="Trellis Post settings in the Gutenberg editor." width="600px"/>
 
 *Classic Editor (Post Settings)*
 
-<img src="/images/Trellis-settings-menu-classic.png" alt="Trellis Post settings in the Classic editor." width="600px"/>
+<img src="Trellis-settings-menu-classic.png" alt="Trellis Post settings in the Classic editor." width="600px"/>
 
 ### Available Settings for Posts
 
@@ -88,7 +86,7 @@ Trellis adds a Mediavine Trellis submenu to the WordPress Appearance menu. This 
 
 More information is available on the Trellis Settings page, which discusses each setting and how to integrate it into Trellis child themes. 
 
-<img src="/images/wp-dashboard-trellis-menu-v2.png" alt="Mediavine Trellis Dashboard" width="600px"/>
+<img src="wp-dashboard-trellis-menu-v2.png" alt="Mediavine Trellis Dashboard" width="600px"/>
 
 ## What’s Next?
 
