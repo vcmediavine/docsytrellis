@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -566,6 +566,30 @@ While the syntax is shown using the <code>apply_filters()</code> function, these
 <li>$values <code>array</code> List of classes that will not be lazy loaded.</li>
 </ul>
 <hr>
+<h3 id=mv_trellis_disable_ld_output_for_compatibility>mv_trellis_disable_ld_output_for_compatibility</h3>
+<p>Allows compatibility classes to stop the output of Trellis' JSON-LD data.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_ld_output_for_compatibility&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable output of Trellis JSON-LD data.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_og_output_for_compatibility>mv_trellis_disable_og_output_for_compatibility</h3>
+<p>An array of plugin slugs that will disable Trellis Open Graph output if any are active.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_og_output_for_compatibility&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable output of Trellis Open Graph data.</li>
+</ul>
+<hr>
 <h3 id=mv_trellis_disable_og_plugin_slugs>mv_trellis_disable_og_plugin_slugs</h3>
 <p>An array of plugin slugs that will disable Trellis Open Graph output if any are active.</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_og_plugin_slugs&#39;</span><span style=color:#111>,</span> <span style=color:#00a8c8>array</span> <span style=color:#111>$disable_og_plugin_slugs</span> <span style=color:#111>)</span>
@@ -600,6 +624,18 @@ While the syntax is shown using the <code>apply_filters()</code> function, these
 <p><strong>Arguments</strong></p>
 <ul>
 <li>$value <code>bool</code> Whether to disable compatibility code for the specified plugin slug.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_disable_seo_output_for_compatibility>mv_trellis_disable_seo_output_for_compatibility</h3>
+<p>Allows compatibility classes to stop the output of Trellis&rsquo; SEO data.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>apply_filters</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_seo_output_for_compatibility&#39;</span><span style=color:#111>,</span> <span style=color:#75af00>bool</span> <span style=color:#111>$value</span> <span style=color:#111>)</span>
+</code></pre></div><p><strong>Default</strong></p>
+<ul>
+<li>False</li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$value <code>bool</code> Whether to disable output of Trellis SEO data.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_disable_set_image_cls_aspect_styles>mv_trellis_disable_set_image_cls_aspect_styles</h3>

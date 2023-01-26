@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -193,7 +193,7 @@ Trellis templates provided by Mediavine limit Comment Count to the top of a post
 <tr>
 <td>Post Meta Date Display</td>
 <td>Determine the date to display in the post header. Options include: Display Modified, Display Published, or Display Both.</td>
-<td>Created by the mv_trellis_entry_date() function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference.</td>
+<td>Created by the <code>mv_trellis_entry_date()</code> function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference.</td>
 </tr>
 </tbody>
 </table>
@@ -223,8 +223,8 @@ Trellis templates provided by Mediavine limit Comment Count to the top of a post
 <li>breadcrumbs: Assembled from an internal class and posted to the hook specified by the <code>mv_trellis_top_breadcrumbs_placement</code> filter.</li>
 </ul>
 <p><strong>Example</strong></p>
-<p>The following example shows how the post’s Author meta information is output in article-meta-header.php.</p>
-<pre tabindex=0><code>if ( $display_author ) {
+<p>The following example shows how the post’s Author meta information is output in <code>article-meta-header.php</code>.</p>
+<pre tabindex=0><code class=language-php+HTML data-lang=php+HTML>if ( $display_author ) {
 		?&gt;
 		&lt;p class=&quot;author-meta post-author meta-wrapper&quot;&gt;
 			&lt;?php
@@ -237,12 +237,12 @@ Trellis templates provided by Mediavine limit Comment Count to the top of a post
 </code></pre><h2 id=useful-filters>Useful Filters</h2>
 <p>One filter is available to adjust breadcrumb placement if Yoast SEO is installed:</p>
 <ul>
-<li><code>mv_trellis_top_breadcrumbs_placement</code>: Specifies the hook where the Post Meta breadcrumbs value is placed. The default is <code>tha_aside_before_entry_content</code>, which is output by <code>mvt_entry_before()</code> in the Trellis Core templates. See Hooks in the Reference section for a list of all available hooks.</li>
+<li><code>mv_trellis_top_breadcrumbs_placement</code>: Specifies the hook where the Post Meta breadcrumbs value is placed. The default is <code>tha_aside_before_entry_content</code>, which is output by <code>mvt_entry_before()</code> in the Trellis Core templates. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> in the Reference section for a list of all available hooks.</li>
 </ul>
 <h2 id=additional-information>Additional Information</h2>
-<p>To best understand how Post Meta information is displayed, refer to the article-meta-header.php and article-meta-footer.php template parts in Trellis Core.</p>
+<p>To best understand how Post Meta information is displayed, refer to the <code>article-meta-header.php</code> and <code>article-meta-footer.php</code> template parts in Trellis Core.</p>
 <h3 id=moving-the-comment-count>Moving the Comment Count</h3>
-<p>If you’d like to display the Comment Count at the bottom of a post, you’ll need to add code to your child theme’s functions.php file as well as modifying the article-meta-footer.php template part.</p>
+<p>If you’d like to display the Comment Count at the bottom of a post, you’ll need to add code to your child theme’s <code>functions.php</code> file as well as modifying the <code>article-meta-footer.php</code> template part.</p>
 <p><strong>Functions.php</strong></p>
 <p>This code will add the Comment Count as an option to the Post Meta setting in the Mediavine Trellis Dashboard:</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
@@ -257,7 +257,7 @@ Trellis templates provided by Mediavine limit Comment Count to the top of a post
      <span style=color:#00a8c8>return</span> <span style=color:#111>$setting</span><span style=color:#111>;</span>
  <span style=color:#111>}</span>
 </code></pre></div><p><strong>Article-meta-footer.php</strong></p>
-<p>You’ll need to add code to three places in the article-meta-footer.php template part. First, you’ll want to check if the Comment Count has been enabled for the footer:</p>
+<p>You’ll need to add code to three places in the <code>article-meta-footer.php</code> template part. First, you’ll want to check if the Comment Count has been enabled for the footer:</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75715e>// Check if the Comment Count is set for the bottom of Post Meta
 </span><span style=color:#75715e></span><span style=color:#111>$mv_trellis_display_comment_count</span> <span style=color:#f92672>=</span> <span style=color:#111>(</span> <span style=color:#111>(</span> <span style=color:#75af00>comments_open</span><span style=color:#111>(</span> <span style=color:#111>$mv_trellis_post_id</span> <span style=color:#111>)</span> <span style=color:#f92672>||</span> <span style=color:#75af00>get_comments_number</span><span style=color:#111>()</span> <span style=color:#111>)</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span> <span style=color:#75af00>post_password_required</span><span style=color:#111>()</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#75af00>mv_trellis_is_meta_item_enabled</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;comment_count&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;post_meta_bottom&#39;</span> <span style=color:#111>)</span> <span style=color:#111>);</span>
 </code></pre></div><p>Next, you’ll want to modify the post’s check for meta output to include the Comment Count:</p>
@@ -266,7 +266,7 @@ Trellis templates provided by Mediavine limit Comment Count to the top of a post
 	<span style=color:#00a8c8>return</span><span style=color:#111>;</span>
 <span style=color:#111>}</span>
 </code></pre></div><p>Finally, enter code to render the Comment Count:</p>
-<pre tabindex=0><code>// Comments.
+<pre tabindex=0><code class=language-php+HTML data-lang=php+HTML>// Comments.
 	if ( $display_comment_count ) {
 		?&gt;
 		&lt;div id=&quot;comment-count&quot; class=&quot;meta-element meta-wrapper&quot;&gt;

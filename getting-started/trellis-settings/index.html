@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -136,7 +136,6 @@
 </li>
 <li><a href=#advanced-settings>Advanced Settings</a>
 <ul>
-<li><a href=#critical-css>Critical CSS</a></li>
 <li><a href=#google-analytics>Google Analytics</a></li>
 <li><a href=#seo>SEO</a></li>
 <li><a href=#optimization>Optimization</a></li>
@@ -146,6 +145,12 @@
 <li><a href=#pwa-settings>PWA Settings</a></li>
 <li><a href=#license-settings>License Settings</a></li>
 <li><a href=#hooks-settings>Hooks Settings</a></li>
+<li><a href=#critical-css-settings>Critical CSS Settings</a>
+<ul>
+<li><a href=#settings>Settings</a></li>
+<li><a href=#exclusions>Exclusions</a></li>
+</ul>
+</li>
 <li><a href=#whats-next>What’s Next?</a></li>
 </ul>
 </nav>
@@ -334,7 +339,7 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tr>
 <td>Site Logo</td>
 <td>Sets an image for use as a logo in the site header. If there is no site logo, the site title will be shown. <br><br> In the Trellis Core theme and Bamboo and Birch, the logo will display inline with the main navigation. <br><br>In Wisteria, the logo will display next to the sticky post on the homepage, and inline with the main navigation on posts and pages.</td>
-<td>Created by the mv_trellis_site_title() function. See Hooks for more information.</td>
+<td>Created by the <code>mv_trellis_site_title()</code> function. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
 </tr>
 <tr>
 <td>Change logo height</td>
@@ -349,7 +354,7 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tr>
 <td>Hide Featured Image from Small Screens</td>
 <td>Hides the post featured image when the visitor is using a device with a viewport width smaller than 600px. <br><br> Displaying featured images to mobile devices impacts the Largest Contentful Paint (LCP) score, one of Google&rsquo;s Core Web Vitals.</td>
-<td>Adds a hide-featured-image-on-mobile class to the body tag when post featured images are enabled but hidden on mobile.</td>
+<td>Adds a <code>hide-featured-image-on-mobile</code> class to the body tag when post featured images are enabled but hidden on mobile.</td>
 </tr>
 <tr>
 <td>Featured Image Size</td>
@@ -371,12 +376,12 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tr>
 <td>Hide Mediavine/Trellis footer links</td>
 <td>Removes the Mediavine/Trellis footer links.</td>
-<td>Controlled by the <code>mvt_footer_bottom()</code> function. <br><br>See Hooks for more information.</td>
+<td>Controlled by the <code>mvt_footer_bottom()</code> function. <br><br>See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
 </tr>
 <tr>
 <td>Footer Copyright Text</td>
 <td>Adds personalized copyright text to the footer. Supports HTML markup, including links.</td>
-<td>Controlled by the <code>mvt_footer_bottom()</code> function. <br><br>See Hooks for more information.</td>
+<td>Controlled by the <code>mvt_footer_bottom()</code> function. <br><br>See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
 </tr>
 </tbody>
 </table>
@@ -401,40 +406,23 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <td>CSS Variable: <code>--mv-trellis-gutter</code></td>
 </tr>
 <tr>
+<td>Display Tag Links</td>
+<td>Controls if tag links are output in the <code>footer.entry-footer</code> when viewing a post.</td>
+<td>Controlled by the Mediavine Trellis Dashboard.</td>
+</tr>
+<tr>
+<td>Article Navigation</td>
+<td>Controls whether a <code>nav.post-navigation</code> tag with a link to the next or previous post is added to the bottom of a post.</td>
+<td>Controlled by the Mediavine Trellis Dashboard.</td>
+</tr>
+<tr>
 <td>Enable Trellis comments</td>
-<td>Sets Trellis as the commenting engine for the site. <br><br> See Trellis Comments in Advanced Topics for more information. <br> <br> Note: If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility.</td>
-<td>See comments template in Trellis Core for reference.</td>
+<td>Sets Trellis as the commenting engine for the site. <br><br> See <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/trellis-comments/>Trellis Comments</a> in Advanced Topics for more information. <br> <br> <strong>Note:</strong> If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility.</td>
+<td>See the comments template in Trellis Core for reference.</td>
 </tr>
 </tbody>
 </table>
 <h2 id=advanced-settings>Advanced Settings</h2>
-<h3 id=critical-css>Critical CSS</h3>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Description</th>
-<th>Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Enable Critical CSS</td>
-<td>Improves your site&rsquo;s performance by separating CSS into two cached files. See Critical CSS in Advanced Topics for more information.</td>
-<td>Controlled by the Mediavine Trellis Dashboard.</td>
-</tr>
-<tr>
-<td>CSS Allowlist</td>
-<td>Allows CSS styling for HTML elements that are rendered after page load. <br><br> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in Advanced Topics for more information.</td>
-<td>Selectors can be added programmatically via <code>mv_trellis_css_allowlist</code>. See Filters for more information.</td>
-</tr>
-<tr>
-<td>Force Critical CSS</td>
-<td>Adds selectors to the initial Critical CSS file. <br><br> This is a compatibility setting for selectors that are not part of the initial viewport of a page. <br><br> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in Advanced Topics for more information.</td>
-<td>Selectors can be added programmatically via <code>mv_trellis_css_force_keep</code>. See Filters for more information.</td>
-</tr>
-</tbody>
-</table>
 <h3 id=google-analytics>Google Analytics</h3>
 <table>
 <thead>
@@ -474,7 +462,7 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tbody>
 <tr>
 <td>Trellis SEO Output</td>
-<td>Enables meta descriptions, schema output (via JSON-LD), and Open Graph tags for your site. <br><br> Note: This option is disabled if Trellis detects Yoast, RankMath, or AIO as installed and active. It cannot be turned on while these plugins are active. <br><br> For all other SEO plugins, disable this to prevent duplicate SEO data.</td>
+<td>Enables meta descriptions, schema output (via JSON-LD), and Open Graph tags for your site. <br><br> <strong>Note:</strong> This option is disabled if Trellis detects Yoast, RankMath, or AIO as installed and active. It cannot be turned on while these plugins are active. <br><br> For all other SEO plugins, disable this to prevent duplicate SEO data.</td>
 <td>Controlled by the Mediavine Trellis Dashboard.</td>
 </tr>
 </tbody>
@@ -491,12 +479,12 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tbody>
 <tr>
 <td>JavaScript Optimization</td>
-<td>Enables minification of JavaScript files and defers loading for better performance. <br><br> Note: If Trellis detects another plugin is performing JavaScript optimizations, it will disable its own optimization functions. <br><br> Recognized plugins include Autoptimize, Clearfy Cache, Jetpack, Litespeed Cache, NitroPack, SG Optimizer, W3 Total Cache, WP Fastest Cache, and WP Rocket.</td>
+<td>Enables minification of JavaScript files and defers loading for better performance. <br><br> <strong>Note:</strong> If Trellis detects another plugin is performing JavaScript optimizations, it will disable its own optimization functions. <br><br> Recognized plugins include Autoptimize, Clearfy Cache, Jetpack, Litespeed Cache, NitroPack, SG Optimizer, W3 Total Cache, WP Fastest Cache, and WP Rocket.</td>
 <td>Controlled by the Mediavine Trellis Dashboard.</td>
 </tr>
 <tr>
 <td>JavaScript Exclusions</td>
-<td>Matching full or partial URLs in this list are excluded from any deferment or minification performed by Trellis. <br><br> Note: This setting is only visible when JavaScript Optimization is enabled.</td>
+<td>Matching full or partial URLs in this list are excluded from any deferment or minification performed by Trellis. <br><br> <strong>Note:</strong> This setting is only visible when JavaScript Optimization is enabled.</td>
 <td>Controlled by the Mediavine Trellis Dashboard.</td>
 </tr>
 </tbody>
@@ -524,6 +512,11 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tr>
 <td>Regenerate Images</td>
 <td>Regenerates all image sizes on your site. <br><br> This is used if images other than your featured images are displaying at the wrong size. See How to Regenerate Your Image Sizes in the Trellis Help Center for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard.</td>
+</tr>
+<tr>
+<td>Rebuild Active Compatibility Plugins List</td>
+<td>Regenerates a list of active plugins that require compatibility code to work properly with Trellis. See <a href=https://product-help.mediavine.com/en/articles/5046317-trellis-themes-conflicts-and-compatibilities>Trellis Themes: Conflicts and Compatibilities</a> in the Trellis Help Center for more information.</td>
 <td>Controlled by the Mediavine Trellis Dashboard.</td>
 </tr>
 </tbody>
@@ -589,31 +582,86 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 <tbody>
 <tr>
 <td>Add custom HTML code to the <code>&lt;head></code> tag</td>
-<td>Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See Trellis Hooks Settings Overview in the Trellis Help Center for more information.</td>
-<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_header_bottom()</code> in templates to <code>tha_head_bottom()</code>. See Hooks for more information.</td>
+<td>Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See <a href=https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview>Trellis Hooks Settings Overview</a> in the Trellis Help Center for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_header_bottom()</code> in templates to <code>tha_head_bottom()</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
+</tr>
+<tr>
+<td>Add custom content after the page header and menu</td>
+<td>Useful for anything to be displayed on pages just after the header and before the content. See <a href=https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview>Trellis Hooks Settings Overview</a> in the Trellis Help Center for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_content_before()</code> in templates to <code>tha_content_before()</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
 </tr>
 <tr>
 <td>Add custom content between the post heading and the post content</td>
-<td>Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See Trellis Hooks Settings Overview in the Trellis Help Center for more information.</td>
-<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_aside_before_entry_content()</code> in templates to <code>tha_aside_before_entry_content()</code>. See Hooks for more information.</td>
+<td>Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See <a href=https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview>Trellis Hooks Settings Overview</a> in the Trellis Help Center for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_aside_before_entry_content()</code> in templates to <code>tha_aside_before_entry_content()</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
 </tr>
 <tr>
 <td>Add custom content after the post content</td>
-<td>Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See Trellis Hooks Settings Overview in the Trellis Help Center for more information.</td>
-<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_content_after()</code> in templates to <code>tha_content_after()</code>. See Hooks for more information.</td>
+<td>Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See <a href=https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview>Trellis Hooks Settings Overview</a> in the Trellis Help Center for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_content_after()</code> in templates to <code>tha_content_after()</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
 </tr>
 <tr>
 <td>Add custom HTML code to the end of the <code>&lt;body></code> tag</td>
-<td>Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See Trellis Hooks Settings Overview in the Trellis Help Center for more information.</td>
-<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_body_bottom()</code> in templates to <code>tha_body_bottom()</code>. See Hooks for more information.</td>
+<td>Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See <a href=https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview>Trellis Hooks Settings Overview</a> in the Trellis Help Center for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard. Added via <code>mvt_body_bottom()</code> in templates to <code>tha_body_bottom()</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Hooks</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+<h2 id=critical-css-settings>Critical CSS Settings</h2>
+<h3 id=settings>Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable Critical CSS</td>
+<td>Improves your site&rsquo;s performance by separating CSS into two cached files. See Critical CSS in <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a> for more information.</td>
+<td>Controlled by the Mediavine Trellis Dashboard.</td>
+</tr>
+<tr>
+<td>Purge All Critical CSS</td>
+<td>Removes all Critical CSS files for the site. New Critical CSS files are added as readers visit the site. Original CSS code will be served until the Critical CSS is regenerated.</td>
+<td>Controlled by the Mediavine Trellis Dashboard.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=exclusions>Exclusions</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post/Page Exclusions</td>
+<td>Shows all posts and pages where Critical CSS has been disabled manually in the WordPress Editor.</td>
+<td>Controlled by the Mediavine Trellis Dashboard.</td>
+</tr>
+<tr>
+<td>Force Non-Critical CSS</td>
+<td>Allows CSS styling for HTML elements that are rendered after page load. <br><br> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a> for more information.</td>
+<td>Selectors can be added programmatically via <code>mv_trellis_css_allowlist</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/>Filters</a> for more information.</td>
+</tr>
+<tr>
+<td>Force Critical CSS</td>
+<td>Adds selectors to the initial Critical CSS file. <br><br> This is a compatibility setting for selectors that are not part of the initial viewport of a page. <br><br> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a> for more information.</td>
+<td>Selectors can be added programmatically via <code>mv_trellis_css_force_keep</code>. See <a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/>Filters</a> for more information.</td>
 </tr>
 </tbody>
 </table>
 <h2 id=whats-next>What’s Next?</h2>
 <ul>
-<li>Get started creating a Trellis child theme</li>
-<li>Read more about Trellis Hooks</li>
-<li>Read more about Trellis Filters</li>
+<li>Get started <a href=https://vcmediavine.github.io/docsytrellis/getting-started/creating-your-child-theme/>creating a Trellis child theme</a></li>
+<li>Read more about <a href=https://vcmediavine.github.io/docsytrellis/reference/hooks/>Trellis Hooks</a></li>
+<li>Read more about <a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/>Trellis Filters</a></li>
 </ul>
 <div class=section-index>
 </div>

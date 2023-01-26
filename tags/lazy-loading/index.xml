@@ -1,5 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – lazy loading</title><link>https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/</link><description>Recent content in lazy loading on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vcmediavine.github.io/docsytrellis/tags/lazy-loading/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced-Topics: Image Delivery and Optimizations</title><link>https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/</guid><description>
-&lt;img src="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/display-featured-image_hu8042e33ad2267bbdf54a1c4031ea1c38_187230_640x0_resize_catmullrom_3.png" width="640" height="245"/>
+&lt;img src="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-featured-image_hu856ccec85bc71492f816a6c5753dad8e_190308_640x0_resize_catmullrom_3.png" width="640" height="344"/>
 &lt;p>When using Trellis, several image-specific features are available to make your pages load faster and improve your site’s Google Core Web Vitals score. These include:&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>Image delivery enhancement via lazy loading.&lt;/strong> For older browsers that don’t natively support lazy loading, Trellis uses a JavaScript solution. Developers can also disable lazy loading per image, across the site, or specify eager loading. Lazy loading is also applied to iframe content.&lt;/li>
@@ -14,7 +14,7 @@
 Lazy loading is also automatically applied to iframe content. The instructions for disabling lazy loading per image (or enabling eager loading) also applies to iframes.
 &lt;/div>
 &lt;h3 id="disabling-lazy-loading-across-the-site">Disabling Lazy Loading Across the Site&lt;/h3>
-&lt;p>If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s functions.php file:&lt;/p>
+&lt;p>If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s &lt;code>functions.php&lt;/code> file:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#d88200">/**
 &lt;/span>&lt;span style="color:#d88200"> * Disable Trellis lazy loading
 &lt;/span>&lt;span style="color:#d88200">*/&lt;/span>
@@ -31,11 +31,11 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 &lt;tbody>
 &lt;tr>
 &lt;td>no-lazyload&lt;/td>
-&lt;td>This class stops Trellis from adding the loading=&amp;ldquo;lazy&amp;rdquo; attribute. The element will be served as-is.&lt;/td>
+&lt;td>This class stops Trellis from adding the &lt;code>loading=&amp;quot;lazy&amp;quot;&lt;/code> attribute. The element will be served as-is.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>native-lazyload&lt;/td>
-&lt;td>This class allows Trellis to add the loading=&amp;ldquo;lazy&amp;rdquo; attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally.&lt;/td>
+&lt;td>This class allows Trellis to add the &lt;code>loading=&amp;quot;lazy&amp;quot;&lt;/code> attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -52,7 +52,7 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 &lt;tbody>
 &lt;tr>
 &lt;td>eager-load&lt;/td>
-&lt;td>This class stops Trellis from adding the loading=&amp;ldquo;lazy&amp;rdquo; attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a loading=&amp;ldquo;eager&amp;rdquo; attribute (provided one doesn’t already exist).&lt;br />&lt;br />&lt;strong>Note:&lt;/strong> This feature is only available as of Trellis 0.15.3.&lt;/td>
+&lt;td>This class stops Trellis from adding the &lt;code>loading=&amp;quot;lazy&amp;quot;&lt;/code> attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a &lt;code>loading=&amp;quot;eager&amp;quot;&lt;/code> attribute (provided one doesn’t already exist).&lt;br />&lt;br />&lt;strong>Note:&lt;/strong> This feature is only available as of Trellis 0.15.3.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -60,9 +60,9 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 &lt;p>WordPress has a predefined set of image sizes it creates when a new image is uploaded. When active, Trellis modifies this set to add more sizes that are frequently used in publisher sites. This helps prevent the &lt;a href="https://web.dev/uses-responsive-images/">“Properly Sized Image Warning” in Google Pagespeed Insights&lt;/a>.&lt;/p>
 &lt;p>Publishers can choose a desired featured image thumbnail size and ratio in the &lt;strong>Display&lt;/strong> tab of the Mediavine Trellis Dashboard. Depending on the size selected, additional sizes (as listed in the Image Sizes chart) will be created by WordPress whenever an image is uploaded or on post save when the featured image size is changed.&lt;/p>
 &lt;p>The &lt;strong>Regenerate Featured Images&lt;/strong> button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See &lt;a href="https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images">Trellis Featured Images&lt;/a> in the Help Center for more information.&lt;/p>
-&lt;img src="display-featured-image.png" alt="Regenerate featured images." width="600px"/>
+&lt;img src="settings-featured-image.png" alt="Regenerate featured images." width="600px"/>
 &lt;p>If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the &lt;strong>Advanced&lt;/strong> tab of the Mediavine Trellis Dashboard and use the &lt;strong>Regenerate All Images&lt;/strong> button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See &lt;a href="https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis">How to Regenerate Your Image Sizes in Trellis&lt;/a> in the Help Center for more information.&lt;/p>
-&lt;img src="regenerate-all-images.png" alt="Regenerate all images." width="600px"/>
+&lt;img src="settings-regenerate-images.png" alt="Regenerate all images." width="600px"/>
 &lt;h2 id="image-sizes-chart">Image Sizes Chart&lt;/h2>
 &lt;p>By default, Trellis will generate all image sizes for the selected Featured Image Size and a high res size for all other sizes not selected. Image sizes are grouped by setting.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">

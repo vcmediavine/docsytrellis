@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -228,70 +228,6 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <p><strong>Return</strong></p>
 <ul>
 <li><code>string|null</code> The HTML <code>&lt;img></code> tag or null if no image is available.</li>
-</ul>
-<hr>
-<h3 id=mvt_adjust_excerpt_image_orientation_res>mvt_adjust_excerpt_image_orientation_res</h3>
-<p>Returns the specified resolution size for excerpt featured images.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$orientation <code>string</code> The selected orientation for the image.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The resolution size.</li>
-</ul>
-<hr>
-<h3 id=mvt_adjust_featured_post_image_orientation_res>mvt_adjust_featured_post_image_orientation_res</h3>
-<p>Returns the specificed resolution size of the excerpt featured image for the featured post.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$orientation <code>string</code> The selected orientation for the image.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The resolution size.</li>
-</ul>
-<hr>
-<h3 id=mvt_adjust_excerpt_image_sizes-string-sizes->mvt_adjust_excerpt_image_sizes( string $sizes )</h3>
-<p>Adjusts the sizes attribute value for excerpt thumbnail images.</p>
-<p><strong>Default</strong></p>
-<ul>
-<li>(max-width: 599px) 300px, 270px</li>
-</ul>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$sizes <code>string</code> The value of the image sizes attribute.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The adjusted sizes attribute value.</li>
-</ul>
-<hr>
-<h3 id=mvt_adjust_featured_post_image_sizes>mvt_adjust_featured_post_image_sizes</h3>
-<p>Adjusts the sizes attribute value for the featured post thumbnail images.</p>
-<p><strong>Default</strong></p>
-<ul>
-<li>(max-width: 340px) calc(100vw - 40px), (max-width: 450px) calc(100vw - 100px), (max-width: 959px) 350px, (max-width: 1134px) 275px, 350px</li>
-</ul>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$sizes <code>string</code> The value of the image sizes attribute.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The adjusted sizes attribute value.</li>
-</ul>
-<hr>
-<h3 id=mvt_get_image_orientation_res>mvt_get_image_orientation_res</h3>
-<p>Appends a filtered resolution size to the image orientation. Ensures the specific resolution size of the image is used.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$orientation <code>string</code> The selected orientation for the image. Defaults to empty.</li>
-<li>$image_res <code>string</code> The selected resolution for the image.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The orientation with an appended resolution size.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_set_data>mv_trellis_set_data</h3>
@@ -557,7 +493,7 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li>Not applicable</li>
+<li>Not applicable.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_purge_page_critical_css>mv_trellis_purge_page_critical_css</h3>
@@ -566,6 +502,92 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <ul>
 <li>$id <code>int|string</code> Post or page id. Used to get the post or page slug when the slug is not provided.</li>
 <li>$slug <code>string</code> Post or page slug.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li>Not applicable.</li>
+</ul>
+<hr>
+<h3 id=mvt_adjust_excerpt_image_orientation_res>mvt_adjust_excerpt_image_orientation_res</h3>
+<p>Returns the specified resolution size for excerpt featured images.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$orientation <code>string</code> The selected orientation for the image.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The resolution size.</li>
+</ul>
+<hr>
+<h3 id=mvt_adjust_featured_post_image_orientation_res>mvt_adjust_featured_post_image_orientation_res</h3>
+<p>Returns the specificed resolution size of the excerpt featured image for the featured post.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$orientation <code>string</code> The selected orientation for the image.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The resolution size.</li>
+</ul>
+<hr>
+<h3 id=mvt_adjust_excerpt_image_sizes-string-sizes->mvt_adjust_excerpt_image_sizes( string $sizes )</h3>
+<p>Adjusts the sizes attribute value for excerpt thumbnail images.</p>
+<p><strong>Default</strong></p>
+<ul>
+<li>(max-width: 599px) 300px, 270px</li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$sizes <code>string</code> The value of the image sizes attribute.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The adjusted sizes attribute value.</li>
+</ul>
+<hr>
+<h3 id=mvt_adjust_featured_post_image_sizes>mvt_adjust_featured_post_image_sizes</h3>
+<p>Adjusts the sizes attribute value for the featured post thumbnail images.</p>
+<p><strong>Default</strong></p>
+<ul>
+<li>(max-width: 340px) calc(100vw - 40px), (max-width: 450px) calc(100vw - 100px), (max-width: 959px) 350px, (max-width: 1134px) 275px, 350px</li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$sizes <code>string</code> The value of the image sizes attribute.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The adjusted sizes attribute value.</li>
+</ul>
+<hr>
+<h3 id=mvt_get_image_orientation_res>mvt_get_image_orientation_res</h3>
+<p>Appends a filtered resolution size to the image orientation. Ensures the specific resolution size of the image is used.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$orientation <code>string</code> The selected orientation for the image. Defaults to empty.</li>
+<li>$image_res <code>string</code> The selected resolution for the image.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The orientation with an appended resolution size.</li>
+</ul>
+<hr>
+<h3 id=mvt_title_after>mvt_title_after</h3>
+<p>Fires off the <code>tha_title_after</code> hook after the closing title <code>&lt;/h1></code> tag (as long as the page title output isn&rsquo;t hidden).</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>None.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li>Not applicable.</li>
+</ul>
+<hr>
+<h3 id=mvt_title_before>mvt_title_before</h3>
+<p>Fires off the <code>tha_title_before</code> hook before the title <code>&lt;h1></code> tag (as long as the page title output isn&rsquo;t hidden).</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>None.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>

@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -206,7 +206,7 @@ Trellis child themes follow the same basic structure as any WordPress child them
 <h2 id=add-css-files>Add CSS Files</h2>
 <h3 id=create-a-stylecss-file>Create a Style.css File</h3>
 <ol>
-<li>Create a new file called style.css in your child theme folder.</li>
+<li>Create a new file called <code>style.css</code> in your child theme folder.</li>
 <li>Add the following code, replacing the boilerplate text with your own content:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#75715e>/*
@@ -222,7 +222,7 @@ Trellis child themes follow the same basic structure as any WordPress child them
 </span><span style=color:#75715e>*/</span>
 </code></pre></div><p>The fields are used in the following ways:</p>
 <h3 id=add-custom-css-files>Add Custom CSS Files</h3>
-<p>You can choose to add your custom CSS to the style.css file or you can create separate CSS files for inclusion in your child theme.</p>
+<p>You can choose to add your custom CSS to the <code>style.css</code> file or you can create separate CSS files for inclusion in your child theme.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
 We recommend having separate CSS files that are stored in your child theme’s assets folder as a best practice.
@@ -233,18 +233,18 @@ We recommend having separate CSS files that are stored in your child theme’s a
 </ol>
 <pre tabindex=0><code>wp-content/themes/my-child-theme-name/assets/
 </code></pre><ol>
-<li>Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file index.0.0.1.css.</li>
+<li>Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file <code>index.0.0.1.css</code>.</li>
 </ol>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see CSS Variables in Advanced Topics.
+Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/using-css-variables/>Using CSS Variables</a> in Advanced Topics.
 </div>
 <h2 id=add-a-functionsphp-file>Add a Functions.php File</h2>
-<p>Your child theme’s functions.php file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.</p>
+<p>Your child theme’s <code>functions.php</code> file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.</p>
 <h3 id=set-basic-definitions>Set Basic Definitions</h3>
 <ol>
-<li>Add a functions.php file to your child theme folder.</li>
-<li>Add the following code to the functions.php, replacing the boilerplate text with your own values:</li>
+<li>Add a <code>functions.php</code> file to your child theme folder.</li>
+<li>Add the following code to <code>functions.php</code>, replacing the boilerplate text with your own values:</li>
 </ol>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#f92672>&lt;?</span><span style=color:#75af00>php</span>
 
@@ -317,7 +317,7 @@ Adding CSS selectors to your child theme’s CSS file will override any matching
 </tbody>
 </table>
 <h3 id=optional-add-theme-support-options>(Optional) Add Theme Support Options</h3>
-<p>Add the following code after <code>Options::set_multiple</code> to allow the publisher to set accent colors and heading styles using the Mediavine Trellis Dashboard. See Trellis Settings for information on how to connect your code to the settings in your child theme.</p>
+<p>Add the following code after <code>Options::set_multiple</code> to allow the publisher to set accent colors and heading styles using the Mediavine Trellis Dashboard. See <a href=https://vcmediavine.github.io/docsytrellis/getting-started/trellis-settings/>Trellis Settings</a> for information on how to connect your code to the settings in your child theme.</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/** Accent Color and Headings Support **
 </span><span style=color:#d88200> * Use add_theme_support to use accent colors and heading options defined in Trellis Settings.
 </span><span style=color:#d88200> */</span>
@@ -327,7 +327,7 @@ Adding CSS selectors to your child theme’s CSS file will override any matching
 <span style=color:#111>}</span>
 </code></pre></div><h2 id=create-template-files>Create Template Files</h2>
 <p>While Trellis supports the WordPress <a href=https://developer.wordpress.org/themes/basics/template-hierarchy/>Template Hierarchy</a>, page load time can be reduced through the use of template parts. Template parts are reusable blocks of code that can be called from different page templates. This allows them to serve up special coding for things like category templates, author templates, and more. Think of template parts as more sophisticated versions of <code>get_header()</code> and <code>get_footer()</code>.</p>
-<p>WordPress has a built-in function for template parts, but Trellis offers a faster function called <code>mv_trellis_get_template_part()</code><strong>.</strong> This custom function caches your template parts and serves them much faster than WordPress’ built-in function. You can see it in use in the Trellis Core and Bamboo, Birch, and Wisteria child themes. See Functions in Reference for more information.</p>
+<p>WordPress has a built-in function for template parts, but Trellis offers a faster function called <code>mv_trellis_get_template_part()</code><strong>.</strong> This custom function caches your template parts and serves them much faster than WordPress’ built-in function. You can see it in use in the Trellis Core and Bamboo, Birch, and Wisteria child themes. See <a href=https://vcmediavine.github.io/docsytrellis/reference/functions/>Functions</a> in Reference for more information.</p>
 <h3 id=built-in-trellis-core-templates>Built-In Trellis Core Templates</h3>
 <p>Any template placed in your child-theme’s folder will follow the WordPress Template Hierarchy and override a template in the Trellis parent theme folder. However, we recommend using a similar structure of template parts for your own theme files in order to get the biggest speed boost.</p>
 <p>Trellis Core provides the following templates out of the box:</p>

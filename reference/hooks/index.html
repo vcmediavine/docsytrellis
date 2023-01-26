@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -179,11 +179,22 @@ If you add custom templates to your child theme, it’s expected that you’ll 
 <p>Runs hooks inside the standard loop, before the <code>entry-content</code> container. This wraps any hooked content in an <code>aside</code> tag. Fires the <code>tha_aside_before_entry_content</code> hook.</p>
 <h4 id=mvt_aside_after_entry_content>mvt_aside_after_entry_content</h4>
 <p>Runs hooks inside the standard loop, after the <code>entry-content</code> container. This wraps any hooked content in an <code>aside</code> tag. Fires the <code>tha_aside_after_entry_content</code> hook.</p>
+<hr>
 <h2 id=body-hooks>Body Hooks</h2>
 <h4 id=mvt_body_top>mvt_body_top</h4>
 <p>Runs hooks immediately after <code>wp_body_open()</code>. Fires the <code>tha_body_top</code> hook.</p>
 <h4 id=mvt_body_bottom>mvt_body_bottom</h4>
 <p>Runs hooks immediately before <code>wp_footer()</code>. Fires the <code>tha_body_bottom</code> hook.</p>
+<hr>
+<h2 id=cache-hooks>Cache Hooks</h2>
+<h4 id=mv_clear_all_cache>mv_clear_all_cache</h4>
+<p>Clears all the caches associated with a number of caching plugins. Introduced in Trellis 0.17.0.</p>
+<h4 id=mv_clear_single_cache>mv_clear_single_cache</h4>
+<p>Clears a single post cache for a number of caching plugins. Introduced in Trellis 0.17.0.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li>$id <code>int</code> The post ID.</li>
+</ul>
 <hr>
 <h2 id=content-hooks>Content Hooks</h2>
 <h4 id=mvt_content_before>mvt_content_before</h4>

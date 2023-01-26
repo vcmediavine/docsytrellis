@@ -87,6 +87,12 @@
 &lt;h3 id="mv_trellis_disable_lazy_load_classesfilters-detailmv_trellis_disable_lazy_load_classes">&lt;a href="../filters-detail#mv_trellis_disable_lazy_load_classes">mv_trellis_disable_lazy_load_classes&lt;/a>&lt;/h3>
 &lt;p>An array of class names on image tags that will disable lazy loading for an image.&lt;/p>
 &lt;hr>
+&lt;h3 id="mv_trellis_disable_ld_output_for_compatibilityfilters-detailmv_trellis_disable_ld_output_for_compatibility">&lt;a href="../filters-detail#mv_trellis_disable_ld_output_for_compatibility">mv_trellis_disable_ld_output_for_compatibility&lt;/a>&lt;/h3>
+&lt;p>Allows compatibility classes to stop the output of Trellis' JSON-LD data.&lt;/p>
+&lt;hr>
+&lt;h3 id="mv_trellis_disable_og_output_for_compatibilityfilters-detailmv_trellis_disable_og_output_for_compatibility">&lt;a href="../filters-detail#mv_trellis_disable_og_output_for_compatibility">mv_trellis_disable_og_output_for_compatibility&lt;/a>&lt;/h3>
+&lt;p>Allows compatibility classes to stop the output of Trellis' Open Graph data..&lt;/p>
+&lt;hr>
 &lt;h3 id="mv_trellis_disable_og_plugin_slugsfilters-detailmv_trellis_disable_og_plugin_slugs">&lt;a href="../filters-detail#mv_trellis_disable_og_plugin_slugs">mv_trellis_disable_og_plugin_slugs&lt;/a>&lt;/h3>
 &lt;p>An array of plugin slugs that will disable Trellis Open Graph output if any are active.&lt;/p>
 &lt;hr>
@@ -95,6 +101,9 @@
 &lt;hr>
 &lt;h3 id="mv_trellis_disable_this-slug_compatibilityfilters-detailmv_trellis_disable_this-slug_compatibility">&lt;a href="../filters-detail#mv_trellis_disable_this-slug_compatibility">mv_trellis_disable_{$this-&amp;gt;slug}_compatibility&lt;/a>&lt;/h3>
 &lt;p>Disables compatibility code for the specified plugin slug. Compatibility code is written by Mediavine and corresponds to plugins listed in Trellis’ compatibility directory (mediavine-trellis/inc/compatibility).&lt;/p>
+&lt;hr>
+&lt;h3 id="mv_trellis_disable_seo_output_for_compatibilityfilters-detailmv_trellis_disable_seo_output_for_compatibility">&lt;a href="../filters-detail#mv_trellis_disable_seo_output_for_compatibility">mv_trellis_disable_seo_output_for_compatibility&lt;/a>&lt;/h3>
+&lt;p>Allows compatibility classes to stop the output of Trellis' SEO data.&lt;/p>
 &lt;hr>
 &lt;h3 id="mv_trellis_disable_set_image_cls_aspect_stylesfilters-detailmv_trellis_disable_set_image_cls_aspect_styles">&lt;a href="../filters-detail#mv_trellis_disable_set_image_cls_aspect_styles">mv_trellis_disable_set_image_cls_aspect_styles&lt;/a>&lt;/h3>
 &lt;p>Disables adding inline aspect ratio styles.&lt;/p>
@@ -674,6 +683,30 @@ While the syntax is shown using the &lt;code>apply_filters()&lt;/code> function,
 &lt;li>$values &lt;code>array&lt;/code> List of classes that will not be lazy loaded.&lt;/li>
 &lt;/ul>
 &lt;hr>
+&lt;h3 id="mv_trellis_disable_ld_output_for_compatibility">mv_trellis_disable_ld_output_for_compatibility&lt;/h3>
+&lt;p>Allows compatibility classes to stop the output of Trellis' JSON-LD data.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mv_trellis_disable_ld_output_for_compatibility&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">bool&lt;/span> &lt;span style="color:#111">$value&lt;/span> &lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>False&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$value &lt;code>bool&lt;/code> Whether to disable output of Trellis JSON-LD data.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mv_trellis_disable_og_output_for_compatibility">mv_trellis_disable_og_output_for_compatibility&lt;/h3>
+&lt;p>An array of plugin slugs that will disable Trellis Open Graph output if any are active.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mv_trellis_disable_og_output_for_compatibility&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">bool&lt;/span> &lt;span style="color:#111">$value&lt;/span> &lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>False&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$value &lt;code>bool&lt;/code> Whether to disable output of Trellis Open Graph data.&lt;/li>
+&lt;/ul>
+&lt;hr>
 &lt;h3 id="mv_trellis_disable_og_plugin_slugs">mv_trellis_disable_og_plugin_slugs&lt;/h3>
 &lt;p>An array of plugin slugs that will disable Trellis Open Graph output if any are active.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mv_trellis_disable_og_plugin_slugs&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#00a8c8">array&lt;/span> &lt;span style="color:#111">$disable_og_plugin_slugs&lt;/span> &lt;span style="color:#111">)&lt;/span>
@@ -708,6 +741,18 @@ While the syntax is shown using the &lt;code>apply_filters()&lt;/code> function,
 &lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>$value &lt;code>bool&lt;/code> Whether to disable compatibility code for the specified plugin slug.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mv_trellis_disable_seo_output_for_compatibility">mv_trellis_disable_seo_output_for_compatibility&lt;/h3>
+&lt;p>Allows compatibility classes to stop the output of Trellis&amp;rsquo; SEO data.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">apply_filters&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mv_trellis_disable_seo_output_for_compatibility&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#75af00">bool&lt;/span> &lt;span style="color:#111">$value&lt;/span> &lt;span style="color:#111">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Default&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>False&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Arguments&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$value &lt;code>bool&lt;/code> Whether to disable output of Trellis SEO data.&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="mv_trellis_disable_set_image_cls_aspect_styles">mv_trellis_disable_set_image_cls_aspect_styles&lt;/h3>

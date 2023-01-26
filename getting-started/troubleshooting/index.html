@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -75,7 +75,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -185,23 +185,17 @@ When you’re logged in to your site, you will always see the originally coded C
 <li>While logged in, visit the page and check the Critical CSS status in the admin bar. Trellis will tell you if it is regenerating the Critical CSS files or if there was an error during processing.</li>
 </ol>
 <ul>
-<li>If the status is Processing, come back to the page later to see if its status has changed to Success. You can then test the page by viewing it while not logged in as an administrator. For an explanation of all Critical CSS Statuses, see Critical CSS in Advanced Topics.</li>
+<li>If the status is Processing, come back to the page later to see if its status has changed to Success. You can then test the page by viewing it while not logged in as an administrator. For an explanation of all Critical CSS Statuses, see Critical CSS in <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a>.</li>
 <li>If the status is Success but your visitors are still not seeing the CSS changes, try a hard refresh of the page or clearing your browser cache to see if the style changes appear. If the issue persists, try deleting the Critical CSS file for the page. You can do this by logging in, visiting the page, and selecting <strong>Manage Trellis JS/CSS Options > Purge Page CSS</strong> in the admin bar. Once the page’s Critical CSS status is Success, visit it again while not logged in.</li>
-<li>If the status is Error, please contact <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> for further troubleshooting.</li>
 </ul>
 <h2 id=critical-css-errors-on-pages>Critical CSS Errors on Pages</h2>
 <p>The Critical CSS status in the admin bar shows an Error status if Trellis has difficulty parsing the page’s CSS files.</p>
 <h3 id=steps-to-troubleshoot-1>Steps to Troubleshoot</h3>
-<ol>
-<li>Run your page’s CSS through a CSS validator. It could be that something in the CSS file is causing problems. You can disable a single page’s Critical CSS by calling up the page or post for editing and doing one of the following:</li>
-</ol>
+<p>Run your page’s CSS through a CSS validator. It could be that something in the CSS file is causing problems. You can disable a single page’s Critical CSS by calling up the page or post for editing and doing one of the following:</p>
 <ul>
-<li>If using the Gutenberg Editor, go to the Trellis Settings menu in the toolbar and select Disable Critical CSS. Then run the page through a CSS validator.</li>
-<li>If using the Classic Editor, go to the Trellis Settings pane and select Disable Critical CSS. Then run the page through a CSS validator.</li>
+<li>If using the Block Editor, click on the Trellis Settings icon and select <strong>Disable Critical CSS</strong>. Then run the page through a CSS validator.</li>
+<li>If using the Classic Editor, go to the Trellis Settings pane and select <strong>Disable Critical CSS</strong>. Then run the page through a CSS validator.</li>
 </ul>
-<ol start=2>
-<li>If your CSS passes validation but the page still shows an Error, please contact <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> for further troubleshooting.</li>
-</ol>
 <h2 id=rest-api-error>REST API Error</h2>
 <p>Trellis generates Critical CSS files by connecting to a Trellis API hosted by Mediavine. If your Trellis instance is having trouble connecting to the Trellis API, you will see an error in the Mediavine Trellis Dashboard. Critical CSS will be disabled for your entire site until the Trellis API can be reached.</p>
 <div class="alert alert-warning" role=alert>
@@ -241,23 +235,20 @@ When you’re logged in to your site, you will always see the originally coded C
 </tr>
 </tbody>
 </table>
-<p>If you are still encountering REST API errors, please contact <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> for further troubleshooting.</p>
 <h2 id=trellis-features-are-grayed-out-license-errors>Trellis Features Are Grayed Out (License Errors)</h2>
 <p>If you go to <strong>Appearance > Mediavine Trellis</strong> and see that some features are grayed out, it could mean that your Trellis license is not installed, you have exceeded the number of sites allowed for your license, or your license has expired.</p>
 <h3 id=steps-to-troubleshoot-3>Steps to Troubleshoot</h3>
 <ol>
 <li>Go to <strong>Appearance > Mediavine Trellis</strong> and go to the License section. You can see if your license is installed or showing any errors. If you have a license entered, click the <strong>Recheck License</strong> button to force a validation.</li>
 <li>Your Trellis license is designed to work on just one site (unless you’ve purchase a multi-site license). This means that you may run into issues if you try to add your license to both a staging site and your live site. If you’re only developing a single site, deactivate the license from your staging site, push your site to a live server, then add your license on the live site.</li>
-<li>If you still encounter license errors, please contact <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> for further troubleshooting.</li>
 </ol>
 <h2 id=core-web-vitals-issues>Core Web Vitals Issues</h2>
 <p>When a Trellis site goes live, pages need to be visited by non-logged in users for the necessary optimizations to be triggered. You can do this by visiting pages in Incognito mode and then checking if their Critical CSS status is Success. You should not test site speed until Critical CSS files are generated, as they provide a big boost to site speed.</p>
 <h3 id=steps-to-troubleshoot-4>Steps to Troubleshoot</h3>
 <ol>
-<li>In Incognito mode in your browser, test a post (not the homepage) to give you a better idea of what your readers are experiencing. ****This is the best method for getting more accurate speed test results.</li>
-<li>Check the Critical CSS status for any pages with low scores. Make sure that the Critical CSS status is Success. See Critical CSS in Advanced Topics for more information on Critical CSS statuses.</li>
+<li>In Incognito mode in your browser, test a post (not the homepage) to give you a better idea of what your readers are experiencing. This is the best method for getting more accurate speed test results.</li>
+<li>Check the Critical CSS status for any pages with low scores. Make sure that the Critical CSS status is Success. See Critical CSS in <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/>Advanced Topics</a> for more information on Critical CSS statuses.</li>
 <li>For an extensive list of troubleshooting steps, see <a href=https://product-help.mediavine.com/en/articles/5392546-core-web-vitals-with-trellis>Core Web Vitals with Trellis</a> in the Help Center.</li>
-<li>If you still encounter Core Web Vitals issues, please contact <a href=mailto:trellis@mediavine.com>trellis@mediavine.com</a> for further troubleshooting.</li>
 </ol>
 <div class=section-index>
 </div>

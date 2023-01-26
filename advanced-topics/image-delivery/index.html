@@ -22,11 +22,11 @@
 <meta property="og:description" content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/"><meta property="og:image" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/display-featured-image.png"><meta property="og:site_name" content="Mediavine Trellis">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/"><meta property="og:image" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-featured-image.png"><meta property="og:site_name" content="Mediavine Trellis">
 <meta itemprop=name content="Image Delivery and Optimizations">
 <meta itemprop=description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
 "><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/display-featured-image.png">
+<meta name=twitter:image content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-featured-image.png">
 <meta name=twitter:title content="Image Delivery and Optimizations">
 <meta name=twitter:description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
 ">
@@ -65,7 +65,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -76,7 +76,7 @@
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.0acb5dd12729819bcfc731db3086916e.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.2d5d2d3fa5efa334968b5ff4350fe62a.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -192,7 +192,7 @@
 Lazy loading is also automatically applied to iframe content. The instructions for disabling lazy loading per image (or enabling eager loading) also applies to iframes.
 </div>
 <h3 id=disabling-lazy-loading-across-the-site>Disabling Lazy Loading Across the Site</h3>
-<p>If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s functions.php file:</p>
+<p>If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s <code>functions.php</code> file:</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
 </span><span style=color:#d88200>  * Disable Trellis lazy loading
 </span><span style=color:#d88200>*/</span>
@@ -209,11 +209,11 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 <tbody>
 <tr>
 <td>no-lazyload</td>
-<td>This class stops Trellis from adding the loading=&ldquo;lazy&rdquo; attribute. The element will be served as-is.</td>
+<td>This class stops Trellis from adding the <code>loading="lazy"</code> attribute. The element will be served as-is.</td>
 </tr>
 <tr>
 <td>native-lazyload</td>
-<td>This class allows Trellis to add the loading=&ldquo;lazy&rdquo; attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally.</td>
+<td>This class allows Trellis to add the <code>loading="lazy"</code> attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally.</td>
 </tr>
 </tbody>
 </table>
@@ -230,7 +230,7 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 <tbody>
 <tr>
 <td>eager-load</td>
-<td>This class stops Trellis from adding the loading=&ldquo;lazy&rdquo; attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a loading=&ldquo;eager&rdquo; attribute (provided one doesn’t already exist).<br><br><strong>Note:</strong> This feature is only available as of Trellis 0.15.3.</td>
+<td>This class stops Trellis from adding the <code>loading="lazy"</code> attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a <code>loading="eager"</code> attribute (provided one doesn’t already exist).<br><br><strong>Note:</strong> This feature is only available as of Trellis 0.15.3.</td>
 </tr>
 </tbody>
 </table>
@@ -238,9 +238,9 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 <p>WordPress has a predefined set of image sizes it creates when a new image is uploaded. When active, Trellis modifies this set to add more sizes that are frequently used in publisher sites. This helps prevent the <a href=https://web.dev/uses-responsive-images/>“Properly Sized Image Warning” in Google Pagespeed Insights</a>.</p>
 <p>Publishers can choose a desired featured image thumbnail size and ratio in the <strong>Display</strong> tab of the Mediavine Trellis Dashboard. Depending on the size selected, additional sizes (as listed in the Image Sizes chart) will be created by WordPress whenever an image is uploaded or on post save when the featured image size is changed.</p>
 <p>The <strong>Regenerate Featured Images</strong> button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images>Trellis Featured Images</a> in the Help Center for more information.</p>
-<img src=display-featured-image.png alt="Regenerate featured images." width=600px>
+<img src=settings-featured-image.png alt="Regenerate featured images." width=600px>
 <p>If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the <strong>Advanced</strong> tab of the Mediavine Trellis Dashboard and use the <strong>Regenerate All Images</strong> button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis>How to Regenerate Your Image Sizes in Trellis</a> in the Help Center for more information.</p>
-<img src=regenerate-all-images.png alt="Regenerate all images." width=600px>
+<img src=settings-regenerate-images.png alt="Regenerate all images." width=600px>
 <h2 id=image-sizes-chart>Image Sizes Chart</h2>
 <p>By default, Trellis will generate all image sizes for the selected Featured Image Size and a high res size for all other sizes not selected. Image sizes are grouped by setting.</p>
 <div class="alert alert-primary" role=alert>
