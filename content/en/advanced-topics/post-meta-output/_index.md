@@ -28,7 +28,7 @@ Publishers can control the Post Meta information and where it gets displayed via
 | --- | --- | --- |
 | Post Meta Display - Top | Select which post meta to display in the post header. Options include: Comment Count, Author, Date, and Categories.<br /><br />If Yoast SEO is installed, you can show Yoast breadcrumbs. | Refer to the article-meta-header template part in Trellis Core to see how this is implemented.<br /><br />Location: mediavine-trellis/template-parts/article/article-meta-header.php |
 | Post Meta Display - Bottom | Select which post meta to display in the post footer. Options include: Author, Date, and Categories.<br /><br />If Yoast SEO is installed, you can show Yoast breadcrumbs. | Refer to the article-meta-footer template part in Trellis Core to see how this is implemented.<br /><br />Location: mediavine-trellis/template-parts/article/article-meta-footer.php |
-| Post Meta Date Display | Determine the date to display in the post header. Options include: Display Modified, Display Published, or Display Both. | Created by the mv_trellis_entry_date() function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference. |
+| Post Meta Date Display | Determine the date to display in the post header. Options include: Display Modified, Display Published, or Display Both. | Created by the `mv_trellis_entry_date()` function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference. |
 
 ## Functions
 
@@ -63,9 +63,9 @@ If a Post Meta item is available, other functions are used to output its value.
 
 **Example**
 
-The following example shows how the post’s Author meta information is output in article-meta-header.php.
+The following example shows how the post’s Author meta information is output in `article-meta-header.php`.
 
-```
+```php+HTML
 if ( $display_author ) {
 		?>
 		<p class="author-meta post-author meta-wrapper">
@@ -82,15 +82,15 @@ if ( $display_author ) {
 
 One filter is available to adjust breadcrumb placement if Yoast SEO is installed:
 
-- `mv_trellis_top_breadcrumbs_placement`: Specifies the hook where the Post Meta breadcrumbs value is placed. The default is `tha_aside_before_entry_content`, which is output by `mvt_entry_before()` in the Trellis Core templates. See Hooks in the Reference section for a list of all available hooks.
+- `mv_trellis_top_breadcrumbs_placement`: Specifies the hook where the Post Meta breadcrumbs value is placed. The default is `tha_aside_before_entry_content`, which is output by `mvt_entry_before()` in the Trellis Core templates. See [Hooks]({{< ref "hooks" >}}) in the Reference section for a list of all available hooks.
 
 ## Additional Information
 
-To best understand how Post Meta information is displayed, refer to the article-meta-header.php and article-meta-footer.php template parts in Trellis Core.
+To best understand how Post Meta information is displayed, refer to the `article-meta-header.php` and `article-meta-footer.php` template parts in Trellis Core.
 
 ### Moving the Comment Count
 
-If you’d like to display the Comment Count at the bottom of a post, you’ll need to add code to your child theme’s functions.php file as well as modifying the article-meta-footer.php template part.
+If you’d like to display the Comment Count at the bottom of a post, you’ll need to add code to your child theme’s `functions.php` file as well as modifying the `article-meta-footer.php` template part.
 
 **Functions.php**
 
@@ -112,7 +112,7 @@ This code will add the Comment Count as an option to the Post Meta setting in th
 
 **Article-meta-footer.php**
 
-You’ll need to add code to three places in the article-meta-footer.php template part. First, you’ll want to check if the Comment Count has been enabled for the footer:
+You’ll need to add code to three places in the `article-meta-footer.php` template part. First, you’ll want to check if the Comment Count has been enabled for the footer:
 
 ```php
 // Check if the Comment Count is set for the bottom of Post Meta
@@ -130,7 +130,7 @@ if ( ! $mv_trellis_display_author && ! $mv_trellis_display_date && ! $mv_trellis
 
 Finally, enter code to render the Comment Count:
 
-```
+```php+HTML
 // Comments.
 	if ( $display_comment_count ) {
 		?>

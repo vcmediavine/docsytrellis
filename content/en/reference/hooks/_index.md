@@ -48,6 +48,8 @@ Runs hooks inside the standard loop, before the `entry-content` container. This 
 
 Runs hooks inside the standard loop, after the `entry-content` container. This wraps any hooked content in an `aside` tag. Fires the `tha_aside_after_entry_content` hook.
 
+---
+
 ## Body Hooks
 
 #### mvt_body_top
@@ -60,6 +62,21 @@ Runs hooks immediately before `wp_footer()`. Fires the `tha_body_bottom` hook.
 
 ---
 
+## Cache Hooks
+
+#### mv_clear_all_cache
+
+Clears all the caches associated with a number of caching plugins. Introduced in Trellis 0.17.0.
+
+#### mv_clear_single_cache
+
+Clears a single post cache for a number of caching plugins. Introduced in Trellis 0.17.0.
+
+**Arguments**
+
+- $id `int` The post ID.
+
+---
 ## Content Hooks
 
 #### mvt_content_before

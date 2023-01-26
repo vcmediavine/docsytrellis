@@ -182,6 +182,18 @@ An array of class names on image tags that will disable lazy loading for an imag
 
 ------
 
+### [mv_trellis_disable_ld_output_for_compatibility](../filters-detail#mv_trellis_disable_ld_output_for_compatibility)
+
+Allows compatibility classes to stop the output of Trellis' JSON-LD data.
+
+------
+
+### [mv_trellis_disable_og_output_for_compatibility](../filters-detail#mv_trellis_disable_og_output_for_compatibility)
+
+Allows compatibility classes to stop the output of Trellis' Open Graph data..
+
+------
+
 ### [mv_trellis_disable_og_plugin_slugs](../filters-detail#mv_trellis_disable_og_plugin_slugs)
 
 An array of plugin slugs that will disable Trellis Open Graph output if any are active.
@@ -197,6 +209,12 @@ Disables processing of all image optimizations.
 ### [mv_trellis_disable_{$this->slug}_compatibility](../filters-detail#mv_trellis_disable_this-slug_compatibility)
 
 Disables compatibility code for the specified plugin slug. Compatibility code is written by Mediavine and corresponds to plugins listed in Trellis’ compatibility directory (mediavine-trellis/inc/compatibility).
+
+------
+
+### [mv_trellis_disable_seo_output_for_compatibility](../filters-detail#mv_trellis_disable_seo_output_for_compatibility)
+
+Allows compatibility classes to stop the output of Trellis' SEO data.
 
 ------
 

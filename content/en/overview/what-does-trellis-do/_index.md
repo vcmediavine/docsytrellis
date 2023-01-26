@@ -11,7 +11,7 @@ While you can use it right out of the box, Trellis’ real power comes from deve
 
 When you purchase Trellis, you’ll get access to the following:
 
-- The **Trellis Core framework**, which includes a starter theme with minimalistic styling and coded for speed and performance. It also includes a **dashboard** and **enhancements to the WordPress admin bar** so that publishers can fine-tune Trellis’ features for their content.
+- The **Trellis Core framework**, which includes a starter theme with minimalistic styling and coded for speed and performance. It also includes a **Mediavine Trellis Settings dashboard** and **enhancements to the WordPress Admin Bar** so that publishers can fine-tune Trellis’ features for their content.
 - **Bamboo, Birch, and Wisteria child themes**. These separately installed themes offer unique styles to cater to different types of content. Use them as the basis for your own child themes.
 - **Trellis Images**, a helper plugin that automatically generates and swaps out legacy images for Google-friendly WebP versions.
 

@@ -15,7 +15,7 @@ Trellis and its helper plugins can replace image generators, HTML/CSS/JavaScript
 
 ## For Developers
 
-- **Optimized CSS:** Trellis’ Critical CSS feature creates two separate, optimized CSS files: one for initial viewport content, and another for the rest. When a reader visits a page, Trellis serves the initial viewport stylesheet first—the other is loaded after, resulting in faster page rendering. Learn more about Critical CSS in our Advanced Topics section or in our [Working with Critical CSS](https://intercom.help/mediavine-products/en/articles/4551189-working-with-critical-css) Help Center article.
+- **Optimized CSS:** Trellis’ Critical CSS feature creates two separate, optimized CSS files: one for initial viewport content, and another for the rest. When a reader visits a page, Trellis serves the initial viewport stylesheet as inline styles—the other is loaded after as a linked stylesheet, resulting in faster page rendering. Learn more about Critical CSS in our Advanced Topics section or in our [Working with Critical CSS](https://intercom.help/mediavine-products/en/articles/4551189-working-with-critical-css) Help Center article.
 - **Service worker integration:** Trellis uses [service workers](https://developers.google.com/web/fundamentals/primers/service-workers) to cache assets in the browser, reducing the need for network round trips.
 - **Better SEO with JSON-LD:** Trellis generates structured data for search engines in the JSON-LD format (preferred by Google). This improves page indexing and supports displaying rich snippets in search results.
 - **JavaScript enhancements:** Trellis minifies JavaScript files and defers loading asynchronously. This prevents render blocking and serves up pages faster.

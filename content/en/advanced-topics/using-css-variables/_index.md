@@ -65,7 +65,7 @@ This table represents a full list of CSS variables available in Trellis.
 
 ## Disabling All Trellis CSS Styling
 
-If you’d like to start from scratch and discard all default Trellis Core CSS styling, add the following code:
+If you’d like to start from scratch and discard all default Trellis Core CSS styling, add the following code in your `functions.php` file:
 
 {{% alert color="warning" title="Important" %}}
 Disabling the default Trellis CSS styles will require you to define all layout and styling in your own CSS files.
