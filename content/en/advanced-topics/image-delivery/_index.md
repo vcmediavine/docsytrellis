@@ -24,7 +24,7 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 
 ### Disabling Lazy Loading Across the Site
 
-If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s functions.php file:
+If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s `functions.php` file:
 
 ```php
 /**
@@ -39,8 +39,8 @@ If you want to disable lazy loading on a specific image or to disable Trellis’
 
 | Class           | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| no-lazyload     | This class stops Trellis from adding the loading="lazy" attribute. The element will be served as-is. |
-| native-lazyload | This class allows Trellis to add the loading="lazy" attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally. |
+| no-lazyload     | This class stops Trellis from adding the `loading="lazy"` attribute. The element will be served as-is. |
+| native-lazyload | This class allows Trellis to add the `loading="lazy"` attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally. |
 
 ### Applying Eager-Loading to an Image
 
@@ -50,7 +50,7 @@ Eager loading can be applied as a class on an `<img>` or `<iframe>` tag.
 
 | Class      | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
-| eager-load | This class stops Trellis from adding the loading="lazy" attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a loading="eager" attribute (provided one doesn’t already exist).<br /><br />**Note:** This feature is only available as of Trellis 0.15.3. |
+| eager-load | This class stops Trellis from adding the `loading="lazy"` attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a `loading="eager"` attribute (provided one doesn’t already exist).<br /><br />**Note:** This feature is only available as of Trellis 0.15.3. |
 
 ## Image Size Optimization
 
@@ -60,11 +60,11 @@ Publishers can choose a desired featured image thumbnail size and ratio in the *
 
 The **Regenerate Featured Images** button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See [Trellis Featured Images](https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images) in the Help Center for more information.
 
-<img src="display-featured-image.png" alt="Regenerate featured images." width="600px"/>
+<img src="settings-featured-image.png" alt="Regenerate featured images." width="600px"/>
 
 If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the **Advanced** tab of the Mediavine Trellis Dashboard and use the **Regenerate All Images** button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See [How to Regenerate Your Image Sizes in Trellis](https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis) in the Help Center for more information.
 
-<img src="regenerate-all-images.png" alt="Regenerate all images." width="600px"/>
+<img src="settings-regenerate-images.png" alt="Regenerate all images." width="600px"/>
 
 ## Image Sizes Chart
 

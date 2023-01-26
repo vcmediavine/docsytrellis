@@ -31,7 +31,7 @@ Trellis is now running on your WordPress site. The Trellis Core minimally-styled
 1. In the WordPress Admin Dashboard, go to **Appearance > Mediavine Trellis**.
 2. Click **License**.
 <br />
-<img src="install-license-v2.png" alt="License setting." width="200px" />
+<img src="trellis-17.0.0-settings-license.png" alt="License setting." width="200px" />
 3. Enter your Trellis license in the **License Code** box.
 4. Click **Activate License**.
 

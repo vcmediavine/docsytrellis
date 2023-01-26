@@ -27,7 +27,7 @@ Trellis child themes follow the same basic structure as any WordPress child them
 
 ### Create a Style.css File
 
-1. Create a new file called style.css in your child theme folder.
+1. Create a new file called `style.css` in your child theme folder.
 2. Add the following code, replacing the boilerplate text with your own content:
 
 ```css
@@ -48,7 +48,7 @@ The fields are used in the following ways:
 
 ### Add Custom CSS Files
 
-You can choose to add your custom CSS to the style.css file or you can create separate CSS files for inclusion in your child theme.
+You can choose to add your custom CSS to the `style.css` file or you can create separate CSS files for inclusion in your child theme.
 
 {{% alert title="Note" %}}
 We recommend having separate CSS files that are stored in your child theme’s assets folder as a best practice.
@@ -62,20 +62,20 @@ Your custom CSS file can be any name you choose, but we recommend including the 
 wp-content/themes/my-child-theme-name/assets/
 ```
 
-1. Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file index.0.0.1.css.
+1. Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file `index.0.0.1.css`.
 
 {{% alert title="Note" %}}
-Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see CSS Variables in Advanced Topics.
+Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see [Using CSS Variables]({{< ref "using-css-variables" >}}) in Advanced Topics.
 {{% /alert %}}
 
 ## Add a Functions.php File
 
-Your child theme’s functions.php file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.
+Your child theme’s `functions.php` file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.
 
 ### Set Basic Definitions
 
-1. Add a functions.php file to your child theme folder.
-2. Add the following code to the functions.php, replacing the boilerplate text with your own values:
+1. Add a `functions.php` file to your child theme folder.
+2. Add the following code to `functions.php`, replacing the boilerplate text with your own values:
 
 ```php
 <?php
@@ -120,7 +120,7 @@ The other options you set are described in the table below:
 
 ### (Optional) Add Theme Support Options
 
-Add the following code after `Options::set_multiple` to allow the publisher to set accent colors and heading styles using the Mediavine Trellis Dashboard. See Trellis Settings for information on how to connect your code to the settings in your child theme.
+Add the following code after `Options::set_multiple` to allow the publisher to set accent colors and heading styles using the Mediavine Trellis Dashboard. See [Trellis Settings]({{< ref "trellis-settings" >}}) for information on how to connect your code to the settings in your child theme.
 
 ```php
 /** Accent Color and Headings Support **
@@ -136,7 +136,7 @@ Add the following code after `Options::set_multiple` to allow the publisher to s
 
 While Trellis supports the WordPress [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/), page load time can be reduced through the use of template parts. Template parts are reusable blocks of code that can be called from different page templates. This allows them to serve up special coding for things like category templates, author templates, and more. Think of template parts as more sophisticated versions of `get_header()` and `get_footer()`.
 
-WordPress has a built-in function for template parts, but Trellis offers a faster function called `mv_trellis_get_template_part()`**.** This custom function caches your template parts and serves them much faster than WordPress’ built-in function. You can see it in use in the Trellis Core and Bamboo, Birch, and Wisteria child themes. See Functions in Reference for more information.
+WordPress has a built-in function for template parts, but Trellis offers a faster function called `mv_trellis_get_template_part()`**.** This custom function caches your template parts and serves them much faster than WordPress’ built-in function. You can see it in use in the Trellis Core and Bamboo, Birch, and Wisteria child themes. See [Functions]({{< ref "functions" >}}) in Reference for more information.
 
 ### Built-In Trellis Core Templates
 

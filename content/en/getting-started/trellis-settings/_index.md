@@ -106,18 +106,18 @@ Some settings will reference functions or code that needs to be included in a te
 
 | Setting | Description | Usage |
 | --- | --- | --- |
-| Site Logo | Sets an image for use as a logo in the site header. If there is no site logo, the site title will be shown. <br /><br /> In the Trellis Core theme and Bamboo and Birch, the logo will display inline with the main navigation. <br /><br />In Wisteria, the logo will display next to the sticky post on the homepage, and inline with the main navigation on posts and pages. | Created by the mv_trellis_site_title() function. See Hooks for more information. |
+| Site Logo | Sets an image for use as a logo in the site header. If there is no site logo, the site title will be shown. <br /><br /> In the Trellis Core theme and Bamboo and Birch, the logo will display inline with the main navigation. <br /><br />In Wisteria, the logo will display next to the sticky post on the homepage, and inline with the main navigation on posts and pages. | Created by the `mv_trellis_site_title()` function. See [Hooks]({{< ref "hooks" >}}) for more information. |
 | Change logo height | Sets the max logo height value that can be shown in the header. | CSS variable: <br /> `--mv-trellis-max-logo-size` |
 | Display Featured Images | Shows featured images on posts before the post content. | See content-article template part in Trellis Core for reference. |
-| Hide Featured Image from Small Screens | Hides the post featured image when the visitor is using a device with a viewport width smaller than 600px. <br /><br /> Displaying featured images to mobile devices impacts the Largest Contentful Paint (LCP) score, one of Google's Core Web Vitals. | Adds a hide-featured-image-on-mobile class to the body tag when post featured images are enabled but hidden on mobile. |
+| Hide Featured Image from Small Screens | Hides the post featured image when the visitor is using a device with a viewport width smaller than 600px. <br /><br /> Displaying featured images to mobile devices impacts the Largest Contentful Paint (LCP) score, one of Google's Core Web Vitals. | Adds a `hide-featured-image-on-mobile` class to the body tag when post featured images are enabled but hidden on mobile. |
 | Featured Image Size | Sets the thumbnail size used for post thumbnails. <br /><br /> Also controls the additional image sizes Trellis instructs WordPress Core to create. See Image Generation in Advanced Topics for more information. | Controlled by the Mediavine Trellis Dashboard.  |
 
 ### Footer
 
 | Setting | Description | Usage |
 | --- | --- | --- |
-| Hide Mediavine/Trellis footer links | Removes the Mediavine/Trellis footer links. | Controlled by the `mvt_footer_bottom()` function. <br /><br />See Hooks for more information. |
-| Footer Copyright Text | Adds personalized copyright text to the footer. Supports HTML markup, including links. | Controlled by the `mvt_footer_bottom()` function. <br /><br />See Hooks for more information. |
+| Hide Mediavine/Trellis footer links | Removes the Mediavine/Trellis footer links. | Controlled by the `mvt_footer_bottom()` function. <br /><br />See [Hooks]({{< ref "hooks" >}}) for more information. |
+| Footer Copyright Text | Adds personalized copyright text to the footer. Supports HTML markup, including links. | Controlled by the `mvt_footer_bottom()` function. <br /><br />See [Hooks]({{< ref "hooks" >}}) for more information. |
 
 ### Layout
 
@@ -125,17 +125,11 @@ Some settings will reference functions or code that needs to be included in a te
 | --- | --- | --- |
 | Enable Search Bar | Adds a search bar to the site header. | See header template part in Trellis Core for reference. |
 | Layout space | Adjusts the margins between key layout elements like the primary content, sidebar, and widgets. The following defaults are used: <br /><br /> Compact = 10px <br /> Comfortable = 20px | CSS Variable: `--mv-trellis-gutter` |
-| Enable Trellis comments | Sets Trellis as the commenting engine for the site. <br /><br /> See Trellis Comments in Advanced Topics for more information. <br /> <br /> Note: If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility. | See comments template in Trellis Core for reference. |
+| Display Tag Links | Controls if tag links are output in the `footer.entry-footer` when viewing a post. | Controlled by the Mediavine Trellis Dashboard. |
+| Article Navigation | Controls whether a `nav.post-navigation` tag with a link to the next or previous post is added to the bottom of a post. | Controlled by the Mediavine Trellis Dashboard. |
+| Enable Trellis comments | Sets Trellis as the commenting engine for the site. <br /><br /> See [Trellis Comments]({{< ref"trellis-comments" >}}) in Advanced Topics for more information. <br /> <br /> **Note:** If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility. | See the comments template in Trellis Core for reference. |
 
 ## Advanced Settings
-
-### Critical CSS
-
-| Setting | Description | Usage |
-| --- | --- | --- |
-| Enable Critical CSS | Improves your site's performance by separating CSS into two cached files. See Critical CSS in Advanced Topics for more information. | Controlled by the Mediavine Trellis Dashboard.  |
-| CSS Allowlist | Allows CSS styling for HTML elements that are rendered after page load. <br /><br /> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in Advanced Topics for more information. | Selectors can be added programmatically via  `mv_trellis_css_allowlist`. See Filters for more information. |
-| Force Critical CSS | Adds selectors to the initial Critical CSS file. <br /><br /> This is a compatibility setting for selectors that are not part of the initial viewport of a page. <br /><br /> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in Advanced Topics for more information. | Selectors can be added programmatically via `mv_trellis_css_force_keep`. See Filters for more information. |
 
 ### Google Analytics
 
@@ -149,14 +143,14 @@ Some settings will reference functions or code that needs to be included in a te
 
 | Setting | Description | Usage |
 | --- | --- | --- |
-| Trellis SEO Output | Enables meta descriptions, schema output (via JSON-LD), and Open Graph tags for your site. <br /><br /> Note: This option is disabled if Trellis detects Yoast, RankMath, or AIO as installed and active. It cannot be turned on while these plugins are active. <br /><br /> For all other SEO plugins, disable this to prevent duplicate SEO data. | Controlled by the Mediavine Trellis Dashboard. |
+| Trellis SEO Output | Enables meta descriptions, schema output (via JSON-LD), and Open Graph tags for your site. <br /><br /> **Note:** This option is disabled if Trellis detects Yoast, RankMath, or AIO as installed and active. It cannot be turned on while these plugins are active. <br /><br /> For all other SEO plugins, disable this to prevent duplicate SEO data. | Controlled by the Mediavine Trellis Dashboard. |
 
 ### Optimization
 
 | Setting | Description | Usage |
 | --- | --- | --- |
-| JavaScript Optimization | Enables minification of JavaScript files and defers loading for better performance.  <br /><br /> Note: If Trellis detects another plugin is performing JavaScript optimizations, it will disable its own optimization functions. <br /><br /> Recognized plugins include Autoptimize, Clearfy Cache, Jetpack, Litespeed Cache, NitroPack, SG Optimizer, W3 Total Cache, WP Fastest Cache, and WP Rocket. | Controlled by the Mediavine Trellis Dashboard. |
-| JavaScript Exclusions | Matching full or partial URLs in this list are excluded from any deferment or minification performed by Trellis. <br /><br /> Note: This setting is only visible when JavaScript Optimization is enabled. | Controlled by the Mediavine Trellis Dashboard. |
+| JavaScript Optimization | Enables minification of JavaScript files and defers loading for better performance.  <br /><br /> **Note:** If Trellis detects another plugin is performing JavaScript optimizations, it will disable its own optimization functions. <br /><br /> Recognized plugins include Autoptimize, Clearfy Cache, Jetpack, Litespeed Cache, NitroPack, SG Optimizer, W3 Total Cache, WP Fastest Cache, and WP Rocket. | Controlled by the Mediavine Trellis Dashboard. |
+| JavaScript Exclusions | Matching full or partial URLs in this list are excluded from any deferment or minification performed by Trellis. <br /><br /> **Note:** This setting is only visible when JavaScript Optimization is enabled. | Controlled by the Mediavine Trellis Dashboard. |
 
 ### Permanent Actions
 
@@ -165,6 +159,7 @@ Some settings will reference functions or code that needs to be included in a te
 | Reset Settings | Sets the theme back to default settings (except for the license field). <br /><br /> **Warning:** This cannot be undone. | Controlled by the Mediavine Trellis Dashboard. |
 | Trellis Cache | Clears the Trellis cache. Use if new Trellis features or settings are not appearing. <br /><br /> **Warning:** This cannot be undone. | Controlled by the Mediavine Trellis Dashboard. |
 | Regenerate Images | Regenerates all image sizes on your site. <br /><br /> This is used if images other than your featured images are displaying at the wrong size. See How to Regenerate Your Image Sizes in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. |
+| Rebuild Active Compatibility Plugins List | Regenerates a list of active plugins that require compatibility code to work properly with Trellis. See [Trellis Themes: Conflicts and Compatibilities](https://product-help.mediavine.com/en/articles/5046317-trellis-themes-conflicts-and-compatibilities) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. |
 
 ## PWA Settings
 
@@ -185,13 +180,30 @@ Some settings will reference functions or code that needs to be included in a te
 
 | Setting | Description | Usage |
 | --- | --- | --- |
-| Add custom HTML code to the `<head>` tag | Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See Trellis Hooks Settings Overview in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_header_bottom()` in templates to `tha_head_bottom()`. See Hooks for more information. | Add custom content after the page header and menu | Useful for anything to be displayed on all posts and pages, including Home, Feed, and Category pages. See Trellis Hooks Settings Overview in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_before()` in templates to `tha_content_before()`. See Hooks for more information. |
-| Add custom content between the post heading and the post content | Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See Trellis Hooks Settings Overview in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_aside_before_entry_content()` in templates to `tha_aside_before_entry_content()`. See Hooks for more information. |
-| Add custom content after the post content | Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See Trellis Hooks Settings Overview in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_after()` in templates to `tha_content_after()`. See Hooks for more information. |
-| Add custom HTML code to the end of the `<body>` tag | Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See Trellis Hooks Settings Overview in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_body_bottom()` in templates to `tha_body_bottom()`. See Hooks for more information. |
+| Add custom HTML code to the `<head>` tag | Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_header_bottom()` in templates to `tha_head_bottom()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
+| Add custom content after the page header and menu | Useful for anything to be displayed on pages just after the header and before the content. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_before()` in templates to `tha_content_before()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
+| Add custom content between the post heading and the post content | Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_aside_before_entry_content()` in templates to `tha_aside_before_entry_content()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
+| Add custom content after the post content | Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_after()` in templates to `tha_content_after()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
+| Add custom HTML code to the end of the `<body>` tag | Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_body_bottom()` in templates to `tha_body_bottom()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
+
+## Critical CSS Settings
+
+### Settings
+
+| Setting | Description | Usage |
+| --- | --- | --- |
+| Enable Critical CSS | Improves your site's performance by separating CSS into two cached files. See Critical CSS in [Advanced Topics]({{< ref "advanced-topics" >}}) for more information. | Controlled by the Mediavine Trellis Dashboard.  |
+| Purge All Critical CSS | Removes all Critical CSS files for the site. New Critical CSS files are added as readers visit the site. Original CSS code will be served until the Critical CSS is regenerated. | Controlled by the Mediavine Trellis Dashboard. |
+
+### Exclusions
+| Setting | Description | Usage |
+| --- | --- | --- |
+| Post/Page Exclusions | Shows all posts and pages where Critical CSS has been disabled manually in the WordPress Editor. | Controlled by the Mediavine Trellis Dashboard. |
+| Force Non-Critical CSS | Allows CSS styling for HTML elements that are rendered after page load. <br /><br /> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in [Advanced Topics]({{< ref "advanced-topics" >}}) for more information. | Selectors can be added programmatically via  `mv_trellis_css_allowlist`. See [Filters]({{< ref "filters-summary" >}}) for more information. |
+| Force Critical CSS | Adds selectors to the initial Critical CSS file. <br /><br /> This is a compatibility setting for selectors that are not part of the initial viewport of a page. <br /><br /> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in [Advanced Topics]({{< ref "advanced-topics" >}}) for more information. | Selectors can be added programmatically via `mv_trellis_css_force_keep`. See [Filters]({{< ref "filters-summary" >}}) for more information. |
 
 ## What’s Next?
 
-- Get started creating a Trellis child theme
-- Read more about Trellis Hooks
-- Read more about Trellis Filters
+- Get started [creating a Trellis child theme]({{< ref "creating-your-child-theme" >}})
+- Read more about [Trellis Hooks]({{< ref "Hooks" >}})
+- Read more about [Trellis Filters]({{< ref "filters-summary" >}})

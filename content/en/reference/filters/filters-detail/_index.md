@@ -609,6 +609,42 @@ apply_filters( 'mv_trellis_disable_lazy_load_classes', array $values )
 
 ------
 
+### mv_trellis_disable_ld_output_for_compatibility
+
+Allows compatibility classes to stop the output of Trellis' JSON-LD data.
+
+```php
+apply_filters( 'mv_trellis_disable_ld_output_for_compatibility', bool $value )
+```
+
+**Default**
+
+- False
+
+**Arguments**
+
+- $value `bool` Whether to disable output of Trellis JSON-LD data.
+ 
+------
+
+### mv_trellis_disable_og_output_for_compatibility
+
+An array of plugin slugs that will disable Trellis Open Graph output if any are active.
+
+```php
+apply_filters( 'mv_trellis_disable_og_output_for_compatibility', bool $value )
+```
+
+**Default**
+
+- False
+
+**Arguments**
+
+- $value `bool` Whether to disable output of Trellis Open Graph data.
+
+------
+
 ### mv_trellis_disable_og_plugin_slugs
 
 An array of plugin slugs that will disable Trellis Open Graph output if any are active.
@@ -660,6 +696,24 @@ apply_filters( "mv_trellis_disable_{$this->slug}_compatibility", bool $value )
 **Arguments**
 
 - $value `bool` Whether to disable compatibility code for the specified plugin slug.
+
+------
+
+### mv_trellis_disable_seo_output_for_compatibility
+
+Allows compatibility classes to stop the output of Trellis' SEO data.
+
+```php
+apply_filters( 'mv_trellis_disable_seo_output_for_compatibility', bool $value )
+```
+
+**Default**
+
+- False
+
+**Arguments**
+
+- $value `bool` Whether to disable output of Trellis SEO data.
 
 ------
 

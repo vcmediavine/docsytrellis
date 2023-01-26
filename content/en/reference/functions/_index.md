@@ -109,85 +109,6 @@ Echoes the best resolution image in an `<img>` tag with srcset data.
 
 ---
 
-### mvt_adjust_excerpt_image_orientation_res
-
-Returns the specified resolution size for excerpt featured images.
-
-**Parameters**
-
-- $orientation `string` The selected orientation for the image.
-
-**Return**
-
-- `string` The resolution size.
-
----
-
-### mvt_adjust_featured_post_image_orientation_res
-
-Returns the specificed resolution size of the excerpt featured image for the featured post.
-
-**Parameters**
-
-- $orientation `string` The selected orientation for the image.
-
-**Return**
-
-- `string` The resolution size.
-
----
-
-### mvt_adjust_excerpt_image_sizes( string $sizes )
-
-Adjusts the sizes attribute value for excerpt thumbnail images.
-
-**Default**
-
-- (max-width: 599px) 300px, 270px
-
-**Parameters**
-
-- $sizes `string` The value of the image sizes attribute.
-
-**Return**
-
-- `string` The adjusted sizes attribute value.
-
----
-
-### mvt_adjust_featured_post_image_sizes
-
-Adjusts the sizes attribute value for the featured post thumbnail images.
-
-**Default**
-
-- (max-width: 340px) calc(100vw - 40px), (max-width: 450px) calc(100vw - 100px), (max-width: 959px) 350px, (max-width: 1134px) 275px, 350px
-
-**Parameters**
-
-- $sizes `string` The value of the image sizes attribute.
-
-**Return**
-
-- `string` The adjusted sizes attribute value.
-
----
-
-### mvt_get_image_orientation_res
-
-Appends a filtered resolution size to the image orientation. Ensures the specific resolution size of the image is used.
-
-**Parameters**
-
-- $orientation `string` The selected orientation for the image. Defaults to empty.
-- $image_res `string` The selected resolution for the image.
-
-**Return**
-
-- `string`  The orientation with an appended resolution size.
-
----
-
 ### mv_trellis_set_data
 
 Sets data that can be used across template parts.
@@ -519,7 +440,7 @@ Deletes all site Critical CSS and removes any pending rebuild requests.
 
 **Return**
 
-- Not applicable
+- Not applicable.
 
 ---
 
@@ -531,6 +452,113 @@ Deletes Critical CSS files for a specific post or page.
 
 - $id `int|string` Post or page id. Used to get the post or page slug when the slug is not provided.
 - $slug `string` Post or page slug.
+
+**Return**
+
+- Not applicable.
+
+---
+
+### mvt_adjust_excerpt_image_orientation_res
+
+Returns the specified resolution size for excerpt featured images.
+
+**Parameters**
+
+- $orientation `string` The selected orientation for the image.
+
+**Return**
+
+- `string` The resolution size.
+
+---
+
+### mvt_adjust_featured_post_image_orientation_res
+
+Returns the specificed resolution size of the excerpt featured image for the featured post.
+
+**Parameters**
+
+- $orientation `string` The selected orientation for the image.
+
+**Return**
+
+- `string` The resolution size.
+
+---
+
+### mvt_adjust_excerpt_image_sizes( string $sizes )
+
+Adjusts the sizes attribute value for excerpt thumbnail images.
+
+**Default**
+
+- (max-width: 599px) 300px, 270px
+
+**Parameters**
+
+- $sizes `string` The value of the image sizes attribute.
+
+**Return**
+
+- `string` The adjusted sizes attribute value.
+
+---
+
+### mvt_adjust_featured_post_image_sizes
+
+Adjusts the sizes attribute value for the featured post thumbnail images.
+
+**Default**
+
+- (max-width: 340px) calc(100vw - 40px), (max-width: 450px) calc(100vw - 100px), (max-width: 959px) 350px, (max-width: 1134px) 275px, 350px
+
+**Parameters**
+
+- $sizes `string` The value of the image sizes attribute.
+
+**Return**
+
+- `string` The adjusted sizes attribute value.
+
+---
+
+### mvt_get_image_orientation_res
+
+Appends a filtered resolution size to the image orientation. Ensures the specific resolution size of the image is used.
+
+**Parameters**
+
+- $orientation `string` The selected orientation for the image. Defaults to empty.
+- $image_res `string` The selected resolution for the image.
+
+**Return**
+
+- `string`  The orientation with an appended resolution size.
+
+---
+
+### mvt_title_after
+
+Fires off the `tha_title_after` hook after the closing  title `</h1>` tag (as long as the page title output isn't hidden).
+
+**Parameters**
+
+- None.
+
+**Return**
+
+- Not applicable.
+
+---
+
+### mvt_title_before
+
+Fires off the `tha_title_before` hook before the title `<h1>` tag (as long as the page title output isn't hidden).
+
+**Parameters**
+
+- None.
 
 **Return**
 
