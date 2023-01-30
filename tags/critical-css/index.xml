@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – critical css</title><link>https://mediavine.github.io/trellis-docs/tags/critical-css/</link><description>Recent content in critical css on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://mediavine.github.io/trellis-docs/tags/critical-css/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced-Topics: Critical CSS</title><link>https://mediavine.github.io/trellis-docs/advanced-topics/critical-css/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/advanced-topics/critical-css/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – critical css</title><link>https://vcmediavine.github.io/docsytrellis/tags/critical-css/</link><description>Recent content in critical css on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://vcmediavine.github.io/docsytrellis/tags/critical-css/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced-Topics: Critical CSS</title><link>https://vcmediavine.github.io/docsytrellis/advanced-topics/critical-css/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/advanced-topics/critical-css/</guid><description>
 &lt;p>Critical CSS reduces load time by generating two optimized CSS files: one for content styling that appears in the initial viewport for a page, and another for content styling for the rest of the page. Trellis creates these files for each page of your WordPress site.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Note&lt;/h4>
@@ -33,7 +33,7 @@ The primary Critical CSS file is loaded as inline styles when the page loads. Th
 &lt;/tr>
 &lt;tr>
 &lt;td>Error&lt;/td>
-&lt;td>The page encountered an error while generating the Critical CSS files. See &lt;a href="https://mediavine.github.io/trellis-docs/getting-started/troubleshooting">Troubleshooting&lt;/a> for some steps you can take to determine the problem.&lt;/td>
+&lt;td>The page encountered an error while generating the Critical CSS files. See &lt;a href="https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting">Troubleshooting&lt;/a> for some steps you can take to determine the problem.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>None&lt;/td>
@@ -69,7 +69,7 @@ When you visit a page while logged in, Trellis &lt;strong>does not&lt;/strong> s
 &lt;/tr>
 &lt;tr>
 &lt;td>Custom functions&lt;/td>
-&lt;td>The functions &lt;code>mv_trellis_purge_all_critical_css()&lt;/code> and &lt;code>mv_trellis_purge_page_critical_css()&lt;/code> will prompt a refresh of Critical CSS files. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/functions/">Functions&lt;/a> in the Reference section for more information.&lt;/td>
+&lt;td>The functions &lt;code>mv_trellis_purge_all_critical_css()&lt;/code> and &lt;code>mv_trellis_purge_page_critical_css()&lt;/code> will prompt a refresh of Critical CSS files. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/functions/">Functions&lt;/a> in the Reference section for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Plugin changes&lt;/td>
@@ -139,7 +139,7 @@ Styles added programmatically will not appear in the Mediavine Trellis Dashboard
 Styles added programmatically will not appear in the Mediavine Trellis Dashboard.
 &lt;/div>
 &lt;h2 id="issues-with-critical-css">Issues with Critical CSS&lt;/h2>
-&lt;p>If you encounter problems using Critical CSS during development, refer to &lt;a href="https://mediavine.github.io/trellis-docs/getting-started/troubleshooting">Troubleshooting&lt;/a>.&lt;/p></description></item><item><title>Getting-Started: Trellis Settings</title><link>https://mediavine.github.io/trellis-docs/getting-started/trellis-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/getting-started/trellis-settings/</guid><description>
+&lt;p>If you encounter problems using Critical CSS during development, refer to &lt;a href="https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting">Troubleshooting&lt;/a>.&lt;/p></description></item><item><title>Getting-Started: Trellis Settings</title><link>https://vcmediavine.github.io/docsytrellis/getting-started/trellis-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/getting-started/trellis-settings/</guid><description>
 &lt;p>The Mediavine Trellis Dashboard provides settings that the publisher can change to alter a theme’s behavior or perform Trellis maintenance functions. Not all settings may be available in a child theme. Some require the theme developer to specifically add support.&lt;/p>
 &lt;p>Also, if you choose to create new or additional templates (or create an entirely new CSS stylesheet), it’s up to you to connect the Trellis Dashboard settings to elements in your theme.&lt;/p>
 &lt;h2 id="using-settings-in-a-child-theme">Using Settings in a Child Theme&lt;/h2>
@@ -295,7 +295,7 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 &lt;tr>
 &lt;td>Site Logo&lt;/td>
 &lt;td>Sets an image for use as a logo in the site header. If there is no site logo, the site title will be shown. &lt;br />&lt;br /> In the Trellis Core theme and Bamboo and Birch, the logo will display inline with the main navigation. &lt;br />&lt;br />In Wisteria, the logo will display next to the sticky post on the homepage, and inline with the main navigation on posts and pages.&lt;/td>
-&lt;td>Created by the &lt;code>mv_trellis_site_title()&lt;/code> function. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Created by the &lt;code>mv_trellis_site_title()&lt;/code> function. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Change logo height&lt;/td>
@@ -332,12 +332,12 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 &lt;tr>
 &lt;td>Hide Mediavine/Trellis footer links&lt;/td>
 &lt;td>Removes the Mediavine/Trellis footer links.&lt;/td>
-&lt;td>Controlled by the &lt;code>mvt_footer_bottom()&lt;/code> function. &lt;br />&lt;br />See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the &lt;code>mvt_footer_bottom()&lt;/code> function. &lt;br />&lt;br />See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Footer Copyright Text&lt;/td>
 &lt;td>Adds personalized copyright text to the footer. Supports HTML markup, including links.&lt;/td>
-&lt;td>Controlled by the &lt;code>mvt_footer_bottom()&lt;/code> function. &lt;br />&lt;br />See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the &lt;code>mvt_footer_bottom()&lt;/code> function. &lt;br />&lt;br />See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -373,7 +373,7 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 &lt;/tr>
 &lt;tr>
 &lt;td>Enable Trellis comments&lt;/td>
-&lt;td>Sets Trellis as the commenting engine for the site. &lt;br />&lt;br /> See &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/trellis-comments/">Trellis Comments&lt;/a> in Advanced Topics for more information. &lt;br /> &lt;br /> &lt;strong>Note:&lt;/strong> If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility.&lt;/td>
+&lt;td>Sets Trellis as the commenting engine for the site. &lt;br />&lt;br /> See &lt;a href="https://vcmediavine.github.io/docsytrellis/advanced-topics/trellis-comments/">Trellis Comments&lt;/a> in Advanced Topics for more information. &lt;br /> &lt;br /> &lt;strong>Note:&lt;/strong> If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility.&lt;/td>
 &lt;td>See the comments template in Trellis Core for reference.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
@@ -539,27 +539,27 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 &lt;tr>
 &lt;td>Add custom HTML code to the &lt;code>&amp;lt;head&amp;gt;&lt;/code> tag&lt;/td>
 &lt;td>Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
-&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_header_bottom()&lt;/code> in templates to &lt;code>tha_head_bottom()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_header_bottom()&lt;/code> in templates to &lt;code>tha_head_bottom()&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Add custom content after the page header and menu&lt;/td>
 &lt;td>As of Trellis 0.17.0, this hook is useful for anything to be displayed on pages just after the header and before the content. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
-&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_content_before()&lt;/code> in templates to &lt;code>tha_content_before()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_content_before()&lt;/code> in templates to &lt;code>tha_content_before()&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Add custom content between the post heading and the post content&lt;/td>
 &lt;td>Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
-&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_aside_before_entry_content()&lt;/code> in templates to &lt;code>tha_aside_before_entry_content()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_aside_before_entry_content()&lt;/code> in templates to &lt;code>tha_aside_before_entry_content()&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Add custom content after the post content&lt;/td>
 &lt;td>Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
-&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_content_after()&lt;/code> in templates to &lt;code>tha_content_after()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_content_after()&lt;/code> in templates to &lt;code>tha_content_after()&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Add custom HTML code to the end of the &lt;code>&amp;lt;body&amp;gt;&lt;/code> tag&lt;/td>
 &lt;td>Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
-&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_body_bottom()&lt;/code> in templates to &lt;code>tha_body_bottom()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_body_bottom()&lt;/code> in templates to &lt;code>tha_body_bottom()&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -576,7 +576,7 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 &lt;tbody>
 &lt;tr>
 &lt;td>Enable Critical CSS&lt;/td>
-&lt;td>Improves your site&amp;rsquo;s performance by separating CSS into two cached files. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
+&lt;td>Improves your site&amp;rsquo;s performance by separating CSS into two cached files. See Critical CSS in &lt;a href="https://vcmediavine.github.io/docsytrellis/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
 &lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -603,22 +603,22 @@ Do not redeclare any Trellis CSS variables. Doing so will break Trellis function
 &lt;/tr>
 &lt;tr>
 &lt;td>Force Non-Critical CSS&lt;/td>
-&lt;td>Allows CSS styling for HTML elements that are rendered after page load. &lt;br />&lt;br /> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
-&lt;td>Selectors can be added programmatically via &lt;code>mv_trellis_css_allowlist&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Filters&lt;/a> for more information.&lt;/td>
+&lt;td>Allows CSS styling for HTML elements that are rendered after page load. &lt;br />&lt;br /> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in &lt;a href="https://vcmediavine.github.io/docsytrellis/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
+&lt;td>Selectors can be added programmatically via &lt;code>mv_trellis_css_allowlist&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/">Filters&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Force Critical CSS&lt;/td>
-&lt;td>Adds selectors to the initial Critical CSS file. &lt;br />&lt;br /> This is a compatibility setting for selectors that are not part of the initial viewport of a page. &lt;br />&lt;br /> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
-&lt;td>Selectors can be added programmatically via &lt;code>mv_trellis_css_force_keep&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Filters&lt;/a> for more information.&lt;/td>
+&lt;td>Adds selectors to the initial Critical CSS file. &lt;br />&lt;br /> This is a compatibility setting for selectors that are not part of the initial viewport of a page. &lt;br />&lt;br /> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in &lt;a href="https://vcmediavine.github.io/docsytrellis/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
+&lt;td>Selectors can be added programmatically via &lt;code>mv_trellis_css_force_keep&lt;/code>. See &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/">Filters&lt;/a> for more information.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="whats-next">What’s Next?&lt;/h2>
 &lt;ul>
-&lt;li>Get started &lt;a href="https://mediavine.github.io/trellis-docs/getting-started/creating-your-child-theme/">creating a Trellis child theme&lt;/a>&lt;/li>
-&lt;li>Read more about &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Trellis Hooks&lt;/a>&lt;/li>
-&lt;li>Read more about &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Trellis Filters&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Getting-Started: Troubleshooting</title><link>https://mediavine.github.io/trellis-docs/getting-started/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/getting-started/troubleshooting/</guid><description>
+&lt;li>Get started &lt;a href="https://vcmediavine.github.io/docsytrellis/getting-started/creating-your-child-theme/">creating a Trellis child theme&lt;/a>&lt;/li>
+&lt;li>Read more about &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/hooks/">Trellis Hooks&lt;/a>&lt;/li>
+&lt;li>Read more about &lt;a href="https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/">Trellis Filters&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Getting-Started: Troubleshooting</title><link>https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting/</guid><description>
 &lt;h2 id="visitors-unable-to-see-css-changes">Visitors Unable to See CSS Changes&lt;/h2>
 &lt;p>When Critical CSS is enabled, Trellis will audit the CSS files for your website and generate a Critical CSS file and a Non-Critical CSS file for each rendered page as visitors view them. These files are cached, and so visitors may not immediately see any styling changes until the Critical CSS files are regenerated.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
@@ -631,7 +631,7 @@ When you’re logged in to your site, you will always see the originally coded C
 &lt;li>While logged in, visit the page and check the Critical CSS status in the admin bar. Trellis will tell you if it is regenerating the Critical CSS files or if there was an error during processing.&lt;/li>
 &lt;/ol>
 &lt;ul>
-&lt;li>If the status is Processing, come back to the page later to see if its status has changed to Success. You can then test the page by viewing it while not logged in as an administrator. For an explanation of all Critical CSS Statuses, see Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a>.&lt;/li>
+&lt;li>If the status is Processing, come back to the page later to see if its status has changed to Success. You can then test the page by viewing it while not logged in as an administrator. For an explanation of all Critical CSS Statuses, see Critical CSS in &lt;a href="https://vcmediavine.github.io/docsytrellis/advanced-topics/">Advanced Topics&lt;/a>.&lt;/li>
 &lt;li>If the status is Success but your visitors are still not seeing the CSS changes, try a hard refresh of the page or clearing your browser cache to see if the style changes appear. If the issue persists, try deleting the Critical CSS file for the page. You can do this by logging in, visiting the page, and selecting &lt;strong>Manage Trellis JS/CSS Options &amp;gt; Purge Page CSS&lt;/strong> in the admin bar. Once the page’s Critical CSS status is Success, visit it again while not logged in.&lt;/li>
 &lt;/ul>
 &lt;h2 id="critical-css-errors-on-pages">Critical CSS Errors on Pages&lt;/h2>
@@ -693,6 +693,6 @@ When you’re logged in to your site, you will always see the originally coded C
 &lt;h3 id="steps-to-troubleshoot-4">Steps to Troubleshoot&lt;/h3>
 &lt;ol>
 &lt;li>In Incognito mode in your browser, test a post (not the homepage) to give you a better idea of what your readers are experiencing. This is the best method for getting more accurate speed test results.&lt;/li>
-&lt;li>Check the Critical CSS status for any pages with low scores. Make sure that the Critical CSS status is Success. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information on Critical CSS statuses.&lt;/li>
+&lt;li>Check the Critical CSS status for any pages with low scores. Make sure that the Critical CSS status is Success. See Critical CSS in &lt;a href="https://vcmediavine.github.io/docsytrellis/advanced-topics/">Advanced Topics&lt;/a> for more information on Critical CSS statuses.&lt;/li>
 &lt;li>For an extensive list of troubleshooting steps, see &lt;a href="https://product-help.mediavine.com/en/articles/5392546-core-web-vitals-with-trellis">Core Web Vitals with Trellis&lt;/a> in the Help Center.&lt;/li>
 &lt;/ol></description></item></channel></rss>
