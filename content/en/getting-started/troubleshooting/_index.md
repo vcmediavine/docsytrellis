@@ -1,4 +1,5 @@
 ---
+tags: ["critical css","troubleshooting"]
 title: "Troubleshooting"
 type: docs
 weight: 60

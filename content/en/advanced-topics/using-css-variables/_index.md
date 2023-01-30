@@ -1,4 +1,5 @@
 ---
+tags: ["css variables"]
 title: "Using CSS Variables"
 type: docs
 weight: 40
@@ -37,7 +38,7 @@ This table represents a full list of CSS variables available in Trellis.
 
 | CSS Variable | Description | Default Value |
 | --- | --- | --- |
-| `--mv-trellis-color-heading` | Applied to Site Title text when there’s not a logo. | #243746 |
+| `--mv-trellis-color-heading` | Applied to the Site Title text when there’s not a logo. | #243746 |
 | `--mv-trellis-color-link` | Applied to:<br />- Link text default color<br />- Link icon default fill color<br />- Button default background color | `--mv-trellis-color-primary` |
 | `--mv-trellis-color-link-hover` | Applied to:<br />- Link text default hover color<br />- Link icon default hover fill cover<br />- Button default hover background color | `--mv-trellis-color-secondary` |
 | `--mv-trellis-color-primary` | Sets a main color for use in child themes. Trellis defaults to using this color for links, buttons, and other elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo. | #243746 |
@@ -65,7 +66,7 @@ This table represents a full list of CSS variables available in Trellis.
 
 ## Disabling All Trellis CSS Styling
 
-If you’d like to start from scratch and discard all default Trellis Core CSS styling, add the following code in your `functions.php` file:
+If you’d like to start from scratch and discard all default Trellis Core CSS styling, add the following code in your functions.php file:
 
 {{% alert color="warning" title="Important" %}}
 Disabling the default Trellis CSS styles will require you to define all layout and styling in your own CSS files.

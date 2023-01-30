@@ -27,4 +27,4 @@ Click on a link to view the diagram.
 
 ## What’s Next?
 
-- See the [Visual Hooks Guide]({{< ref "visual-hooks-guide" >}}) to see where Trellis hooks appear within page layouts.
+- See the [Visual Hooks Guide]({{< ref "visual-hooks-guide" >}}) to see where Trellis hooks appear within page layouts

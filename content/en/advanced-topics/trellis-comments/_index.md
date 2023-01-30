@@ -1,4 +1,5 @@
 ---
+tags: ["comments"]
 title: "Trellis Comments"
 type: docs
 weight: 60
@@ -32,6 +33,8 @@ Trellis attempts to mitigate any problems by saving each field in the comment fo
 If you plan on using additional comment plugins with your Trellis child theme, be sure to test them. If there are conflicts, you may need to disable Trellis Comments. See [Trellis Themes: Conflicts and Compatibilities](https://intercom.help/mediavine-products/en/articles/5046317-trellis-themes-conflicts-and-compatibilities) in the Help Center for information on known plugins that don’t work well with Trellis.
 
 ## Useful Filters
+
+The following filters can be used in Trellis child theme code. For more information on them, see [Filters]({{< ref "filters-summary" >}}) in the Reference section.
 
 - mvt_requires_default_wp_fields
 - mv_trellis_comments_template

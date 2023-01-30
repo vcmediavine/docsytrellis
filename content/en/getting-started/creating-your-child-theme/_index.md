@@ -27,7 +27,7 @@ Trellis child themes follow the same basic structure as any WordPress child them
 
 ### Create a Style.css File
 
-1. Create a new file called `style.css` in your child theme folder.
+1. Create a new file called style.css in your child theme folder.
 2. Add the following code, replacing the boilerplate text with your own content:
 
 ```css
@@ -62,7 +62,7 @@ Your custom CSS file can be any name you choose, but we recommend including the 
 wp-content/themes/my-child-theme-name/assets/
 ```
 
-1. Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file `index.0.0.1.css`.
+1. Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file index.0.0.1.css.
 
 {{% alert title="Note" %}}
 Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see [Using CSS Variables]({{< ref "using-css-variables" >}}) in Advanced Topics.
@@ -70,12 +70,12 @@ Adding CSS selectors to your child theme’s CSS file will override any matching
 
 ## Add a Functions.php File
 
-Your child theme’s `functions.php` file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.
+Your child theme’s functions.php file will hold custom functions that change how your theme behaves. It lets you enqueue your CSS stylesheet and customize your theme options.
 
 ### Set Basic Definitions
 
-1. Add a `functions.php` file to your child theme folder.
-2. Add the following code to `functions.php`, replacing the boilerplate text with your own values:
+1. Add a functions.php file to your child theme folder.
+2. Add the following code to functions.php, replacing the boilerplate text with your own values:
 
 ```php
 <?php

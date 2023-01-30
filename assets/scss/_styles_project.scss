@@ -7,8 +7,31 @@ Add styles or override variables from the theme here.
 @import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Lora:400,700|Roboto+Mono:300,400";
 @import "https://cdn.mediavine.com/fonts/ProximaNova/stylesheet.css";
 
-a {
-	color: #41A4A9;
+
+/* Change color of links for accessibility */
+
+a, div.alert > code {
+	color: #5A71AD;
+}
+
+div.alert > a {
+	font-weight: 700;
+}
+
+a:hover {
+	color: #465A8E;
+}
+
+/* Change color of home page links on color background */
+
+.td-box--secondary p > a {
+	color: #5A71AD !important;
+	font-weight: 700 !important;
+}
+
+/* Change color of privacy link on home page for accessibility */
+.privacy a {
+	color: #ffffff;
 }
 
 /* Hide repo links */
