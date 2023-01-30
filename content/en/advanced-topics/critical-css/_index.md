@@ -18,7 +18,7 @@ In this article, a page refers to either a post or an actual page in WordPress. 
 2. The page is rendered in a browser with a 1300 x 900px viewport and its CSS stylesheet is audited.
 3. Any CSS styles that affect content in this viewport are saved into a minified primary Critical CSS file.
 4. Any CSS styles that fall outside of this viewport are saved into a minified secondary Non-Critical CSS file. CSS styles that are not referenced by elements on the page are completely left out.
-5. When the Critical and Non-Critical files are complete, the Trellis API notifies your Trellis instance to download them. These files are saved into your WordPress installation (specifically the `/wp-content/mvt-critical/`  directory).
+5. When the Critical and Non-Critical files are complete, the Trellis API notifies your Trellis instance to download them. These files are saved into your WordPress installation (specifically the /wp-content/mvt-critical/ directory).
 6. The next time the page is visited, the Critical and Non-Critical CSS files are served to the reader.
 
 {{% alert title="Note" %}}
@@ -32,7 +32,7 @@ When logged in, a Critical CSS Status will appear in the admin bar when you view
 | Status | Description |
 | --- | --- |
 | Disabled | Critical CSS generation has been disabled for the post or page. |
-| Error | The page encountered an error while generating the Critical CSS files. See [Troubleshooting]({{< ref "troubleshooting">}}) for some steps you can take to determine the problem. |
+| Error | The page encountered an error while generating the Critical CSS files. See [Troubleshooting](/getting-started/troubleshooting) for some steps you can take to determine the problem. |
 | None | The page has not attempted to generate Critical CSS yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis API after two hours. |
 | Processing | The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis API, but the files haven’t been saved to the site yet. |
 | Success | The page successfully generated Critical CSS files. |
@@ -64,7 +64,7 @@ There are instances where you might want to alter Critical CSS functionality bec
 
 By default, if a CSS selector doesn’t match an element in the initial 1300 x 900px viewport of a page, it gets saved to that page’s Non-Critical CSS file. This might not be the desired behavior. It's possible that you need some styles to be present at page load to prevent a layout shift or stop a flash of unstyled content for elements close to the viewport, but not in it.
 
-While publishers can add CSS selectors manually to the Force Critical CSS list with the Mediavine Trellis Dashboard, you can include them programmatically by adding code to your child theme’s `functions.php` file.
+While publishers can add CSS selectors manually to the Force Critical CSS list with the Mediavine Trellis Dashboard, you can include them programmatically by adding code to your child theme’s functions.php file.
 
 In the example below, selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An `add_filter` is then used to add the matching selectors to Trellis’ Force Critical CSS list. When a page gets submitted to the Trellis API, any matching CSS selectors are added to the Critical CSS file.
 
@@ -106,7 +106,7 @@ Styles added programmatically will not appear in the Mediavine Trellis Dashboard
 
 When creating the secondary Non-Critical CSS file, Trellis leaves out any CSS styles that don't apply to elements on the page. This can create issues if elements are added to the page markup after the initial page load. The Trellis API does not execute JavaScript at runtime, so styles for these added elements would not be included in the Non-Critical CSS file.
 
-Publishers can add these style selectors manually by using the Mediavine Trellis Dashboard, but if you design your child theme to work with a third-party plugin (or are adding your own JavaScript that impacts content styling) you may want to include selectors programmatically. You do this by adding code to your child theme’s `functions.php` file.
+Publishers can add these style selectors manually by using the Mediavine Trellis Dashboard, but if you design your child theme to work with a third-party plugin (or are adding your own JavaScript that impacts content styling) you may want to include selectors programmatically. You do this by adding code to your child theme’s functions.php file.
 
 Just like with Force Critical CSS, the example below shows a custom function where selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An `add_filter` is then used to add the matching selectors to Trellis’ Force Non-Critical CSS list. Any CSS styles that match the expression will get added to the Non-Critical CSS file. 
 
@@ -142,4 +142,4 @@ Styles added programmatically will not appear in the Mediavine Trellis Dashboard
 
 ## Issues with Critical CSS
 
-If you encounter problems using Critical CSS during development, refer to [Troubleshooting]({{< ref "troubleshooting" >}}).
+If you encounter problems using Critical CSS during development, refer to [Troubleshooting](/getting-started/troubleshooting).

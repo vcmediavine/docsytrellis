@@ -1,4 +1,5 @@
 ---
+tags: ["settings","critical css"]
 title: "Trellis Settings"
 type: docs
 weight: 30
@@ -125,8 +126,8 @@ Some settings will reference functions or code that needs to be included in a te
 | --- | --- | --- |
 | Enable Search Bar | Adds a search bar to the site header. | See header template part in Trellis Core for reference. |
 | Layout space | Adjusts the margins between key layout elements like the primary content, sidebar, and widgets. The following defaults are used: <br /><br /> Compact = 10px <br /> Comfortable = 20px | CSS Variable: `--mv-trellis-gutter` |
-| Display Tag Links | Controls if tag links are output in the `footer.entry-footer` when viewing a post. | Controlled by the Mediavine Trellis Dashboard. |
-| Article Navigation | Controls whether a `nav.post-navigation` tag with a link to the next or previous post is added to the bottom of a post. | Controlled by the Mediavine Trellis Dashboard. |
+| Display Tag Links | As of Trellis 0.17.0, controls if tag links are output in the `footer.entry-footer` when viewing a post. | Controlled by the Mediavine Trellis Dashboard. |
+| Article Navigation | As of Trellis 0.17.0, controls whether a `nav.post-navigation` tag with a link to the next or previous post is added to the bottom of a post. | Controlled by the Mediavine Trellis Dashboard. |
 | Enable Trellis comments | Sets Trellis as the commenting engine for the site. <br /><br /> See [Trellis Comments]({{< ref"trellis-comments" >}}) in Advanced Topics for more information. <br /> <br /> **Note:** If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility. | See the comments template in Trellis Core for reference. |
 
 ## Advanced Settings
@@ -181,7 +182,7 @@ Some settings will reference functions or code that needs to be included in a te
 | Setting | Description | Usage |
 | --- | --- | --- |
 | Add custom HTML code to the `<head>` tag | Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_header_bottom()` in templates to `tha_head_bottom()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
-| Add custom content after the page header and menu | Useful for anything to be displayed on pages just after the header and before the content. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_before()` in templates to `tha_content_before()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
+| Add custom content after the page header and menu | As of Trellis 0.17.0, this hook is useful for anything to be displayed on pages just after the header and before the content. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_before()` in templates to `tha_content_before()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
 | Add custom content between the post heading and the post content | Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_aside_before_entry_content()` in templates to `tha_aside_before_entry_content()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
 | Add custom content after the post content | Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_content_after()` in templates to `tha_content_after()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
 | Add custom HTML code to the end of the `<body>` tag | Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See [Trellis Hooks Settings Overview](https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview) in the Trellis Help Center for more information. | Controlled by the Mediavine Trellis Dashboard. Added via `mvt_body_bottom()` in templates to `tha_body_bottom()`. See [Hooks]({{< ref "hooks" >}}) for more information. |
@@ -198,7 +199,7 @@ Some settings will reference functions or code that needs to be included in a te
 ### Exclusions
 | Setting | Description | Usage |
 | --- | --- | --- |
-| Post/Page Exclusions | Shows all posts and pages where Critical CSS has been disabled manually in the WordPress Editor. | Controlled by the Mediavine Trellis Dashboard. |
+| Post/Page Exclusions | As of Trellis 0.17.0, it shows all posts and pages where Critical CSS has been disabled manually in the WordPress Editor. | Controlled by the Mediavine Trellis Dashboard. |
 | Force Non-Critical CSS | Allows CSS styling for HTML elements that are rendered after page load. <br /><br /> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in [Advanced Topics]({{< ref "advanced-topics" >}}) for more information. | Selectors can be added programmatically via  `mv_trellis_css_allowlist`. See [Filters]({{< ref "filters-summary" >}}) for more information. |
 | Force Critical CSS | Adds selectors to the initial Critical CSS file. <br /><br /> This is a compatibility setting for selectors that are not part of the initial viewport of a page. <br /><br /> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in [Advanced Topics]({{< ref "advanced-topics" >}}) for more information. | Selectors can be added programmatically via `mv_trellis_css_force_keep`. See [Filters]({{< ref "filters-summary" >}}) for more information. |
 

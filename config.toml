@@ -1,4 +1,4 @@
-baseURL = "https://vcmediavine.github.io/docsytrellis/"
+baseURL = "https://mediavine.github.io/trellis-docs/"
 title = "Mediavine Trellis Developer Reference"
 
 # Language settings
@@ -61,7 +61,7 @@ anchor = "smart"
 [services]
 [services.googleAnalytics]
 # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
-id = "UA-00000000-0"
+id = "G-5F1P8LLZ5M"
 
 # Language configuration
 
@@ -128,7 +128,7 @@ github_project_repo = "https://github.com/google/docsy"
 
 # Uncomment this if your GitHub repo does not have "main" as the default branch,
 # or specify a new value if you want to reference another branch in your GitHub links
-github_branch= "master"
+# github_branch= "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "d72aa9b2712488cc3"
@@ -166,7 +166,7 @@ sidebar_search_disable = true
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
 yes = 'Thanks for your feedback!'
-no = 'Sorry to hear that. Please contact Trellis Support at <a href="mailto:trellis@mediavine.com">trellis@mediavine.com</a> if you need additional help.'
+no = 'Sorry to hear that. Your feedback has been noted and our doc team will review this page. Try visiting the <a href="https://product-help.mediavine.com/en/collections/2558553-the-trellis-framework">Trellis Help Center</a> to see if there is an answer to your question there.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page, 
