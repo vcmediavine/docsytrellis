@@ -1,0 +1,166 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – css variables</title><link>https://mediavine.github.io/trellis-docs/tags/css-variables/</link><description>Recent content in css variables on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://mediavine.github.io/trellis-docs/tags/css-variables/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced-Topics: Using CSS Variables</title><link>https://mediavine.github.io/trellis-docs/advanced-topics/using-css-variables/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/advanced-topics/using-css-variables/</guid><description>
+&lt;p>By using CSS variables in your own child theme, you can make it easy for publishers to update CSS styles using the Mediavine Trellis Dashboard.&lt;/p>
+&lt;h2 id="how-css-variables-work">How CSS Variables Work&lt;/h2>
+&lt;p>Trellis’ default CSS stylesheet incorporates all of the settings shown in the table below. If you want to make use of a setting color or font in a different part of your theme, you’ll need to reference a Trellis CSS variable.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+Do not redeclare any Trellis CSS variables. Doing so will break Trellis functionality.
+&lt;/div>
+&lt;p>The syntax to use a CSS variable is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">var&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#f92672">--trellis-variable-name&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#111">#&lt;/span>&lt;span style="color:#111">optional-fallback-value&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, if using the Trellis Primary color as the background for a div element (with a fallback value of white), you would use:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#111">{&lt;/span> &lt;span style="color:#00a8c8">background-color&lt;/span>&lt;span style="color:#111">:&lt;/span> &lt;span style="color:#75af00">var&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#f92672">--&lt;/span>&lt;span style="color:#111">mv&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#111">trellis&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#00a8c8">color&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#111">primary&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#ae81ff">#ffffff&lt;/span>&lt;span style="color:#111">);&lt;/span> &lt;span style="color:#111">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+A &lt;a href="https://sass-lang.com/">Sass&lt;/a> mixin is included in Trellis Core and Mediavine child themes. This mixin will provide fallback for browsers that don’t support CSS variables. For a complete list of browsers that support CSS variables, see &lt;a href="https://www.lambdatest.com/web-technologies/css-variables">https://www.lambdatest.com/web-technologies/css-variables&lt;/a>.
+&lt;/div>
+&lt;h2 id="list-of-trellis-css-variables">List of Trellis CSS Variables&lt;/h2>
+&lt;p>This table represents a full list of CSS variables available in Trellis.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>CSS Variable&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Default Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-color-heading&lt;/code>&lt;/td>
+&lt;td>Applied to the Site Title text when there’s not a logo.&lt;/td>
+&lt;td>#243746&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-color-link&lt;/code>&lt;/td>
+&lt;td>Applied to:&lt;br />- Link text default color&lt;br />- Link icon default fill color&lt;br />- Button default background color&lt;/td>
+&lt;td>&lt;code>--mv-trellis-color-primary&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-color-link-hover&lt;/code>&lt;/td>
+&lt;td>Applied to:&lt;br />- Link text default hover color&lt;br />- Link icon default hover fill cover&lt;br />- Button default hover background color&lt;/td>
+&lt;td>&lt;code>--mv-trellis-color-secondary&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-color-primary&lt;/code>&lt;/td>
+&lt;td>Sets a main color for use in child themes. Trellis defaults to using this color for links, buttons, and other elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo.&lt;/td>
+&lt;td>#243746&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-color-secondary&lt;/code>&lt;/td>
+&lt;td>Sets an alternate color for use in child themes. Trellis defaults to using this color for hover effects, alternate buttons, and other secondary elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo.&lt;/td>
+&lt;td>#243745&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-color-background-accent&lt;/code>&lt;/td>
+&lt;td>Sets the background color of some elements like page and post headers in the Trellis Core theme and in Birch and Wisteria. &lt;br />&lt;br />This setting is not used in the Bamboo child theme.&lt;br />&lt;br />Theme support parameter:&lt;br />&lt;code>mv_trellis_background_accent_color&lt;/code>&lt;/td>
+&lt;td>#fafafa&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-font-body&lt;/code>&lt;/td>
+&lt;td>Sets the font of the body element. Select a Web Safe font for best performance.&lt;/td>
+&lt;td>System Default (Web Safe)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-font-heading&lt;/code>&lt;/td>
+&lt;td>Sets the font for all headings. Select a Web Safe font for best performance.&lt;/td>
+&lt;td>System Default (Web Safe)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-font-size&lt;/code>&lt;/td>
+&lt;td>Sets the font size for the body element.&lt;/td>
+&lt;td>Medium (18px)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-font-size-ex-sm&lt;/code>&lt;/td>
+&lt;td>A font size derived from mv-trellis-font-size.&lt;/td>
+&lt;td>font-size * 0.667&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-font-size-lg&lt;/code>&lt;/td>
+&lt;td>A font size derived from mv-trellis-font-size.&lt;/td>
+&lt;td>font-size * 1.125&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-font-size-sm&lt;/code>&lt;/td>
+&lt;td>A font size derived from mv-trellis-font-size.&lt;/td>
+&lt;td>font-size * 0.875&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-gutter&lt;/code>&lt;/td>
+&lt;td>Adjusts the margins between key layout elements like the primary content, sidebar, and widgets. The following defaults are used:&lt;br />&lt;br />Compact = 10px&lt;br />Comfortable = 20px&lt;/td>
+&lt;td>Comfortable&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-gutter-double&lt;/code>&lt;/td>
+&lt;td>A gutter value derived from mv-trellis-gutter.&lt;/td>
+&lt;td>gutter * 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-gutter-large&lt;/code>&lt;/td>
+&lt;td>A gutter value derived from mv-trellis-gutter.&lt;/td>
+&lt;td>gutter * 2.5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-gutter-small&lt;/code>&lt;/td>
+&lt;td>A gutter value derived from mv-trellis-gutter.&lt;/td>
+&lt;td>floor(gutter/2)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h1-font-color&lt;/code>&lt;/td>
+&lt;td>Sets the color of all H1 headings in the Trellis Core theme and Bamboo.&lt;br />&lt;br />This setting is not used in the Wisteria and Birch child themes.&lt;br />&lt;br />Theme support parameter:&lt;br />&lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>#000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h1-font-size&lt;/code>&lt;/td>
+&lt;td>Sets the default size for H1 headings.&lt;br />&lt;br />Full options include:&lt;br />- Small: 24px&lt;br />- Medium: 36px&lt;br />- Large: 42px&lt;br />- X-Large: 56px&lt;br />&lt;br />Theme support parameter: &lt;br />&lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>Medium (36px)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h2-font-size&lt;/code>&lt;/td>
+&lt;td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:&lt;br />&lt;br />Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>H1 size * 0.75 (rem)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h3-font-size&lt;/code>&lt;/td>
+&lt;td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:&lt;br />&lt;br />Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>H1 size * 0.67 (rem)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h4-font-size&lt;/code>&lt;/td>
+&lt;td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:&lt;br />&lt;br />Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>H1 size * 0.63 (rem)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h5-font-size&lt;/code>&lt;/td>
+&lt;td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:&lt;br />&lt;br />Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>H1 size * 0.56 (rem)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-h6-font-size&lt;/code>&lt;/td>
+&lt;td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used:&lt;br />&lt;br />Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>H1 size * 0.5 (rem)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-heading-font-color&lt;/code>&lt;/td>
+&lt;td>Sets the color of all H2 to H6 elements to match the H1 color setting in the Trellis Core theme and Bamboo.&lt;br />&lt;br />This setting is not used in the Wisteria and Birch child themes.&lt;br />&lt;br />Theme support parameter: &lt;br />&lt;code>mv_trellis_headings_control&lt;/code>&lt;/td>
+&lt;td>#000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--mv-trellis-max-logo-size&lt;/code>&lt;/td>
+&lt;td>Sets the max logo height value that can be shown in the header.&lt;br />&lt;br />Full options include:&lt;br />- Small (50px)&lt;br />- Medium (75px)&lt;br />- Large (100px)&lt;br />- Extra Large (150px)&lt;/td>
+&lt;td>Extra Large (150px)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="disabling-all-trellis-css-styling">Disabling All Trellis CSS Styling&lt;/h2>
+&lt;p>If you’d like to start from scratch and discard all default Trellis Core CSS styling, add the following code in your functions.php file:&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+Disabling the default Trellis CSS styles will require you to define all layout and styling in your own CSS files.
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#d88200">/** Turn Off Trellis Parent Theme CSS **
+&lt;/span>&lt;span style="color:#d88200"> * Use add_filter to remove all Trellis parent theme CSS definitions.
+&lt;/span>&lt;span style="color:#d88200">*/&lt;/span>
+&lt;span style="color:#75af00">add_filter&lt;/span>&lt;span style="color:#111">(&lt;/span> &lt;span style="color:#d88200">&amp;#39;mv_trellis_enqueue_main_style&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#d88200">&amp;#39;__return_false&amp;#39;&lt;/span> &lt;span style="color:#111">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

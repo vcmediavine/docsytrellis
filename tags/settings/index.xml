@@ -1,0 +1,480 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – settings</title><link>https://mediavine.github.io/trellis-docs/tags/settings/</link><description>Recent content in settings on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://mediavine.github.io/trellis-docs/tags/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Getting-Started: Trellis Settings</title><link>https://mediavine.github.io/trellis-docs/getting-started/trellis-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/getting-started/trellis-settings/</guid><description>
+&lt;p>The Mediavine Trellis Dashboard provides settings that the publisher can change to alter a theme’s behavior or perform Trellis maintenance functions. Not all settings may be available in a child theme. Some require the theme developer to specifically add support.&lt;/p>
+&lt;p>Also, if you choose to create new or additional templates (or create an entirely new CSS stylesheet), it’s up to you to connect the Trellis Dashboard settings to elements in your theme.&lt;/p>
+&lt;h2 id="using-settings-in-a-child-theme">Using Settings in a Child Theme&lt;/h2>
+&lt;p>The Usage column in the table below describes how a setting is incorporated into a child theme. Some settings are enabled via WordPress’ theme support function; some are accessed via CSS variables; others require adding code to child theme templates. Some require a combination of these methods.&lt;/p>
+&lt;p>While it’s possible to read the settings programmatically (and then perform an action on them), this page focuses on how the settings are incorporated in the Trellis Core templates.&lt;/p>
+&lt;h3 id="theme-support">Theme Support&lt;/h3>
+&lt;p>When enabling a feature via WordPress’ theme support function, use the following code in the child theme’s functions.php file, at the end of the &lt;code>mv_trellis_child_set_options()&lt;/code> function:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#75af00">add_theme_support&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;parameter&amp;#39;&lt;/span>&lt;span style="color:#111">);&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+If multiple settings use the same theme support parameter, all of those settings will become visible in the Mediavine Trellis Dashboard when enabled.
+&lt;/div>
+&lt;p>For example, if adding support for the Background Accent Color setting, the code would look similar to:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-php" data-lang="php">&lt;span style="color:#00a8c8">function&lt;/span> &lt;span style="color:#75af00">mv_trellis_child_set_options&lt;/span>&lt;span style="color:#111">()&lt;/span> &lt;span style="color:#111">{&lt;/span>
+&lt;span style="color:#111">$child_version&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#d88200">&amp;#39;0.0.1&amp;#39;&lt;/span>&lt;span style="color:#111">;&lt;/span>
+&lt;span style="color:#75af00">\Mediavine\Trellis\Options&lt;/span>&lt;span style="color:#f92672">::&lt;/span>&lt;span style="color:#75af00">set_multiple&lt;/span>&lt;span style="color:#111">(&lt;/span>
+&lt;span style="color:#111">[&lt;/span>
+&lt;span style="color:#d88200">&amp;#39;child_name&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#d88200">&amp;#39;&amp;lt;trellis-child-theme-name&amp;gt;&amp;#39;&lt;/span>&lt;span style="color:#111">,&lt;/span>
+&lt;span style="color:#d88200">&amp;#39;child_version&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#111">$child_version&lt;/span>&lt;span style="color:#111">,&lt;/span>
+&lt;span style="color:#d88200">&amp;#39;child_css&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#75af00">get_stylesheet_directory_uri&lt;/span>&lt;span style="color:#111">()&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#d88200">&amp;#34;/assets/index.&lt;/span>&lt;span style="color:#d88200">$child_version&lt;/span>&lt;span style="color:#d88200">.css&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span>
+&lt;span style="color:#d88200">&amp;#39;child_js&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&amp;gt;&lt;/span> &lt;span style="color:#75af00">get_stylesheet_directory_uri&lt;/span>&lt;span style="color:#111">()&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#d88200">&amp;#34;/assets/index.&lt;/span>&lt;span style="color:#d88200">$child_version&lt;/span>&lt;span style="color:#d88200">.js&amp;#34;&lt;/span>&lt;span style="color:#111">,&lt;/span>
+&lt;span style="color:#111">]&lt;/span>
+&lt;span style="color:#111">);&lt;/span>
+&lt;span style="color:#d88200">/** add theme support for background accent color */&lt;/span>
+&lt;span style="color:#75af00">add_theme_support&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#d88200">&amp;#39;mv_trellis_background_accent_color&amp;#39;&lt;/span>&lt;span style="color:#111">);&lt;/span>
+&lt;span style="color:#111">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Multiple &lt;code>add_theme_support()&lt;/code> methods can be added to the function.&lt;/p>
+&lt;h3 id="using-trellis-css-variables">Using Trellis CSS Variables&lt;/h3>
+&lt;p>Trellis’ default CSS stylesheet incorporates all the settings shown in the table. If you want to make use of a setting color or font in a different part of your theme, you’ll need to reference a Trellis CSS variable.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+Do not redeclare any Trellis CSS variables. Doing so will break Trellis functionality.
+&lt;/div>
+&lt;p>The syntax to use a CSS variable is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">var&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#f92672">--trellis-variable-name&lt;/span>&lt;span style="color:#f92672">,&lt;/span> &lt;span style="color:#111">#&lt;/span>&lt;span style="color:#111">optional-fallback-value&lt;/span>&lt;span style="color:#f92672">&amp;gt;)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For example, if using the Trellis Primary color as the background for a div element (with a fallback value of white), you would use:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#111">{&lt;/span> &lt;span style="color:#00a8c8">background-color&lt;/span>&lt;span style="color:#111">:&lt;/span> &lt;span style="color:#75af00">var&lt;/span>&lt;span style="color:#111">(&lt;/span>&lt;span style="color:#f92672">--&lt;/span>&lt;span style="color:#111">mv&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#111">trellis&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#00a8c8">color&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#111">primary&lt;/span>&lt;span style="color:#111">,&lt;/span> &lt;span style="color:#ae81ff">#ffffff&lt;/span>&lt;span style="color:#111">);&lt;/span> &lt;span style="color:#111">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="adding-code-to-templates">Adding Code to Templates&lt;/h3>
+&lt;p>Some settings will reference functions or code that needs to be included in a template. Refer to the function, hook, filter, or named Trellis Core templates to see how they’re used.&lt;/p>
+&lt;h2 id="display-settings">Display Settings&lt;/h2>
+&lt;h3 id="font-sizes-and-typefaces">Font Sizes and Typefaces&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Change Font Size&lt;/td>
+&lt;td>Sets the font size for the body element.&lt;/td>
+&lt;td>CSS variable: &lt;br /> &lt;code>--mv-trellis-font-size&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>H1 Font Size&lt;/td>
+&lt;td>Sets the default size for H1 headings.&lt;/td>
+&lt;td>Add theme support and use a CSS variable.&lt;br />&lt;br />Theme support parameter: &lt;code>mv_trellis_headings_control&lt;/code> &lt;br />&lt;br />CSS variable:&lt;br />&lt;code>--mv-trellis-h1-font-size&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Apply H1 Size to All Headings&lt;/td>
+&lt;td>Adjusts the sizes of H2 through H6 elements based on the H1 size. The following conversions are used: &lt;br />&lt;br />h2 = h1 * 0.75rem &lt;br /> h3 = h1 * 0.67rem &lt;br /> h4 = h1 * 0.63rem &lt;br /> h5 = h1 * 0.56rem &lt;br /> h6 = h1 * 0.5rem&lt;/td>
+&lt;td>Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code> &lt;br /> &lt;br />CSS variable:&lt;br /> &lt;code>--mv-trellis-h2-font-size&lt;/code> &lt;br /> &lt;code>--mv-trellis-h3-font-size&lt;/code> &lt;br /> &lt;code>--mv-trellis-h4-font-size&lt;/code> &lt;br /> &lt;code>--mv-trellis-h5-font-size&lt;/code> &lt;br /> &lt;code>--mv-trellis-h6-font-size&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Body Font&lt;/td>
+&lt;td>Sets the font of the body element. Select a Web Safe font for best performance. See Font Localization in Advanced Topics for more information.&lt;/td>
+&lt;td>CSS variable: &lt;br /> &lt;code>—-mv-trellis-font-body&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Heading Font&lt;/td>
+&lt;td>Sets the font for all headings. Select a Web Safe font for best performance. See Font Localization in Advanced Topics for more information.&lt;/td>
+&lt;td>CSS variable: &lt;br /> &lt;code>—-mv-trellis-font-heading&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="colors">Colors&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Primary Color&lt;/td>
+&lt;td>Sets a main color for use in child themes. Trellis defaults to using this color for links, buttons, and other elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo.&lt;/td>
+&lt;td>CSS variable:&lt;br />&lt;code>--mv-trellis-color-primary&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Secondary Color&lt;/td>
+&lt;td>Sets an alternate color for use in child themes. Trellis defaults to using this color for hover effects, alternate buttons, and other secondary elements in the Trellis Core theme and in Birch, Wisteria, and Bamboo.&lt;/td>
+&lt;td>CSS variable: &lt;br /> &lt;code>--mv-trellis-color-secondary&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Background Accent Color&lt;/td>
+&lt;td>Sets the background color of some elements like page and post headers in the Trellis Core theme and in Birch and Wisteria. &lt;br />&lt;br />This setting is not used in the Bamboo child theme.&lt;/td>
+&lt;td>Add theme support and use a CSS variable. &lt;br />&lt;br />Theme support parameter: &lt;br />&lt;code>mv_trellis_background_accent_color&lt;/code> &lt;br />&lt;br />CSS variable: &lt;br />&lt;code>--mv-trellis-color-background-accent&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>H1 Color&lt;/td>
+&lt;td>Sets the color of all H1 headings in the Trellis Core theme and Bamboo. &lt;br />&lt;br /> This setting is not used in the Wisteria and Birch child themes.&lt;/td>
+&lt;td>Add theme support and use a CSS variable. &lt;br />&lt;br /> Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code> &lt;br />&lt;br /> CSS variable: &lt;br /> &lt;code>--mv-trellis-h1-font-color&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Apply H1 Color to All Headings&lt;/td>
+&lt;td>Sets the color of all H2 to H6 elements to match the H1 color setting in the Trellis Core theme and Bamboo. &lt;br />&lt;br /> This setting is not used in the Wisteria and Birch child themes.&lt;/td>
+&lt;td>Add theme support and use a CSS variable. &lt;br />&lt;br /> Theme support parameter: &lt;br /> &lt;code>mv_trellis_headings_control&lt;/code> &lt;br />&lt;br />CSS variable: &lt;br /> &lt;code>--mv-trellis-heading-font-color&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="post-meta">Post Meta&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Post Meta Display - Top&lt;/td>
+&lt;td>Select which post meta to display in the post header. Options include: Comment Count, Author, Date, and Categories. &lt;br />&lt;br />If Yoast SEO is installed, you can show Yoast breadcrumbs.&lt;/td>
+&lt;td>Refer to the article-meta-header template part in Trellis Core to see how this is implemented.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Post Meta Display - Bottom&lt;/td>
+&lt;td>Select which post meta to display in the post footer. Options include: Author, Date, and Categories. &lt;br />&lt;br />If Yoast SEO is installed, you can show Yoast breadcrumbs.&lt;/td>
+&lt;td>Refer to the article-meta-footer template part in Trellis Core to see how this is implemented.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Post Meta Date Display&lt;/td>
+&lt;td>Determine the date to display in the post header. Options include: Display Modified, Display Published, or Display Both.&lt;/td>
+&lt;td>Created by the &lt;code>mv_trellis_entry_date()&lt;/code> function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="images">Images&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Site Logo&lt;/td>
+&lt;td>Sets an image for use as a logo in the site header. If there is no site logo, the site title will be shown. &lt;br />&lt;br /> In the Trellis Core theme and Bamboo and Birch, the logo will display inline with the main navigation. &lt;br />&lt;br />In Wisteria, the logo will display next to the sticky post on the homepage, and inline with the main navigation on posts and pages.&lt;/td>
+&lt;td>Created by the &lt;code>mv_trellis_site_title()&lt;/code> function. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Change logo height&lt;/td>
+&lt;td>Sets the max logo height value that can be shown in the header.&lt;/td>
+&lt;td>CSS variable: &lt;br /> &lt;code>--mv-trellis-max-logo-size&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Display Featured Images&lt;/td>
+&lt;td>Shows featured images on posts before the post content.&lt;/td>
+&lt;td>See content-article template part in Trellis Core for reference.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Hide Featured Image from Small Screens&lt;/td>
+&lt;td>Hides the post featured image when the visitor is using a device with a viewport width smaller than 600px. &lt;br />&lt;br /> Displaying featured images to mobile devices impacts the Largest Contentful Paint (LCP) score, one of Google&amp;rsquo;s Core Web Vitals.&lt;/td>
+&lt;td>Adds a &lt;code>hide-featured-image-on-mobile&lt;/code> class to the body tag when post featured images are enabled but hidden on mobile.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Featured Image Size&lt;/td>
+&lt;td>Sets the thumbnail size used for post thumbnails. &lt;br />&lt;br /> Also controls the additional image sizes Trellis instructs WordPress Core to create. See Image Generation in Advanced Topics for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="footer">Footer&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Hide Mediavine/Trellis footer links&lt;/td>
+&lt;td>Removes the Mediavine/Trellis footer links.&lt;/td>
+&lt;td>Controlled by the &lt;code>mvt_footer_bottom()&lt;/code> function. &lt;br />&lt;br />See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Footer Copyright Text&lt;/td>
+&lt;td>Adds personalized copyright text to the footer. Supports HTML markup, including links.&lt;/td>
+&lt;td>Controlled by the &lt;code>mvt_footer_bottom()&lt;/code> function. &lt;br />&lt;br />See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="layout">Layout&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Enable Search Bar&lt;/td>
+&lt;td>Adds a search bar to the site header.&lt;/td>
+&lt;td>See header template part in Trellis Core for reference.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Layout space&lt;/td>
+&lt;td>Adjusts the margins between key layout elements like the primary content, sidebar, and widgets. The following defaults are used: &lt;br />&lt;br /> Compact = 10px &lt;br /> Comfortable = 20px&lt;/td>
+&lt;td>CSS Variable: &lt;code>--mv-trellis-gutter&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Display Tag Links&lt;/td>
+&lt;td>As of Trellis 0.17.0, controls if tag links are output in the &lt;code>footer.entry-footer&lt;/code> when viewing a post.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Article Navigation&lt;/td>
+&lt;td>As of Trellis 0.17.0, controls whether a &lt;code>nav.post-navigation&lt;/code> tag with a link to the next or previous post is added to the bottom of a post.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Enable Trellis comments&lt;/td>
+&lt;td>Sets Trellis as the commenting engine for the site. &lt;br />&lt;br /> See &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/trellis-comments/">Trellis Comments&lt;/a> in Advanced Topics for more information. &lt;br /> &lt;br /> &lt;strong>Note:&lt;/strong> If you are using an additional third party comment tool, deactivating Trellis Comments may be necessary for compatibility.&lt;/td>
+&lt;td>See the comments template in Trellis Core for reference.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="advanced-settings">Advanced Settings&lt;/h2>
+&lt;h3 id="google-analytics">Google Analytics&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Universal Analytics Tracking ID&lt;/td>
+&lt;td>The legacy Google Analytics UA Tracking ID. See Tracking ID and property number in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Inserted within the &lt;code>&amp;lt;head&amp;gt;&lt;/code> element.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Google Analytics 4 Tracking ID&lt;/td>
+&lt;td>The newer Google Analytics 4 (GA4) Tracking ID. See Introducing Google Analytics 4 (GA4) in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Inserted within the &lt;code>&amp;lt;head&amp;gt;&lt;/code> element.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Delay Google Analytics Load&lt;/td>
+&lt;td>Forces a three second delay to the initial Google Analytics load. While visitors who leave your site within that time will not be tracked, site performance will improve.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="seo">SEO&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Trellis SEO Output&lt;/td>
+&lt;td>Enables meta descriptions, schema output (via JSON-LD), and Open Graph tags for your site. &lt;br />&lt;br /> &lt;strong>Note:&lt;/strong> This option is disabled if Trellis detects Yoast, RankMath, or AIO as installed and active. It cannot be turned on while these plugins are active. &lt;br />&lt;br /> For all other SEO plugins, disable this to prevent duplicate SEO data.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="optimization">Optimization&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>JavaScript Optimization&lt;/td>
+&lt;td>Enables minification of JavaScript files and defers loading for better performance. &lt;br />&lt;br /> &lt;strong>Note:&lt;/strong> If Trellis detects another plugin is performing JavaScript optimizations, it will disable its own optimization functions. &lt;br />&lt;br /> Recognized plugins include Autoptimize, Clearfy Cache, Jetpack, Litespeed Cache, NitroPack, SG Optimizer, W3 Total Cache, WP Fastest Cache, and WP Rocket.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>JavaScript Exclusions&lt;/td>
+&lt;td>Matching full or partial URLs in this list are excluded from any deferment or minification performed by Trellis. &lt;br />&lt;br /> &lt;strong>Note:&lt;/strong> This setting is only visible when JavaScript Optimization is enabled.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="permanent-actions">Permanent Actions&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Reset Settings&lt;/td>
+&lt;td>Sets the theme back to default settings (except for the license field). &lt;br />&lt;br /> &lt;strong>Warning:&lt;/strong> This cannot be undone.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Trellis Cache&lt;/td>
+&lt;td>Clears the Trellis cache. Use if new Trellis features or settings are not appearing. &lt;br />&lt;br /> &lt;strong>Warning:&lt;/strong> This cannot be undone.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Regenerate Images&lt;/td>
+&lt;td>Regenerates all image sizes on your site. &lt;br />&lt;br /> This is used if images other than your featured images are displaying at the wrong size. See How to Regenerate Your Image Sizes in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Rebuild Active Compatibility Plugins List&lt;/td>
+&lt;td>Regenerates a list of active plugins that require compatibility code to work properly with Trellis. See &lt;a href="https://product-help.mediavine.com/en/articles/5046317-trellis-themes-conflicts-and-compatibilities">Trellis Themes: Conflicts and Compatibilities&lt;/a> in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="pwa-settings">PWA Settings&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Enable PWA&lt;/td>
+&lt;td>Enables PWA support for your site. If enabled, it allows users to view your blog as a progressive web app on their desktop or mobile device.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PWA Short Name&lt;/td>
+&lt;td>Sets the display name of the app on the installed device. &lt;br />&lt;br /> &lt;strong>Note:&lt;/strong> A PWA Short Name is required for this feature to operate.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Theme Color&lt;/td>
+&lt;td>Sets the color of the URL bar on supported devices to match your site style.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PWA Site Icon&lt;/td>
+&lt;td>Sets the image for use as the PWA icon. &lt;br />&lt;br /> &lt;strong>Note:&lt;/strong> A PWA Site Icon is required for this feature to operate.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="license-settings">License Settings&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Trellis License&lt;/td>
+&lt;td>Unlocks Trellis’ full features. Visit the Mediavine Marketplace to purchase a license.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="hooks-settings">Hooks Settings&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Add custom HTML code to the &lt;code>&amp;lt;head&amp;gt;&lt;/code> tag&lt;/td>
+&lt;td>Useful for Google Site verification HTML meta tags or a Pinterest domain verification HTML tag. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_header_bottom()&lt;/code> in templates to &lt;code>tha_head_bottom()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add custom content after the page header and menu&lt;/td>
+&lt;td>As of Trellis 0.17.0, this hook is useful for anything to be displayed on pages just after the header and before the content. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_content_before()&lt;/code> in templates to &lt;code>tha_content_before()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add custom content between the post heading and the post content&lt;/td>
+&lt;td>Useful for anything to be displayed only on posts just before the content. Typically used for affiliate disclaimers and CTAs. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_aside_before_entry_content()&lt;/code> in templates to &lt;code>tha_aside_before_entry_content()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add custom content after the post content&lt;/td>
+&lt;td>Useful for anything to be displayed only on posts just after the content. Useful for CTAs. See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_content_after()&lt;/code> in templates to &lt;code>tha_content_after()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Add custom HTML code to the end of the &lt;code>&amp;lt;body&amp;gt;&lt;/code> tag&lt;/td>
+&lt;td>Useful for additional scripts required by external services such as newsletters or email opt-in forms. Anything added here should not be needed at the time of the First Contentful Paint (FCP). See &lt;a href="https://product-help.mediavine.com/en/articles/5592808-trellis-hooks-settings-overview">Trellis Hooks Settings Overview&lt;/a> in the Trellis Help Center for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard. Added via &lt;code>mvt_body_bottom()&lt;/code> in templates to &lt;code>tha_body_bottom()&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Hooks&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="critical-css-settings">Critical CSS Settings&lt;/h2>
+&lt;h3 id="settings">Settings&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Enable Critical CSS&lt;/td>
+&lt;td>Improves your site&amp;rsquo;s performance by separating CSS into two cached files. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Purge All Critical CSS&lt;/td>
+&lt;td>Removes all Critical CSS files for the site. New Critical CSS files are added as readers visit the site. Original CSS code will be served until the Critical CSS is regenerated.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="exclusions">Exclusions&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Setting&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Usage&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Post/Page Exclusions&lt;/td>
+&lt;td>As of Trellis 0.17.0, it shows all posts and pages where Critical CSS has been disabled manually in the WordPress Editor.&lt;/td>
+&lt;td>Controlled by the Mediavine Trellis Dashboard.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Force Non-Critical CSS&lt;/td>
+&lt;td>Allows CSS styling for HTML elements that are rendered after page load. &lt;br />&lt;br /> This is a compatibility setting for selectors that are added via JavaScript after the page loads. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
+&lt;td>Selectors can be added programmatically via &lt;code>mv_trellis_css_allowlist&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Filters&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Force Critical CSS&lt;/td>
+&lt;td>Adds selectors to the initial Critical CSS file. &lt;br />&lt;br /> This is a compatibility setting for selectors that are not part of the initial viewport of a page. &lt;br />&lt;br /> Some styles may be necessary to add to prevent layout shift or a flash of unstyled content at page load. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information.&lt;/td>
+&lt;td>Selectors can be added programmatically via &lt;code>mv_trellis_css_force_keep&lt;/code>. See &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Filters&lt;/a> for more information.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="whats-next">What’s Next?&lt;/h2>
+&lt;ul>
+&lt;li>Get started &lt;a href="https://mediavine.github.io/trellis-docs/getting-started/creating-your-child-theme/">creating a Trellis child theme&lt;/a>&lt;/li>
+&lt;li>Read more about &lt;a href="https://mediavine.github.io/trellis-docs/reference/hooks/">Trellis Hooks&lt;/a>&lt;/li>
+&lt;li>Read more about &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Trellis Filters&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

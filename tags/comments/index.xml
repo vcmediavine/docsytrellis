@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – comments</title><link>https://mediavine.github.io/trellis-docs/tags/comments/</link><description>Recent content in comments on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://mediavine.github.io/trellis-docs/tags/comments/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced-Topics: Trellis Comments</title><link>https://mediavine.github.io/trellis-docs/advanced-topics/trellis-comments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/advanced-topics/trellis-comments/</guid><description>
+&lt;p>Trellis defers the loading of the remaining comments (which can be a huge part of page markup) until they&amp;rsquo;re actually needed.&lt;/p>
+&lt;h2 id="enabling-trellis-comments">Enabling Trellis Comments&lt;/h2>
+&lt;p>Trellis Comments are enabled by default. Publishers can access the setting that controls them by going to &lt;strong>Appearance &amp;gt;&lt;/strong> &lt;strong>Mediavine Trellis &amp;gt; Display&lt;/strong> under the &lt;strong>Layout&lt;/strong> section.&lt;/p>
+&lt;img src="settings-trellis-comments.png" alt="Trellis Comments toggle in Trellis Settings." width="600px"/>
+&lt;h2 id="how-trellis-comments-work">How Trellis Comments Work&lt;/h2>
+&lt;p>To start, the first five top-level comments on a post are server-rendered via the &lt;a href="https://developer.wordpress.org/rest-api/">WordPress REST API&lt;/a>. A &lt;a href="https://preactjs.com/">Preact&lt;/a> app then modifies the &lt;code>div&lt;/code> rendered by class-comments.php, allowing Trellis to populate these comments with extra data and user interface elements.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+The full path to the class-comments.php file is mediavine-trellis/inc/classes/class-comments.php. Trellis Comments markup is found in mediavine-trellis/comments.php.
+&lt;/div>
+&lt;p>Trellis then fetches all comments for that post that are stored in the component state. When a site visitor requests more comments, no additional REST requests are made.&lt;/p>
+&lt;h2 id="compatibility-issues">Compatibility Issues&lt;/h2>
+&lt;p>When Trellis Comments is enabled, comments are also submitted via the &lt;a href="https://developer.wordpress.org/rest-api/">WordPress REST API&lt;/a>. This can cause conflicts with third-party plugins that add additional fields (such as ratings) to a post&amp;rsquo;s comments field. Most plugins save data via the form submission, not an API call, which can cause issues.&lt;/p>
+&lt;p>Trellis attempts to mitigate any problems by saving each field in the comment form as a piece of comment metadata. However, when a comment plugin uses a different &lt;code>name&lt;/code> for the form field than it does the meta key, there will be a problem.&lt;/p>
+&lt;p>If you plan on using additional comment plugins with your Trellis child theme, be sure to test them. If there are conflicts, you may need to disable Trellis Comments. See &lt;a href="https://intercom.help/mediavine-products/en/articles/5046317-trellis-themes-conflicts-and-compatibilities">Trellis Themes: Conflicts and Compatibilities&lt;/a> in the Help Center for information on known plugins that don’t work well with Trellis.&lt;/p>
+&lt;h2 id="useful-filters">Useful Filters&lt;/h2>
+&lt;p>The following filters can be used in Trellis child theme code. For more information on them, see &lt;a href="https://mediavine.github.io/trellis-docs/reference/filters/filters-summary/">Filters&lt;/a> in the Reference section.&lt;/p>
+&lt;ul>
+&lt;li>mvt_requires_default_wp_fields&lt;/li>
+&lt;li>mv_trellis_comments_template&lt;/li>
+&lt;/ul></description></item></channel></rss>

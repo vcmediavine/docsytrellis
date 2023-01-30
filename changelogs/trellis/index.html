@@ -1,0 +1,900 @@
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=en class=no-js>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=generator content="Hugo 0.91.2">
+<link rel=alternate type=application/rss+xml href=https://mediavine.github.io/trellis-docs/changelogs/trellis/index.xml>
+<meta name=robots content="index, follow">
+<link rel="shortcut icon" href=/trellis-docs/favicons/favicon.ico>
+<link rel=apple-touch-icon href=/trellis-docs/favicons/apple-touch-icon-180x180.png sizes=180x180>
+<link rel=icon type=image/png href=/trellis-docs/favicons/favicon-16x16.png sizes=16x16>
+<link rel=icon type=image/png href=/trellis-docs/favicons/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/trellis-docs/favicons/android-36x36.png sizes=36x36>
+<link rel=icon type=image/png href=/trellis-docs/favicons/android-48x48.png sizes=48x48>
+<link rel=icon type=image/png href=/trellis-docs/favicons/android-72x72.png sizes=72x72>
+<link rel=icon type=image/png href=/trellis-docs/favicons/android-96x96.png sizes=96x96>
+<link rel=icon type=image/png href=/trellis-docs/favicons/android-144x144.png sizes=144x144>
+<link rel=icon type=image/png href=/trellis-docs/favicons/android-192x192.png sizes=192x192>
+<title>Trellis | Mediavine Trellis</title>
+<meta name=description content="A list of changes made to the main Trellis framework, including the Trellis Core templates.
+">
+<meta property="og:title" content="Trellis">
+<meta property="og:description" content="A list of changes made to the main Trellis framework, including the Trellis Core templates.
+">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mediavine.github.io/trellis-docs/changelogs/trellis/"><meta property="og:site_name" content="Mediavine Trellis">
+<meta itemprop=name content="Trellis">
+<meta itemprop=description content="A list of changes made to the main Trellis framework, including the Trellis Core templates.
+"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Trellis">
+<meta name=twitter:description content="A list of changes made to the main Trellis framework, including the Trellis Core templates.
+">
+<link rel=preload href=/trellis-docs/scss/main.min.f1241590deedead987fb95564f0a3599103d954af64621d95e540c3c9985adc6.css as=style>
+<link href=/trellis-docs/scss/main.min.f1241590deedead987fb95564f0a3599103d954af64621d95e540c3c9985adc6.css rel=stylesheet integrity>
+<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+<script src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F1P8LLZ5M"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-5F1P8LLZ5M',{anonymize_ip:!1})}</script>
+</head>
+<body class=td-section>
+<header>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<a class=navbar-brand href=/trellis-docs/>
+<span class=navbar-logo><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1e3 1e3" style="enable-background:new 0 0 1000 1000"><style>.st0{fill:#41a4a9}.st1{fill:#67b6ba}.st2{fill:#a3dbdf}.st3{fill:#247272}.st4{fill:#8dc8cb}</style><g><g><path class="st0" d="M753.93 64.88c2.16.0 4.24.02 6.25.06.19 11.19-.16 24.94-1.83 39.78-3.36 29.93-12.97 71.18-39.67 97.79-35.86 35.78-97.72 41.12-131.4 41.12-2.15.0-4.23-.02-6.23-.06-.19-11.18.16-24.93 1.82-39.77 3.36-29.93 12.96-71.19 39.64-97.79 35.89-35.79 97.74-41.13 131.42-41.13m0-64.88C705.59.0 627.92 8.99 576.7 60.07c-77.41 77.13-58.89 214.92-58.07 220.75l3.1 21.9 21.89 3.16c1.97.28 18.99 2.62 43.66 2.62 48.34.0 126.03-8.99 177.22-60.07 77.43-77.15 58.92-214.93 58.09-220.75l-3.1-21.9L797.6 2.63C795.64 2.34 778.6.0 753.93.0z"/></g><g><path class="st1" d="M521.73 648.47l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 648.47z"/></g><g><path class="st2" d="M521.73 994.22l-3.1-21.9c-.82-5.83-19.34-143.61 58.07-220.75 77.37-77.16 215.08-58.29 220.9-57.45l21.89 3.16 3.1 21.9c.82 5.83 19.33 143.61-58.09 220.75-77.32 77.14-215.05 58.28-220.88 57.44L521.73 994.22z"/></g><g><path class="st3" d="M477.61 476.01l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 476.01z"/></g><g><path class="st4" d="M477.61 821.75l-21.9 3.1c-5.83.82-143.61 19.34-220.75-58.07-77.16-77.37-58.29-215.08-57.45-220.9l3.16-21.89 21.9-3.1c5.83-.82 143.61-19.33 220.75 58.09 77.14 77.32 58.28 215.05 57.44 220.88L477.61 821.75z"/></g></g></svg></span><span class=font-weight-bold>Mediavine Trellis</span>
+</a>
+<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
+<ul class="navbar-nav mt-2 mt-lg-0">
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/trellis-docs/overview/><span>Overview</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/trellis-docs/getting-started/><span>Getting Started</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/trellis-docs/advanced-topics/><span>Advanced Topics</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/trellis-docs/faqs/><span>FAQ</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class=nav-link href=/trellis-docs/reference/><span>Reference</span></a>
+</li>
+<li class="nav-item mr-4 mb-2 mb-lg-0">
+<a class="nav-link active" href=/trellis-docs/changelogs/><span class=active>Changelogs</span></a>
+</li>
+</ul>
+</div>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/trellis-docs/offline-search-index.0ee51dde2963c9022d5daaec671bd7cd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</div>
+</nav>
+</header>
+<div class="container-fluid td-outer">
+<div class=td-main>
+<div class="row flex-xl-nowrap">
+<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+<div id=td-sidebar-menu class=td-sidebar__inner>
+<div id=content-mobile>
+<form class="td-sidebar__search d-flex align-items-center">
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/trellis-docs/offline-search-index.0ee51dde2963c9022d5daaec671bd7cd.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
+</button>
+</form>
+</div>
+<div id=content-desktop></div>
+<nav class="collapse td-sidebar-nav" id=td-section-nav>
+<ul class="td-sidebar-nav__section pr-md-3 ul-0">
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-trellis-docschangelogs-li>
+<a href=/trellis-docs/changelogs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-trellis-docschangelogs><span>Changelogs</span></a>
+<ul class=ul-1>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-trellis-docschangelogstrellis-li>
+<a href=/trellis-docs/changelogs/trellis/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-trellis-docschangelogstrellis><span class=td-sidebar-nav-active-item>Trellis</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-trellis-docschangelogsbamboo-li>
+<a href=/trellis-docs/changelogs/bamboo/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-trellis-docschangelogsbamboo><span>Bamboo</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-trellis-docschangelogsbirch-li>
+<a href=/trellis-docs/changelogs/birch/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-trellis-docschangelogsbirch><span>Birch</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-trellis-docschangelogswisteria-li>
+<a href=/trellis-docs/changelogs/wisteria/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-trellis-docschangelogswisteria><span>Wisteria</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-trellis-docschangelogstrellis-images-li>
+<a href=/trellis-docs/changelogs/trellis-images/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-trellis-docschangelogstrellis-images><span>Trellis Images</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+<aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href=https://github.com/google/docsy-example/tree/main/content/en/changelogs/trellis/_index.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<a href=https://github.com/google/docsy-example/edit/main/content/en/changelogs/trellis/_index.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/new/main/content/en/changelogs/trellis/_index.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Trellis" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href=https://github.com/google/docsy/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+</div>
+<div class="taxonomy taxonomy-terms-cloud taxo-tags">
+<h5 class=taxonomy-title>Tag Cloud</h5>
+<ul class=taxonomy-terms>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/comments/ data-taxonomy-term=comments><span class=taxonomy-label>comments</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/critical-css/ data-taxonomy-term=critical-css><span class=taxonomy-label>critical css</span><span class=taxonomy-count>3</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/css-variables/ data-taxonomy-term=css-variables><span class=taxonomy-label>css variables</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/filters/ data-taxonomy-term=filters><span class=taxonomy-label>filters</span><span class=taxonomy-count>2</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/image-sizes/ data-taxonomy-term=image-sizes><span class=taxonomy-label>image sizes</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/lazy-loading/ data-taxonomy-term=lazy-loading><span class=taxonomy-label>lazy loading</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/post-meta/ data-taxonomy-term=post-meta><span class=taxonomy-label>post meta</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/settings/ data-taxonomy-term=settings><span class=taxonomy-label>settings</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/troubleshooting/ data-taxonomy-term=troubleshooting><span class=taxonomy-label>troubleshooting</span><span class=taxonomy-count>1</span></a></li>
+<li><a class=taxonomy-term href=https://mediavine.github.io/trellis-docs/tags/webp/ data-taxonomy-term=webp><span class=taxonomy-label>WebP</span><span class=taxonomy-count>1</span></a></li>
+</ul>
+</div>
+</aside>
+<main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<nav aria-label=breadcrumb class=td-breadcrumbs>
+<ol class=breadcrumb>
+<li class=breadcrumb-item>
+<a href=https://mediavine.github.io/trellis-docs/changelogs/>Changelogs</a>
+</li>
+<li class="breadcrumb-item active" aria-current=page>
+<a href=https://mediavine.github.io/trellis-docs/changelogs/trellis/>Trellis</a>
+</li>
+</ol>
+</nav>
+<div class=td-content>
+<h1>Trellis</h1>
+<div class=lead>A list of changes made to the main Trellis framework, including the Trellis Core templates.</div>
+<header class=article-meta>
+</header>
+<h2 id=changelog>Changelog</h2>
+<h3 id=0170-01302023>0.17.0 (01/30/2023)</h3>
+<ul>
+<li>NEW: Trellis 0.17.0 now requires PHP version 7.3 or higher.</li>
+<li>NEW: Critical CSS settings and features are now available in a separate Critical CSS tab in the Mediavine Trellis Dashboard. Publishers can enable/disable Critical CSS, purge Critical CSS files, add or remove selectors from the Critical and Non-Critical CSS files, and see any Critical CSS issues that have been identified by Trellis.</li>
+<li>NEW: The Critical CSS tab now features a Post/Page Exclusion table showing any posts or pages where Critical CSS has been disabled. Publishers can re-enable Critical CSS for individual posts or pages using an Enable button.</li>
+<li>NEW: A Purge All Critical CSS button is now available in the Critical CSS tab. This button removes all existing Critical CSS files. New Critical CSS files will be generated as readers visit the site’s pages.</li>
+<li>NEW: A status indicator is now shown on the Trellis icon (Block editor only) and more descriptive text in the Trellis Settings sidebar in the WordPress Editor. This informs publishers if there are any detected Critical CSS issues.
+<ul>
+<li>Green indicator: This means that Critical CSS files are processing or were successfully generated.</li>
+<li>Grey indicator: This means that Critical CSS files are pending, disabled, or don’t exist.</li>
+<li>Red indicator: This means that there was an error generating the Critical CSS files.</li>
+</ul>
+</li>
+<li>NEW: A Purge Critical CSS button is now available in the WordPress Editor. This lets publishers delete the Critical CSS associated with a single page or post. It will be regenerated when a reader visits the page.</li>
+<li>NEW: A Display Tag Links toggle in Trellis Settings > Display > Layout now controls whether tag links are shown after a post. The default is to show tag links.</li>
+<li>NEW: Publishers can now control whether to show a Next/Previous link on posts via an Article Navigation setting in Trellis Settings. The default is to show the Next/Previous link.</li>
+<li>NEW: Removed Trellis Settings from the WordPress Customizer. Settings are more easily displayed (along with additional configuration options) in the Mediavine Trellis Dashboard.</li>
+<li>NEW: Publishers can now use a Hide Page Title control on any page in the Page editor.</li>
+<li>NEW: For child theme developers, two new functions were added to the Trellis Core front page template (header-content-front-page.php) for static front pages:
+<ul>
+<li><code>mvt_title_before()</code> fires off the <code>tha_title_before</code> hook before the page title output (as long as the title isn’t hidden).</li>
+<li><code>mvt_title_after()</code> fires off the <code>tha_title_after</code> hook after the page title output (as long as the title isn’t hidden).</li>
+</ul>
+</li>
+<li>CHANGED: Removed the Enable Stale CSS While Revalidating feature. Trellis will now serve the original page/post CSS while the Critical CSS files are regenerating. This may result in a slower site speed until the files are regenerated, but will help reduce confusion for publishers. For example, if a plugin updated a site’s CSS while the stale Critical CSS was shown during regeneration, publishers would think the plugin wasn’t working.</li>
+<li>CHANGED: Renamed the CSS Allowlist section in Trellis Settings to Force Non-Critical CSS.</li>
+<li>CHANGED: Added more detailed descriptions to Force Critical CSS and Force Non-Critical CSS features to help publishers better understand the features.</li>
+<li>CHANGED: Modified how entered CSS selectors are displayed in the Force Critical CSS and Force Non-Critical CSS settings. Values entered for these features are now shown as user interface “chips” which can be removed from the setting by clicking the X control.</li>
+<li>CHANGED: Added descriptive text to the PWA Short Name and PWA Site Icon settings to inform the publisher that these items must be set for the Progressive Web App feature to work.</li>
+<li>CHANGED: Added a caret (>) control to Trellis notices when additional information is available. Previously, notices showed a link which could be missed at a casual glance.</li>
+<li>CHANGED: Added code to resolve a “Links do not have discernible name” failure in the GPSI/Lighthouse accessibility audit. The <code>aria-hidden="true" tabindex="-1”</code> attributes are now added to Featured Image tags in the post pagination section.</li>
+<li>CHANGED: Modified the behavior of links in Trellis Settings to open in a new browser tab instead of the current tab. This affects License, Marketplace, and links to help articles.</li>
+<li>CHANGED: Modified admin notices so that they can be dismissed like other notices.</li>
+<li>CHANGED: Removed the Critical CSS Error notice and replaced it with a dismissible Critical CSS Warning notice.</li>
+<li>CHANGED: Added a warning for publishers choosing a 16px font size in Trellis Settings. For optimal ad performance, the font size should be 18px or larger.</li>
+<li>CHANGED: Changed the name of the About Widget to be Trellis About Widget to better identify it as Trellis functionality.</li>
+<li>CHANGED: Child theme developers can no longer use the <code>mv_trellis_admin_notices</code>
+ filter as it has been removed. This filter removed all notices during an upgrade, but it’s no longer needed due to changes in how Trellis handles notices.</li>
+<li>FIXED: Removed underlines when displaying WP Core button blocks. By default, underlines will only be applied when hovering over these elements.</li>
+<li>FIXED: Added a message and button to the Critical CSS tab when a Trellis license is not found. Publishers will be directed to the Mediavine Marketplace.</li>
+<li>FIXED: Added a compatibility class for RankMath so that publishers can add links to category pages.</li>
+<li>FIXED: Added code to ensure all Trellis theme styling is applied in the Gutenberg and Widget Block editors. Previously, some default WordPress styling could be shown.</li>
+<li>FIXED: Improved the code for the About Widget to better ensure that changes can be saved.</li>
+<li>FIXED: Resolved an issue where a Trellis theme could trigger side-scrolling on smaller screens.</li>
+<li>FIXED: Resolved an issue where the Yoast compatibility class code triggered Trellis to clear its cache, even if Yoast Breadcrumb settings were not changed.</li>
+<li>FIXED: Resolved an issue where Purge Page CSS in the WordPress Admin Bar didn’t work on static home pages.</li>
+<li>FIXED: Added missing RSS feed links on the home page to optimize Trellis sites for Google Discover.</li>
+<li>FIXED: Added <code>.excerpt-link:hover</code> styles to the Critical CSS file in Trellis Core. Previously, hover colors could be missing when Critical CSS was generated.</li>
+<li>FIXED: Resolved an issue where the Critical CSS status could show as white when it should be a different color.</li>
+<li>FIXED: Clearing the Trellis cache no longer removes <code>&lt;link></code> tags from Trellis Settings > Hooks.</li>
+<li>FIXED: Added an Error notice in the Widget Editor when the Mediavine Sidebar Ad Hint widget was the last widget in the sidebar. Sidebar Ad Hints should not be the last widget in a sidebar.</li>
+<li>FIXED: Removed the <code>&lt;title></code> tag on the Search Bar SVG image when the Search Bar is enabled. The prevents duplicate title tags in the site HTML.</li>
+<li>FIXED: Resolved an issue with images that had a <code>width:auto</code> attribute. In Create and WPRM, this would manifest as images that would appear larger than their actual size.</li>
+<li>FIXED: Resolved an issue where special characters weren’t decoded properly on some mobile browsers.</li>
+<li>FIXED: Resolved an issue where inline images within a paragraph could be downsized to 300px when they should be larger.</li>
+<li>FIXED: Resolved an issue where Trellis Comments were not styled when Trellis and Create were running on a post and the browser was reloaded with the comments on screen.</li>
+<li>FIXED: Resolved a compatibility issue when Jetpack, WooCommerce, and Trellis Comments were active. WooCommerce’s Product Page > Review tab was missing if either Trellis Comments or Jetpack Comments were enabled.</li>
+<li>FIXED: Resolved a Lighthouse fail with the message “Tap targets are not sized properly” message. Pagination link padding was adjusted.</li>
+<li>FIXED: Resolved an issue where Settings > Display > Custom Font Loading could be active even if there was no Trellis license. This only occurred when custom Body and Font settings were selected and the Trellis license was removed.</li>
+<li>FIXED: Removed the link from the Manage Trellis JS/CSS button in the Admin bar so that it isn’t clickable. Previously, clicking on it could show a blank Settings page.</li>
+</ul>
+<h3 id=0161-08242022>0.16.1 (08/24/2022)</h3>
+<ul>
+<li>FEATURE: Adds a new setting to Enable/Disable Trellis JS Optimizations.</li>
+<li>FEATURE: Disables JS Optimizations when Autoptimize JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when NitroPack is enabled</li>
+<li>FEATURE: Disables JS Optimizations when Litespeed Cache JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when WP Fastest Cache JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when W3 Total Cache JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when Clearfy Cache JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when WP Rocket JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when Jetpack JS Optimizations are enabled</li>
+<li>FEATURE: Disables JS Optimizations when SG Optimizer JS Optimizations are enabled</li>
+<li>FIX: Resolves an issue with the Rebuilding Minified JS action not functioning properly</li>
+<li>FIX: Enables partial JS file URLs to be used instead of just full JS file URLs</li>
+<li>FIX: Resolves error when localizing the same font for Body Font and Heading Font settings</li>
+<li>FIX: Removes the code that automatically added images to the image generation queue when pages are viewed</li>
+<li>FIX: Removes Link To Issues Tab From Critical CSS Status Bar</li>
+<li>CHANGE: Removes the need to rebuild minified JS after adding a JS file exclusion</li>
+<li>CHANGE: Adds image selected, for the About Me Widget, to the image generation queue when the correct size doesn’t exist</li>
+<li>CHANGE: Stops the process of getting the count of images in the image generation queue when server resources aren&rsquo;t available</li>
+<li>CHANGE: Removes Critical CSS Error notices</li>
+<li>CHANGE: Sends Critical CSS Errors with REST API check</li>
+<li>CHANGE: Removes Issues Tab</li>
+<li>CHANGE: Reduces Critical CSS timeout duration and time between REST request tests to 48 hours</li>
+</ul>
+<h3 id=0160-07132022>0.16.0 (07/13/2022)</h3>
+<ul>
+<li>FEATURE: Added Create compatibility class to add its critical css selectors to the forceInclude filter</li>
+<li>FEATURE: WP Rocket specific code moved to compatibility class</li>
+<li>FEATURE: New way to process settings and database updates when the theme is updated</li>
+<li>FEATURE: Links the post meta Author name to their Website url, or falls back to the Author Posts url</li>
+<li>FEATURE: New setting to disable Trellis comments/Jetpack compatibility class</li>
+<li>FEATURE: Added public functions for purging critical css, mv_trellis_purge_page_critical_css and mv_trellis_purge_all_critical_css</li>
+<li>FEATURE: Admin update notices are dismissible</li>
+<li>FEATURE: Added theme supports check for mvt_hooks to check for Trellis specific hooks</li>
+<li>FEATURE: Added function ’mvt_content_header_after’ to fire new ‘hook tha_content_header_after' immediately after closing </header> content tag</li>
+<li>FEATURE: Added a link to the MV Marketplace when viewing Theme Details</li>
+<li>FEATURE: Adds “disabled” to list of possible Critical CSS statuses displayed on WordPress Admin Bar</li>
+<li>FEATURE: Javascript Optimization exclusion setting</li>
+<li>FEATURE: Posts and Pages with &ldquo;Processing&rdquo; Critical CSS Status are set back to &ldquo;None&rdquo; after 2 hours</li>
+<li>FEATURE: mvt_processing_css_status_timeout filter added for altering the timeout of &ldquo;Processing&rdquo; status Critical CSS</li>
+<li>FEATURE: Added &ldquo;Show on mobile&rdquo; setting for all blocks in the Gutenberg widget editor</li>
+<li>FEATURE: Added filter mv_trellis_post_link_featured_image_sizes for post link featured images sizes attribute</li>
+<li>FEATURE: Ability to process all image sizes in queue</li>
+<li>FEATURE: REST endpoint for adding images to queue</li>
+<li>FEATURE: 2nd level mobile menu drop-down</li>
+<li>FEATURE: Display notice when font fails to localize</li>
+<li>FEATURE: Adds admin notice when Trellis issues present with a link to issues page</li>
+<li>FEATURE: Collapsible Notice Messages</li>
+<li>FEATURE: Adds filter mv_trellis_disable_add_async_styles to disable adding async to enqueued styles</li>
+<li>FEATURE: Adds filter mv_trellis_disable_add_async_attribute to disable adding async to enqueued scripts</li>
+<li>FEATURE: Adds filter mv_trellis_disable_convert_iframe_to_lazyload_when_enabled to disable adding or modifying iframe loading attribute</li>
+<li>FEATURE: Adds filter mv_trellis_disable_{$this->slug}_compatibility to disable adding plugin compatibility code</li>
+<li>FEATURE: Adds filter mv_trellis_disable_convert_image_to_lazyload_when_enabled to disable adding or modifying image loading attribute</li>
+<li>FEATURE: Adds filter mv_trellis_disable_set_image_data_pin_attribute to disable adding data-pin-media attribute</li>
+<li>FEATURE: Adds filter mv_trellis_disable_set_image_dimensions to disable setting image dimensions</li>
+<li>FEATURE: Adds filter mv_trellis_disable_set_image_cls_aspect_styles to disable setting and adding aspect ratio styles</li>
+<li>FEATURE: Adds filter mv_trellis_disable_process_images to disable processing all image optimizations</li>
+<li>FEATURE: Adds GA4 Support</li>
+<li>FEATURE: Images that Trellis generates for src-set are now put into a queue only if they don&rsquo;t exist and are needed</li>
+<li>FEATURE: Image generation queue runs as a background process that scales with server resources</li>
+<li>FEATURE: Add images to size generation queue on post save</li>
+<li>FEATURE: Ability to regenerate all images and featured images in Trellis Settings</li>
+<li>FEATURE: Reduced number of custom image sizes created when a one is uploaded</li>
+<li>FEATURE: Expands on functionality of collapsible admin notices with collapsed label and collapsed message text</li>
+<li>FIX: No longer hiding WP Rocket settings</li>
+<li>FIX: Comment forms are removed on posts with comments disabled when using Trellis Comments</li>
+<li>FIX: Removed Trellis font selection settings from the Customizer</li>
+<li>FIX: Adds &lsquo;ggnoads&rsquo; class to post navigation images to prevent gum gum ads on those images</li>
+<li>FIX: Replaced cUrl with wp_remote_get for font localization</li>
+<li>FIX: Reduces Critical CSS selectors by only pulling used WP Blocks on the current page</li>
+<li>FIX: Removes automatic adjustment of WP Rocket&rsquo;s settings when the plugin is activated</li>
+<li>FIX: Post Thumbnail Size now based on selected Featured Image Size in Trellis settings</li>
+<li>FIX: Removes excess Mediavine links in footer branding</li>
+<li>FIX: Fixes issue with Convert Pro popups not displaying when Critical CSS is enabled</li>
+<li>FIX: MV ad hint last unit in sidebar notice fixed</li>
+<li>FIX: MV ad hint sidebar notice fixed</li>
+<li>FIX: Pre-cache links that start with the site url</li>
+<li>FIX: All comments are displayed if Trellis Comments are disabled</li>
+<li>FIX: Disables Critical CSS on WooCommerce Checkout and Cart pages</li>
+<li>FIX: Breadcrumbs will not display on the front page, feed or static</li>
+<li>FIX: Restores Submit button on WooCommerce review page</li>
+<li>FIX: Removed the Critical CSS label from admin bar when in page or post edit mode</li>
+<li>FIX: Clearing Trellis Cache/Upgrading Trellis will now reset &ldquo;Processing&rdquo; Critical CSS statuses</li>
+<li>FIX: Thrive Leads mobile content selector</li>
+<li>FIX: Adjusted sizes attribute for post link featured images to allow the browser to select the appropriate image size</li>
+<li>FIX: Fixes layout issues from broken HTML in user comment content</li>
+<li>FIX: Ensures correct title is being added to Critical CSS issues list for category pages</li>
+<li>FIX: PWA version is updated whenever Critical CSS is successful, is purged, or Critical CSS is disabled for a post</li>
+<li>FIX: UI no longer crashes when trying to Queue a page for Critical CSS from the Issues tab</li>
+<li>FIX: Fixes CLS and blurriness for the about widget image on Wisteria and Birch by ensuring the correct source size is used</li>
+<li>FIX: Ensures that All In One SEO settings appear in the Classic Editor for legacy versions of the plugin</li>
+<li>FIX: Data attributes no longer removed from Trellis Setting Hooks fields when settings are rebuilt</li>
+<li>FIX: Adds author &lsquo;url&rsquo; field to json-ld output for type &lsquo;person&rsquo; with Trellis SEO active</li>
+<li>COSMETIC: Adjusts default image sizes attribute to 728px</li>
+<li>CHANGE: Updates Theme URI to the Mediavine Marketplace</li>
+<li>CHANGE: Updates minimum PHP version to 7.2</li>
+<li>CHANGE: Remove &lsquo;Enable Additional Image Sizes&rsquo; setting</li>
+<li>CHANGE: Updates font localization to REST request</li>
+<li>CHANGE: Removes possibility that fonts are served from Google</li>
+<li>CHANGE: Font localization is now a requirement to change fonts</li>
+<li>CHANGE: Button has been added for confirming a custom-typed font</li>
+<li>CHANGE: Sanitization of custom font input</li>
+<li>CHANGE: Adjusts Universal Analytics Field Copy</li>
+<li>CHANGE: Updates privacy parameters for UA tracking disabling both allow_google_signals and allow_ad_personalization_signals</li>
+<li>
+<ul>
+<li>REMOVAL: WP Rocket Trellis setting</li>
+</ul>
+</li>
+</ul>
+<h3 id=0153-03302022>0.15.3 (03/30/2022)</h3>
+<ul>
+<li>FEATURE: Images can be eager loaded by adding the <code>eager-load </code> class</li>
+<li>FIX: Fixes issue where image tags with the loading=&ldquo;eager&rdquo; property were being lazy loaded</li>
+<li>FIX: Adds support for Trellis Images with non-lazyloaded images</li>
+<li>FIX: Critical CSS issues list now display if Critical CSS is turned off due to an issue</li>
+<li>FIX: BTF sidebar localModel position</li>
+<li>FIX: Fixes CLS image aspect ratio issues on posts with broken HTML</li>
+<li>FIX: About Me Widget Images Sizes on specific child themes is fixed</li>
+<li>FIX: Curly brace for an inline style when using Grow Social is no longer missing</li>
+<li>FIX: Fixes issue where image tags with the loading=&ldquo;eager&rdquo; property were being lazy loaded</li>
+<li>FIX: Trellis will not add meta description nor open graph tags when Grow Social is handling them</li>
+<li>CHANGE: Updated PHP deprecation nag version to 7.2</li>
+<li>CHANGE: Trellis now requires PHP 7.1 or greater</li>
+<li>COSMETIC: Text boxes now appear with a border around them instead of inline text boxes</li>
+<li>COSMETIC: Checkboxes are now easy to see in Customizer Settings</li>
+<li>COSMETIC: Monotext now uses the same font as everything else</li>
+</ul>
+<h3 id=0152-02022022>0.15.2 (02/02/2022)</h3>
+<ul>
+<li>FIX: Posts with bad HTML will now still load instead of being a blank page</li>
+<li>FIX: Prevents fatals when checking for Critical CSS on term pages</li>
+<li>FIX: Fixes custom kses allowed elements to not throw warnings after the WordPress 5.9 update</li>
+<li>FIX: Prevents stripping of HTML tags from Footer Copyright Text setting</li>
+</ul>
+<h3 id=0151-01172022>0.15.1 (01/17/2022)</h3>
+<ul>
+<li>FIX: Force a critical css purge when updating to 0.15.1</li>
+</ul>
+<h3 id=0150-01172022>0.15.0 (01/17/2022)</h3>
+<ul>
+<li>FEATURE: New setting to disable Trellis comments/Jetpack compatibility class</li>
+<li>FEATURE: Add button to with link to Trellis marketplace for settings when no license active</li>
+<li>FEATURE: Added a way to bypass the Trellis lazyload functionality in favor of browser native lazyloading</li>
+<li>FEATURE: Added filter <code>mv_trellis_about_widget_image_sizes</code> to adjust About widget thumbnail sizes attribute</li>
+<li>FEATURE: Adds new hooks to be run through the Critical CSS generation lifecycle</li>
+<li>FEATURE: Harmonize color setting inputs with color picker</li>
+<li>FEATURE: Link to the changelog on Trellis Docs added to the theme description, viewable when looking at the theme details</li>
+<li>FEATURE: More/Read More block now works in RSS feeds for RSS feed-driven emails</li>
+<li>FEATURE: New template for Featured post - template-parts/header/header-featured.php</li>
+<li>FEATURE: Update Admin UI, increasing usability of settings with subsections</li>
+<li>FEATURE: Transients are no longer used and replaced with the Throttle API which uses options under the hood</li>
+<li>FIX: About widget thumbnail is no longer lazyloaded</li>
+<li>FIX: About widget thumbnail sizes attribute has been adjusted for its available space</li>
+<li>FIX: Ads will not display on mobile pages when Show Ads on Pages is disabled</li>
+<li>FIX: Category page content is now processed allowing Trellis Images to optimize its images</li>
+<li>FIX: CSS validation errors</li>
+<li>FIX: Disable new WP Rocket delay_js</li>
+<li>FIX: Disabling and Purging Critical CSS on pages set to the Front Page now work</li>
+<li>FIX: Don&rsquo;t show &lsquo;Display on mobile devices&rsquo; option for ATF ad widget</li>
+<li>FIX: EDD no longer causes issues with featured images</li>
+<li>FIX: Feed Ad Spacing setting None value displays correctly in both the Customizer and Settings Page</li>
+<li>FIX: Fixes issue with false negatives about site&rsquo;s REST API support</li>
+<li>FIX: Improve Critical CSS setting language</li>
+<li>FIX: Improves Trellis license checks and caches the status for 12 hours. Includes a button in the Trellis Settings to recheck</li>
+<li>FIX: Made strings translatable where applicable</li>
+<li>FIX: Post Meta Date Display now has the correct default value</li>
+<li>FIX: Prevents multiple WP Fastest Cache menu items from appearing</li>
+<li>FIX: PWA Short name set maxLength, add placeholder text, update copy</li>
+<li>FIX: Remove WP 5.8 <code>block_categories</code> deprecated notice</li>
+<li>FIX: Remove Add Media buttons from category description editor because WordPress doesn&rsquo;t support images in category descriptions</li>
+<li>FIX: Removed BTF ad hint/placeholder and added a value for sidebar_btf_selector local model</li>
+<li>FIX: Service worker registration error in rich search results</li>
+<li>FIX: Shows Breadcrumb option in Post Meta Settings only when Yoast breadcrumbs are active and enabled</li>
+<li>FIX: Sidebar is a sibling of main#content for all page types</li>
+<li>FIX: Theme settings will be updated when Mediavine Control Panel is activated and deactivated</li>
+<li>FIX: Underlines added to post content links</li>
+<li>FIX: Updated widget Display on Mobile so it&rsquo;ll work as expected with legacy widgets in the new widget editor</li>
+<li>COSMETIC: .tags-links set to max-width: 100%</li>
+<li>COSMETIC: Hide trellis settings on mobile and add notice</li>
+<li>COSMETIC: Remove License tab from the Customizer</li>
+<li>COSMETIC: Remove plain &lsquo;no issues found&rsquo; box from settings</li>
+<li>COSMETIC: Update disabled license text to button with link to Marketplace Trellis page
+LANGUAGE: Updated SEO Setting Copy to reflect expected behavior</li>
+</ul>
+<h3 id=0144-10272021>0.14.4 (10/27/2021)</h3>
+<ul>
+<li>FIX: Increases performance of Trellis Comments, reducing server load on pages with numerous comments</li>
+<li>FIX: Fixes smooth scroll conflict with non-Create arrival</li>
+<li>FIX: Prevents the Trellis Settings from crashing if the Google Font settings didn&rsquo;t exist</li>
+</ul>
+<h3 id=0143-08302021>0.14.3 (08/30/2021)</h3>
+<ul>
+<li>FIX: Removed Next and Previous text from article navigation. In some cases it was being added to the SERP title.</li>
+<li>FIX: Hooks not migrating properly when upgrading Trellis</li>
+</ul>
+<h3 id=0142-08302021>0.14.2 (08/30/2021)</h3>
+<ul>
+<li>COSMETIC: Moved the featured image above the page title on article pagination</li>
+</ul>
+<h3 id=0141-08302021>0.14.1 (08/30/2021)</h3>
+<ul>
+<li>FIX: Force the purge of critical css when upgrading Trellis from a version before 0.14.1</li>
+</ul>
+<h3 id=0140-08302021>0.14.0 (08/30/2021)</h3>
+<ul>
+<li>FEATURE: New settings for post meta display options.</li>
+<li>FEATURE: Added filter mv_trellis_image_sizes_attribute to allow the Trellis default to be changed</li>
+<li>FEATURE: Added filter mv_trellis_excerpt_image_res for excerpt image resolution size</li>
+<li>FEATURE: Added filter mv_trellis_excerpt_image_sizes for excerpt image sizes attribute</li>
+<li>FEATURE: Added filter mv_trellis_featured_post_image_res for featured post image resolution size</li>
+<li>FEATURE: Added filter mv_trellis_featured_post_image_sizes for featured post image sizes attribute</li>
+<li>FEATURE: Added hook function mvt_aside_before_entry_content that will run tha_aside_before_entry_content just before opening div.entry-content</li>
+<li>FEATURE: Added hook function mvt_aside_after_entry_content that will run tha_aside_after_entry_content just after closing div.entry-content</li>
+<li>FEATURE: Added filter mv_trellis_entry_content_classes for adjusting div.entry-content classes</li>
+<li>FEATURE: Added hook function mvt_trellis_entry_footer_top that will run tha_entry_footer_top just inside the entry footer (footer.entry-footer)</li>
+<li>FEATURE: Added hook function mvt_trellis_entry_footer_bottom that will run tha_entry_footer_bottom just before closing the entry footer tag (footer.entry-footer)</li>
+<li>FEATURE: Added filter mv_trellis_article_nav_image_res for article nav image resolution size</li>
+<li>FEATURE: Added filter mv_trellis_excerpt_image_res for excerpt image resolution size</li>
+<li>FEATURE: Added filter mv_trellis_grow_sidebar_margin_space to adjust side space given to Grow Social sidebar</li>
+<li>FEATURE: Added filter mv_trellis_grow_sidebar_media_query_min_width to adjust min-width to apply side space given to Grow Social sidebar</li>
+<li>FEATURE: Added filter mv_trellis_grow_sidebar_media_query_max_width to adjust max-width to apply side space given to Grow Social sidebar
+FEATURE Added filter mv_trellis_grow_sidebar_compatibility_styles to overwrite the styles output when the Grow Social sidebar is active</li>
+<li>FIX: Updated html output to be more semantic</li>
+<li>FIX: Updates the sizes attribute for images to be more specific for Trellis based themes</li>
+<li>FIX: HTML used in the Author Biographical Info displays as expected.</li>
+<li>FIX: mv_trellis_the_title now includes a title for 404s</li>
+<li>FIX: Moved Grow Social specific styles into the compatibility class that will only load when needed</li>
+<li>FIX: Updated scripts for better IE11 support</li>
+<li>FIX: Updated WooCommerce compatibility class to work with semantic changes</li>
+<li>CHANGE: Renamed the filter used to override the article nav image orientation, from mv_trellis_image_orientation to mv_trellis_article_nav_image_orientation</li>
+<li>COSMETIC: Many style updates for the semantic html changes</li>
+<li>COSMETIC: Removed &ldquo;Cozy&rdquo; option from Layout Size Trellis Setting</li>
+<li>REMOVED: Bamboo specific styles for Web Stories compatibility</li>
+</ul>
+<h3 id=0134-06142021>0.13.4 (06/14/2021)</h3>
+<ul>
+<li>FIX: Removed hook that disabled Yoast json-ld before checking to see if Trellis SEO Output is enabled</li>
+</ul>
+<h3 id=0133-06082021>0.13.3 (06/08/2021)</h3>
+<ul>
+<li>FIX: adjusted logic to not output description meta when Trellis SEO Output is disabled</li>
+</ul>
+<h3 id=0132-06082021>0.13.2 (06/08/2021)</h3>
+<ul>
+<li>FIX: removed logo inline css that&rsquo;s causing images to not scale as expected</li>
+</ul>
+<h3 id=0131-05262021>0.13.1 (05/26/2021)</h3>
+<ul>
+<li>FEATURE: Font CLS fix with settings</li>
+<li>FEATURE: New setting to hide featured images on mobile</li>
+<li>FIX: Sidebar ATF CLS</li>
+<li>FIX: Logo CLS Issue</li>
+</ul>
+<h3 id=0130-05262021>0.13.0 (05/26/2021)</h3>
+<ul>
+<li>FEATURE: Adds checks for REST API Availability</li>
+<li>FEATURE: Adds native ad templates and base styles</li>
+<li>FEATURE: Anonymize Google Analytics</li>
+<li>FEATURE: Preload fonts when possible</li>
+<li>FEATURE: Custom CSS that will break in the semantic HTML update is posted to intercom.</li>
+<li>FEATURE: Add touch screen support to desktop menu</li>
+<li>FIX: Remove custom CSS impact from MV Dashboard</li>
+<li>FIX: Remove ad targeting impact from Cloudflare&rsquo;s RocketLoader.</li>
+<li>FIX: WB_REVISION is no longer added to Front Page posts paginated links</li>
+<li>FIX: Site logo/title link URL now has ending slash</li>
+<li>FIX: Default Font is now System Default and warnings are provided for when using a non-web safe font.</li>
+<li>FIX: Moved comment base styles to main style sheet</li>
+<li>FIX: Post navigation images use the Featured Image Size setting for orientation</li>
+<li>FIX: Added role=&ldquo;comment&rdquo; to comment containers</li>
+<li>FIX: Fix display of fallback user avatars in Safari</li>
+<li>FIX: Fix list style of nested lists</li>
+<li>FIX: License Notice no longer displays &lsquo;Invalid Date&rsquo; on the license&rsquo;s expiration.</li>
+<li>FIX: Critical CSS is no longer generated for WooCommerce pages.</li>
+<li>FIX: If the WP setting &lsquo;Comment author must fill out name and email&rsquo; is disabled, then users can comment without a username or email now.</li>
+<li>FIX: Set THA hooks theme support earlier</li>
+<li>FIX: Added force keep selector to fix Web Story display</li>
+<li>FIX: Trellis Display Settings not Rendering in Customizer</li>
+<li>FIX: Added role=&ldquo;comment&rdquo; to comment containers</li>
+<li>FIX: All of the hard-coded strings are now using the &lsquo;mediavine&rsquo; text-domain.</li>
+<li>FIX: Excerpt thumbnails should use the correct size</li>
+<li>FIX: High Vulnerability Security Issue is no longer present inside of Critical CSS</li>
+<li>CHANGE: &ldquo;Comments are closed.&rdquo; notice only displays on posts that have previous comments</li>
+<li>COSMETIC: Improves UX of color selection settings</li>
+<li>COSMETIC: Clean up mobile menu and remove lines</li>
+<li>COSMETIC: Clean up font stack</li>
+<li>COSMETIC: Change normal font name to medium in settings</li>
+<li>REMOVE: Removed Helvetica from the Web Safe font list</li>
+<li>REMOVE: Trellis hooks that were replaced with THA hooks are no longer available</li>
+</ul>
+<h3 id=0121-02252021>0.12.1 (02/25/2021)</h3>
+<ul>
+<li>FIX: Constrains the range of inputs allowed by the Critical CSS endpoint.</li>
+</ul>
+<h3 id=0120-02252021>0.12.0 (02/25/2021)</h3>
+<ul>
+<li>FEATURE: Added a Critical CSS Issues tab to the Trellis Settings Page</li>
+<li>FEATURE: Changed the text & link on the global error message</li>
+<li>FEATURE: Added multisite support</li>
+<li>FEATURE: More granular control over H tags display</li>
+<li>FEATURE: Adjusts sizes attributes on images to get proper size added during PSI tests.</li>
+<li>FEATURE: Display author name and biographical info on the author page.</li>
+<li>FEATURE: Adds a new &ldquo;Trellis SEO Output&rdquo; setting that replaces the old &ldquo;JSON-LD Source&rdquo; & &ldquo;Meta Description Source&rdquo;. JSON-LD, meta description, and open graph are now only output if this setting is ENABLED.</li>
+<li>FIX: .txt files are no longer processed by the service worker</li>
+<li>FIX: Tooltip for the &ldquo;Display Featured Images&rdquo; Setting was incorrect</li>
+<li>FIX: tha_head_bottom now fires after wp_head()</li>
+<li>FIX: Critical CSS is no longer generated on the Subscribe to Comments Reloaded page</li>
+<li>FIX: Add a srcset width of 960px to address Google Page Speed Insights warnings about image optimization</li>
+<li>FIX: Update the Instructions for the Footer Copyright Text setting to declare support for HTML</li>
+<li>FIX: Remove resize event listener for sub-menu-open</li>
+<li>FIX: html lang attribute now outputs the Site Language setting value</li>
+<li>REMOVE: Scss and js source files are no longer included as part of the distribution</li>
+<li>REMOVE: custom-functions.php and custom-style.css removed</li>
+<li>COSMETIC: The Trellis settings for Primary and Secondary color are used for the search field border default and focus colors, respectively</li>
+<li>COSMETIC: Removed gutters over 1200px</li>
+<li>COSMETIC: Adds display adjustments for Web Stories</li>
+</ul>
+<h3 id=0110-02252021>0.11.0 (02/25/2021)</h3>
+<ul>
+<li>FEATURE: Added Background Accent Color field for customizing the background color of page/post headers</li>
+<li>FEATURE: Theme authors can now use remove_theme_support( &lsquo;mv_trellis_background_accent_color&rsquo; ) to disable support for changing page/post header background colors</li>
+<li>FEATURE: Added filters for the labels & instructions for Theme Settings</li>
+<li>FEATURE: Added theme support attribute to settings schema. Only settings that have theme support or don&rsquo;t declare the need for this attribute will be added to the localized array of settings</li>
+<li>FEATURE: Add a setting for adding third-party service workers</li>
+<li>FEATURE: Adds form validation for invalid hook content</li>
+<li>FIX: moved array of license dependant settings to the back end so they can be filtered by child themes</li>
+<li>FIX: The most recent sticky post will display as the featured post on the home page</li>
+<li>FIX: No longer deferring Thrive Leads frontend javascript</li>
+<li>FIX: Thrive Leads styles needed for interaction after page load will be included in critical css</li>
+<li>FIX: Prevent pixelation of JPG and PNG logos</li>
+<li>FIX: Allow Trellis users to specify Full size images for Featured Image</li>
+<li>FIX: Provide a default for the Featured Image Size field when default_image_ratio isn&rsquo;t populated</li>
+<li>FIX: Adds new method for extracting stored widget values</li>
+<li>FIX: Modified date will not display if it is older than or the same as the published date</li>
+<li>FIX: Change .about-author-title to <code>&lt;h3></code></li>
+<li>FIX: Added descriptive text to home page sticky excerpt &lsquo;Read More&rsquo; link</li>
+<li>FIX: Removed extra markup from RSS feed</li>
+<li>FIX: Added wp-embed back into our minified script</li>
+<li>FIX: Trellis Settings text fields are now sanitized using <code>wp_kses</code></li>
+<li>REMOVAL: Remove JP2 support from lazyloading</li>
+<li>COSMETIC: removed space for Grow sidebar on screens smaller than 700px</li>
+<li>COSMETIC: Featured Hero background color controlled by Background Accent Color setting</li>
+</ul>
+<h3 id=0103-11252020>0.10.3 (11/25/2020)</h3>
+<ul>
+<li>FIX: Added local model selector, content_selector_mobile</li>
+</ul>
+<h3 id=0102-11142020>0.10.2 (11/14/2020)</h3>
+<ul>
+<li>FIX: Prevents tha_head_bottom hook from being wrapped in a div</li>
+</ul>
+<h3 id=0101-11112020>0.10.1 (11/11/2020)</h3>
+<ul>
+<li>FEATURE: Allow a user to delete all critical CSS files that have been generated (rather than marking them as stale)</li>
+<li>FEATURE: Makes mobile sub-menus open & close with an arrow instead of being always-visible</li>
+<li>FEATURE: Add a setting to prevent meta description conflicts</li>
+<li>FEATURE: Adds settings to set allowlist and force critical CSS options for Critical CSS API</li>
+<li>FIX: Disable some settings if license is invalid</li>
+<li>FIX: Add pagination for articles with multiple pages</li>
+<li>FIX: Add more detail to article meta and set default to display both modified and published dates</li>
+<li>FIX: SCSS variables within calc() are now replaced properly</li>
+<li>FIX: Fix scrolling conflict with WRPM Comment Ratings enabled</li>
+<li>FIX: loading=&ldquo;lazy&rdquo; will be removed on images that have lazyloading disabled</li>
+<li>FIX: Corrects an issue where &ldquo;Comments are Closed&rdquo; message displays on pages</li>
+<li>FIX: No longer adding width/height attribute to externally hosted images</li>
+<li>FIX: Fix comment submission in IE11</li>
+<li>FIX: Renamed filter mv_trellis_css_bypass to mv_trellis_css_allowlist</li>
+<li>FIX: Correctly output Akismet privacy notice in comments</li>
+<li>FIX: Password-protected posts/pages will not request critical css</li>
+<li>REMOVAL: Removes WebP Image Host URL setting</li>
+<li>COSMETIC: Add spacing to <hr> elements</li>
+<li>COSMETIC: Adjusted spacing around user-entered content</li>
+</ul>
+<h3 id=0100-10262020>0.10.0 (10/26/2020)</h3>
+<ul>
+<li>FEATURE: ability to hide the page title on a page that is used as the static home page</li>
+<li>FEATURE: Improve instructions for Trellis License</li>
+<li>FEATURE: Improve instructions for Enable Additional Image Size settings</li>
+<li>FEATURE: Replace color picker component</li>
+<li>FEATURE: delete critical css when adding or removing a primary sidebar widget</li>
+<li>FEATURE: updating a sidebar widget setting invalidates critical css, only applies to the primary sidebar</li>
+<li>FEATURE: Added a Trellis Setting to display the featured image on posts</li>
+<li>FEATURE: Adds data sync for licensed Trellis users</li>
+<li>FEATURE: Adds Intercom widget to settings and customizer for users with valid licenses</li>
+<li>FIX: Meta fields will only show for appropriate post types in Gutenberg editor</li>
+<li>FIX: Fixes JavaScript errors in IE11</li>
+<li>FIX: Prevent JS error on login page</li>
+<li>FIX: Update license warning copy</li>
+<li>FIX: Prevent CLS issues</li>
+<li>FIX: removed add_action instance of <code>mv_trellis_after_entry</code></li>
+<li>FIX: html used in Trellis Settings Hooks will persist changing or upgrading Trellis based themes</li>
+<li>FIX: Fix fetching and updating of comments when using plain permalinks</li>
+<li>COSMETIC: Clean up display of logo, searchbars, and sidebar and footer navs</li>
+<li>COSMETIC: Corrected the display of headers preceding galleries</li>
+<li>COSMETIC: Corrected the image caption overlay display</li>
+<li>COSMETIC: Replaced the search form close <code>X</code> with <code>&amp;times;</code></li>
+<li>COSMETIC: Search field input now uses the Trellis Settings Primary Color for its outline/border when it has focus</li>
+<li>COSMETIC: Search toggle icon now uses Trellis Settings Primary Color for its fill and Secondary color when hovered</li>
+<li>COSMETIC: Set body background color to white</li>
+<li>COSMETIC: footer widgets no longer have their text centered by default</li>
+<li>COSMETIC: all li styles within widgets default to list-style:none, margin-left:0, and text-align:left</li>
+<li>COSMETIC: all a styles within widgets default to text-decoration:none, same font size, and text-transform:uppercase</li>
+<li>COSMETIC: updated calendar widget to handle new markup</li>
+<li>COSMETIC: Grow floating sidebar will not cover content on screen widths greater than 700px</li>
+<li>COSMETIC: only display horizontal scrollbar for code when needed</li>
+<li>COSMETIC: comment avatar images will not get squashed on smaller screens</li>
+</ul>
+<h3 id=093-10122020>0.9.3 (10/12/2020)</h3>
+<ul>
+<li>FIX: fixes an issue where Critical CSS behavior depended on Create being active</li>
+</ul>
+<h3 id=092-10022020>0.9.2 (10/02/2020)</h3>
+<ul>
+<li>FEATURE: added a filter for the page title</li>
+<li>FEATURE: plugin compatibility handling framework added</li>
+<li>FEATURE: Checks and validates Trellis Pro license</li>
+<li>FEATURE: added filter mv_trellis_site_title_text_classes for site title markup classes</li>
+<li>FEATURE: added filter mv_trellis_site_title_logo_classes for site logo source markup classes</li>
+<li>FEATURE: added filter mv_trellis_site_title_logo_alt_text for site logo alt text</li>
+<li>FEATURE: Automatically disable Trellis JSON-LD at theme activation if Yoast or AIOSEO exist.</li>
+<li>FEATURE: Add notices for license status</li>
+<li>FEATURE: Add button to remove license</li>
+<li>FIX: Displays a notice on posts when discussion is turned off</li>
+<li>FIX: resolved compatibility issue with Sassy Social Share</li>
+<li>FIX: handle Worth the Read content wrapping compatibility issue</li>
+<li>FIX: Ampersands in author names in comments will render correctly.</li>
+<li>FIX: Prevent display of comments on password-protected pages</li>
+<li>FIX: Critical css will not respond with a WP_Error for critical css Rest API calls</li>
+<li>FIX: Email me whenever Anyone posts a comment is now checked for new comments</li>
+<li>FIX: Fix non-functional buttons in About widget</li>
+<li>FIX: Make sure theme can be previewed on a fresh WordPress installation from the customizer.</li>
+<li>FIX: removed Delay Google Font setting, it&rsquo;s no longer needed</li>
+<li>FIX: removing this htaccess directive in hopes of not conflicting with StackCache</li>
+<li>FIX: Removed some boilerplate code for a React app that never ended up being created.</li>
+<li>FIX: Remove unused CSSComb config</li>
+<li>FIX: Move placement of comment hooks so the content isn&rsquo;t removed on load</li>
+<li>FIX: Remove Genesis hooks from Trellis, preventing duplicate content on plugins that support both Genesis and THA</li>
+<li>FIX: Fix issue where ad hints weren&rsquo;t added within post archives</li>
+<li>COSMETIC: Hide dangerous buttons</li>
+</ul>
+<h3 id=091-09302020>0.9.1 (09/30/2020)</h3>
+<ul>
+<li>FEATURE: Add Trellis Hooks with UI to add custom content</li>
+<li>FEATURE: Add Yoast Breadcrumb support</li>
+<li>FEATURE: added setting to specify which post date(s) are to be displayed in the post meta.</li>
+<li>FEATURE: Add logo optimization filter for Trellis Images to use.</li>
+<li>FEATURE: Add optimized image lazy loading using detection and queueing</li>
+<li>FEATURE: Added a dropdown for setting the post thumbnail orientation</li>
+<li>FEATURE: added a way to handle errors with critical css generation</li>
+<li>FEATURE: Rename &ldquo;Sidebar Unit&rdquo; widget to &ldquo;Mediavine Sidebar Ad Hint&rdquo; and add usage notices</li>
+<li>FIX: Typography: H1 tags in archives and feeds should be H2 unless it&rsquo;s the page title.</li>
+<li>FIX: article navigation images will not be shown with pinnable images</li>
+<li>FIX: comments will display on pages that have them enabled</li>
+<li>FIX: the menu will not display over the header search form</li>
+<li>FIX: Avoid caching non-200 response types</li>
+<li>FIX: Avoid caching third party JavaScript</li>
+<li>FIX: Fixes an undefined index notice that can occur when a child theme is activated</li>
+<li>FIX: critical CSS generation for static home pages</li>
+<li>FIX: Only displays article schema when on that specific post/page</li>
+<li>FIX: Remove single-size optimized logo sources from Trellis.</li>
+<li>FIX: Activating or updating Trellis based themes will not remove previously localized fonts</li>
+<li>FIX: critical css can handle page slugs with non-english characters and %</li>
+<li>FIX: Home page featured post image will display reliably</li>
+<li>FIX: Enable Additional Image Sizes should work as expected when disabled</li>
+<li>COSMETIC: excerpt title hover uses the selected secondary color.</li>
+<li>COSMETIC: b tag will have the same font-weight as the strong tag</li>
+<li>COSMETIC: ensure the sidebar stays below the header</li>
+<li>COSMETIC: ensure footer is clearing floated elements from the entry content</li>
+<li>COSMETIC: figcaptions will be distinguishable from paragraph text</li>
+<li>COSMETIC: the sidebar should not overlap the content above it anymore</li>
+</ul>
+<h3 id=090-06102020>0.9.0 (06/10/2020)</h3>
+<ul>
+<li>FIX: ad hint widget now has a save setting button for display on mobile</li>
+<li>FIX: don&rsquo;t try to convert svg to webp/jp2</li>
+<li>FIX: moved output of Trellis css variables to before the Trellis css output</li>
+<li>FIX: removed margin from sub menus that pushed it away from its parent</li>
+<li>FIX: Fixes issue where critical CSS wasn&rsquo;t properly generated for static home pages</li>
+<li>FIX: keep the sidebar btf ad from overlapping the footer</li>
+<li>FIX: Adds <code>mv_trellis_disable_lazy_load_classes</code> filter to disable image lazy loading based off class name</li>
+<li>FIX: resolved an issue where the secondary css file would be deleted when critical css was rebuilt.</li>
+<li>COSMETIC: added max-width to sidebar widgets to center on narrower screens</li>
+</ul>
+<h3 id=083-05132020>0.8.3 (05/13/2020)</h3>
+<ul>
+<li>FEATURE: Adds native browser lazyloading attribute to iframe tags</li>
+<li>FIX: Adjusts localModel so script wrapper works with third party recipe card plugins</li>
+<li>FIX: Prevents lazyload script from trying to convert gifs to webp/jp2</li>
+<li>FIX: Asynchronously loads secondary CSS</li>
+<li>COSMETIC: Adds space above the sidebar on smaller screens</li>
+<li>COSMETIC: Centers sidebar widgets on small screens</li>
+</ul>
+<h3 id=082-05052020>0.8.2 (05/05/2020)</h3>
+<ul>
+<li>FEATURE: adds Trellis Setting to enable Critical CSS</li>
+<li>FEATURE: add setting to enable/disable PWA, default: enabled</li>
+<li>ENHANCEMENT: Update Workbox Dependencies</li>
+<li>FIX: Fixes about widget image display</li>
+<li>FIX: correct PHP notice in debug logs</li>
+<li>COSMETIC: use new logo for admin theme selector</li>
+<li>COSMETIC: gave long navigation links a little space between wrapped lines</li>
+</ul>
+<h3 id=081-04292020>0.8.1 (04/29/2020)</h3>
+<ul>
+<li>FEATURE: Add option for Pro users to disable Trellis/Mediavine links in footer</li>
+<li>FEATURE: Adds <code>rel="noopener nofollow"</code> to Trellis/Mediavine links</li>
+<li>FEATURE: trigger cache clearing when theme update is triggered</li>
+<li>FEATURE: Add sidebar images to lazyload processing</li>
+<li>FEATURE: Disable Yoast and All-In-One SEO options in JSON-LD if these plugins aren&rsquo;t active</li>
+<li>FEATURE: Added two endpoints, mv-trellis/v1/clear-db and mv-trellis/v1/reset-theme for clearing and resetting theme options</li>
+<li>FEATURE: add theme_default to localized settings array</li>
+<li>FIX: added local model defaults</li>
+<li>FIX: added space between links in lists increasing the clickability</li>
+<li>FIX: increased text contrast in multiple places</li>
+<li>FIX: Default JSON-LD to Yoast if Yoast is active when Trellis is activated</li>
+<li>FIX: ColorPicker now displays placeholder Default when it is empty instead of forcing the value to #777.</li>
+<li>COSMETIC: set default Layout Space to &lsquo;Cozy&rsquo;</li>
+<li>COSMETIC: footer widgets are not restricted to 200px wide</li>
+<li>COSMETIC: Adjusted padding on single page header wrapper</li>
+<li>COSMETIC: child theme css isn&rsquo;t enqueued in WP admin</li>
+</ul>
+<h3 id=080-04142020>0.8.0 (04/14/2020)</h3>
+<ul>
+<li>FEATURE: Trellis API updated to V3</li>
+<li>FEATURE: Added detection for Grow social sidebar to add needed body class</li>
+<li>FEATURE: added filter &lsquo;mv_trellis_local_script_model&rsquo; to allow overriding of local model settings</li>
+<li>FEATURE: Adds ability to rollback Rocket settings on activation</li>
+<li>FEATURE: Added additional options to JSON-LD Source field in Customizer</li>
+<li>ENHANCEMENT: when critical css is refreshed, the old css stays in place until the newly rebuild can take its place</li>
+<li>ENHANCEMENT: check critical css file size before it&rsquo;s written to the pub server</li>
+<li>FIX: Critical css is deleted on Trellis based theme switch</li>
+<li>FIX: if disable_critical_css flag is set, get_css_paths will exit early</li>
+<li>FIX: pluralization of &ldquo;Comments&rdquo; label when there&rsquo;s a single comment</li>
+<li>FIX: Resolves a console error when loading comments</li>
+<li>FIX: sub-menu UI</li>
+<li>FIX: menu UI in IE11</li>
+<li>FIX: post meta author uses the &lsquo;Display name publicly as&rsquo; user setting</li>
+<li>FIX: site meta description will only be output when Yoast SEO is not active</li>
+<li>FIX: bug with blank customizer page</li>
+<li>FIX: bug where Pro settings wouldn&rsquo;t be available after saving the setting</li>
+<li>FIX: removed the setting that created the footer menu display location</li>
+<li>FIX: Added hook to disable All in One SEO JSON+LD if plugin is enabled</li>
+<li>FIX: Calculates image size attributes faster when lazy loading</li>
+<li>COSMETIC: force videos to 16:9 ratio on mobile</li>
+<li>COSMETIC: Pushed content 65px to left if social sidebar is active</li>
+<li>COSMETIC: Hide Trellis Pro feature settings in the WP Customizer</li>
+</ul>
+<h3 id=071-03042020>0.7.1 (03/04/2020)</h3>
+<ul>
+<li>FEATURE: support for SVGs added</li>
+<li>FEATURE: added check for custom function and custom styles within site root</li>
+<li>FEATURE: added CloudFlare support</li>
+<li>ENHANCEMENT: added php-scoper to help remove scope issues</li>
+<li>ENHANCEMENT: migrated to UI 5.0</li>
+<li>ENHANCEMENT: added hook for running script when theme is updated</li>
+<li>ENHANCEMENT: font selector in Trellis settings updated, size limited with better scrolling</li>
+<li>ENHANCEMENT: font selector in Trellis settings updated, font name displayed in that font</li>
+</ul>
+<h3 id=070-01162020>0.7.0 (01/16/2020)</h3>
+<ul>
+<li>FEATURE: Full width page template added</li>
+<li>ENHANCEMENT: Heading Font setting accepts custom font(s)</li>
+<li>ENHANCEMENT: add theme slug to body class</li>
+<li>ENHANCEMENT: added 3 action hooks to footer: mv_trellis_before_footer, mv_trellis_footer, mv_trellis_after_footer</li>
+<li>ENHANCEMENT: new shortcodes: mv_trellis_footer_backtotop, mv_trellis_footer_copyright, mv_trellis_footer_childtheme_link, mv_trellis_footer_trellis_link, mv_trellis_footer_medivine_link, mv_trellis_footer_wordpress_link, mv_trellis_footer_site_title</li>
+<li>ENHANCEMENT: footer copyright line is built using the new shortcodes</li>
+<li>ENHANCEMENT: Site logo placed within a picture element</li>
+<li>ENHANCEMENT: added bypass to specify css classes that need to be included in the critical draw</li>
+<li>ENHANCEMENT: expanded webp and jp2 server support</li>
+<li>ENHANCEMENT: updated htaccess entry for support of the following: woff, woff2, webp, jp2</li>
+<li>FIX: renamed Theme class to Init, better reflecting what it does</li>
+<li>FIX: font sizes for content is properly set based on the Trellis setting</li>
+<li>FIX: adjusted lazyload script match regex - replaces end of url matches, not all matches</li>
+<li>FIX: Fix blank page when navigating from Trellis settings to Customizer</li>
+<li>COSMETIC: many css tweaks</li>
+<li>COSMETIC: Automatic case correction for Mediavine</li>
+</ul>
+<h3 id=060-12092019>0.6.0 (12/09/2019)</h3>
+<ul>
+<li>FEATURE: use picture element for site logo</li>
+<li>FEATURE: Google font localization. Selected Google fonts will be served from the site</li>
+<li>ENHANCEMENT: web safe fonts are marked as such and listed first in theme options</li>
+<li>ENHANCEMENT: when a search has no results, display most recent posts under the &lsquo;No results&rsquo; statement.</li>
+<li>ENHANCEMENT: gutter sizes are filterable for Layout Space option</li>
+<li>ENHANCEMENT: added option to widgets that will allow them to be hidden on smaller screens</li>
+<li>ENHANCEMENT: added option for default image size ratio</li>
+<li>ENHANCEMENT: added data-pin-attribute to images with original image src</li>
+<li>ENHANCEMENT: added footer copyright filter</li>
+<li>ENHANCEMENT: description on how to use settings api added to readme</li>
+<li>ENHANCEMENT: many updates to lazyloading images</li>
+<li>FIX: navigation items wrap</li>
+<li>FIX: menu item names don&rsquo;t break mid-word</li>
+<li>FIX: cache namespaces</li>
+<li>FIX: removed link from Posted on date for single posts</li>
+<li>FIX: removed hardcoded footer navigation location</li>
+<li>FIX: CI tests that were failing due to WP svn rate limits</li>
+<li>FIX: IE support for picture elements</li>
+<li>COSMETIC: many css tweaks</li>
+<li>COSMETIC: removed mobile specific widget area</li>
+</ul>
+<h3 id=051-11082019>0.5.1 (11/08/2019)</h3>
+<ul>
+<li>FIX: Remove extra div tag from article content</li>
+</ul>
+<h3 id=050-11072019>0.5.0 (11/07/2019)</h3>
+<ul>
+<li>ENHANCEMENT: css tweaks</li>
+<li>ENHANCEMENT: added search bar to header replacing the mobile search bar</li>
+<li>ENHANCEMENT: added setting for adjusting element spacing</li>
+<li>ENHANCEMENT: added setting for logo size</li>
+<li>ENHANCEMENT: better cache clearing</li>
+<li>ENHANCEMENT: better support for rocket cache</li>
+<li>ENHANCEMENT: better custom font stack support</li>
+<li>ENHANCEMENT: added fallbacks for Google fonts</li>
+<li>ENHANCEMENT: added post meta to single post header</li>
+<li>ENHANCEMENT: added custom title option for category archive list</li>
+<li>ENHANCEMENT: added custom title option for author archive list</li>
+<li>FIX: long words not breaking and extending outside of the container</li>
+<li>FIX: support for IE11</li>
+<li>FIX: error caused by old version of LIBXML on server</li>
+</ul>
+<div class=section-index>
+</div>
+<style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>
+<br>
+<hr>
+<div class=d-print-none>
+<h2 class=feedback--title>Feedback</h2>
+<p class=feedback--question>Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+Thanks for your feedback!
+</p>
+<p class="feedback--response feedback--response-no">
+Sorry to hear that. Your feedback has been noted and our doc team will review this page. Try visiting the <a href=https://product-help.mediavine.com/en/collections/2558553-the-trellis-framework>Trellis Help Center</a> to see if there is an answer to your question there.
+</p>
+</div>
+<script>const yesButton=document.querySelector('.feedback--answer-yes'),noButton=document.querySelector('.feedback--answer-no'),yesResponse=document.querySelector('.feedback--response-yes'),noResponse=document.querySelector('.feedback--response-no'),disableButtons=()=>{yesButton.disabled=!0,noButton.disabled=!0},sendFeedback=b=>{if(typeof ga!='function')return;const a={command:'send',hitType:'event',category:'Helpful',action:'click',label:window.location.pathname,value:b};ga(a.command,a.hitType,a.category,a.action,a.label,a.value)};yesButton.addEventListener('click',()=>{yesResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(1)}),noButton.addEventListener('click',()=>{noResponse.classList.add('feedback--response__visible'),disableButtons(),sendFeedback(0)})</script>
+<br>
+</div>
+</main>
+</div>
+</div>
+<footer class="bg-dark py-5 row d-print-none">
+<div class="container-fluid mx-sm-5">
+<div class=row>
+<div class="col-6 col-sm-4 text-xs-center order-sm-2">
+<ul class="list-inline mb-0">
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=LinkedIn aria-label=LinkedIn>
+<a class=text-white target=_blank rel=noopener href=https://www.linkedin.com/company/mediavine/ aria-label=LinkedIn>
+<i class="fab fa-linkedin"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Facebook aria-label=Facebook>
+<a class=text-white target=_blank rel=noopener href=https://www.facebook.com/mediavinepublishernetwork/ aria-label=Facebook>
+<i class="fab fa-facebook-f"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
+<a class=text-white target=_blank rel=noopener href=https://www.twitter.com/mediavine/ aria-label=Twitter>
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Instagram aria-label=Instagram>
+<a class=text-white target=_blank rel=noopener href=https://www.instagram.com/mediavine/ aria-label=Instagram>
+<i class="fab fa-instagram"></i>
+</a>
+</li>
+<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=YouTube aria-label=YouTube>
+<a class=text-white target=_blank rel=noopener href=https://www.youtube.com/mediavine/ aria-label=YouTube>
+<i class="fab fa-youtube"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+</div>
+<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+<small class=text-white>&copy; 2023 Mediavine All Rights Reserved</small>
+<small class="ml-1 privacy"><a href=https://www.mediavine.com/privacy-policy/ target=_blank rel=noopener>Privacy Policy</a></small>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
+<script src=/trellis-docs/js/tabpane-persist.js></script>
+<script src=/trellis-docs/js/main.min.8ab8f81ff7e1454d30024cd6f956d4d341c3a97e2a673f988065f2ee4e147922.js integrity="sha256-irj4H/fhRU0wAkzW+VbU00HDqX4qZz+YgGXy7k4UeSI=" crossorigin=anonymous></script>
+</body>
+</html>

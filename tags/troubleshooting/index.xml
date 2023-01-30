@@ -1,0 +1,78 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mediavine Trellis – troubleshooting</title><link>https://mediavine.github.io/trellis-docs/tags/troubleshooting/</link><description>Recent content in troubleshooting on Mediavine Trellis</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://mediavine.github.io/trellis-docs/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Getting-Started: Troubleshooting</title><link>https://mediavine.github.io/trellis-docs/getting-started/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mediavine.github.io/trellis-docs/getting-started/troubleshooting/</guid><description>
+&lt;h2 id="visitors-unable-to-see-css-changes">Visitors Unable to See CSS Changes&lt;/h2>
+&lt;p>When Critical CSS is enabled, Trellis will audit the CSS files for your website and generate a Critical CSS file and a Non-Critical CSS file for each rendered page as visitors view them. These files are cached, and so visitors may not immediately see any styling changes until the Critical CSS files are regenerated.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Note&lt;/h4>
+When you’re logged in to your site, you will always see the originally coded CSS styling for your pages. Only site visitors are ever served Critical CSS files.
+&lt;/div>
+&lt;h3 id="steps-to-troubleshoot">Steps to Troubleshoot&lt;/h3>
+&lt;ol>
+&lt;li>Log in to WordPress and see if your CSS styling is appearing on the page. Logged in users are always served the page’s original CSS files. If the styling is not appearing, you may have issues with how you’ve coded your CSS, or a different caching plugin you use might be causing the problem. Clear any other caching plugins and try again.&lt;/li>
+&lt;li>While logged in, visit the page and check the Critical CSS status in the admin bar. Trellis will tell you if it is regenerating the Critical CSS files or if there was an error during processing.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>If the status is Processing, come back to the page later to see if its status has changed to Success. You can then test the page by viewing it while not logged in as an administrator. For an explanation of all Critical CSS Statuses, see Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a>.&lt;/li>
+&lt;li>If the status is Success but your visitors are still not seeing the CSS changes, try a hard refresh of the page or clearing your browser cache to see if the style changes appear. If the issue persists, try deleting the Critical CSS file for the page. You can do this by logging in, visiting the page, and selecting &lt;strong>Manage Trellis JS/CSS Options &amp;gt; Purge Page CSS&lt;/strong> in the admin bar. Once the page’s Critical CSS status is Success, visit it again while not logged in.&lt;/li>
+&lt;/ul>
+&lt;h2 id="critical-css-errors-on-pages">Critical CSS Errors on Pages&lt;/h2>
+&lt;p>The Critical CSS status in the admin bar shows an Error status if Trellis has difficulty parsing the page’s CSS files.&lt;/p>
+&lt;h3 id="steps-to-troubleshoot-1">Steps to Troubleshoot&lt;/h3>
+&lt;p>Run your page’s CSS through a CSS validator. It could be that something in the CSS file is causing problems. You can disable a single page’s Critical CSS by calling up the page or post for editing and doing one of the following:&lt;/p>
+&lt;ul>
+&lt;li>If using the Block Editor, click on the Trellis Settings icon and select &lt;strong>Disable Critical CSS&lt;/strong>. Then run the page through a CSS validator.&lt;/li>
+&lt;li>If using the Classic Editor, go to the Trellis Settings pane and select &lt;strong>Disable Critical CSS&lt;/strong>. Then run the page through a CSS validator.&lt;/li>
+&lt;/ul>
+&lt;h2 id="rest-api-error">REST API Error&lt;/h2>
+&lt;p>Trellis generates Critical CSS files by connecting to a Trellis API hosted by Mediavine. If your Trellis instance is having trouble connecting to the Trellis API, you will see an error in the Mediavine Trellis Dashboard. Critical CSS will be disabled for your entire site until the Trellis API can be reached.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Important&lt;/h4>
+&lt;ul>
+&lt;li>If developing or testing with Trellis on your personal workstation (using an environment such as Local or MAMP), it is normal to see a REST API error. An SSL certificate must be present and your URL public to let your Trellis instance connect to the Trellis API. Test your instance in an online environment before taking it live to ensure Trellis can connect to the Trellis API.&lt;/li>
+&lt;li>If using an online staging site or sandbox, you might also encounter REST API errors since these environments might have limited access to outside services. Check the environment’s firewall policies (explained below) to make sure Trellis can connect to the Trellis API.&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;h3 id="steps-to-troubleshoot-2">Steps to Troubleshoot&lt;/h3>
+&lt;p>If you are working with your site online and still see a REST API error, follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;strong>Appearance &amp;gt; Mediavine Trellis &amp;gt; Advanced&lt;/strong>. Go to the Permanent Actions section and click the &lt;strong>Clear&lt;/strong> button for the Trellis Cache. It could be that something in the Trellis Cache is preventing access to the Trellis API.&lt;/li>
+&lt;li>Check whether you have any bot blocking or firewall plugins loaded in your WordPress installation. Plugins such as WordFence, Titan Anti-Spam, and iThemes Security have been known to cause issues connecting with the Trellis API.
+&lt;ul>
+&lt;li>&lt;strong>For WordFence and Titan Anti-Spam:&lt;/strong> Set the Firewall settings to &lt;strong>Learning Mode&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>For iThemes Security:&lt;/strong> Make sure the REST API option is &lt;strong>Set to Default Access&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Check with your hosting provider to see if your server has bot blocking or firewall settings enabled. If so, provide your host with the information below and ask them to allowlist the Trellis Services API in their firewall.&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Firewall Setting&lt;/th>
+&lt;th>Value&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>X-MV-Trellis-Services&lt;/td>
+&lt;td>trellis-services&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>User-Agent&lt;/td>
+&lt;td>Trellis-Services&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="trellis-features-are-grayed-out-license-errors">Trellis Features Are Grayed Out (License Errors)&lt;/h2>
+&lt;p>If you go to &lt;strong>Appearance &amp;gt; Mediavine Trellis&lt;/strong> and see that some features are grayed out, it could mean that your Trellis license is not installed, you have exceeded the number of sites allowed for your license, or your license has expired.&lt;/p>
+&lt;h3 id="steps-to-troubleshoot-3">Steps to Troubleshoot&lt;/h3>
+&lt;ol>
+&lt;li>Go to &lt;strong>Appearance &amp;gt; Mediavine Trellis&lt;/strong> and go to the License section. You can see if your license is installed or showing any errors. If you have a license entered, click the &lt;strong>Recheck License&lt;/strong> button to force a validation.&lt;/li>
+&lt;li>Your Trellis license is designed to work on just one site (unless you’ve purchase a multi-site license). This means that you may run into issues if you try to add your license to both a staging site and your live site. If you’re only developing a single site, deactivate the license from your staging site, push your site to a live server, then add your license on the live site.&lt;/li>
+&lt;/ol>
+&lt;h2 id="core-web-vitals-issues">Core Web Vitals Issues&lt;/h2>
+&lt;p>When a Trellis site goes live, pages need to be visited by non-logged in users for the necessary optimizations to be triggered. You can do this by visiting pages in Incognito mode and then checking if their Critical CSS status is Success. You should not test site speed until Critical CSS files are generated, as they provide a big boost to site speed.&lt;/p>
+&lt;h3 id="steps-to-troubleshoot-4">Steps to Troubleshoot&lt;/h3>
+&lt;ol>
+&lt;li>In Incognito mode in your browser, test a post (not the homepage) to give you a better idea of what your readers are experiencing. This is the best method for getting more accurate speed test results.&lt;/li>
+&lt;li>Check the Critical CSS status for any pages with low scores. Make sure that the Critical CSS status is Success. See Critical CSS in &lt;a href="https://mediavine.github.io/trellis-docs/advanced-topics/">Advanced Topics&lt;/a> for more information on Critical CSS statuses.&lt;/li>
+&lt;li>For an extensive list of troubleshooting steps, see &lt;a href="https://product-help.mediavine.com/en/articles/5392546-core-web-vitals-with-trellis">Core Web Vitals with Trellis&lt;/a> in the Help Center.&lt;/li>
+&lt;/ol></description></item></channel></rss>
