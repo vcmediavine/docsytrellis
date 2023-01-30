@@ -19,7 +19,7 @@ $td-enable-google-fonts: false;
 /* Proxima Nova */
 
 $td-fonts-serif: "Proxima Nova", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-sans-serif: "Proxima Nova" !default;
+$font-family-sans-serif: "Proxima Nova", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $success: #A1C56D !default;
 $info: #5870AC !default;
