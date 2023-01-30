@@ -32,7 +32,7 @@ When logged in, a Critical CSS Status will appear in the admin bar when you view
 | Status | Description |
 | --- | --- |
 | Disabled | Critical CSS generation has been disabled for the post or page. |
-| Error | The page encountered an error while generating the Critical CSS files. See [Troubleshooting]({{< ref "troubleshooting">}}) for some steps you can take to determine the problem. |
+| Error | The page encountered an error while generating the Critical CSS files. See [Troubleshooting](/getting-started/troubleshooting) for some steps you can take to determine the problem. |
 | None | The page has not attempted to generate Critical CSS yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis API after two hours. |
 | Processing | The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis API, but the files haven’t been saved to the site yet. |
 | Success | The page successfully generated Critical CSS files. |
@@ -142,4 +142,4 @@ Styles added programmatically will not appear in the Mediavine Trellis Dashboard
 
 ## Issues with Critical CSS
 
-If you encounter problems using Critical CSS during development, refer to [Troubleshooting]({{< ref "troubleshooting" >}}).
+If you encounter problems using Critical CSS during development, refer to [Troubleshooting](/getting-started/troubleshooting).
