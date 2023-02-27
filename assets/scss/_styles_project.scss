@@ -8,6 +8,29 @@ Add styles or override variables from the theme here.
 @import url('https://cdn.mediavine.com/fonts/ProximaNova/stylesheet.css');
 
 
+/* Suppress navbar logo and add sidebar and home logos for branding */
+
+.sidebar-logo, .home-logo {
+	display: block;
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+
+.home-logo {
+	padding-bottom: 20px;
+}
+
+.sidebar-logo img {
+	max-width: 100%;
+}
+
+.home-logo img {
+	max-width: 60%;
+}
+
+a.navbar-brand {
+	display: none;
+}
 /* Change color of links for accessibility */
 
 a, div.alert > code {
@@ -18,8 +41,16 @@ div.alert > a {
 	font-weight: 700;
 }
 
-a:hover {
-	color: #465A8E;
+.td-sidebar-nav a:hover {
+	color: #465A8E !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: #fff;
+}
+
+.navbar-dark .navbar-nav .show>.nav-link, .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+	font-weight: 700 !important;
 }
 
 /* Change color of home page links on color background */
