@@ -8,6 +8,33 @@ description: >
 
 ## Changelog
 
+### 1.0.0 (02/14/2022)
+- FEATURE: Adds theme support for “Hide page title” setting to Birch
+- FIX: Tighten #content selector to prevent grid conflicts
+- FIX: Solves desktop sidescroll caused by sub-menu of final menu-item
+- FIX: Applies secondary color to hover for footer links.
+- FIX: Removes styles that cause sub menu text to wrap
+- FIX: Add break-word to body
+- FIX: Adding hover color
+- FIX: blurry about me image
+- FIX: Resolve css validation errors
+- FIX: For better mobile results, make .search-field width a calculation
+- FIX: Prevents sidebar from dropping below content on woocommerce pages
+- FIX: Adds mvt_title_before() to static front page template before page title output
+- FIX: Adds mvt_title_after() to static front page template after page title output
+- FIX: Removes redundant layout setting notice
+- FIX: Fixes missing hover color from excerpt links when critical CSS is generated
+- FIX: Sets max-width for post tags
+- COSMETIC: Spacing between before/after content containers and the content
+- COSMETIC: Revert .wp-block-button_link to style before update
+- COSMETIC: Remove padding-right: 0 from hero excerpt
+- COSMETIC: Remove CSS rule causing sidebar Grow padding on first button
+- COSMETIC: About Me Widget’s Image is now 300px for max-width
+- COSMETIC: Adds padding between logo and open mobile menu
+- CHANGE: Updates Theme URI to the Mediavine Marketplace
+- CHANGE: Changed the Theme URI to point to the Mediavine Marketplace
+- CHANGE: Update child settings UI
+
 ### 0.6.3 (08/26/2021)
 - FIX: Static Homepage with no title's sidebar is now in the correct place.
 

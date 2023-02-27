@@ -8,6 +8,10 @@ description: >
 
 ## Changelog
 
+### 0.17.1 (02/09/2023)
+
+- FIXED: Ensures that Trellis' local model script is not optimized by WP Rocket.
+
 ### 0.17.0 (01/30/2023)
 
 - NEW: Trellis 0.17.0 now requires PHP version 7.3 or higher.
