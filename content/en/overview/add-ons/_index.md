@@ -12,8 +12,6 @@ Automatically create WebP versions of your existing legacy images and swap them 
 
 The next time a visitor lands on the page, they’ll be served the WebP version instead. WebP lossless images are smaller than equivalent PNGs and JPEGs, and are preferred by Google. See the [WebP site](https://developers.google.com/speed/webp) for more information.
 
-Trellis Images also ensures eager loading for the first image in post content, making it immediately available and resulting in better performance. All other images are lazy loaded. For more information, see [Image Delivery and Optimizations]({{< ref "/advanced-topics/image-delivery" >}}).
-
 {{% alert title="Note" %}}
 Trellis Images is an optional plugin included with your purchase. If you already create WebP images as part of your workflow (or prefer a different plugin), you don’t need to install Trellis Images.
 {{% /alert %}}
