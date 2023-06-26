@@ -16,19 +16,19 @@
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
 <title>Image Delivery and Optimizations | Mediavine Trellis</title>
-<meta name=description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+<meta name=description content="Trellis automatically applies first image eager loading, thumbnail optimizations, and other optional image formatting features. 
 ">
 <meta property="og:title" content="Image Delivery and Optimizations">
-<meta property="og:description" content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+<meta property="og:description" content="Trellis automatically applies first image eager loading, thumbnail optimizations, and other optional image formatting features. 
 ">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/"><meta property="og:image" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-featured-image.png"><meta property="og:site_name" content="Mediavine Trellis">
+<meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/"><meta property="og:image" content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-regenerate-featured-image.png"><meta property="og:site_name" content="Mediavine Trellis">
 <meta itemprop=name content="Image Delivery and Optimizations">
-<meta itemprop=description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+<meta itemprop=description content="Trellis automatically applies first image eager loading, thumbnail optimizations, and other optional image formatting features. 
 "><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-featured-image.png">
+<meta name=twitter:image content="https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/settings-regenerate-featured-image.png">
 <meta name=twitter:title content="Image Delivery and Optimizations">
-<meta name=twitter:description content="Trellis offers lazy loading, thumbnail optimization, and optional image formatting features. 
+<meta name=twitter:description content="Trellis automatically applies first image eager loading, thumbnail optimizations, and other optional image formatting features. 
 ">
 <link rel=preload href=/docsytrellis/scss/main.min.9b9c0a01f901c6ab4edd155033b5421ef874875ee7bad631903705a727f93953.css as=style>
 <link href=/docsytrellis/scss/main.min.9b9c0a01f901c6ab4edd155033b5421ef874875ee7bad631903705a727f93953.css rel=stylesheet integrity>
@@ -65,7 +65,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -79,7 +79,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -119,11 +119,17 @@
 <h4>Contents</h4>
 <nav id=TableOfContents>
 <ul>
+<li><a href=#eager-loading-and-first-image-delivery>Eager Loading and First Image Delivery</a>
+<ul>
+<li><a href=#disabling-first-image-eager-loading-across-the-site>Disabling First Image Eager Loading Across the Site</a></li>
+<li><a href=#disabling-first-image-eager-loading-per-image>Disabling First Image Eager Loading Per Image</a></li>
+<li><a href=#disabling-first-image-svg-replacement>Disabling First Image SVG Replacement</a></li>
+</ul>
+</li>
 <li><a href=#lazy-loading-delivery>Lazy Loading Delivery</a>
 <ul>
 <li><a href=#disabling-lazy-loading-across-the-site>Disabling Lazy Loading Across the Site</a></li>
-<li><a href=#disabling-lazy-loading-per-image>Disabling Lazy Loading Per Image</a></li>
-<li><a href=#applying-eager-loading-to-an-image>Applying Eager-Loading to an Image</a></li>
+<li><a href=#disabling-lazy-loading-per-element>Disabling Lazy Loading Per Element</a></li>
 </ul>
 </li>
 <li><a href=#image-size-optimization>Image Size Optimization</a></li>
@@ -174,7 +180,7 @@
 </nav>
 <div class=td-content>
 <h1>Image Delivery and Optimizations</h1>
-<div class=lead>Trellis offers lazy loading, thumbnail optimization, and optional image formatting features.</div>
+<div class=lead>Trellis automatically applies first image eager loading, thumbnail optimizations, and other optional image formatting features.</div>
 <header class=article-meta>
 <div class="taxonomy taxonomy-terms-article taxo-tags">
 <h5 class=taxonomy-title>Tags:</h5>
@@ -187,46 +193,21 @@
 </header>
 <p>When using Trellis, several image-specific features are available to make your pages load faster and improve your site’s Google Core Web Vitals score. These include:</p>
 <ul>
-<li><strong>Image delivery enhancement via lazy loading.</strong> For older browsers that don’t natively support lazy loading, Trellis uses a JavaScript solution. Developers can also disable lazy loading per image, across the site, or specify eager loading. Lazy loading is also applied to iframe content.</li>
-<li><strong>Image thumbnail size optimizations.</strong> Trellis instructs WordPress to create additional image sizes for uploaded images based on the Featured Image size setting. Existing images can be retroactively processed via a Regenerate Featured Images button or Regenerate All Images button in the Mediavine Trellis Dashboard.</li>
-<li><strong>(Optional) Image formatting optimizations.</strong> If the optional Trellis Images plugin is installed, Trellis will generate WebP versions of legacy image formats when visitors go to a page.</li>
+<li><strong>Image delivery enhancements.</strong> For the first image in the content (or the featured image), Trellis checks if it is eager loaded (via a specified class or attribute). If not, it will add code. It also initally renders the first image as a gray SVG image, swapping it out for the actual image when it comes into view. For all other images, Trellis makes sure that a <code>loading="lazy"</code> attribute exists to take advantage of modern web browsers' support for lazy loading. Developers can alter eager and lazy loading behavior per image or across the entire site (see more below).</li>
+<li><strong>Image thumbnail size optimizations.</strong> Trellis instructs WordPress to create additional image sizes for uploaded images based on the Featured Image size setting. Existing images can be retroactively processed via a Regenerate Featured Images button or Regenerate All Images button in Trellis Settings.</li>
+<li><strong>(Optional) Image formatting optimizations.</strong> If the optional Trellis Images plugin is installed, Trellis will generate WebP versions of legacy image formats when visitors go to a page and then swap them for the WebP version.</li>
 </ul>
-<h2 id=lazy-loading-delivery>Lazy Loading Delivery</h2>
-<p>Lazy loading is the practice of delaying the load or initialization of objects until they’re needed by the browser. When Trellis is active, a <code>loading="lazy"</code> attribute is automatically added to images and iframes found within Trellis content and sidebars. This allows modern browsers to use their native lazy loading functions. If a browser doesn’t natively support lazy loading, Trellis falls back to using a JavaScript solution to accomplish it.</p>
-<p>Once the page is loaded, Trellis inserts the correct image or iframe content just before it enters the viewport. An image within a <code>noscript</code> tag is also added to provide compatibility for scenarios where JavaScript is not available.</p>
-<div class="alert alert-primary" role=alert>
-<h4 class=alert-heading>Note</h4>
-Lazy loading is also automatically applied to iframe content. The instructions for disabling lazy loading per image (or enabling eager loading) also applies to iframes.
-</div>
-<h3 id=disabling-lazy-loading-across-the-site>Disabling Lazy Loading Across the Site</h3>
-<p>If you plan on using a different lazy loading solution or just want to disable Trellis’ lazy loading functionality site-wide, you can add the following filter to your child theme’s <code>functions.php</code> file:</p>
+<h2 id=eager-loading-and-first-image-delivery>Eager Loading and First Image Delivery</h2>
+<p>Trellis checks for an <code>eager-load</code> class or a <code>loading="eager"</code> attribute on the first image in content (or the featured image). If it doesn&rsquo;t find either, it will automatically add the <code>loading="eager"</code> attribute.</p>
+<p>Additionally, Trellis increases LCP scores by initially rendering the first image as a gray SVG with the same dimensions. When the page finishes loading, Trellis uses JavaScript to replace the SVG with the correct image just before it comes into view.</p>
+<h3 id=disabling-first-image-eager-loading-across-the-site>Disabling First Image Eager Loading Across the Site</h3>
+<p>(As of 0.18.0) If you want to disable Trellis' automatic eager loading functions, you can add the following filter to your child theme’s functions.php file:</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
-</span><span style=color:#d88200>  * Disable Trellis lazy loading
+</span><span style=color:#d88200>  * Disable Trellis eager loading
 </span><span style=color:#d88200>*/</span>
-<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enable_lazy_load&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__return_false&#39;</span> <span style=color:#111>);</span>
-</code></pre></div><h3 id=disabling-lazy-loading-per-image>Disabling Lazy Loading Per Image</h3>
-<p>If you want to disable lazy loading on a specific image or to disable Trellis’ lazy loading JavaScript fallback, you can apply a class to an <code>&lt;img></code> or <code>&lt;iframe></code> tag or block.</p>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>no-lazyload</td>
-<td>This class stops Trellis from adding the <code>loading="lazy"</code> attribute. The element will be served as-is.</td>
-</tr>
-<tr>
-<td>native-lazyload</td>
-<td>This class allows Trellis to add the <code>loading="lazy"</code> attribute, but disables the JavaScript fallback. If the browser doesn’t natively support lazy loading, the element will be rendered normally.</td>
-</tr>
-</tbody>
-</table>
-<h3 id=applying-eager-loading-to-an-image>Applying Eager-Loading to an Image</h3>
-<p>Eager loading is the opposite of lazy loading. Eager loading initializes or loads a resource as soon as the code is executed. This is useful when you need to have image or iframe resources immediately available — for example, if shown as part of a “Loading” screen.</p>
-<p>Eager loading can be applied as a class on an <code>&lt;img></code> or <code>&lt;iframe></code> tag.</p>
+<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_eagerload_first_image&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__return_true&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><h3 id=disabling-first-image-eager-loading-per-image>Disabling First Image Eager Loading Per Image</h3>
+<p>(As of 0.15.3) If you want to prevent Trellis from adding a <code>loading="eager"</code> attribute to specific images, you can add a class to the <code>&lt;img></code> tag.</p>
 <table>
 <thead>
 <tr>
@@ -237,17 +218,51 @@ Lazy loading is also automatically applied to iframe content. The instructions f
 <tbody>
 <tr>
 <td>eager-load</td>
-<td>This class stops Trellis from adding the <code>loading="lazy"</code> attribute and any other lazy-loading features (such as the JavaScript fallback). Instead, Trellis adds a <code>loading="eager"</code> attribute (provided one doesn’t already exist).<br><br><strong>Note:</strong> This feature is only available as of Trellis 0.15.3.</td>
+<td>This class stops Trellis from adding the <code>loading="eager"</code> attribute.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=disabling-first-image-svg-replacement>Disabling First Image SVG Replacement</h3>
+<p>(As of 0.18.0) If you want to disable Trellis' SVG replacement feature, you can add the following filter to your child theme’s functions.php file:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
+</span><span style=color:#d88200>  * Disable Trellis first image SVG replacement
+</span><span style=color:#d88200>*/</span>
+<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_disable_svg_preload_first_image&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__return_true&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><h2 id=lazy-loading-delivery>Lazy Loading Delivery</h2>
+<p>Lazy loading is the practice of delaying the load or initialization of objects until they’re needed by the browser. For all images other than the first image (or featured image), Trellis ensures that a <code>loading="lazy"</code> attribute is present for images and iframes. This allows modern browsers to use their native lazy loading features.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Lazy loading is also automatically applied to iframe content. The instructions for disabling lazy loading per image also applies to iframes.
+</div>
+<h3 id=disabling-lazy-loading-across-the-site>Disabling Lazy Loading Across the Site</h3>
+<p>If you plan on using a different lazy loading solution (or just want to disable Trellis’ lazy loading functionality site-wide), you can add the following filter to your child theme’s functions.php file:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#d88200>/**
+</span><span style=color:#d88200>  * Disable Trellis lazy loading
+</span><span style=color:#d88200>*/</span>
+<span style=color:#75af00>add_filter</span><span style=color:#111>(</span> <span style=color:#d88200>&#39;mv_trellis_enable_lazy_load&#39;</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;__return_false&#39;</span> <span style=color:#111>);</span>
+</code></pre></div><h3 id=disabling-lazy-loading-per-element>Disabling Lazy Loading Per Element</h3>
+<p>If you want to disable Trellis' lazy loading features on a specific element, you can apply a class to an <code>&lt;img></code> or <code>&lt;iframe></code> tag or block.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>no-lazyload</td>
+<td>This class stops Trellis from checking for the <code>loading="lazy"</code> attribute. The content will be served as-is.</td>
 </tr>
 </tbody>
 </table>
 <h2 id=image-size-optimization>Image Size Optimization</h2>
-<p>WordPress has a predefined set of image sizes it creates when a new image is uploaded. When active, Trellis modifies this set to add more sizes that are frequently used in publisher sites. This helps prevent the <a href=https://web.dev/uses-responsive-images/>“Properly Sized Image Warning” in Google Pagespeed Insights</a>.</p>
-<p>Publishers can choose a desired featured image thumbnail size and ratio in the <strong>Display</strong> tab of the Mediavine Trellis Dashboard. Depending on the size selected, additional sizes (as listed in the Image Sizes chart) will be created by WordPress whenever an image is uploaded or on post save when the featured image size is changed.</p>
+<p>WordPress has a predefined set of image sizes it creates when a new image is uploaded. When active, Trellis modifies this set to add more sizes that are frequently used in publisher sites. This helps prevent the <a href=https://web.dev/uses-responsive-images/>“Properly Size Images" Warning in Google Pagespeed Insights</a>.</p>
+<p>Publishers can choose a desired featured image thumbnail size and ratio in the <strong>Display</strong> tab of Trellis Settings. Depending on the size selected, additional sizes (as listed in the Image Sizes chart) will be created by WordPress whenever an image is uploaded or on post save when the featured image size is changed.</p>
 <p>The <strong>Regenerate Featured Images</strong> button will add all featured images to a queue and have their necessary Trellis sizes created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5691530-trellis-featured-images>Trellis Featured Images</a> in the Help Center for more information.</p>
-<img src=settings-featured-image.png alt="Regenerate featured images." width=600px>
-<p>If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the <strong>Advanced</strong> tab of the Mediavine Trellis Dashboard and use the <strong>Regenerate All Images</strong> button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis>How to Regenerate Your Image Sizes in Trellis</a> in the Help Center for more information.</p>
-<img src=settings-regenerate-images.png alt="Regenerate all images." width=600px>
+<img src=settings-regenerate-featured-image.png alt="Regenerate featured images." width=600px>
+<p>If a publisher wants to regenerate Trellis sizes on all of the images on their site (Featured Images included), they can go to the <strong>Advanced</strong> tab of Trellis Settings and use the <strong>Regenerate All Images</strong> button. Depending on the size selected in the Featured Image Size, additional sizes (as listed in the Image Sizes chart) will be created by WordPress. See <a href=https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis>How to Regenerate Your Image Sizes in Trellis</a> in the Help Center for more information.</p>
+<img src=settings-regenerate-all-images.png alt="Regenerate all images." width=600px>
 <h2 id=image-sizes-chart>Image Sizes Chart</h2>
 <p>By default, Trellis will generate all image sizes for the selected Featured Image Size and a high res size for all other sizes not selected. Image sizes are grouped by setting.</p>
 <div class="alert alert-primary" role=alert>
@@ -493,7 +508,7 @@ Trellis never alters original images. The additional images it creates will, how
 </tr>
 <tr>
 <td>medium_large</td>
-<td>768x0</td>
+<td>768x768</td>
 <td>Proportionally resized to fit inside dimensions</td>
 <td>None. This size is provided by WP Core.</td>
 </tr>
@@ -524,39 +539,41 @@ Trellis never alters original images. The additional images it creates will, how
 </tbody>
 </table>
 <h2 id=useful-filters-and-functions>Useful Filters and Functions</h2>
-<p>The following image filters and functions can be used in Trellis child theme code. For more information on them, see <a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/>Filters</a> or <a href=https://vcmediavine.github.io/docsytrellis/reference/functions/>Functions</a> in the Reference section.</p>
+<p>The following image filters and functions can be used in Trellis child theme code. For additional filters and functions, see the <a href=https://vcmediavine.github.io/docsytrellis/reference/>Reference</a> section.</p>
 <h3 id=filters>Filters</h3>
 <ul>
-<li>mv_trellis_article_nav_image_orientation</li>
-<li>mv_trellis_article_nav_image_res</li>
-<li>mv_trellis_default_featured_image_size</li>
-<li>mv_trellis_disable_convert_image_to_lazyload_when_enabled</li>
-<li>mv_trellis_disable_lazy_load_classes</li>
-<li>mv_trellis_disable_process_images</li>
-<li>mv_trellis_disable_set_image_cls_aspect_styles</li>
-<li>mv_trellis_disable_set_image_dimensions</li>
-<li>mv_trellis_enable_lazy_load</li>
-<li>mv_trellis_excerpt_image_res</li>
-<li>mv_trellis_excerpt_image_sizes</li>
-<li>mv_trellis_featured_post_image_res</li>
-<li>mv_trellis_featured_post_image_sizes</li>
-<li>mv_trellis_image_orientation</li>
-<li>mv_trellis_image_sizes</li>
-<li>mv_trellis_image_sizes_attribute</li>
-<li>mv_trellis_match_image_dimensions</li>
-<li>mv_trellis_post_link_featured_image_sizes</li>
-<li>mv_trellis_resolution_sizes</li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_article_nav_image_orientation>mv_trellis_article_nav_image_orientation</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_article_nav_image_res>mv_trellis_article_nav_image_res</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_default_featured_image_size>mv_trellis_default_featured_image_size</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_convert_image_to_lazyload_when_enabled>mv_trellis_disable_convert_image_to_lazyload_when_enabled</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_eagerload_first_image>mv_trellis_disable_eagerload_first_image</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_lazy_load_classes>mv_trellis_disable_lazy_load_classes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_process_images>mv_trellis_disable_process_images</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_set_image_cls_aspect_styles>mv_trellis_disable_set_image_cls_aspect_styles</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_set_image_dimensions>mv_trellis_disable_set_image_dimensions</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_disable_svg_preload_first_image>mv_trellis_disable_svg_preload_first_image</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_enable_lazy_load>mv_trellis_enable_lazy_load</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_excerpt_image_res>mv_trellis_excerpt_image_res</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_excerpt_image_sizes>mv_trellis_excerpt_image_sizes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_featured_post_image_res>mv_trellis_featured_post_image_res</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_featured_post_image_sizes>mv_trellis_featured_post_image_sizes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_image_orientation>mv_trellis_image_orientation</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_image_sizes>mv_trellis_image_sizes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_image_sizes_attribute>mv_trellis_image_sizes_attribute</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_match_image_dimensions>mv_trellis_match_image_dimensions</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_post_link_featured_image_sizes>mv_trellis_post_link_featured_image_sizes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_resolution_sizes>mv_trellis_resolution_sizes</a></li>
 </ul>
 <h3 id=functions>Functions</h3>
 <ul>
-<li>mv_trellis_get_attachment_image_tag</li>
-<li>mv_trellis_the_attachment_image_tag</li>
-<li>mvt_adjust_excerpt_image_orientation_res</li>
-<li>mvt_adjust_featured_post_image_orientation_res</li>
-<li>mvt_adjust_excerpt_image_sizes</li>
-<li>mvt_adjust_featured_post_image_sizes</li>
-<li>mvt_get_image_orientation_res</li>
-<li>mv_trellis_get_featured_image_tag</li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mv_trellis_get_attachment_image_tag>mv_trellis_get_attachment_image_tag</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mv_trellis_the_attachment_image_tag>mv_trellis_the_attachment_image_tag</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mvt_adjust_excerpt_image_orientation_res>mvt_adjust_excerpt_image_orientation_res</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mvt_adjust_featured_post_image_orientation_res>mvt_adjust_featured_post_image_orientation_res</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mvt_adjust_excerpt_image_sizes>mvt_adjust_excerpt_image_sizes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mvt_adjust_featured_post_image_sizes>mvt_adjust_featured_post_image_sizes</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mvt_get_image_orientation_res>mvt_get_image_orientation_res</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/functions/#mv_trellis_get_featured_image_tag>mv_trellis_get_featured_image_tag</a></li>
 </ul>
 <div class=section-index>
 </div>

@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -168,16 +168,16 @@
 <p class=card-text>
 <ul>
 <li>
-<p><strong>Determine your development environment:</strong> You can choose to develop your child theme on your local computer or in a hosted environment that’s running WordPress. When developing on a local computer, Critical CSS and REST API warnings might appear, depending on your configuration. See the SSL certificate item below for more information.</p>
+<p><strong>Determine your development environment:</strong> You can choose to develop your child theme on your local computer or in a hosted environment that’s running WordPress. When developing on a local computer, Critical CSS and REST API warnings might appear, depending on your configuration. Trellis needs to communicate with Mediavine&rsquo;s Trellis Services API (included in your subscription) to generate Critical CSS files.</p>
 </li>
 <li>
-<p><strong>Check your WordPress and PHP versions:</strong> To install Trellis, you must be using WordPress 5.2 or higher and have PHP 7.3 installed.</p>
+<p><strong>Check your WordPress and PHP versions:</strong> To install Trellis, you must be using WordPress 5.2 or higher and have at least PHP 7.3 installed.</p>
 </li>
 <li>
-<p><strong>(Optional for development) Install an SSL certificate:</strong> An SSL certificate allows Trellis to create optimized CSS files for faster performance. If you don’t have an SSL certificate installed, you’ll see a Critical CSS error in the WP Dashboard and in Trellis Settings. You can ignore this warning while developing your child theme.</p>
+<p><strong>(Optional for development) Install an SSL certificate:</strong> An SSL certificate lets Trellis create optimized CSS files for faster performance (your Trellis instance also needs the ability to communicate with the Mediavine Trellis Services API). If you don’t have an SSL certificate installed, you’ll see a Critical CSS error in the WP Dashboard and in Trellis Settings. However, this is optional. You can ignore this warning while developing your child theme in a non-production environment.</p>
 </li>
 <li>
-<p><strong>Purchase a License:</strong> Go to the <a href=https://marketplace.mediavine.com/trellis/>Mediavine Marketplace</a> to purchase a Trellis license and download the installation files.</p>
+<p><strong>Purchase a License:</strong> Go to the <a href=https://marketplace.mediavine.com/trellis/>Mediavine Marketplace</a> to purchase a Trellis license and download the installation files. A valid license unlocks all Trellis features.</p>
 </li>
 </ul>
 </p>
@@ -188,7 +188,7 @@
 <li>In the WordPress Admin Dashboard, go to <strong>Appearance > Themes</strong>.</li>
 <li>Click <strong>Add New</strong>.</li>
 <li>Click <strong>Upload Theme</strong>.</li>
-<li>Click <strong>Choose File</strong> and select the Mediavine-Trellis ZIP file.</li>
+<li>Click <strong>Choose File</strong> and select the Mediavine-Trellis ZIP file you received with your subscription purchase.</li>
 <li>Click <strong>Install Now</strong>.</li>
 <li>Click <strong>Activate</strong>.</li>
 </ol>
@@ -198,42 +198,42 @@
 <li>In the WordPress Admin Dashboard, go to <strong>Appearance > Mediavine Trellis</strong>.</li>
 <li>Click <strong>License</strong>.
 <br>
-<img src=trellis-17.0.0-settings-license.png alt="License setting." width=200px></li>
+<img src=trellis-0.18.0-settings-license.png alt="Trellis Settings panel." width=200px></li>
 <li>Enter your Trellis license in the <strong>License Code</strong> box.</li>
 <li>Click <strong>Activate License</strong>.</li>
 </ol>
 <p>You now have access to all of the Trellis Theme Framework features.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-If you’ve installed Trellis on an existing site with posts and images, it’s a good idea to set your Featured Image Size to match your new theme. Click <strong>Display</strong> and go to the Featured Image Size option and select the ratio you’d like to use. Then click the <strong>Regenerate Featured Images</strong> button. This will instruct WordPress to recreate your featured images on posts using the ratio you selected. See <a href=https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis>How to Regenerate Your Image Sizes</a> in the Trellis Help Center for more information.
+If you’ve installed Trellis on an existing site with posts and images, it’s a good idea to set your Featured Image Size to match your new theme. Click <strong>Display</strong> and go to the <strong>Featured Image Size</strong> option and select the ratio you’d like to use. Then click the <strong>Regenerate Featured Images</strong> button. This will instruct WordPress to recreate your featured images on posts using the ratio you selected. See <a href=https://product-help.mediavine.com/en/articles/5528297-how-to-regenerate-your-image-sizes-in-trellis>How to Regenerate Your Image Sizes</a> in the Trellis Help Center for more information.
 </div>
 <h2 id=optional-install-the-trellis-images-plugin>(Optional) Install the Trellis Images Plugin</h2>
-<p>Trellis Images is a helper plugin that automatically creates a WebP version of legacy image formats and stores it in your site’s uploads folder (the original image is never altered or removed). WebP images load faster and score higher in Google’s Core Web Vitals. If you plan on using a different plugin that generates WebP images, you don’t need to install Trellis Images. <a href="https://developers.google.com/speed/webp#:~:text=WebP%20is%20a%20modern%20image,in%20size%20compared%20to%20PNGs.">Learn more about WebP images</a>.</p>
+<p>Trellis Images is a helper plugin that automatically creates a WebP version of legacy image formats and stores it in your site’s uploads folder (the original image is never altered or removed). WebP images load faster and score higher in Google’s Core Web Vitals.</p>
 <ol>
 <li>In the WordPress Admin Dashboard, go to <strong>Plugins > Add New</strong>.</li>
 <li>Click <strong>Upload Plugin</strong>.</li>
-<li>Click <strong>Choose File</strong> and select the Trellis Images plugin.</li>
+<li>Click <strong>Choose File</strong> and select the Trellis Images plugin you received with your subscription purchase.</li>
 <li>Click <strong>Install Now</strong>.</li>
 <li>Click <strong>Activate Plugin</strong>.</li>
 </ol>
 <h2 id=optional-install-the-trellis-child-themes>(Optional) Install the Trellis Child Themes</h2>
-<p>Trellis comes with three child themes: Bamboo, Birch, and Wisteria, each available as a separate installation file. When developing a new child theme, it can be useful to refer to these Mediavine-built themes to see how different Trellis features are implemented.</p>
+<p>Trellis comes with three child themes: Bamboo, Birch, and Wisteria, each available as a separate installation file with your subscription purchase. When developing a new child theme, it can be useful to refer to these Mediavine-built themes to see how different Trellis features are implemented.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-You don’t need to install or activate a child theme to see Trellis at work. Trellis Core comes with minimally-styled templates that will show you all the options that are available. Some of the included child themes will not show all options in the Trellis Mediavine Dashboard or may include functionality specifically coded for that theme.
+You don’t need to install or activate a child theme to see Trellis at work. Trellis Core comes with minimally-styled templates that will show you all the options that are available. Some of the included child themes will not show all of the options in Trellis Settings or may include functionality specifically coded for that theme.
 </div>
 <ol>
 <li>Click <strong>Add New</strong>.</li>
 <li>Click <strong>Upload Theme</strong>.</li>
-<li>Click <strong>Choose File</strong> and select a Trellis child theme ZIP file.</li>
+<li>Click <strong>Choose File</strong> and select a Trellis child theme ZIP file included with your subscription purchase.</li>
 <li>Click <strong>Install Now</strong>.</li>
 <li>Click <strong>Activate</strong>.</li>
 </ol>
 <h2 id=whats-next>What’s Next?</h2>
 <ul>
-<li>Learn about <a href=https://vcmediavine.github.io/docsytrellis/getting-started/changes-to-wordpress/>Trellis’ Changes to WordPress</a></li>
+<li>Learn about Trellis’ <a href=https://vcmediavine.github.io/docsytrellis/getting-started/changes-to-wordpress/>Changes to WordPress</a></li>
 <li>Get to know the available options in <a href=https://vcmediavine.github.io/docsytrellis/getting-started/trellis-settings/>Trellis Settings</a></li>
-<li><a href=https://vcmediavine.github.io/docsytrellis/getting-started/creating-your-child-theme/>Get started</a> creating a Trellis child theme</li>
+<li>Get started <a href=https://vcmediavine.github.io/docsytrellis/getting-started/creating-your-child-theme/>creating a Trellis child theme</a></li>
 </ul>
 <div class=section-index>
 </div>

@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -147,6 +147,19 @@
 <header class=article-meta>
 </header>
 <h2 id=changelog>Changelog</h2>
+<h3 id=071-04252023>0.7.1 (04/25/2023)</h3>
+<ul>
+<li>FIXED: Added a comma to the logo source tag&rsquo;s srcset attribute. The first image URL in the srcset was missing a comma, which could result in a blurred image.</li>
+</ul>
+<h3 id=070-04032023>0.7.0 (04/03/2023)</h3>
+<ul>
+<li>NEW: Trellis Images 0.7.0 now requires a minimum version of Trellis 0.18.0 and a minimum PHP version of 7.3 to run.</li>
+<li>NEW: Swapping legacy images for WebP versions is now handled by Trellis Images. Previously, Trellis Images only produced new WebP images while Trellis Core handled the swapping functions.</li>
+<li>NEW: Added a new mv_trellis_images_stop_process filter to terminate image processing.</li>
+<li>NEW: Added a link to the Mediavine Marketplace in the Trellis Images plugin page.</li>
+<li>CHANGED: Added the ability to serve a WebP version of a specific image size if it already exists. Previously, all image sizes had to be converted before a WebP version was served.</li>
+<li>FIXED: Added code to exclude WebP processing for images hosted on a CloudFlare CDN (these are recognized by cdn-cgi in the URL). Previously, images would appear broken after processing due to how CloudFlare operates.</li>
+</ul>
 <h3 id=060-05262021>0.6.0 (05/26/2021)</h3>
 <ul>
 <li>FEATURE: Trellis Images no longer uses transients for throttling.</li>

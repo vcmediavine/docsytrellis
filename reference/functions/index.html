@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -159,52 +159,72 @@
 To view the complete function, look for it within Trellis Core’s functions.php file, located in mediavine-trellis/inc/functions.php.
 </div>
 <hr>
-<h3 id=mv_trellis_get_child_theme>mv_trellis_get_child_theme</h3>
-<p>Gets the name of the child theme.</p>
-<div class="alert alert-primary" role=alert>
-<h4 class=alert-heading>Note</h4>
-Use this function when checking for the existence of Trellis.
-</div>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string|null</code> Name of the child theme or null if the name is not found.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_is_core>mv_trellis_is_core</h3>
-<p>Returns whether Trellis Core is the active theme.</p>
-<div class="alert alert-primary" role=alert>
-<h4 class=alert-heading>Note</h4>
-Using the WP Core function <code>is_child_theme()</code> is more reliable and is available earlier.
-</div>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>bool</code> True if Trellis Core is the active theme, False if a Trellis child theme is active.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_get_template_part>mv_trellis_get_template_part</h3>
-<p>Loads the found template part.</p>
+<h3 id=mv_trellis_entry_author>mv_trellis_entry_author</h3>
+<p>Outputs the entry’s author.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>$slug <code>string</code> Template file (including path) to search for.</li>
-<li>$name <code>string|array</code> The <code>mv_trellis_template_type</code> will search through the Trellis template hierarchy for the matching template name. Including an array will limit the files to search from what is specified in the array.</li>
+<li>None</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> The HTML of the matching template part.</li>
+<li><code>string</code> The author name.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_nav_menu>mv_trellis_nav_menu</h3>
-<p>Outputs the nav menu with toggle button support.</p>
+<h3 id=mv_trellis_entry_content_class>mv_trellis_entry_content_class</h3>
+<p>Outputs a class attribute for the entry-content container. Includes classes specified by the <code>mv_trellis_entry_content_classes</code> filter.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>$args <code>array</code> Arguments to be used in the core <code>wp_nav_menu</code> function.</li>
-<li>$toggle_btn <code>bool</code> Displays the toggle button. Defaults to False.</li>
-<li>$toggle_text <code>string</code> Text string to be used in the toggle button. Defaults to “Menu.”</li>
-<li>$toggle_template_part <code>string</code> Template part to be used for the toggle button. This overrides <code>$toggle_text</code>. Defaults to null.</li>
+<li>$class <code>string|array</code> A string or array of additional classes to be added to the entry-content class attribute.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> The HTML containing the navigation menu.</li>
+<li><code>string</code> Complete list of classes to be added to the entry-content class attribute.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_entry_date>mv_trellis_entry_date</h3>
+<p>Outputs the entry publish date or updated date (if the entry has been updated).</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> Publish date or updated date of the entry.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_entry_tags>mv_trellis_entry_tags</h3>
+<p>Outputs a list of tags, if they exist, with optional content before or after the list.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$before <code>string</code> The content to display before the tags. Defaults to empty.</li>
+<li>$sep <code>string</code> The separator to use between the returned tags. Defaults to comma.</li>
+<li>$after <code>string</code> The content to display after the tags. Defaults to empty.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> A list of tags with appended and prepended content, using specified separators.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_entry_taxonomies>mv_trellis_entry_taxonomies</h3>
+<p>Returns a list of taxonomies, if they exist.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$sep <code>string</code> The separator to use for the taxonomies. Defaults to comma.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> A list of taxonomies with the separator between them.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_get_asset_url>mv_trellis_get_asset_url</h3>
+<p>Returns the absolute path of an asset.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$asset_path <code>string</code> An optional relative path to the asset. Defaults to empty.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The absolute path to the asset.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_get_attachment_image_tag>mv_trellis_get_attachment_image_tag</h3>
@@ -222,31 +242,15 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li><code>string|null</code> The HTML <code>&lt;img></code> tag or null if no image is available.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_the_attachment_image_tag>mv_trellis_the_attachment_image_tag</h3>
-<p>Echoes the best resolution image in an <code>&lt;img></code> tag with srcset data.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$img_id <code>int|string</code> The image attachment ID.</li>
-<li>$img_size <code>string</code> The image size.</li>
-<li>$attributes <code>array</code> A Key/value array of attributes added (such as class).</li>
-<li>$highest_res <code>string</code> The max resolution allowed.</li>
-<li>$lazy_load <code>bool</code> Whether lazy loaded markup is added to the image.</li>
-</ul>
+<h3 id=mv_trellis_get_child_theme>mv_trellis_get_child_theme</h3>
+<p>Gets the name of the child theme.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Use this function when checking for the existence of Trellis.
+</div>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string|null</code> The HTML <code>&lt;img></code> tag or null if no image is available.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_set_data>mv_trellis_set_data</h3>
-<p>Sets data that can be used across template parts.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$data_key <code>string</code> Key of the data.</li>
-<li>$data_value <code>mixed</code> Value of the data.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li>Not applicable. Sets data for retrieval using <code>mv_trellis_get_data</code>.</li>
+<li><code>string|null</code> Name of the child theme or null if the name is not found.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_get_data>mv_trellis_get_data</h3>
@@ -264,48 +268,17 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li><code>mixed</code> Data from a specified key or all data in an <code>array</code>.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_remove_data>mv_trellis_remove_data</h3>
-<p>Removes data from an array that was set using the <code>mv_trellis_set_data</code> function. Data in the array is available across template parts.</p>
+<h3 id=mv_trellis_get_featured_image_tag>mv_trellis_get_featured_image_tag</h3>
+<p>Gets the HTML tag of the featured image.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>$data_key <code>string</code> The key of the data to remove.</li>
+<li>$post_id <code>int</code> Optional post ID.</li>
+<li>$attr <code>array</code> Attributes array. Defaults to empty.</li>
+<li>$echo <code>bool</code> Whether to echo the tag or return. Optional, but defaults to True.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li>Not applicable.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_site_title>mv_trellis_site_title</h3>
-<p>Outputs the HTML of the site title and logo.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$link <code>bool</code> Whether to display the site title and logo wrapped in an anchor tag. Defaults to True.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> HTML of the site title and logo.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_is_plugin_active>mv_trellis_is_plugin_active</h3>
-<p>Checks to see if a plugin is active based on a specified slug.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$plugin_slug <code>string|array</code> Slug of the plugin or an array of slugs to check.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>bool</code> True if the plugin is active, false if the plugin is not found.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_get_term_description>mv_trellis_get_term_description</h3>
-<p>Gets the specified term description. Checks for Genesis data if no description is found.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$term_id <code>int</code> ID of the term. Looks for the current term if an ID is not provided.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> HTML of the term description.</li>
+<li><code>string|null</code> HTML of the featured image or null if <code>$echo</code> is false.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_get_featured_post>mv_trellis_get_featured_post</h3>
@@ -319,27 +292,38 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li><code>int</code> The ID of the featured post.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_the_term_description>mv_trellis_the_term_description</h3>
-<p>Echos the term description with optional content before and after. Checks for Genesis data if no description is found.</p>
+<h3 id=mv_trellis_get_template_part>mv_trellis_get_template_part</h3>
+<p>Loads the found template part.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>$before <code>string</code> Content to prepend to the term description. Defaults to empty.</li>
-<li>$after <code>string</code> Content to append to the term description. Defaults to empty.</li>
+<li>$slug <code>string</code> Template file (including path) to search for.</li>
+<li>$name <code>string|array</code> The <code>mv_trellis_template_type</code> will search through the Trellis template hierarchy for the matching template name. Including an array will limit the files to search from what is specified in the array.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> The term description, complete with any specified before or after content.</li>
+<li><code>string</code> The HTML of the matching template part.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_get_asset_url>mv_trellis_get_asset_url</h3>
-<p>Returns the absolute path of an asset.</p>
+<h3 id=mv_trellis_get_term_description>mv_trellis_get_term_description</h3>
+<p>Gets the specified term description. Checks for Genesis data if no description is found.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>$asset_path <code>string</code> An optional relative path to the asset. Defaults to empty.</li>
+<li>$term_id <code>int</code> ID of the term. Looks for the current term if an ID is not provided.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> The absolute path to the asset.</li>
+<li><code>string</code> HTML of the term description.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_get_wp_kses_post_with_images>mv_trellis_get_wp_kses_post_with_images</h3>
+<p>Adds image and style related tags (including attributes) to the default list for posts. Used to sanitize Trellis DOM manipulations and image handling.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>array</code> A list of image and style tags.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_has_flag>mv_trellis_has_flag</h3>
@@ -353,39 +337,15 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li><code>bool</code> Whether the specified flag exists in the URL.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_entry_taxonomies>mv_trellis_entry_taxonomies</h3>
-<p>Returns a list of taxonomies, if they exist.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$sep <code>string</code> The separator to use for the taxonomies. Defaults to comma.</li>
-</ul>
+<h3 id=mv_trellis_is_core>mv_trellis_is_core</h3>
+<p>Returns whether Trellis Core is the active theme.</p>
+<div class="alert alert-primary" role=alert>
+<h4 class=alert-heading>Note</h4>
+Using the WP Core function <code>is_child_theme()</code> is more reliable and is available earlier.
+</div>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> A list of taxonomies with the separator between them.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_entry_tags>mv_trellis_entry_tags</h3>
-<p>Outputs a list of tags, if they exist, with optional content before or after the list.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$before <code>string</code> The content to display before the tags. Defaults to empty.</li>
-<li>$sep <code>string</code> The separator to use between the returned tags. Defaults to comma.</li>
-<li>$after <code>string</code> The content to display after the tags. Defaults to empty.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> A list of tags with appended and prepended content, using specified separators.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_entry_author>mv_trellis_entry_author</h3>
-<p>Outputs the entry’s author.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>None</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The author name.</li>
+<li><code>bool</code> True if Trellis Core is the active theme, False if a Trellis child theme is active.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_is_meta_item_enabled>mv_trellis_is_meta_item_enabled</h3>
@@ -400,50 +360,29 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li><code>bool</code> Whether the post meta item is set for the specified location.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_yoast_breadcrumbs>mv_trellis_yoast_breadcrumbs</h3>
-<p>Outputs Yoast Breadcrumbs markup if Yoast SEO is available.</p>
+<h3 id=mv_trellis_is_plugin_active>mv_trellis_is_plugin_active</h3>
+<p>Checks to see if a plugin is active based on a specified slug.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>None</li>
+<li>$plugin_slug <code>string|array</code> Slug of the plugin or an array of slugs to check.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> HTML markup of Yoast breadcrumb data.</li>
+<li><code>bool</code> True if the plugin is active, false if the plugin is not found.</li>
 </ul>
 <hr>
-<h3 id=mv_trellis_entry_date>mv_trellis_entry_date</h3>
-<p>Outputs the entry publish date or updated date (if the entry has been updated).</p>
+<h3 id=mv_trellis_nav_menu>mv_trellis_nav_menu</h3>
+<p>Outputs the nav menu with toggle button support.</p>
 <p><strong>Parameters</strong></p>
 <ul>
-<li>None</li>
+<li>$args <code>array</code> Arguments to be used in the core <code>wp_nav_menu</code> function.</li>
+<li>$toggle_btn <code>bool</code> Displays the toggle button. Defaults to False.</li>
+<li>$toggle_text <code>string</code> Text string to be used in the toggle button. Defaults to “Menu.”</li>
+<li>$toggle_template_part <code>string</code> Template part to be used for the toggle button. This overrides <code>$toggle_text</code>. Defaults to null.</li>
 </ul>
 <p><strong>Return</strong></p>
 <ul>
-<li><code>string</code> Publish date or updated date of the entry.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_the_posts_pagination>mv_trellis_the_posts_pagination</h3>
-<p>Displays archive/feed pagination controls using arguments passed by the <code>mv_trellis_pages_pagination_args</code> filter.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>Customize arguments in your functions.php file by using the <code>mv_trellis_pages_pagination_args</code> filter. See Filters for more information.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> HTML output of the pagination links.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_the_title>mv_trellis_the_title</h3>
-<p>Outputs a title (page, author, category, etc.) with optional content before or after.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$before <code>string</code> Content or markup to be output before the title. Defaults to empty.</li>
-<li>$after <code>string</code> Content or markup to be output after the title. Defaults to empty.</li>
-<li>$echo <code>bool</code> Whether the title content will be echoed. Defaults to True.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The title, complete with optional content before or after.</li>
+<li><code>string</code> The HTML containing the navigation menu.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_output_sidebar>mv_trellis_output_sidebar</h3>
@@ -455,41 +394,6 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <p><strong>Return</strong></p>
 <ul>
 <li><code>string</code> HTML content of the specified sidebar.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_get_featured_image_tag>mv_trellis_get_featured_image_tag</h3>
-<p>Gets the HTML tag of the featured image.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$post_id <code>int</code> Optional post ID.</li>
-<li>$attr <code>array</code> Attributes array. Defaults to empty.</li>
-<li>$echo <code>bool</code> Whether to echo the tag or return. Optional, but defaults to True.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string|null</code> HTML of the featured image or null if <code>$echo</code> is false.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_get_wp_kses_post_with_images>mv_trellis_get_wp_kses_post_with_images</h3>
-<p>Adds image and style related tags (including attributes) to the default list for posts. Used to sanitize Trellis DOM manipulations and image handling.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>None</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>array</code> A list of image and style tags.</li>
-</ul>
-<hr>
-<h3 id=mv_trellis_entry_content_class>mv_trellis_entry_content_class</h3>
-<p>Outputs a class attribute for the entry-content container. Includes classes specified by the <code>mv_trellis_entry_content_classes</code> filter.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$class <code>string|array</code> A string or array of additional classes to be added to the entry-content class attribute.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> Complete list of classes to be added to the entry-content class attribute.</li>
 </ul>
 <hr>
 <h3 id=mv_trellis_purge_all_critical_css>mv_trellis_purge_all_critical_css</h3>
@@ -515,6 +419,102 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li>Not applicable.</li>
 </ul>
 <hr>
+<h3 id=mv_trellis_remove_data>mv_trellis_remove_data</h3>
+<p>Removes data from an array that was set using the <code>mv_trellis_set_data</code> function. Data in the array is available across template parts.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$data_key <code>string</code> The key of the data to remove.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li>Not applicable.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_set_data>mv_trellis_set_data</h3>
+<p>Sets data that can be used across template parts.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$data_key <code>string</code> Key of the data.</li>
+<li>$data_value <code>mixed</code> Value of the data.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li>Not applicable. Sets data for retrieval using <code>mv_trellis_get_data</code>.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_site_title>mv_trellis_site_title</h3>
+<p>Outputs the HTML of the site title and logo.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$link <code>bool</code> Whether to display the site title and logo wrapped in an anchor tag. Defaults to True.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> HTML of the site title and logo.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_the_attachment_image_tag>mv_trellis_the_attachment_image_tag</h3>
+<p>Echoes the best resolution image in an <code>&lt;img></code> tag with srcset data.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$img_id <code>int|string</code> The image attachment ID.</li>
+<li>$img_size <code>string</code> The image size.</li>
+<li>$attributes <code>array</code> A Key/value array of attributes added (such as class).</li>
+<li>$highest_res <code>string</code> The max resolution allowed.</li>
+<li>$lazy_load <code>bool</code> Whether lazy loaded markup is added to the image.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string|null</code> The HTML <code>&lt;img></code> tag or null if no image is available.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_the_posts_pagination>mv_trellis_the_posts_pagination</h3>
+<p>Displays archive/feed pagination controls using arguments passed by the <code>mv_trellis_pages_pagination_args</code> filter.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>Customize arguments in your functions.php file by using the <code>mv_trellis_pages_pagination_args</code> filter. See Filters for more information.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> HTML output of the pagination links.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_the_term_description>mv_trellis_the_term_description</h3>
+<p>Echos the term description with optional content before and after. Checks for Genesis data if no description is found.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$before <code>string</code> Content to prepend to the term description. Defaults to empty.</li>
+<li>$after <code>string</code> Content to append to the term description. Defaults to empty.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The term description, complete with any specified before or after content.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_the_title>mv_trellis_the_title</h3>
+<p>Outputs a title (page, author, category, etc.) with optional content before or after.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$before <code>string</code> Content or markup to be output before the title. Defaults to empty.</li>
+<li>$after <code>string</code> Content or markup to be output after the title. Defaults to empty.</li>
+<li>$echo <code>bool</code> Whether the title content will be echoed. Defaults to True.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The title, complete with optional content before or after.</li>
+</ul>
+<hr>
+<h3 id=mv_trellis_yoast_breadcrumbs>mv_trellis_yoast_breadcrumbs</h3>
+<p>Outputs Yoast Breadcrumbs markup if Yoast SEO is available.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> HTML markup of Yoast breadcrumb data.</li>
+</ul>
+<hr>
 <h3 id=mvt_adjust_excerpt_image_orientation_res>mvt_adjust_excerpt_image_orientation_res</h3>
 <p>Returns the specified resolution size for excerpt featured images.</p>
 <p><strong>Parameters</strong></p>
@@ -526,18 +526,7 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <li><code>string</code> The resolution size.</li>
 </ul>
 <hr>
-<h3 id=mvt_adjust_featured_post_image_orientation_res>mvt_adjust_featured_post_image_orientation_res</h3>
-<p>Returns the specificed resolution size of the excerpt featured image for the featured post.</p>
-<p><strong>Parameters</strong></p>
-<ul>
-<li>$orientation <code>string</code> The selected orientation for the image.</li>
-</ul>
-<p><strong>Return</strong></p>
-<ul>
-<li><code>string</code> The resolution size.</li>
-</ul>
-<hr>
-<h3 id=mvt_adjust_excerpt_image_sizes-string-sizes->mvt_adjust_excerpt_image_sizes( string $sizes )</h3>
+<h3 id=mvt_adjust_excerpt_image_sizes>mvt_adjust_excerpt_image_sizes</h3>
 <p>Adjusts the sizes attribute value for excerpt thumbnail images.</p>
 <p><strong>Default</strong></p>
 <ul>
@@ -550,6 +539,17 @@ Using the WP Core function <code>is_child_theme()</code> is more reliable and is
 <p><strong>Return</strong></p>
 <ul>
 <li><code>string</code> The adjusted sizes attribute value.</li>
+</ul>
+<hr>
+<h3 id=mvt_adjust_featured_post_image_orientation_res>mvt_adjust_featured_post_image_orientation_res</h3>
+<p>Returns the specificed resolution size of the excerpt featured image for the featured post.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>$orientation <code>string</code> The selected orientation for the image.</li>
+</ul>
+<p><strong>Return</strong></p>
+<ul>
+<li><code>string</code> The resolution size.</li>
 </ul>
 <hr>
 <h3 id=mvt_adjust_featured_post_image_sizes>mvt_adjust_featured_post_image_sizes</h3>

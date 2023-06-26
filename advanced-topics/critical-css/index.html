@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -169,26 +169,26 @@
 </ul>
 </div>
 </header>
-<p>Critical CSS reduces load time by generating two optimized CSS files: one for content styling that appears in the initial viewport for a page, and another for content styling for the rest of the page. Trellis creates these files for each page of your WordPress site.</p>
+<p>Critical CSS reduces load time by generating two optimized CSS files: one for inline styling of content that appears in the initial viewport for a page, and another linked file for styling the rest of the page. Trellis creates these files for each page of your WordPress site.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
 In this article, a page refers to either a post or an actual page in WordPress. It’s whatever gets served to your reader when they visit your site in a browser.
 </div>
 <h2 id=how-is-critical-css-generated>How Is Critical CSS Generated?</h2>
 <ol>
-<li>When a page is first visited by a reader, your Trellis instance submits it to the Trellis API hosted by Mediavine (access to this service is included in your license).</li>
-<li>The page is rendered in a browser with a 1300 x 900px viewport and its CSS stylesheet is audited.</li>
+<li>When a page is first visited by a non-logged in user, your Trellis instance submits it to the Trellis Services API hosted by Mediavine. Access to this service is included in your license.</li>
+<li>The page is rendered in a browser with a 1300 x 900 px viewport and its CSS stylesheet is audited.</li>
 <li>Any CSS styles that affect content in this viewport are saved into a minified primary Critical CSS file.</li>
 <li>Any CSS styles that fall outside of this viewport are saved into a minified secondary Non-Critical CSS file. CSS styles that are not referenced by elements on the page are completely left out.</li>
-<li>When the Critical and Non-Critical files are complete, the Trellis API notifies your Trellis instance to download them. These files are saved into your WordPress installation (specifically the /wp-content/mvt-critical/ directory).</li>
-<li>The next time the page is visited, the Critical and Non-Critical CSS files are served to the reader.</li>
+<li>When the Critical and Non-Critical files are complete, the Trellis Services API notifies your Trellis instance to download them. These files are saved into your WordPress installation (specifically the /wp-content/mvt-critical/ directory).</li>
+<li>The next time the page is visited by a non-logged in user, the Critical and Non-Critical CSS files are served.</li>
 </ol>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-The primary Critical CSS file is loaded as inline styles when the page loads. The secondary Non-Critical CSS file is loaded as an external stylesheet. This renders initial page views much more quickly, as the site includes the most important CSS (the Critical CSS styles) in the page markup.
+The primary Critical CSS file is loaded as inline styles when the page loads. The secondary Non-Critical CSS file is loaded as an external stylesheet. This renders initial page views much more quickly, as the site includes the most important CSS (the primary Critical CSS styles) in the page markup.
 </div>
 <h2 id=how-to-determine-the-critical-css-status-of-a-page>How To Determine the Critical CSS Status of a Page</h2>
-<p>When logged in, a Critical CSS Status will appear in the admin bar when you view a page on your site (See Changes to WordPress for more information). The status tells you where Trellis is in the Critical CSS generation process:</p>
+<p>When logged in to WordPress, a Critical CSS Status will appear in the admin bar when you view a page on your site (See <a href=https://vcmediavine.github.io/docsytrellis/getting-started/changes-to-wordpress/>Changes to WordPress</a> for more information). The status tells you where Trellis is in the Critical CSS generation process:</p>
 <table>
 <thead>
 <tr>
@@ -198,20 +198,28 @@ The primary Critical CSS file is loaded as inline styles when the page loads. Th
 </thead>
 <tbody>
 <tr>
+<td>Critical CSS - License Required</td>
+<td>The site is missing an active Trellis license. Go to <strong>Appearance > Mediavine Trellis</strong> and click <strong>License</strong> to purchase or add a Trellis license.</td>
+</tr>
+<tr>
 <td>Disabled</td>
-<td>Critical CSS generation has been disabled for the post or page.</td>
+<td>Critical CSS generation has been disabled for the post or page in the WP Editor. This status will also be displayed if Critical CSS is disabled on your site (check <strong>Appearance > Mediavine Trellis</strong> and click <strong>Critical CSS</strong>).</td>
 </tr>
 <tr>
 <td>Error</td>
-<td>The page encountered an error while generating the Critical CSS files. See <a href=/getting-started/troubleshooting>Troubleshooting</a> for some steps you can take to determine the problem.</td>
+<td>The page encountered an error while generating the Critical CSS files. See <a href=https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting/>Troubleshooting</a> for some steps you can take to determine the problem.</td>
 </tr>
 <tr>
 <td>None</td>
-<td>The page has not attempted to generate Critical CSS yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis API after two hours.</td>
+<td>The page has not attempted to generate Critical CSS yet. This can occur if your readers (i.e. non-logged in users) haven&rsquo;t visited it yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis Services API after two hours.</td>
+</tr>
+<tr>
+<td>Pending</td>
+<td>(Deprecated in 0.17.0.) The page has been queued for generation of Critical CSS.</td>
 </tr>
 <tr>
 <td>Processing</td>
-<td>The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis API, but the files haven’t been saved to the site yet.</td>
+<td>The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis Services API, but the files haven’t been saved to the site yet.</td>
 </tr>
 <tr>
 <td>Success</td>
@@ -221,10 +229,10 @@ The primary Critical CSS file is loaded as inline styles when the page loads. Th
 </table>
 <div class="alert alert-warning" role=alert>
 <h4 class=alert-heading>Important</h4>
-When you visit a page while logged in, Trellis <strong>does not</strong> submit it for Critical CSS generation. Automatic generation only happens when a reader visits the page.
+When you visit a page while logged in, Trellis <strong>does not</strong> submit it for Critical CSS generation. Automatic generation only happens when a non-logged in user visits the page.
 </div>
 <h2 id=when-does-critical-css-get-refreshed>When Does Critical CSS Get Refreshed?</h2>
-<p>Knowing that Critical CSS files are only generated when a visitor reads a page, it’s natural to wonder when Trellis will trigger an update to those files. Here are the events that prompt Critical CSS to purge its existing files:</p>
+<p>Knowing that Critical CSS files are only generated when a non-logged in user views a page, it’s natural to wonder when Trellis will trigger an update to those files. Here are the events that prompt Critical CSS to purge its existing files:</p>
 <table>
 <thead>
 <tr>
@@ -239,11 +247,11 @@ When you visit a page while logged in, Trellis <strong>does not</strong> submit 
 </tr>
 <tr>
 <td>Custom functions</td>
-<td>The functions <code>mv_trellis_purge_all_critical_css()</code> and <code>mv_trellis_purge_page_critical_css()</code> will prompt a refresh of Critical CSS files. See <a href=https://vcmediavine.github.io/docsytrellis/reference/functions/>Functions</a> in the Reference section for more information.</td>
+<td>The functions <code>mv_trellis_purge_all_critical_css()</code> and <code>mv_trellis_purge_page_critical_css()</code> will trigger an update. See <a href=https://vcmediavine.github.io/docsytrellis/reference/functions/>Functions</a> in the Reference section for more information.</td>
 </tr>
 <tr>
 <td>Plugin changes</td>
-<td>Activating or deactivating a plugin will prompt Trellis to regenerate existing Critical CSS files.</td>
+<td>Activating or deactivating a plugin.</td>
 </tr>
 <tr>
 <td>Critical CSS commands</td>
@@ -259,13 +267,13 @@ When you visit a page while logged in, Trellis <strong>does not</strong> submit 
 </tr>
 </tbody>
 </table>
-<p>If you’ve made a significant change to your theme’s design or functionality, you may want to tell Trellis to discard all existing Critical CSS files and rebuild them from scratch. For more information on when to use Purge, please read <a href=https://product-help.mediavine.com/en/articles/4964387-critical-css-in-the-admin-bar>Critical CSS in the Admin Bar</a> in the Help Center.</p>
+<p>If you’ve made a significant change to your theme’s design or functionality, you may want to tell Trellis to discard all existing Critical CSS files and rebuild them from scratch (also referred to as purging). For more information on when to use the Purge features, see <a href=https://product-help.mediavine.com/en/articles/4964387-critical-css-in-the-admin-bar>Critical CSS in the Admin Bar</a> in the Help Center.</p>
 <h2 id=advanced-functionality>Advanced Functionality</h2>
-<p>There are instances where you might want to alter Critical CSS functionality because you intend to use your child-theme with other plugins. You might also use JavaScript to alter the styling of page elements after page load. In these scenarios, Critical CSS’ default functionality might give you unexpected results. For dynamically altered elements that appear in the initial viewport, you’ll want to consider adding their selectors to the Critical CSS file. If those elements appear outside of the initial viewport, add their selectors to the Non-Critical CSS file.</p>
+<p>There are instances where you might want to alter Critical CSS functionality because you intend to use your child theme with other plugins. You might also use JavaScript to alter the styling of page elements after page load. In these scenarios, Critical CSS’ default functionality might give you unexpected results. For dynamically altered elements that appear in the initial viewport, you’ll want to consider adding their selectors to the Critical CSS file. If those elements appear outside of the initial viewport, add their selectors to the Non-Critical CSS file.</p>
 <h3 id=adding-css-to-the-critical-css-file>Adding CSS to the Critical CSS File</h3>
-<p>By default, if a CSS selector doesn’t match an element in the initial 1300 x 900px viewport of a page, it gets saved to that page’s Non-Critical CSS file. This might not be the desired behavior. It&rsquo;s possible that you need some styles to be present at page load to prevent a layout shift or stop a flash of unstyled content for elements close to the viewport, but not in it.</p>
-<p>While publishers can add CSS selectors manually to the Force Critical CSS list with the Mediavine Trellis Dashboard, you can include them programmatically by adding code to your child theme’s functions.php file.</p>
-<p>In the example below, selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An <code>add_filter</code> is then used to add the matching selectors to Trellis’ Force Critical CSS list. When a page gets submitted to the Trellis API, any matching CSS selectors are added to the Critical CSS file.</p>
+<p>By default, if a CSS selector doesn’t match an element in the initial 1300 x 900 px viewport of a page, it gets saved to that page’s Non-Critical CSS file. This might not be the desired behavior. It&rsquo;s possible that you need some styles to be present at page load to prevent a layout shift or stop a flash of unstyled content for elements close to the viewport, but not in it.</p>
+<p>While publishers can add CSS selectors manually to the Force Critical CSS list in Trellis Settings, you can include them programmatically by adding code to your child theme’s functions.php file.</p>
+<p>In the example below, selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An <code>add_filter</code> is then used to add the matching selectors to Trellis’ Force Critical CSS list. When a page gets submitted to the Trellis Services API, any matching CSS selectors are added to the Critical CSS file.</p>
 <div class="alert alert-warning" role=alert>
 <h4 class=alert-heading>Important</h4>
 If you add selectors to the Force Critical CSS list, be sure to check your pages in a Google Page Speed Insights report during testing. Adding selectors to the Force Critical CSS list may cause an &ldquo;Unused CSS&rdquo; warning to appear if the selectors are not specific enough or only appear outside of the initial viewport.
@@ -286,11 +294,11 @@ If you add selectors to the Force Critical CSS list, be sure to check your pages
 </code></pre></div>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-Styles added programmatically will not appear in the Mediavine Trellis Dashboard.
+Styles added programmatically do not appear in Trellis Settings.
 </div>
 <h3 id=adding-css-to-the-non-critical-css-file>Adding CSS to the Non-Critical CSS File</h3>
-<p>When creating the secondary Non-Critical CSS file, Trellis leaves out any CSS styles that don&rsquo;t apply to elements on the page. This can create issues if elements are added to the page markup after the initial page load. The Trellis API does not execute JavaScript at runtime, so styles for these added elements would not be included in the Non-Critical CSS file.</p>
-<p>Publishers can add these style selectors manually by using the Mediavine Trellis Dashboard, but if you design your child theme to work with a third-party plugin (or are adding your own JavaScript that impacts content styling) you may want to include selectors programmatically. You do this by adding code to your child theme’s functions.php file.</p>
+<p>When creating the secondary Non-Critical CSS file, Trellis leaves out any CSS styles that don&rsquo;t apply to elements on the page. This can create issues if elements are added to the page markup after the initial page load. The Trellis Services API does not execute JavaScript at runtime, so styles for these added elements would not be included in the Non-Critical CSS file.</p>
+<p>Publishers can add these style selectors manually in Trellis Settings, but if you design your child theme to work with a third-party plugin (or are adding your own JavaScript that impacts content styling) you may want to include selectors programmatically. You do this by adding code to your child theme’s functions.php file.</p>
 <p>Just like with Force Critical CSS, the example below shows a custom function where selectors are added to an array. You can add full selector names or partial names if you want to match a range of selectors. An <code>add_filter</code> is then used to add the matching selectors to Trellis’ Force Non-Critical CSS list. Any CSS styles that match the expression will get added to the Non-Critical CSS file.</p>
 <p><strong>Example</strong></p>
 <p>In the example below, dynamic page elements marked with “pop-up” are styled via JavaScript after page load. Specifying “pop-up” will add all matching styles.</p>
@@ -308,10 +316,10 @@ Styles added programmatically will not appear in the Mediavine Trellis Dashboard
 </code></pre></div>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-Styles added programmatically will not appear in the Mediavine Trellis Dashboard.
+Styles added programmatically do not appear in Trellis Settings.
 </div>
 <h2 id=issues-with-critical-css>Issues with Critical CSS</h2>
-<p>If you encounter problems using Critical CSS during development, refer to <a href=/getting-started/troubleshooting>Troubleshooting</a>.</p>
+<p>If you encounter problems using Critical CSS during development, refer to <a href=https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting/>Troubleshooting</a>.</p>
 <div class=section-index>
 </div>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>

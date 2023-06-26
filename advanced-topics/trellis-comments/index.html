@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -165,24 +165,24 @@
 </header>
 <p>Trellis defers the loading of the remaining comments (which can be a huge part of page markup) until they&rsquo;re actually needed.</p>
 <h2 id=enabling-trellis-comments>Enabling Trellis Comments</h2>
-<p>Trellis Comments are enabled by default. Publishers can access the setting that controls them by going to <strong>Appearance ></strong> <strong>Mediavine Trellis > Display</strong> under the <strong>Layout</strong> section.</p>
-<img src=settings-trellis-comments.png alt="Trellis Comments toggle in Trellis Settings." width=600px>
+<p>Trellis Comments are enabled by default. Publishers can access the setting that controls them by going to <strong>Appearance ></strong> <strong>Mediavine Trellis</strong> and clicking on <strong>Display</strong>. The toggle is available in the Layout section.</p>
+<img src=settings-trellis-comments_v2.png alt="Trellis Comments toggle in Trellis Settings." width=600px>
 <h2 id=how-trellis-comments-work>How Trellis Comments Work</h2>
-<p>To start, the first five top-level comments on a post are server-rendered via the <a href=https://developer.wordpress.org/rest-api/>WordPress REST API</a>. A <a href=https://preactjs.com/>Preact</a> app then modifies the <code>div</code> rendered by class-comments.php, allowing Trellis to populate these comments with extra data and user interface elements.</p>
+<p>The first five top-level comments on a post are server-rendered via the <a href=https://developer.wordpress.org/rest-api/>WordPress REST API</a>. A <a href=https://preactjs.com/>Preact</a> app then modifies a <code>div</code> constructed by Trellis' class-comments.php file. Trellis then populates these comments with extra data and user interface elements.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
-The full path to the class-comments.php file is mediavine-trellis/inc/classes/class-comments.php. Trellis Comments markup is found in mediavine-trellis/comments.php.
+The class-comments.php file can be found in mediavine-trellis/inc/classes/class-comments.php. Markup for the comments is found in the mediavine-trellis/comments.php template.
 </div>
-<p>Trellis then fetches all comments for that post that are stored in the component state. When a site visitor requests more comments, no additional REST requests are made.</p>
+<p>Finally, Trellis fetches all comments for the post that are stored in the component state. When a site visitor requests more comments, no additional REST requests are made.</p>
 <h2 id=compatibility-issues>Compatibility Issues</h2>
-<p>When Trellis Comments is enabled, comments are also submitted via the <a href=https://developer.wordpress.org/rest-api/>WordPress REST API</a>. This can cause conflicts with third-party plugins that add additional fields (such as ratings) to a post&rsquo;s comments field. Most plugins save data via the form submission, not an API call, which can cause issues.</p>
+<p>When Trellis Comments is enabled, comments are submitted via the <a href=https://developer.wordpress.org/rest-api/>WordPress REST API</a>. This can cause conflicts with third-party plugins that add additional fields (such as ratings) to a post&rsquo;s comments field. Most plugins save data via the form submission, not an API call, which can cause issues.</p>
 <p>Trellis attempts to mitigate any problems by saving each field in the comment form as a piece of comment metadata. However, when a comment plugin uses a different <code>name</code> for the form field than it does the meta key, there will be a problem.</p>
-<p>If you plan on using additional comment plugins with your Trellis child theme, be sure to test them. If there are conflicts, you may need to disable Trellis Comments. See <a href=https://intercom.help/mediavine-products/en/articles/5046317-trellis-themes-conflicts-and-compatibilities>Trellis Themes: Conflicts and Compatibilities</a> in the Help Center for information on known plugins that don’t work well with Trellis.</p>
+<p>If you plan on using additional comment plugins with your Trellis child theme, be sure to test them. If there are conflicts, you may need to disable Trellis Comments entirely. See <a href=https://intercom.help/mediavine-products/en/articles/5046317-trellis-themes-conflicts-and-compatibilities>Trellis Themes: Conflicts and Compatibilities</a> in the Help Center for information on known plugins that don’t work well with Trellis.</p>
 <h2 id=useful-filters>Useful Filters</h2>
-<p>The following filters can be used in Trellis child theme code. For more information on them, see <a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-summary/>Filters</a> in the Reference section.</p>
+<p>The following filters can be used in Trellis child theme code for comments. For additional filters and functions, see the <a href=https://vcmediavine.github.io/docsytrellis/reference/>Reference</a> section.</p>
 <ul>
-<li>mvt_requires_default_wp_fields</li>
-<li>mv_trellis_comments_template</li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mvt_requires_default_wp_fields>mvt_requires_default_wp_fields</a></li>
+<li><a href=https://vcmediavine.github.io/docsytrellis/reference/filters/filters-detail/#mv_trellis_comments_template>mv_trellis_comments_template</a></li>
 </ul>
 <div class=section-index>
 </div>

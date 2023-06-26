@@ -16,18 +16,18 @@
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/docsytrellis/favicons/android-192x192.png sizes=192x192>
 <title>Hooks | Mediavine Trellis</title>
-<meta name=description content="Trellis provides a number of action hooks that web developers can use in their child themes.
+<meta name=description content="Trellis includes a number of action hooks that web developers can use in their child themes.
 ">
 <meta property="og:title" content="Hooks">
-<meta property="og:description" content="Trellis provides a number of action hooks that web developers can use in their child themes.
+<meta property="og:description" content="Trellis includes a number of action hooks that web developers can use in their child themes.
 ">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vcmediavine.github.io/docsytrellis/reference/hooks/"><meta property="og:site_name" content="Mediavine Trellis">
 <meta itemprop=name content="Hooks">
-<meta itemprop=description content="Trellis provides a number of action hooks that web developers can use in their child themes.
+<meta itemprop=description content="Trellis includes a number of action hooks that web developers can use in their child themes.
 "><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Hooks">
-<meta name=twitter:description content="Trellis provides a number of action hooks that web developers can use in their child themes.
+<meta name=twitter:description content="Trellis includes a number of action hooks that web developers can use in their child themes.
 ">
 <link rel=preload href=/docsytrellis/scss/main.min.9b9c0a01f901c6ab4edd155033b5421ef874875ee7bad631903705a727f93953.css as=style>
 <link href=/docsytrellis/scss/main.min.9b9c0a01f901c6ab4edd155033b5421ef874875ee7bad631903705a727f93953.css rel=stylesheet integrity>
@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -150,18 +150,27 @@
 </nav>
 <div class=td-content>
 <h1>Hooks</h1>
-<div class=lead>Trellis provides a number of action hooks that web developers can use in their child themes.</div>
+<div class=lead>Trellis includes a number of action hooks that web developers can use in their child themes.</div>
 <header class=article-meta>
 </header>
-<p>In addition to custom Mediavine hooks, Trellis uses the <a href=https://github.com/zamoose/themehookalliance>Theme Hook Alliance (THA)</a> standards, offering a consistent set of entry points for easy customization and altering of functionality. Where applicable, this documentation references which THA hooks are called as part of a Mediavine hook.</p>
+<p>Trellis includes the <a href=https://github.com/zamoose/themehookalliance>Theme Hook Alliance (THA)</a> standards, offering a consistent set of entry points for easy customization and altering of functionality. However, instead of firing THA hooks directly within templates, Trellis Core and Bamboo, Birch, and Wisteria templates use custom Trellis functions. These functions fire the THA hooks and, in some cases, perform additional tasks.</p>
+<p>For example, in the content-article.php template part, instead of the traditional method of calling a THA hook:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>do_action</span><span style=color:#111>(</span><span style=color:#d88200>&#39;tha_aside_before_entry_content&#39;</span><span style=color:#111>);</span>
+</code></pre></div><p>Trellis uses the following custom function:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#75af00>mvt_aside_before_entry_content</span><span style=color:#111>();</span>
+</code></pre></div><p>This accomplishes two things:</p>
+<ol>
+<li>It runs the <code>tha_aside_before_entry_content</code> hook with less code.</li>
+<li>It also wraps any hooked content in an <code>aside</code> tag.</li>
+</ol>
 <div class="alert alert-warning" role=alert>
 <h4 class=alert-heading>Important</h4>
-If you add custom templates to your child theme, it’s expected that you’ll include the appropriate hooks in your template files. This ensures compatibility with future versions of Trellis that rely on these hooks.
+If you add custom templates to your child theme, you should include the appropriate Trellis functions in your template files. This ensures compatibility with future versions of Trellis.
 </div>
-<h2 id=usage>Usage</h2>
-<p>Publishers can add content to a subset of these hooks by going to the <strong>Mediavine Trellis Dashboard > Hooks</strong> section.</p>
-<p>As a child theme developer, you can add content by calling the hook in your child theme’s functions.php file.</p>
-<img src=ref-hooks.png alt="Hooks section in Settings." width=600px>
+<p>This article will describe all THA and Trellis hooks that are available for use. For THA hooks, the custom Trellis function which fires it is also listed.</p>
+<h2 id=publisher-usage>Publisher Usage</h2>
+<p>As a child theme developer, you can add content by calling a hook in your child theme’s functions.php file. To give publishers an easier way to add their own customizations, a subset of these hooks can be modified by going to <strong>Trellis Settings</strong> and clicking on <strong>Hooks</strong>.</p>
+<img src=ref-hooks_v2.png alt="Hooks section in Trellis Settings." width=600px>
 <h2 id=sections>Sections</h2>
 <ul>
 <li><a href=#aside-hooks>Aside Hooks</a></li>
@@ -182,21 +191,21 @@ If you add custom templates to your child theme, it’s expected that you’ll 
 <li><a href=#title-hooks>Title Hooks</a></li>
 </ul>
 <h2 id=aside-hooks>Aside Hooks</h2>
-<h4 id=mvt_aside_before_entry_content>mvt_aside_before_entry_content</h4>
-<p>Runs hooks inside the standard loop, before the <code>entry-content</code> container. This wraps any hooked content in an <code>aside</code> tag. Fires the <code>tha_aside_before_entry_content</code> hook.</p>
-<h4 id=mvt_aside_after_entry_content>mvt_aside_after_entry_content</h4>
-<p>Runs hooks inside the standard loop, after the <code>entry-content</code> container. This wraps any hooked content in an <code>aside</code> tag. Fires the <code>tha_aside_after_entry_content</code> hook.</p>
+<h4 id=tha_aside_before_entry_content>tha_aside_before_entry_content</h4>
+<p>Called by the <code>mvt_aside_before_entry_content</code> function. Fires inside the standard loop, before the <code>entry-content</code> container. This wraps any hooked content in an <code>aside</code> tag.</p>
+<h4 id=tha_aside_after_entry_content>tha_aside_after_entry_content</h4>
+<p>Called by the <code>mvt_aside_after_entry_content</code> function. Fires inside the standard loop, after the <code>entry-content</code> container. This wraps any hooked content in an <code>aside</code> tag.</p>
 <hr>
 <h2 id=body-hooks>Body Hooks</h2>
-<h4 id=mvt_body_top>mvt_body_top</h4>
-<p>Runs hooks immediately after <code>wp_body_open()</code>. Fires the <code>tha_body_top</code> hook.</p>
-<h4 id=mvt_body_bottom>mvt_body_bottom</h4>
-<p>Runs hooks immediately before <code>wp_footer()</code>. Fires the <code>tha_body_bottom</code> hook.</p>
+<h4 id=tha_body_top>tha_body_top</h4>
+<p>Called by the <code>mvt_body_top</code> function. Fires immediately after <code>wp_body_open()</code>.</p>
+<h4 id=tha_body_bottom>tha_body_bottom</h4>
+<p>Called by the <code>mvt_body_bottom</code> function. Fires immediately before <code>wp_footer()</code>.</p>
 <hr>
 <h2 id=cache-hooks>Cache Hooks</h2>
-<h4 id=mv_clear_all_cache>mv_clear_all_cache</h4>
+<h4 id=mv_trellis_clear_all_cache>mv_trellis_clear_all_cache</h4>
 <p>Clears all the caches associated with a number of caching plugins. Introduced in Trellis 0.17.0.</p>
-<h4 id=mv_clear_single_cache>mv_clear_single_cache</h4>
+<h4 id=mv_trellis_clear_single_cache>mv_trellis_clear_single_cache</h4>
 <p>Clears a single post cache for a number of caching plugins. Introduced in Trellis 0.17.0.</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -204,149 +213,151 @@ If you add custom templates to your child theme, it’s expected that you’ll 
 </ul>
 <hr>
 <h2 id=content-hooks>Content Hooks</h2>
-<h4 id=mvt_content_before>mvt_content_before</h4>
-<p>Runs hooks immediately before the opening <code>&lt;main></code> content tag. Fires the <code>tha_content_before</code> hook.</p>
-<h4 id=mvt_content_after>mvt_content_after</h4>
-<p>Runs hooks immediately after the closing <code>&lt;/main></code> content tag. Fires the <code>tha_content_after</code> hook.</p>
-<h4 id=mvt_content_top>mvt_content_top</h4>
-<p>Runs hooks immediately after the opening <code>&lt;main></code> content tag. Fires the <code>tha_content_top</code> hook.</p>
-<h4 id=mvt_content_bottom>mvt_content_bottom</h4>
-<p>Runs hooks immediately before the closing <code>&lt;/main></code> content tag. Fires the <code>tha_content_bottom</code> hook.</p>
-<h4 id=mvt_content_while_before>mvt_content_while_before</h4>
-<p>Runs hooks inside the standard loop, before the <code>while()</code> block. Fires the <code>tha_content_while_before</code> hook.</p>
-<h4 id=mvt_content_while_after>mvt_content_while_after</h4>
-<p>Runs hooks inside the standard loop, after the <code>while()</code> block. Fires the <code>tha_content_while_after</code> hook.</p>
-<h4 id=mvt_no_content_top>mvt_no_content_top</h4>
-<p>Runs hooks inside the standard loop when there are no posts to show, before the Trellis “No content found” notice. Fires the <code>tha_no_content_top</code> hook.</p>
-<h4 id=mvt_no_content_bottom>mvt_no_content_bottom</h4>
-<p>Runs hooks inside the standard loop when there are no posts to show, after the Trellis “No content found” notice. Fires the <code>tha_no_content_bottom</code> hook.</p>
-<h4 id=mvt_content_header_after>mvt_content_header_after</h4>
-<p>Runs hooks immediately after the closing <code>&lt;/header></code> content tag. Fires the <code>tha_content_header_after</code> hook.</p>
+<h4 id=tha_content_before>tha_content_before</h4>
+<p>Called by the <code>mvt_content_before</code> function. Fires immediately before the opening <code>&lt;main></code> content tag.</p>
+<h4 id=tha_content_after>tha_content_after</h4>
+<p>Called by the <code>mvt_content_after</code> function. Fires immediately after the closing <code>&lt;/main></code> content tag.</p>
+<h4 id=tha_content_top>tha_content_top</h4>
+<p>Called by the <code>mvt_content_top</code> function. Fires immediately after the opening <code>&lt;main></code> content tag.</p>
+<h4 id=tha_content_bottom>tha_content_bottom</h4>
+<p>Called by the <code>mvt_content_bottom</code> function. Fires immediately before the closing <code>&lt;/main></code> content tag.</p>
+<h4 id=tha_content_while_before>tha_content_while_before</h4>
+<p>Called by the <code>mvt_content_while_before</code> function. Fires inside the standard loop, before the <code>while()</code> block.</p>
+<h4 id=tha_content_while_after>tha_content_while_after</h4>
+<p>Called by the <code>mvt_content_while_after</code> function. Fires inside the standard loop, after the <code>while()</code> block.</p>
+<h4 id=tha_no_content_top>tha_no_content_top</h4>
+<p>Called by the <code>mvt_no_content_top</code> function. Fires inside the standard loop when there are no posts to show, before the Trellis “No content found” notice.</p>
+<h4 id=tha_no_content_bottom>tha_no_content_bottom</h4>
+<p>Called by the <code>mvt_no_content_bottom</code> function. Fires inside the standard loop when there are no posts to show, after the Trellis “No content found” notice.</p>
+<h4 id=tha_content_header_after>tha_content_header_after</h4>
+<p>Called by the <code>mvt_content_header_after</code> function. Fires immediately after the closing <code>&lt;/header></code> content tag.</p>
 <hr>
 <h2 id=comment-hooks>Comment Hooks</h2>
-<h4 id=mvt_comments_before>mvt_comments_before</h4>
-<p>Runs hooks inside the standard loop, before the <code>comments_template()</code> wrapper. Fires the <code>tha_comments_before</code> hook.</p>
-<h4 id=mvt_comments_after>mvt_comments_after</h4>
-<p>Runs hooks inside the standard loop, after the <code>comments_template()</code> wrapper. Fires two hooks: <code>comment_form_after</code> and <code>tha_comments_after</code>.</p>
 <h4 id=mv_trellis_comments_output>mv_trellis_comments_output</h4>
 <p>Fires where the comments template is output.</p>
+<h4 id=tha_comments_before>tha_comments_before</h4>
+<p>Called by the <code>mvt_comments_before</code> function. Fires inside the standard loop, before the <code>comments_template()</code> wrapper.</p>
+<h4 id=tha_comments_after>tha_comments_after</h4>
+<p>Called by the <code>mvt_comments_after</code> function (which also fires the <code>comment_form_after</code> hook). Fires inside the standard loop, after the <code>comments_template()</code> wrapper.</p>
 <hr>
 <h2 id=critical-css-hooks>Critical CSS Hooks</h2>
 <h4 id=mv_trellis_crit_css_disable_flag>mv_trellis_crit_css_disable_flag</h4>
 <p>Fires when the disable_critical_css URL flag exists.</p>
 <h4 id=mv_trellis_crit_css_error>mv_trellis_crit_css_error</h4>
-<p>Fires when Critical CSS has an error while generating files. Accepts arguments.</p>
+<p>Fires when Critical CSS has an error while generating files. Accepts arguments passed to it when the hook is fired.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li>$params <code>array</code> The API request parameters.</li>
+<li>$type <code>string</code> The request type.</li>
 </ul>
 <h4 id=mv_trellis_crit_css_incoming>mv_trellis_crit_css_incoming</h4>
-<p>Fires when Critical CSS has a returned callback. Accepts arguments.</p>
+<p>Fires when Critical CSS has a returned callback. Accepts arguments passed to it when the hook is fired.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li>$params <code>array</code> The API request parameters.</li>
 </ul>
 <h4 id=mv_trellis_crit_css_success>mv_trellis_crit_css_success</h4>
-<p>Fires when Critical CSS is successfully generated and posted back. Accepts arguments.</p>
+<p>Fires when Critical CSS is successfully generated and posted back. Accepts arguments passed to it when the hook is fired.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li>$params <code>array</code> The API request parameters.</li>
+<li>$type <code>string</code> The request type.</li>
 </ul>
 <h4 id=mv_trellis_pre_crit_css_req>mv_trellis_pre_crit_css_req</h4>
-<p>Fires when Critical CSS is requested to be generated. Accepts arguments.</p>
+<p>Fires when Critical CSS is requested to be generated. Accepts arguments passed to it when the hook is fired.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li>$params <code>array</code> The API request parameters.</li>
+<li>$type <code>string</code> The request type.</li>
 </ul>
 <h4 id=mv_trellis_purge_critical_css>mv_trellis_purge_critical_css</h4>
 <p>Fires after Critical CSS has been purged.</p>
 <hr>
 <h2 id=entry-hooks>Entry Hooks</h2>
-<h4 id=mvt_entry_top>mvt_entry_top</h4>
-<p>Runs hooks immediately after the opening <code>&lt;article></code> content tag. Fires the <code>tha_entry_top</code> hook.</p>
-<h4 id=mvt_entry_bottom>mvt_entry_bottom</h4>
-<p>Runs hooks immediately before the closing <code>&lt;/article></code> content tag. Fires the <code>tha_entry_bottom</code> hook.</p>
-<h4 id=mvt_entry_excerpt_before>mvt_entry_excerpt_before</h4>
-<p>Runs hooks inside the standard loop, before <code>the_excerpt()</code>. Fires the <code>tha_entry_excerpt_before</code> hook.</p>
-<h4 id=mvt_entry_excerpt_after>mvt_entry_excerpt_after</h4>
-<p>Runs hooks inside the standard loop, after <code>the_excerpt()</code>. Fires the <code>tha_entry_excerpt_after</code> hook.</p>
-<h4 id=mvt_entry_before>mvt_entry_before</h4>
-<p>Runs hooks inside the standard loop, before the entry opening markup. Fires the <code>tha_entry_before</code> hook.</p>
-<h4 id=mvt_entry_after>mvt_entry_after</h4>
-<p>Runs hooks inside the standard loop, after the entry closing markup. Fires the <code>tha_entry_after</code> hook. Accepts arguments.</p>
+<h4 id=tha_entry_top>tha_entry_top</h4>
+<p>Called by the <code>mvt_entry_top</code> function. Fires immediately after the opening <code>&lt;article></code> content tag.</p>
+<h4 id=tha_entry_bottom>tha_entry_bottom</h4>
+<p>Called by the <code>mvt_entry_bottom</code> function. Fires immediately before the closing <code>&lt;/article></code> content tag.</p>
+<h4 id=tha_entry_excerpt_before>tha_entry_excerpt_before</h4>
+<p>Called by the <code>mvt_entry_excerpt_before</code> function. Fires inside the standard loop, before <code>the_excerpt()</code>.</p>
+<h4 id=tha_entry_excerpt_after>tha_entry_excerpt_after</h4>
+<p>Called by the <code>mvt_entry_excerpt_after</code> function. Fires inside the standard loop, after <code>the_excerpt()</code>.</p>
+<h4 id=tha_entry_before>tha_entry_before</h4>
+<p>Called by the <code>mvt_entry_before</code> function. Fires inside the standard loop, before the entry opening markup.</p>
+<h4 id=tha_entry_after>tha_entry_after</h4>
+<p>Called by the <code>mvt_entry_after</code> function. Fires inside the standard loop, after the entry closing markup. The <code>mvt_entry_after</code> function accepts arguments passed when the hook is fired.</p>
 <p><strong>Default</strong></p>
 <ul>
 <li>Empty array</li>
 </ul>
 <p><strong>Arguments</strong></p>
-<p>$args <code>array</code> Contains arguments from the content passed to the hook. In the Trellis Core templates, content-article.php and content.php contain an item count for potential Mediavine ad placement.</p>
-<h4 id=mvt_entry_content_before>mvt_entry_content_before</h4>
-<p>Runs hooks inside the standard loop, before <code>the_content()</code>. Fires the <code>tha_entry_content_before</code> hook.</p>
-<h4 id=mvt_entry_content_after>mvt_entry_content_after</h4>
-<p>Runs hooks inside the standard loop, after <code>the_content()</code>. Fires the <code>tha_entry_content_after</code> hook.</p>
-<h4 id=mvt_trellis_entry_footer_top>mvt_trellis_entry_footer_top</h4>
-<p>Runs hooks immediately after the opening <code>&lt;footer class="entry-footer"></code> tag. Fires the <code>tha_entry_footer_top</code> hook.</p>
-<h4 id=mvt_trellis_entry_footer_bottom>mvt_trellis_entry_footer_bottom</h4>
-<p>Runs hooks immediately before the closing entry-footer <code>&lt;/footer></code> tag. Fires the <code>tha_entry_footer_bottom</code> hook.</p>
+<p>$args <code>array</code> Contains arguments passed when the hook is fired. In the Trellis Core templates, content-article.php and content.php contain an item count for potential Mediavine ad placement.</p>
+<h4 id=tha_entry_content_before>tha_entry_content_before</h4>
+<p>Called by the <code>mvt_entry_content_before</code> function. Fires inside the standard loop, before <code>the_content()</code>.</p>
+<h4 id=tha_entry_content_after>tha_entry_content_after</h4>
+<p>Called by the <code>mvt_entry_content_after</code> function. Fires inside the standard loop, after <code>the_content()</code>.</p>
+<h4 id=tha_entry_footer_top>tha_entry_footer_top</h4>
+<p>Called by the <code>mvt_trellis_entry_footer_top</code> function. Fires immediately after the opening <code>&lt;footer class="entry-footer"></code> tag.</p>
+<h4 id=tha_entry_footer_bottom>tha_entry_footer_bottom</h4>
+<p>Called by the <code>mvt_trellis_entry_footer_bottom</code> function. Fires immediately before the closing entry-footer <code>&lt;/footer></code> tag.</p>
 <hr>
 <h2 id=footer-hooks>Footer Hooks</h2>
-<h4 id=mvt_footer_before>mvt_footer_before</h4>
-<p>Runs hooks immediately before the opening <code>&lt;footer></code> tag. Fires the <code>tha_footer_before</code> hook.</p>
-<h4 id=mvt_footer_after>mvt_footer_after</h4>
-<p>Runs hooks immediately after the closing <code>&lt;/footer></code> tag. Fires the <code>tha_footer_after</code> hook.</p>
-<h4 id=mvt_footer_top>mvt_footer_top</h4>
-<p>Runs hooks immediately after the opening footer wrapper tag. Fires two hooks: <code>tha_footer_top</code> and <code>mv_trellis_footer</code> (which contains the main content of the footer).</p>
-<h4 id=mvt_footer_bottom>mvt_footer_bottom</h4>
-<p>Runs hooks immediately before the closing footer wrapper tag. Fires the <code>tha_footer_bottom</code> hook.</p>
+<h4 id=tha_footer_before>tha_footer_before</h4>
+<p>Called by the <code>mvt_footer_before</code> function. Fires immediately before the opening <code>&lt;footer></code> tag.</p>
+<h4 id=tha_footer_after>tha_footer_after</h4>
+<p>Called by the <code>mvt_footer_after</code> function. Fires immediately after the closing <code>&lt;/footer></code> tag.</p>
+<h4 id=tha_footer_top>tha_footer_top</h4>
+<p>Called by the <code>mvt_footer_top</code> function (which also fires <code>mv_trellis_footer</code>, outputting the main content of the footer). Fires immediately after the opening footer wrapper tag.</p>
+<h4 id=tha_footer_bottom>tha_footer_bottom</h4>
+<p>Called by the <code>mvt_footer_bottom</code> function. Fires immediately before the closing footer wrapper tag.</p>
 <hr>
 <h2 id=head-hooks>Head Hooks</h2>
-<h4 id=mvt_head_top>mvt_head_top</h4>
-<p>Runs hooks immediately after the opening <code>&lt;head></code> tag. Fires the <code>tha_head_top</code> hook.</p>
-<h4 id=mvt_head_bottom>mvt_head_bottom</h4>
-<p>Runs hooks immediately before <code>wp_head()</code>. Fires the <code>tha_head_bottom</code> hook.</p>
+<h4 id=tha_head_top>tha_head_top</h4>
+<p>Called by the <code>mvt_head_top</code> function. Fires immediately after the opening <code>&lt;head></code> tag.</p>
+<h4 id=tha_head_bottom>tha_head_bottom</h4>
+<p>Called by the <code>mvt_head_bottom</code> function. Fires immediately before <code>wp_head()</code>.</p>
 <hr>
 <h2 id=header-hooks>Header Hooks</h2>
 <h4 id=mv_trellis_before_header_content>mv_trellis_before_header_content</h4>
 <p>Fires after the header menu and before any other header content.</p>
-<h4 id=mvt_header_before>mvt_header_before</h4>
-<p>Runs hooks immediately before the opening <code>&lt;header></code> tag. Fires the <code>tha_header_before</code> hook.</p>
-<h4 id=mvt_header_after>mvt_header_after</h4>
-<p>Runs hooks immediately after the closing <code>&lt;/header></code> tag. Fires the <code>tha_header_after</code> hook.</p>
-<h4 id=mvt_header_top>mvt_header_top</h4>
-<p>Runs hooks immediately before the header container. Fires the <code>tha_header_top</code> hook.</p>
-<h4 id=mvt_header_bottom>mvt_header_bottom</h4>
-<p>Runs hooks immediately after the header container. Fires the <code>tha_header_bottom</code> hook.</p>
+<h4 id=tha_header_before>tha_header_before</h4>
+<p>Called by the <code>mvt_header_before</code> function. Fires immediately before the opening <code>&lt;header></code> tag.</p>
+<h4 id=tha_header_after>tha_header_after</h4>
+<p>Called by the <code>mvt_header_after</code> function. Fires immediately after the closing <code>&lt;/header></code> tag.</p>
+<h4 id=tha_header_top>tha_header_top</h4>
+<p>Called by the <code>mvt_header_top</code> function. Fires immediately before the header container.</p>
+<h4 id=tha_header_bottom>tha_header_bottom</h4>
+<p>Called by the <code>mvt_header_bottom</code> function. Fires immediately after the header container.</p>
 <hr>
 <h2 id=html-hooks>HTML Hooks</h2>
-<h4 id=mvt_html_before>mvt_html_before</h4>
-<p>Runs hooks immediately before the opening <code>&lt;html></code> tag. Fires the <code>tha_html_before</code> hook.</p>
+<h4 id=tha_html_before>tha_html_before</h4>
+<p>Called by the <code>mvt_html_before</code> function. Fires immediately before the opening <code>&lt;html></code> tag.</p>
 <hr>
 <h2 id=image-processing-hooks>Image Processing Hooks</h2>
 <h4 id=mv_trellis_before_image_process_loop>mv_trellis_before_image_process_loop</h4>
-<p>Fires before the foreach loop of the <code>process_images()</code> function.</p>
+<p>Fires before the <code>foreach</code> loop of the <code>process_images()</code> function.</p>
 <h4 id=mv_trellis_after_image_process_loop>mv_trellis_after_image_process_loop</h4>
-<p>Fires after the foreach loop of the <code>process_images()</code> function.</p>
+<p>Fires after the <code>foreach</code> loop of the <code>process_images()</code> function.</p>
 <hr>
 <h2 id=navigation-hooks>Navigation Hooks</h2>
-<h4 id=mvt_entry_navigation_before>mvt_entry_navigation_before</h4>
-<p>Runs hooks inside the standard loop, before the article navigation markup. Fires the <code>tha_entry_navigation_before</code> hook.</p>
-<h4 id=mvt_entry_navigation_after>mvt_entry_navigation_after</h4>
-<p>Runs hooks inside the standard loop, after the article navigation markup. Fires the <code>tha_entry_navigation_after</code> hook.</p>
+<h4 id=tha_entry_navigation_before>tha_entry_navigation_before</h4>
+<p>Called by the <code>mvt_entry_navigation_before</code> function. Fires inside the standard loop, before the article navigation markup.</p>
+<h4 id=tha_entry_navigation_after>tha_entry_navigation_after</h4>
+<p>Called by the <code>mvt_entry_navigation_after</code> function. Fires inside the standard loop, after the article navigation markup.</p>
 <hr>
 <h2 id=search-hooks>Search Hooks</h2>
 <h4 id=mv_trellis_search_form>mv_trellis_search_form</h4>
-<p>Outputs the search form in the header.</p>
+<p>Fires in the header before <code>mv_trellis_site_title</code>. Outputs the search form.</p>
 <hr>
 <h2 id=sidebar-hooks>Sidebar Hooks</h2>
-<h4 id=mvt_sidebars_before>mvt_sidebars_before</h4>
-<p>Runs hooks immediately before <code>get_sidebar()</code>. Fires the <code>tha_sidebars_before</code> hook.</p>
-<h4 id=mvt_sidebars_after>mvt_sidebars_after</h4>
-<p>Runs hooks immediately after <code>get_sidebar()</code>. Fires the <code>tha_sidebars_after</code> hook.</p>
-<h4 id=mvt_sidebar_top>mvt_sidebar_top</h4>
-<p>Runs hooks immediately after the opening <code>&lt;aside></code> sidebar tag. Fires the <code>tha_sidebar_top</code> hook.</p>
-<h4 id=mvt_sidebar_bottom>mvt_sidebar_bottom</h4>
-<p>Runs hooks immediately before the closing <code>&lt;/aside></code> sidebar tag. Fires the <code>tha_sidebar_bottom</code> hook.</p>
-<hr>
+<h4 id=tha_sidebars_before>tha_sidebars_before</h4>
+<p>Called by the <code>mvt_sidebars_before</code> function. Fires immediately before <code>get_sidebar()</code>.</p>
+<h4 id=tha_sidebars_after>tha_sidebars_after</h4>
+<p>Called by the <code>mvt_sidebars_after</code> function. Fires immediately after <code>get_sidebar()</code>.</p>
+<h4 id=tha_sidebar_top>tha_sidebar_top</h4>
+<p>Called by the <code>mvt_sidebar_top</code> function. Fires immediately after the opening <code>&lt;aside></code> sidebar tag.</p>
+<h4 id=tha_sidebar_bottom>tha_sidebar_bottom</h4>
+<p>Called by the <code>mvt_sidebar_bottom</code> function. Fires immediately before the closing <code>&lt;/aside></code> sidebar tag.</p>
 <h2 id=theme-hooks>Theme Hooks</h2>
 <h4 id=mv_trellis_parent_loaded>mv_trellis_parent_loaded</h4>
 <p>Fires after the parent theme is loaded so that the child theme has access to options.</p>
@@ -356,10 +367,10 @@ If you add custom templates to your child theme, it’s expected that you’ll 
 <p>Fires when Trellis is deactivated.</p>
 <hr>
 <h2 id=title-hooks>Title Hooks</h2>
-<h4 id=mvt_title_before>mvt_title_before</h4>
-<p>Runs hooks immediately before the content title, before the opening <code>&lt;h1></code> tag. Fires the <code>tha_title_before</code> hook.</p>
-<h4 id=mvt_title_after>mvt_title_after</h4>
-<p>Runs hooks immediately after the content title, after the closing <code>&lt;/h1></code> tag. Fires the <code>tha_title_after</code> hook.</p>
+<h4 id=tha_title_before>tha_title_before</h4>
+<p>Called by the <code>mvt_title_before</code> function. Fires immediately before the content title, before the opening <code>&lt;h1></code> tag.</p>
+<h4 id=tha_title_after>tha_title_after</h4>
+<p>Called by the <code>mvt_title_after</code> function. Fires immediately after the content title, after the closing <code>&lt;/h1></code> tag.</p>
 <div class=section-index>
 </div>
 <style>.feedback--answer{display:inline-block}.feedback--answer-no{margin-left:1em}.feedback--response{display:none;margin-top:1em}.feedback--response__visible{display:block}</style>

@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -152,8 +152,9 @@
 <header class=article-meta>
 </header>
 <h2 id=trellis-images>Trellis Images</h2>
-<p>Automatically create WebP versions of your existing legacy images and swap them out on-the-fly. When a user visits a post that includes a legacy image, Trellis Images passes it on to Mediavine’s image processing service (included free in your Trellis purchase). When done, a WebP version of the image is sent back to your site and stored in the uploads directory (the original image is never altered or removed).</p>
+<p>Automatically create WebP versions of your existing legacy images and swap them out on-the-fly. When a user visits a post that includes a legacy image, Trellis Images passes it on to Mediavine’s image processing service (included free in your Trellis subscription). When done, a WebP version of the image is sent back to your site and stored in the uploads directory (the original image is never altered or removed).</p>
 <p>The next time a visitor lands on the page, they’ll be served the WebP version instead. WebP lossless images are smaller than equivalent PNGs and JPEGs, and are preferred by Google. See the <a href=https://developers.google.com/speed/webp>WebP site</a> for more information.</p>
+<p>Trellis Images also ensures eager loading for the first image in post content, making it immediately available and resulting in better performance. All other images are lazy loaded. For more information, see <a href=https://vcmediavine.github.io/docsytrellis/advanced-topics/image-delivery/>Image Delivery and Optimizations</a>.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
 Trellis Images is an optional plugin included with your purchase. If you already create WebP images as part of your workflow (or prefer a different plugin), you don’t need to install Trellis Images.

@@ -64,7 +64,7 @@
 </li>
 </ul>
 </div>
-<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div>
 </nav>
 </header>
@@ -78,7 +78,7 @@
 </a>
 <div id=content-mobile>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.eef73366e1e4f8ee32d2b3b0edf9cad4.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/docsytrellis/offline-search-index.dc19590a914268101e71702f6e8084c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form>
@@ -133,7 +133,7 @@
 <li><a href=#available-settings-for-pages>Available Settings for Pages</a></li>
 </ul>
 </li>
-<li><a href=#mediavine-trellis-dashboard>Mediavine Trellis Dashboard</a></li>
+<li><a href=#trellis-settings>Trellis Settings</a></li>
 <li><a href=#whats-next>What’s Next?</a></li>
 </ul>
 </nav>
@@ -172,10 +172,10 @@
 </header>
 <p>These controls let the publisher purge Critical CSS and JavaScript files, add Trellis-specific widgets to areas in the child theme, define the schema for posts, and adjust theme-specific styling, as well as other Trellis settings.</p>
 <h2 id=additions-to-the-wordpress-admin-bar>Additions to the WordPress Admin Bar</h2>
-<p>When logged in, the WordPress Admin Bar will contain a menu for controlling Trellis’ JavaScript and Critical CSS features and for showing the status of Critical CSS file generation.</p>
+<p>When logged in, the WordPress Admin Bar will contain a menu for controlling Trellis’ JavaScript and Critical CSS features. It also shows the status of Critical CSS file generation.</p>
 <h3 id=manage-trellis-jscss-menu>Manage Trellis JS/CSS Menu</h3>
 <img src=admin-bar-trellis-controls.png alt="Additions to the Admin Bar" width=600px>
-<p>This menu provides options for rebuilding, resetting, and purging Critical CSS files (for the entire site or for the displayed page) and for regenerating the Trellis minified Javascript file. The specific commands are explained in the table below.</p>
+<p>This menu provides options for rebuilding the Trellis minified Javascript file and for purging Critical CSS files (for the entire site or for the displayed page). The specific commands are explained in the table below.</p>
 <div class="alert alert-primary" role=alert>
 <h4 class=alert-heading>Note</h4>
 The Manage Trellis JS/CSS menu will show different commands depending on if you are viewing a page or are in an admin dashboard (refer to the table below). The Critical CSS Status will only appear if you are viewing a page or post on your site.
@@ -189,20 +189,20 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 </thead>
 <tbody>
 <tr>
+<td>Rebuild Minified JS</td>
+<td>Rebuilds the minified JavaScript files for the entire site.<br></td>
+</tr>
+<tr>
 <td>Purge All Critical CSS</td>
-<td>Sends a request to the Trellis Services API to rebuild the optimized CSS files for the entire site, but removes existing optimized CSS files. No optimized CSS will be served until replacement CSS files have been rebuilt. <br><br>This option is useful for troubleshooting if you have a display issue appearing on your site, as removing the optimized CSS will use the site’s original CSS files for display.<br></td>
+<td>Rebuilds the optimized CSS files for the entire site and removes existing optimized CSS files. No optimized CSS will be served until replacement CSS files have been rebuilt. <br><br>This option is useful for troubleshooting if you have a display issue appearing on your site, as removing the optimized CSS will use the site’s original CSS files for rendering.<br></td>
 </tr>
 <tr>
 <td>Purge Page CSS</td>
 <td>Same as Purge All Critical CSS but only for the current page.</td>
 </tr>
-<tr>
-<td>Rebuild Minified JS</td>
-<td>Sends a request to the Trellis Services API to rebuild the minified JavaScript files for the entire site.<br></td>
-</tr>
 </tbody>
 </table>
-<p>For a more detailed explanation of the menu options, see <a href=https://product-help.mediavine.com/en/articles/4964387-critical-css-in-the-admin-bar>Critical CSS in the Admin bar</a> in the Trellis Help Center.</p>
+<p>For a more detailed explanation of the menu options, see <a href=https://product-help.mediavine.com/en/articles/4964387-critical-css-in-the-admin-bar>Critical CSS in the Admin Bar</a> in the Trellis Help Center.</p>
 <h3 id=critical-css-status>Critical CSS Status</h3>
 <p>When viewing pages on your site, a Critical CSS Status bar shows where Trellis is in the Critical CSS file generation process. One of the statuses in the table below will be displayed.</p>
 <table>
@@ -214,24 +214,28 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 </thead>
 <tbody>
 <tr>
+<td>Critical CSS - License Required</td>
+<td>The site is missing an active Trellis license. Go to <strong>Trellis Settings</strong> and click <strong>License</strong> to purchase or add a Trellis license.</td>
+</tr>
+<tr>
 <td>Disabled</td>
-<td>Critical CSS generation has been disabled for the post or page.</td>
+<td>Critical CSS generation has been disabled for the post or page. It will also be displayed if Critical CSS is disabled in Trellis Settings.</td>
 </tr>
 <tr>
 <td>Error</td>
-<td>The page encountered an error while generating the Critical CSS files.</td>
+<td>The page encountered an error while generating the Critical CSS files. See <a href=https://vcmediavine.github.io/docsytrellis/getting-started/troubleshooting/>Troubleshooting</a> for some steps you can take to determine the problem.</td>
 </tr>
 <tr>
 <td>None</td>
-<td>The page has not attempted to generate Critical CSS yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis API after two hours.</td>
+<td>The page has not attempted to generate Critical CSS yet. As of Trellis 0.16.0, a page in the Pending or Processing status will switch to None if it doesn’t receive a response from the Trellis Services API after two hours.</td>
 </tr>
 <tr>
 <td>Pending</td>
-<td>The page has been queued for regeneration of Critical CSS.</td>
+<td>(Deprecated in 0.17.0.) The page has been queued for regeneration of Critical CSS.</td>
 </tr>
 <tr>
 <td>Processing</td>
-<td>The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis API, but the files haven’t been saved to the site yet.</td>
+<td>The page is currently in the process of generating Critical CSS files. A request has been sent to the Trellis Services API, but the files haven’t been saved to the site yet.</td>
 </tr>
 <tr>
 <td>Success</td>
@@ -252,7 +256,7 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 <tbody>
 <tr>
 <td>Trellis About Widget</td>
-<td>A <a href=https://developer.wordpress.org/block-editor/how-to-guides/widgets/legacy-widget-block/>WordPress legacy widget</a> that displays general information about the site. Publishers can add a Title, Description, and Image.</td>
+<td>A <a href=https://developer.wordpress.org/block-editor/how-to-guides/widgets/legacy-widget-block/>WordPress legacy widget</a> that displays general information about the site. Publishers can add a Title, Description, Image, and whether to display it on mobile devices.</td>
 </tr>
 <tr>
 <td>Mediavine Sidebar Ad Hint</td>
@@ -261,7 +265,7 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 </tbody>
 </table>
 <h2 id=trellis-settings-in-the-wordpress-editor>Trellis Settings in the WordPress Editor</h2>
-<p>When editing posts or pages, Trellis Settings let publishers configure individual features. In the Block editor, a new menu is added to the top toolbar. In the Classic editor, a block is shown below the content. Different options are available depending on whether the content is a post or a page.</p>
+<p>When editing posts or pages, publishers can configure specific Trellis features (see the table below). In the Block editor, a new menu is added to the top toolbar. In the Classic editor, a block is shown below the content. Different options are available depending on whether the content is a post or a page.</p>
 <p><em>Block Editor (Post Settings)</em></p>
 <img src=wordpress-editor-block-trellis.png alt="Trellis Post settings in the Gutenberg editor." width=600px>
 <p><em>Classic Editor (Post Settings)</em></p>
@@ -281,15 +285,15 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 </tr>
 <tr>
 <td>Schema Type</td>
-<td>Defines the schema type of the post for SEO purposes. Options include <a href=https://schema.org/Article>Article</a>, <a href=https://schema.org/NewsArticle>NewsArticle</a>, and <a href=https://schema.org/BlogPosting>BlogPosting</a>.</td>
+<td>Defines the schema type of the post for SEO purposes. Only visible when <strong>Trellis Settings > Advanced > Trellis SEO Output</strong> is enabled. Options include <a href=https://schema.org/Article>Article</a>, <a href=https://schema.org/NewsArticle>NewsArticle</a>, and <a href=https://schema.org/BlogPosting>BlogPosting</a>.</td>
 </tr>
 <tr>
 <td>Disable Critical CSS</td>
-<td>Disables the Critical CSS feature for the post. Useful if the publisher is seeing conflicts or display issues with Critical CSS on an individual post.</td>
+<td>Disables Critical CSS generation for the post. Useful if the publisher is seeing conflicts or display issues with Critical CSS on an individual post.</td>
 </tr>
 <tr>
 <td>Purge Page Critical CSS</td>
-<td>Deletes the Critical CSS files for the current post only. Only available if Disable Critical CSS is not checked.</td>
+<td>Deletes the Critical CSS files for the current post only. (As of 0.18.0) Only visible if the post&rsquo;s Critical CSS files have been successfully generated.</td>
 </tr>
 <tr>
 <td>Critical CSS Status</td>
@@ -308,15 +312,15 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 <tbody>
 <tr>
 <td>Disable Critical CSS</td>
-<td>Disables the Critical CSS feature for the page. Useful if the publisher is seeing conflicts or display issues with Critical CSS on an individual page.</td>
+<td>Disables Critical CSS generation for the page. Useful if the publisher is seeing conflicts or display issues with Critical CSS on an individual page.</td>
 </tr>
 <tr>
 <td>Purge Page Critical CSS</td>
-<td>Deletes the Critical CSS files for the current post only. Only available if Disable Critical CSS is not checked.</td>
+<td>Deletes the Critical CSS files for the current page. (As of 0.18.0) Only visible if the page&rsquo;s Critical CSS files have been successfully generated.</td>
 </tr>
 <tr>
 <td>Critical CSS Status</td>
-<td>Shows the Critical CSS status for the current post. Options include the entries listed in the Critical CSS Status section above.</td>
+<td>Shows the Critical CSS status for the current page. Options include the entries listed in the Critical CSS Status section above.</td>
 </tr>
 <tr>
 <td>Hide Page Title</td>
@@ -324,10 +328,10 @@ The Manage Trellis JS/CSS menu will show different commands depending on if you 
 </tr>
 </tbody>
 </table>
-<h2 id=mediavine-trellis-dashboard>Mediavine Trellis Dashboard</h2>
-<p>Trellis adds a Mediavine Trellis submenu to the WordPress Appearance menu. This dashboard lets publishers and developers set theme options, add a license, and control overall Trellis behavior.</p>
+<h2 id=trellis-settings>Trellis Settings</h2>
+<p>Trellis adds a Mediavine Trellis submenu to the WordPress Appearance menu. This brings up Trellis Settings, where publishers and developers can set theme options, add a license, and control overall Trellis behavior.</p>
 <p>More information is available on the <a href=https://vcmediavine.github.io/docsytrellis/getting-started/trellis-settings/>Trellis Settings</a> page, which discusses each setting and how to integrate it into Trellis child themes.</p>
-<img src=wp-admin-appearance-trellis.png alt="Mediavine Trellis Dashboard" width=600px>
+<img src=wp-admin-appearance-trellis_v2.png alt="Trellis Settings in WordPress menu." width=600px>
 <h2 id=whats-next>What’s Next?</h2>
 <ul>
 <li>Get to know the available options in <a href=https://vcmediavine.github.io/docsytrellis/getting-started/trellis-settings/>Trellis Settings</a></li>
