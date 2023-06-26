@@ -7,55 +7,17 @@ description: >
   A detailed list of available filters in Trellis showing the filter name, description, syntax, default values, and arguments.
 ---
 
-Trellis provides a number of filters that can be used to modify data or functionality in a child theme. You’ll find the filter’s name, description, syntax, default value, and any arguments it accepts in the list below.
+Trellis provides a number of filters that can be used to modify data or functionality. You’ll find the filter’s name, description, syntax, default value, and any arguments it accepts in the list below.
 
 {{% alert title="Note" %}}
-While the syntax is shown using the `apply_filters()` function, these filters can also be used with `add_filter()`.
+The syntax is shown using the `apply_filters()` function. Developers should use  `add_filter()` to add code to filter values.
 {{% /alert %}}
-
-------
-
-### mvt_processing_css_status_timeout
-
-Sets the timeout period for the Processing state in Critical CSS.
-
-```php
-apply_filters( 'mvt_processing_css_status_timeout', int $value)
-```
-
-**Default**
-
-- 7200 seconds (2 hours) from the current time.
-
-**Arguments**
-
-- $value `int` The amount of time measured in seconds since the Unix Epoch (January 1, 1970 00:00:00 GMT).
-
-------
-
-### mvt_requires_default_wp_fields
-
-**Description**
-
-Determines whether default WordPress comment fields should be used in the `comments_form` call in comments.php. If Trellis Comments are enabled, WordPress comment fields are not used.
-
-```php
-apply_filters('mvt_requires_default_wp_fields', bool $value)
-```
-
-**Default**
-
-- False if Trellis Comments are enabled, True if Trellis Comments are disabled.
-
-**Arguments**
-
-- $value `bool` Whether to use default WordPress comment fields.
 
 ------
 
 ### mv_trellis_about_widget_image_height
 
-Applied to the height attribute on the About Widget `<img>` tag.
+Filters the height attribute to be set on the About Widget `<img>` tag.
 
 ```php
 apply_filters('mv_trellis_about_widget_image_height', int $height)
@@ -73,7 +35,7 @@ apply_filters('mv_trellis_about_widget_image_height', int $height)
 
 ### mv_trellis_about_widget_image_width
 
-Applied to the width attribute on the About Widget `<img>` tag.
+Filters the width attribute to be set on the About Widget `<img>` tag.
 
 ```php
 apply_filters( 'mv_trellis_about_widget_image_width', int $width)
@@ -91,7 +53,7 @@ apply_filters( 'mv_trellis_about_widget_image_width', int $width)
 
 ### mv_trellis_about_widget_image_size
 
-The registered size to be used for the About Widget image. This can be a Trellis image size, a WordPress image size, or a custom size.
+Filters the size to be used when getting the About Widget image. This can be a Trellis image size, a WordPress image size, or a custom size.
 
 ```php
 apply_filters('mv_trellis_about_widget_image_size', string $img_size)
@@ -109,7 +71,7 @@ apply_filters('mv_trellis_about_widget_image_size', string $img_size)
 
 ### mv_trellis_about_widget_image_sizes
 
-Applied to the sizes attribute value for the About Widget thumbnail.
+Filters the sizes attribute value for the About Widget thumbnail.
 
 ```php
 apply_filters('mv_trellis_about_widget_image_sizes', string $sizes)
@@ -127,7 +89,7 @@ apply_filters('mv_trellis_about_widget_image_sizes', string $sizes)
 
 ### mv_trellis_admin_runtime_dependencies
 
-Lists the registered dependencies needed for the mv-trellis/runtime script.
+Filters the dependencies needed for the mv-trellis/runtime script.
 
 ```php
 apply_filters('mv_trellis_admin_runtime_dependencies', array $list)
@@ -145,7 +107,7 @@ apply_filters('mv_trellis_admin_runtime_dependencies', array $list)
 
 ### mv_trellis_allowed_google_fonts
 
-Returns a list of allowed Google Fonts to be supplied to Body Font and Heading Font settings. Array keys are the labels provided to the settings and the values are the CSS values.
+Filters the allowed Google Fonts list. Array keys are the labels provided to the settings and the values are the CSS values.
 
 ```php
 apply_filters('mv_trellis_allowed_google_fonts', array $list)
@@ -183,7 +145,7 @@ apply_filters('mv_trellis_allowed_google_fonts', array $list)
 
 ### mv_trellis_allowed_non_google_fonts
 
-Returns a list of web safe fonts to be supplied to Body Font and Heading Font settings. Array keys are the labels provided to the settings and the values are the CSS values.
+Filters the allowed Non-Google Fonts list. Array keys are the labels provided to the settings and the values are the CSS values.
 
 ```php
 apply_filters('mv_trellis_allowed_non_google_fonts', array $list)
@@ -222,7 +184,7 @@ apply_filters('mv_trellis_allowed_non_google_fonts', array $list)
 
 ### mv_trellis_always_scan_template_files
 
-Determines if the Trellis template part files should be scanned on every page load. When set to False, Trellis will only scan template part files upon activation, update, or when clearing the Trellis cache.
+Filters if the template part files should be scanned on each page load. When set to False, Trellis will only scan template part files upon activation, update, or when clearing the Trellis cache.
 
 ```php
 apply_filters( 'mv_trellis_always_scan_template_files', bool $value )
@@ -240,7 +202,7 @@ apply_filters( 'mv_trellis_always_scan_template_files', bool $value )
 
 ### mv_trellis_article_nav_image_orientation
 
-Applies the image orientation for post navigation images.
+Filters the image orientation for post navigation images.
 
 ```php
 apply_filters( 'mv_trellis_article_nav_image_orientation', string $orientation )
@@ -252,13 +214,13 @@ apply_filters( 'mv_trellis_article_nav_image_orientation', string $orientation )
 
 **Arguments**
 
-- $orientation `string` The image orientation as set by the Featured Image Size setting in the Mediavine Trellis Dashboard. Default options include mv_trellis_1x1, mv_trellis_3x4, mv_trellis_4x3, mv_trellis_16x9, and full.
+- $orientation `string` The image orientation as set by the Featured Image Size in Trellis Settings. Default options include mv_trellis_1x1, mv_trellis_3x4, mv_trellis_4x3, mv_trellis_16x9, and full.
 
 ------
 
 ### mv_trellis_article_nav_image_res
 
-Applies the resolution to be used for the post navigation image size.
+Filters the resolution to be used when getting the post navigation image size.
 
 ```php
 apply_filters( 'mv_trellis_article_nav_image_res', string $value )
@@ -276,7 +238,7 @@ apply_filters( 'mv_trellis_article_nav_image_res', string $value )
 
 ### mv_trellis_async_styles_ignore
 
-A list of filepaths to ignore from asynchronous stylesheet loading on the site’s front-end.
+Filters the style filepaths that are ignored from loading asynchronously on the front-end.
 
 ```php
 apply_filters( 'mv_trellis_async_styles_ignore', array $list )
@@ -294,7 +256,7 @@ apply_filters( 'mv_trellis_async_styles_ignore', array $list )
 
 ### mv_trellis_base_gutters
 
-Applies to the base gutter sizes used for layout spacing. A value (in pixels) represents the amount of space to apply between layout elements. Uses the Layout Space setting in the Mediavine Trellis Dashboard. Defaults to Comfortable. These values impact the base padding and margin values used by Trellis CSS variables:
+Filters the base gutter sizes used for layout spacing. A value (in pixels) represents the amount of space to apply between layout elements. Uses the Layout Space value in Trellis Settings. Defaults to Comfortable. These values impact the base padding and margin values used by Trellis CSS variables:
 
 - gutter-small = base/2
 - gutter = base
@@ -317,7 +279,7 @@ apply_filters( 'mv_trellis_base_gutters', array $base_gutters )
 
 ------
 
-### mv_trellis_before_update_{$setting[’slug’]}
+### mv_trellis_before_update_\{$setting\[’slug’\]\}
 
 Filters a Trellis setting before updating it in the options table. This provides a way to trigger an action before the value is saved.
 
@@ -339,7 +301,7 @@ apply_filters( 'mv_trellis_before_update_' . $setting['slug'], array $setting )
 
 ### mv_trellis_childtheme_link_shortcode
 
-Applies the HTML string for the link to the child theme. If the Hide Footer Links setting is off, Trellis will display a link to the child theme in the footer.
+Filters the output of the child theme link shortcode. In Trellis Settings, if the Hide Mediavine/Trellis Footer Links setting is disabled, Trellis will display a link to the child theme in the footer.
 
 ```php
 apply_filters( 'mv_trellis_childtheme_link_shortcode', string $output, array $atts )
@@ -352,13 +314,21 @@ apply_filters( 'mv_trellis_childtheme_link_shortcode', string $output, array $at
 **Arguments**
 
 - $output `string` HTML output of the shortcode.
+
 - $atts `array` List of shortcode attributes.
+
+```php
+[
+	'after' => '',
+	'before' => '&#x000B7'
+]
+```
 
 ------
 
 ### mv_trellis_comments_template
 
-The path to the comments template file. Defaults to an empty string so that the comments.php file from the theme is loaded.
+Filters the comments template filepath. Defaults to an empty string so that the comments.php file from the theme is loaded.
 
 ```php
 apply_filters( 'mv_trellis_comments_template', string $comments_template_file );
@@ -376,7 +346,7 @@ apply_filters( 'mv_trellis_comments_template', string $comments_template_file );
 
 ### mv_trellis_copyright_shortcode
 
-HTML string for the copyright information shown in the footer.
+Filters the copyright shortcode output.
 
 ```php
 apply_filters( 'mv_trellis_copyright_shortcode', string $output, array $atts )
@@ -391,11 +361,20 @@ apply_filters( 'mv_trellis_copyright_shortcode', string $output, array $atts )
 - $output `string` HTML copyright output of the shortcode.
 - $atts `array` List of shortcode attributes.
 
+```php
+[
+	'after' => ''
+	'before' => ''
+  'copyright' => '&#x000A9;'
+  'first' => ''
+]
+```
+
 ------
 
 ### mv_trellis_crit_css_min_file_size
 
-Specifies the minimum size (in bytes) required to save a Critical CSS file. If the generated Critical CSS for a post or page is below this threshold, Trellis will not create a Critical CSS file.
+Filters the minimum size (in bytes) expected for a Critical CSS file to be saved. If the generated Critical CSS for a post or page is below this threshold, Trellis will not create a Critical CSS file.
 
 ```php
 apply_filters('mv_trellis_crit_css_min_file_size', int $min_crit_css_size	)
@@ -413,7 +392,7 @@ apply_filters('mv_trellis_crit_css_min_file_size', int $min_crit_css_size	)
 
 ### mv_trellis_critical_css_rate_limit_in_seconds
 
-Applies the rate (in seconds) of calls to the Trellis Critical CSS API when generating critical CSS files.
+Filters the rate limit (in seconds) between requests for generating Critical CSS.
 
 ```php
 apply_filters( 'mv_trellis_critical_css_rate_limit_in_seconds', int|bool $critical_css_rate_limit_in_seconds );
@@ -425,13 +404,13 @@ apply_filters( 'mv_trellis_critical_css_rate_limit_in_seconds', int|bool $critic
 
 **Arguments**
 
-- $critical_css_rate_limit_in_seconds `int|bool` Rate limit in seconds. Set to False to disable critical CSS rate limiting.
+- $critical_css_rate_limit_in_seconds `int|bool` Rate limit in seconds. Set to False to disable Critical CSS rate limiting.
 
 ------
 
 ### mv_trellis_critical_css_timeout_in_seconds
 
-Applies the Critical CSS request timeout duration. After this time, if a request has not been answered, it will timeout.
+Filters the amount of time (in seconds) before another Critical CSS request can be made. Prevents sites with errors from continuing to make requests that will timeout.
 
 ```php
 apply_filters( 'mv_trellis_critical_css_timeout_in_seconds', int|bool $value )
@@ -449,7 +428,7 @@ apply_filters( 'mv_trellis_critical_css_timeout_in_seconds', int|bool $value )
 
 ### mv_trellis_css_allowlist
 
-Applies a list of CSS selectors that will be kept in the Non-Critical CSS file. Partial selector names can be passed in the array to designate multiple selectors.
+Filters a list of regex values to keep in the Non-Critical CSS file. Partial selector names can be passed in the array to designate multiple selectors.
 
 ```php
 apply_filters( 'mv_trellis_css_allowlist', array $bypass_settings )
@@ -467,7 +446,7 @@ apply_filters( 'mv_trellis_css_allowlist', array $bypass_settings )
 
 ### mv_trellis_css_force_keep
 
-Applies a list of CSS selectors to be kept in the Critical CSS file. Partial selector names can be passed in the array to designate multiple selectors.
+Filters a list of regex values to include in the Critical CSS file. Regex patterns must match CSS selectors. Partial selector names can be passed in the array to designate multiple selectors.
 
 ```php
 apply_filters( 'mv_trellis_css_force_keep', array $force_keep_settings );
@@ -485,7 +464,7 @@ apply_filters( 'mv_trellis_css_force_keep', array $force_keep_settings );
 
 ### mv_trellis_css_vars
 
-Applies the available CSS variables for styling. Returns an array of CSS variables in ‘name’ => 'value' format.
+Filters the CSS variables to be output in a page. Returns an array of CSS variables in `'name' => 'value'` format.
 
 ```php
 apply_filters( 'mv_trellis_css_vars', array $css_vars, array $css_options )
@@ -493,7 +472,7 @@ apply_filters( 'mv_trellis_css_vars', array $css_vars, array $css_options )
 
 **Default**
 
-Variable values are those set in the Mediavine Trellis Dashboard.
+Variable values are those set in Trellis Settings.
 
 ```php
 'color-body'       => $css_options['color_body'],
@@ -521,7 +500,7 @@ Variable values are those set in the Mediavine Trellis Dashboard.
 
 ### mv_trellis_default_featured_image_size
 
-Applies the slug of the image size to be used as the featured image size. Defaults to the value of the Featured Image Size setting in the Mediavine Trellis Dashboard.
+Filters the featured image size before it's returned. Defaults to the value of the Featured Image Size in Trellis Settings.
 
 ```php
 apply_filters( 'mv_trellis_default_featured_image_size', array $default )
@@ -539,7 +518,7 @@ apply_filters( 'mv_trellis_default_featured_image_size', array $default )
 
 ### mv_trellis_disable_add_async_attribute
 
-Disables asynchronous loading on all enqueued scripts.
+Filters whether to return early, disabling asynchronous loading on all enqueued scripts.
 
 ```php
 apply_filters( 'mv_trellis_disable_add_async_attribute', bool $value )
@@ -557,7 +536,7 @@ apply_filters( 'mv_trellis_disable_add_async_attribute', bool $value )
 
 ### mv_trellis_disable_convert_iframe_to_lazyload_when_enabled
 
-Disables adding “loading=lazy” attribute to iframes.
+Filters whether to return early, preventing the addition of a `"loading=lazy"` attribute to iframes.
 
 ```php
 apply_filters( 'mv_trellis_disable_convert_iframe_to_lazyload_when_enabled', bool $value )
@@ -569,13 +548,13 @@ apply_filters( 'mv_trellis_disable_convert_iframe_to_lazyload_when_enabled', boo
 
 **Arguments**
 
-- $value `bool` Whether to disable adding “loading=lazy” attribute to iframes.
+- $value `bool` Whether to disable adding `"loading=lazy"` attribute to iframes.
 
 ------
 
 ### mv_trellis_disable_convert_image_to_lazyload_when_enabled
 
-Disables adding “loading=lazy” attribute to images. 
+Filters whether to return early, disabling the adding or modifying of a `"loading=lazy"` attribute to images. 
 
 ```php
 apply_filters( 'mv_trellis_disable_convert_image_to_lazyload_when_enabled', bool $value )
@@ -587,13 +566,31 @@ apply_filters( 'mv_trellis_disable_convert_image_to_lazyload_when_enabled', bool
 
 **Arguments**
 
-- $value `bool` Whether to disable adding “loading=lazy” attribute to images.
+- $value `bool` Whether to disable adding `"loading=lazy"` attribute to images.
+
+------
+
+### mv_trellis_disable_eagerload_first_image
+
+Filters whether to return early, disabling eager loading on the first image in post content.
+
+```php
+apply_filters( 'mv_trellis_disable_eagerload_first_image', bool $value )
+```
+
+**Default**
+
+- False
+
+**Arguments**
+
+- $value `bool` Whether to disable eager loading on the first image.
 
 ------
 
 ### mv_trellis_disable_lazy_load_classes
 
-An array of class names on image tags that will disable lazy loading for an image.
+Filters an array of classes that are used to disable lazy loading for specific items.
 
 ```php
 apply_filters( 'mv_trellis_disable_lazy_load_classes', array $values )
@@ -611,7 +608,7 @@ apply_filters( 'mv_trellis_disable_lazy_load_classes', array $values )
 
 ### mv_trellis_disable_ld_output_for_compatibility
 
-Allows compatibility classes to stop the output of Trellis' JSON-LD data.
+Filters the addition of Trellis LD output for compatibility.
 
 ```php
 apply_filters( 'mv_trellis_disable_ld_output_for_compatibility', bool $value )
@@ -623,13 +620,13 @@ apply_filters( 'mv_trellis_disable_ld_output_for_compatibility', bool $value )
 
 **Arguments**
 
-- $value `bool` Whether to disable output of Trellis JSON-LD data.
- 
+- $value `bool` Whether to disable output of Trellis LD data.
+
 ------
 
 ### mv_trellis_disable_og_output_for_compatibility
 
-An array of plugin slugs that will disable Trellis Open Graph output if any are active.
+Filters the addition of Trellis Open Graph output for compatibility.
 
 ```php
 apply_filters( 'mv_trellis_disable_og_output_for_compatibility', bool $value )
@@ -647,7 +644,11 @@ apply_filters( 'mv_trellis_disable_og_output_for_compatibility', bool $value )
 
 ### mv_trellis_disable_og_plugin_slugs
 
-An array of plugin slugs that will disable Trellis Open Graph output if any are active.
+(Deprecated in 0.17.0) Filters an array of plugin slugs that will disable Trellis Open Graph output if any are active.
+
+{{% alert title="Note" %}}
+For Trellis 0.17.0 and above, use `mv_trellis_disable_og_output_for_compatibility` within the compatibility class instead.
+{{% /alert %}}
 
 ```php
 apply_filters( 'mv_trellis_disable_og_plugin_slugs', array $disable_og_plugin_slugs )
@@ -665,7 +666,7 @@ apply_filters( 'mv_trellis_disable_og_plugin_slugs', array $disable_og_plugin_sl
 
 ### mv_trellis_disable_process_images
 
-Disables processing of all image optimizations.
+Filters whether to return early, disabling the processing of all images.
 
 ```php
 apply_filters( 'mv_trellis_disable_process_images', bool $value )
@@ -681,9 +682,9 @@ apply_filters( 'mv_trellis_disable_process_images', bool $value )
 
 ------
 
-### mv_trellis_disable_{$this->slug}_compatibility
+### mv_trellis_disable\_\{$this->slug\}\_compatibility
 
-Disables compatibility code for the specified plugin slug. Compatibility code is written by Mediavine and corresponds to plugins listed in Trellis’ compatibility directory (mediavine-trellis/inc/compatibility).
+Filters whether to return early, disabling all compatibility code for the specified plugin slug. Compatibility code is written by Mediavine and corresponds to plugins listed in Trellis’ compatibility directory (mediavine-trellis/inc/compatibility).
 
 ```php
 apply_filters( "mv_trellis_disable_{$this->slug}_compatibility", bool $value )
@@ -701,7 +702,7 @@ apply_filters( "mv_trellis_disable_{$this->slug}_compatibility", bool $value )
 
 ### mv_trellis_disable_seo_output_for_compatibility
 
-Allows compatibility classes to stop the output of Trellis' SEO data.
+Filters the addition of Trellis SEO output.
 
 ```php
 apply_filters( 'mv_trellis_disable_seo_output_for_compatibility', bool $value )
@@ -719,7 +720,7 @@ apply_filters( 'mv_trellis_disable_seo_output_for_compatibility', bool $value )
 
 ### mv_trellis_disable_set_image_cls_aspect_styles
 
-Disables adding inline aspect ratio styles.
+Filters whether to return early, disabling the addition of inline aspect ratio styles.
 
 ```php
 apply_filters( 'mv_trellis_disable_set_image_cls_aspect_styles', bool $value )
@@ -737,7 +738,7 @@ apply_filters( 'mv_trellis_disable_set_image_cls_aspect_styles', bool $value )
 
 ### mv_trellis_disable_set_image_data_pin_attribute
 
-Disables adding data-pin-media attribute to images. Allows specifying an alternate version of an image for Pinterest.
+Filters whether to return early, disabling the addition of the data-pin-media url.
 
 ```php
 apply_filters( 'mv_trellis_disable_set_image_data_pin_attribute', bool $value )
@@ -755,7 +756,7 @@ Arguments
 
 ### mv_trellis_disable_set_image_dimensions
 
-Disables setting image width and height attributes on all images.
+Filters whether to return early, disabling the setting of image dimensions.
 
 ```php
 apply_filters( 'mv_trellis_disable_set_image_dimensions', bool $value )
@@ -771,14 +772,31 @@ apply_filters( 'mv_trellis_disable_set_image_dimensions', bool $value )
 
 ------
 
+### mv_trellis_disable_svg_preload_first_image
+
+Filters whether to return early, disabling the svg preload on the first image in post content.
+
+```php
+apply_filters( 'mv_trellis_disable_svg_preload_first_image', bool $value )
+```
+
+**Default**
+
+- False
+
+**Arguments**
+
+- $value `bool` Whether to disable the svg preload on the first image.
+
+------
+
 ### mv_trellis_enable_lazy_load
 
-Determines whether lazy loading is enabled for images and iframes.
+Filters whether to return early, disabling Trellis lazy loading.
 
-<aside>
-✏️ **Note:** Mediavine recommends keeping lazy loading on for the best performance.
-
-</aside>
+{{% alert title="Note" %}}
+Mediavine recommends keeping lazy loading enabled for the best performance.
+{{% /alert %}}
 
 ```php
 apply_filters( 'mv_trellis_enable_lazy_load', bool $value )
@@ -796,7 +814,7 @@ apply_filters( 'mv_trellis_enable_lazy_load', bool $value )
 
 ### mv_trellis_enqueue_child_style
 
-Determines whether the child theme style should be enqueued.
+Filters whether the child style should be enqueued.
 
 ```php
 apply_filters( 'mv_trellis_enqueue_child_style', bool $value )
@@ -814,7 +832,7 @@ apply_filters( 'mv_trellis_enqueue_child_style', bool $value )
 
 ### mv_trellis_enable_js_optimizations
 
-Determines if JavaScript optimizations are enabled. This is used by compatibility classes for JavaScript optimization plugins. Defaults to True but will read the value of the Trellis setting in the Mediavine Trellis Dashboard.
+Filters whether JavaScript optimizations are enabled. This is used by compatibility classes for JavaScript optimization plugins.
 
 ```php
 apply_filters( 'mv_trellis_enable_js_optimizations', bool $value )
@@ -832,7 +850,7 @@ apply_filters( 'mv_trellis_enable_js_optimizations', bool $value )
 
 ### mv_trellis_entry_content_classes
 
-List of CSS classes added to the entry-content `<div>`.
+Filters the classes added to the `.entry-content <div>`.
 
 ```php
 apply_filters( 'mv_trellis_entry_content_classes', array $class )
@@ -850,7 +868,7 @@ apply_filters( 'mv_trellis_entry_content_classes', array $class )
 
 ### mv_trellis_excerpt_image_res
 
-The resolution to be applied when getting the excerpt image size. Trellis includes the options of high, med_high, med, and low.
+Filters the resolution to be used when getting the excerpt image size. Trellis includes the options of high, med_high, med, and low.
 
 ```php
 apply_filters( 'mv_trellis_excerpt_image_res', string $image_res )
@@ -868,7 +886,7 @@ apply_filters( 'mv_trellis_excerpt_image_res', string $image_res )
 
 ### mv_trellis_excerpt_image_sizes
 
-Applies the sizes attribute to excerpt thumbnail images.
+Filters the sizes attribute of the excerpt thumbnail images.
 
 ```php
 apply_filters( 'mv_trellis_excerpt_image_sizes', string $sizes )
@@ -886,7 +904,7 @@ apply_filters( 'mv_trellis_excerpt_image_sizes', string $sizes )
 
 ### mv_trellis_featured_post_image_res
 
-The resolution to be used when getting the featured post thumbnail image. Trellis includes the options of high, med_high, med, and low.
+Filters the resolution to be used when getting the featured post thumbnail images. Trellis includes the options of high, med_high, med, and low.
 
 ```php
 $image_res = apply_filters( 'mv_trellis_featured_post_image_res', string $image_res );
@@ -904,7 +922,7 @@ $image_res = apply_filters( 'mv_trellis_featured_post_image_res', string $image_
 
 ### mv_trellis_featured_post_image_sizes
 
-The featured post image sizes attribute.
+Filters the featured post image sizes attribute.
 
 ```php
 apply_filters( 'mv_trellis_featured_post_image_sizes', string $sizes )
@@ -920,9 +938,36 @@ apply_filters( 'mv_trellis_featured_post_image_sizes', string $sizes )
 
 ------
 
+### mv_trellis_filter_{$post_type}_meta_fields
+
+Filters the meta field blocks to be registered for this specific post type.
+
+```php
+apply_filters( 'mv_trellis_filter_' . $post_type . '_meta_fields', array $fields, WP_Post $post )
+```
+
+**Default**
+
+- Empty array
+
+**Arguments**
+
+- $fields `array` List of meta fields to pass to `add_meta_box()`.
+
+  ```php
+  [
+  	'slug' => {field_slug},
+  	'type' => {field_type},
+  	'title' => {field_title}
+  ]
+  ```
+  - $post `WP_Post` The current post.
+
+------
+
 ### mv_trellis_filter_localized_font_types
 
-Specifies which font types/formats are allowed to be localized.
+Filters which font types/formats are allowed to be localized.
 
 ```php
 apply_filters( 'mv_trellis_filter_localized_font_types', array $font_types )
@@ -940,7 +985,7 @@ apply_filters( 'mv_trellis_filter_localized_font_types', array $font_types )
 
 ### mv_trellis_flags
 
-An array of flags that Trellis will look for in the submitted URL. Uses the `mvt_flags` query parameter.
+Filters the Trellis flags to look for in the submitted URL.
 
 ```php
 apply_filters( 'mv_trellis_flags', array $flags )
@@ -958,7 +1003,7 @@ apply_filters( 'mv_trellis_flags', array $flags )
 
 ### mv_trellis_force_disable_critical_css
 
-Stops Critical CSS requests.
+Filters whether to stop a Critical CSS request.
 
 ```php
 apply_filters( 'mv_trellis_force_disable_critical_css', bool $value )
@@ -976,7 +1021,7 @@ apply_filters( 'mv_trellis_force_disable_critical_css', bool $value )
 
 ### mv_trellis_footer_copy_text
 
-Sets the footer copyright text before being passed to `mv_trellis_copyright_shortcode`.
+Filters the footer copyright text before being processed by the `mv_trellis_copyright_shortcode` shortcode.
 
 ```php
 apply_filters( 'mv_trellis_footer_copy_text', string $copy_text )
@@ -994,7 +1039,7 @@ apply_filters( 'mv_trellis_footer_copy_text', string $copy_text )
 
 ### mv_trellis_get_{$post_type}_meta_fields
 
-Applies the Trellis meta fields for a specific post type.
+Filters the meta fields for a specific post type.
 
 ```php
 apply_filters( 'mv_trellis_get_' . string $post_type . '_meta_fields', array $fields )
@@ -1006,13 +1051,21 @@ apply_filters( 'mv_trellis_get_' . string $post_type . '_meta_fields', array $fi
 
 **Arguments**
 
-- $fields `array` Trellis-specific meta fields and their attributes.
+- $fields `array` List of meta fields and their attributes.
+  
+  ```php
+  [
+  	'slug' => {field_slug},
+  	'type' => {field_type},
+  	'title' => {field_title}
+  ]
+  ```
 
 ------
 
 ### mv_trellis_google_font_style_{$font_type}_default
 
-Applies the default font styles to use for a particular type of Google Font.
+Filters the font styles for all fonts.
 
 ```php
 apply_filters( "mv_trellis_google_font_style_{$font_type}_default", array $google_font_style )
@@ -1030,7 +1083,7 @@ apply_filters( "mv_trellis_google_font_style_{$font_type}_default", array $googl
 
 ### mv_trellis_google_font_style_{$font_type}_{$sanitized_font_name}
 
-Applies the font styles for a specific Google font.
+Filters the font styles for a specified font.
 
 ```php
 apply_filters( "mv_trellis_google_font_style_{$font_type}_{$sanitized_font_name}", array $google_font_style )
@@ -1048,7 +1101,7 @@ apply_filters( "mv_trellis_google_font_style_{$font_type}_{$sanitized_font_name}
 
 ### mv_trellis_grow_sidebar_compatibility_styles
 
-Used to add to or replace custom styles for Grow Social when the plugin is active.
+Filters style overrides for the Grow Social sidebar.
 
 ```php
 apply_filters( 'mv_trellis_grow_sidebar_compatibility_styles', string $grow_sidebar_styles )
@@ -1056,7 +1109,7 @@ apply_filters( 'mv_trellis_grow_sidebar_compatibility_styles', string $grow_side
 
 **Default**
 
-```css
+```text
 @media only screen and (min-width: ' . $media_query_min_width . ') and (max-width: ' . $media_query_max_width . ')
 {
     .has-grow-sidebar .content > .wrapper,.has-grow-sidebar .footer > .wrapper
@@ -1079,7 +1132,7 @@ apply_filters( 'mv_trellis_grow_sidebar_compatibility_styles', string $grow_side
 
 ### mv_trellis_grow_sidebar_margin_space
 
-Adjusts the sidebar margin space for the Grow Social sticky sidebar when the plugin is active. Helps to prevent Grow Social from covering content.
+Filters the sidebar margin overrides for Grow Social. Helps to prevent Grow Social from covering content.
 
 ```php
 apply_filters( 'mv_trellis_grow_sidebar_margin_space', string $value )
@@ -1095,27 +1148,9 @@ apply_filters( 'mv_trellis_grow_sidebar_margin_space', string $value )
 
 ------
 
-### mv_trellis_grow_sidebar_media_query_min_width
-
-Allows child themes to adjust the minimum viewport width for when the Grow Social styles are active.
-
-```php
-apply_filters( 'mv_trellis_grow_sidebar_media_query_min_width', string $value )
-```
-
-**Default**
-
-- 721px
-
-**Arguments**
-
-- $value `string` Specifies the min width that these styles are applied.
-
-------
-
 ### mv_trellis_grow_sidebar_media_query_max_width
 
-Allows child themes to adjust the maximum viewport width for when the Grow Social styles are active.
+Filters the media query max width style override for Grow Social.
 
 ```php
 apply_filters( 'mv_trellis_grow_sidebar_media_query_max_width', string $value )
@@ -1131,16 +1166,33 @@ Arguments
 
 ------
 
-### mv_trellis_hierarchy
+### mv_trellis_grow_sidebar_media_query_min_width
 
-The array of file names to use when searching for template parts, in hierarchy of search order.
+Filters the media query min width style override for Grow Social.
+
+```php
+apply_filters( 'mv_trellis_grow_sidebar_media_query_min_width', string $value )
+```
 
 **Default**
 
-<aside>
-✏️ **Note:** This list shows the default name and order of template parts to search in plain text, but an array must be passed as an argument to the filter.
+- 721px
 
-</aside>
+**Arguments**
+
+- $value `string` Specifies the min width that these styles are applied.
+
+------
+
+### mv_trellis_hierarchy
+
+Filters the hierarchy of the file search order.
+
+**Default**
+
+{{% alert title="Note" %}}
+This list shows the default name and order of template parts to search in plain text, but an array must be passed as an argument to the filter.
+{{% /alert %}}
 
 ```
 1. {$slug}-front-page-{$theme_style}.php
@@ -1181,7 +1233,7 @@ The array of file names to use when searching for template parts, in hierarchy o
 
 ### mv_trellis_image_orientation
 
-Specifies the article nav image orientation. This is the image size passed to `mv_trellis_get_attachment_image_tag`. Defaults to the value of the Featured Image Size setting in the Mediavine Trellis Dashboard.
+Filters the image orientation. This is the image size passed to `mv_trellis_get_attachment_image_tag`. Defaults to the value of the Featured Image Size in Trellis Settings.
 
 ```php
 apply_filters( 'mv_trellis_image_orientation', string $orientation )
@@ -1199,7 +1251,7 @@ apply_filters( 'mv_trellis_image_orientation', string $orientation )
 
 ### mv_trellis_image_sizes
 
-A list of theme images sizes in a key/value format. These options are passed to the Featured Image Size setting in the Mediavine Trelllis Dashboard. The array should contain a label key with the value shown in the user interface, and a value key with the slug.
+Filters the list of theme image sizes before they are returned.
 
 ```php
 apply_filters( 'mv_trellis_image_sizes', array $options )
@@ -1217,7 +1269,7 @@ apply_filters( 'mv_trellis_image_sizes', array $options )
 
 ### mv_trellis_image_sizes_attribute
 
-Adjusts the Trellis sizes attribute for an image.
+Filters the Trellis adjusted sizes attribute for an image.
 
 ```php
 apply_filters( 'mv_trellis_image_sizes_attribute', string $sizes, string|array $size, string|null $image_src, array|null $image_meta, int $attachment_id )
@@ -1237,9 +1289,27 @@ apply_filters( 'mv_trellis_image_sizes_attribute', string $sizes, string|array $
 
 ------
 
+### mv_trellis_images_stop_process
+
+(Only available if using Trellis Images) Filters whether to return early, disabling image processing.
+
+```php
+apply_filters( 'mv_trellis_images_stop_process', bool $value )
+```
+
+**Default**
+
+- False
+
+**Arguments**
+
+- $value `bool` Whether to disable image processing.
+
+------
+
 ### mv_trellis_js_plugin_name
 
-Displays the plugin name responsible for disabling JavaScript optimizations.
+Filters the displayed plugin name responsible for disabling JavaScript optimizations.
 
 ```php
 apply_filters( 'mv_trellis_js_plugin_name', string $value )
@@ -1257,7 +1327,7 @@ apply_filters( 'mv_trellis_js_plugin_name', string $value )
 
 ### mv_trellis_license_required_settings
 
-An array of settings dependent on a Trellis license.
+Filters the array of settings dependent on a Trellis license.
 
 ```php
 apply_filters( 'mv_trellis_license_required_settings', array $license_dependent )
@@ -1294,7 +1364,7 @@ $license_dependent = [
 
 ### mv_trellis_link_shortcode
 
-HTML string for the link to the Trellis homepage that appears in the site footer.
+Filters the HTML string for the link to the Trellis homepage that appears in the site footer.
 
 ```php
 apply_filters( 'mv_trellis_link_shortcode', string $output, array $atts )
@@ -1309,13 +1379,23 @@ apply_filters( 'mv_trellis_link_shortcode', string $output, array $atts )
 **Arguments**
 
 - $output `string` HTML Trellis link output.
+
 - $atts `array` Trellis link shortcode attributes.
+
+  ```php
+  [
+  	'after' => '',
+  	'before' => ''
+  ]
+  ```
+
+  
 
 ------
 
 ### mv_trellis_local_script_model
 
-Allows overriding of the Mediavine Control Panel (MCP) ad settings for the script wrapper.
+Filters the local model overrides for the Mediavine ad script wrapper.
 
 ```php
 apply_filters( 'mv_trellis_local_script_model', array $local_model_default_values )
@@ -1357,37 +1437,26 @@ $local_model_default_values = [
 
 ### mv_trellis_logo_sources
 
-Allows Trellis Images to offer an optimized image version via source tags.
+Filters the `source` tags for the site logo that are output in a picture element.
 
 ```php
-apply_filters( 'mv_trellis_logo_sources', '', array $img_html )
+apply_filters( 'mv_trellis_logo_sources', '', string $img_html )
 ```
 
 **Default**
 
-```php
-$img_html = mv_trellis_get_attachment_image_tag(
-      $logo_id,
-      'full',
-      [
-        'class'          => $image_classes,
-        'alt'            => $alt_text,
-        'data-pin-nopin' => 'true',
-      ],
-      null,
-      false
-    );
-```
+- Empty
 
 **Arguments**
 
-- $img_html `array` Arguments for getting logo sources.
+- $value `string` The added source tags to be output before the `<img>` tag.
+- $img_html `string` The default logo `<img>` tag.
 
 ------
 
 ### mv_trellis_match_image_dimensions
 
-Determines if Trellis should check that dimensions match the registered image size.
+Filters whether Trellis should check if specified dimensions match the registered image size.
 
 ```php
 apply_filters( 'mv_trellis_match_image_dimensions', bool $value, int $img_id, string $img_size )
@@ -1407,7 +1476,7 @@ apply_filters( 'mv_trellis_match_image_dimensions', bool $value, int $img_id, st
 
 ### mv_trellis_mediavine_link_shortcode
 
-HTML string for the link to the Mediavine homepage in the site footer.
+Filters the HTML string for the link to the Mediavine homepage in the site footer.
 
 ```php
 apply_filters( 'mv_trellis_mediavine_link_shortcode', string $output, array $atts )
@@ -1422,13 +1491,21 @@ apply_filters( 'mv_trellis_mediavine_link_shortcode', string $output, array $att
 **Arguments**
 
 - $output `string` Mediavine link output.
-- $atts `array` Mediavine link shortcode attributes.
+
+- $atts `array` Mediavine link shortcode attributes. Only accepts `after` and `before`.
+
+  ```php
+  [
+      'after' ⇒ '',
+      'before' ⇒ __( 'by', 'mediavine' )
+  ]
+  ```
 
 ------
 
 ### mv_trellis_memory_exceeded
 
-Returns whether Trellis has exceeded its memory limit. Returns False if the memory limit has not been reached. Memory limit is set via `mv_trellis_memory_limit_percent`.
+Filters the result of Trellis' memory limit being reached.
 
 ```php
 apply_filters( 'mv_trellis_memory_exceeded', bool $return )
@@ -1446,7 +1523,7 @@ apply_filters( 'mv_trellis_memory_exceeded', bool $return )
 
 ### mv_trellis_memory_limit_percent
 
-Sets the percentage of available WordPress memory as a decimal. Trellis uses this amount to determine if there is enough memory available for its batch processes.
+Filters the percentage of available WordPress memory as a decimal. Trellis uses this amount to determine if there is enough memory available for its batch processes.
 
 ```php
 apply_filters( 'mv_trellis_memory_limit_percent', float $value )
@@ -1464,7 +1541,7 @@ apply_filters( 'mv_trellis_memory_limit_percent', float $value )
 
 ### mv_trellis_model_sidebar_breakpoint
 
-Adjusts the value added for the sidebar breakpoint. This is used by the Mediavine ad script wrapper so that ads are not served when the sidebar is pushed below the content.
+Filters the value added to the model for the sidebar breakpoint. This is used by the Mediavine ad script wrapper so that ads are not served when the sidebar is pushed below the content.
 
 ```php
 apply_filters( 'mv_trellis_model_sidebar_breakpoint', string $value )
@@ -1482,7 +1559,7 @@ apply_filters( 'mv_trellis_model_sidebar_breakpoint', string $value )
 
 ### mv_trellis_nonasync_js_handles
 
-List of handles where Trellis should not load scripts asynchronously. Should match handles passed to `wp_register_script`.
+Filters the script handles that Trellis should not load asynchronously. Should match handles passed to `wp_register_script`.
 
 ```php
 apply_filters( 'mv_trellis_nonasync_js_handles', array $disallowed_handles )
@@ -1500,7 +1577,7 @@ apply_filters( 'mv_trellis_nonasync_js_handles', array $disallowed_handles )
 
 ### mv_trellis_nonasync_js_urls
 
-List of script source URLs that Trellis should not load asynchronously.
+Filters the list of script source URLs that Trellis should not load asynchronously.
 
 ```php
 apply_filters( 'mv_trellis_nonasync_js_urls', array $disallowed_urls)
@@ -1518,7 +1595,7 @@ apply_filters( 'mv_trellis_nonasync_js_urls', array $disallowed_urls)
 
 ### mv_trellis_nonasync_js_prefixes
 
-List of handle prefixes where Trellis should not load scripts asynchronously. Prefixes should be at the start of the handles passed to `wp_register_script`.
+Filters the list of handle prefixes where Trellis should not load scripts asynchronously. Prefixes should be at the start of the handles passed to `wp_register_script`.
 
 ```php
 apply_filters( 'mv_trellis_nonasync_js_prefixes', $disallowed_prefixes )
@@ -1536,7 +1613,7 @@ apply_filters( 'mv_trellis_nonasync_js_prefixes', $disallowed_prefixes )
 
 ### mv_trellis_pages_pagination_args
 
-Arguments to be passed to `the_posts_pagination`. Available arguments are described on the [WordPress paginate_links function page](https://developer.wordpress.org/reference/functions/paginate_links/)**.**
+Filters arguments used to display archive and feed page pagination. Available arguments are described on the [WordPress paginate_links function page](https://developer.wordpress.org/reference/functions/paginate_links/).
 
 ```php
 apply_filters( 'mv_trellis_pages_pagination_args', array $posts_pagination_args )
@@ -1554,7 +1631,7 @@ apply_filters( 'mv_trellis_pages_pagination_args', array $posts_pagination_args 
 
 ### mv_trellis_post_link_featured_image_sizes
 
-Outputs the sizes attribute in featured image post links.
+Filters the post link featured image sizes attribute.
 
 ```php
 apply_filters( 'mv_trellis_post_link_featured_image_sizes', string $sizes )
@@ -1572,7 +1649,7 @@ apply_filters( 'mv_trellis_post_link_featured_image_sizes', string $sizes )
 
 ### mv_trellis_process_content
 
-Returns the DOM document to make changes before it’s output to the browser.
+Filters the DOMDocument for making changes before it’s output to the browser.
 
 ```php
 apply_filters( 'mv_trellis_process_content', \DOMDocument $content_dom )
@@ -1590,7 +1667,7 @@ apply_filters( 'mv_trellis_process_content', \DOMDocument $content_dom )
 
 ### mv_trellis_resolution_sizes
 
-List of resolution sizes to associate with image sizes.
+Filters the resolution sizes to associate with image sizes.
 
 ```php
 apply_filters( 'mv_trellis_resolution_sizes',  array $resolution_sizes, array $custom_image_sizes )
@@ -1609,9 +1686,7 @@ apply_filters( 'mv_trellis_resolution_sizes',  array $resolution_sizes, array $c
 
 ### mv_trellis_settings
 
-Used to add or modify theme settings whenever the settings are being built or rebuilt. A Flags key can be used to force a value update to the default.
-
-For example, 'flags' => [ 'force_default' => 'parent_1.0.0' ] where 1.0.0 is the parent version number or 'flags' => [ 'force_default' => 'child_1.0.0' ] where 1.0.0 is the child version number. 
+Filters the theme settings. Used to add or modify theme settings whenever the settings are being built or rebuilt.
 
 ```php
 apply_filters( 'mv_trellis_settings', array $theme_settings )
@@ -1629,7 +1704,7 @@ apply_filters( 'mv_trellis_settings', array $theme_settings )
 
 ### mv_trellis_settings_groups
 
-Used to add or modify theme setting groups or tabs.
+Filters the Trellis Settings tabs or groups.
 
 ```php
 apply_filters( 'mv_trellis_settings_groups', array $default_groups )
@@ -1656,7 +1731,7 @@ $groups = [
 
 ### mv_trellis_settings_update
 
-Used to specify which settings to update.
+Filters the theme settings to be updated.
 
 ```php
 apply_filters( 'mv_trellis_settings_update', array $theme_settings )
@@ -1664,7 +1739,7 @@ apply_filters( 'mv_trellis_settings_update', array $theme_settings )
 
 **Default**
 
-- self::get_theme_settings()
+- `self::get_theme_settings()`
 
 **Arguments**
 
@@ -1674,7 +1749,7 @@ apply_filters( 'mv_trellis_settings_update', array $theme_settings )
 
 ### mv_trellis_sidebar_content
 
-HTML string for the sidebar. Used internally to apply lazy loading attributes to images.
+Filters the sidebar HTML output. Used internally to apply lazy loading attributes to images.
 
 ```php
 apply_filters( 'mv_trellis_sidebar_content', string $sidebar_html, string $sidebar_id )
@@ -1693,7 +1768,7 @@ apply_filters( 'mv_trellis_sidebar_content', string $sidebar_html, string $sideb
 
 ### mv_trellis_site_title_logo_alt_text
 
-Alt text used by the site logo. Defaults to the site name.
+Filters the site logo image alt text.
 
 ```php
 apply_filters( 'mv_trellis_site_title_logo_alt_text', string $site_name )
@@ -1711,7 +1786,7 @@ apply_filters( 'mv_trellis_site_title_logo_alt_text', string $site_name )
 
 ### mv_trellis_site_title_logo_classes
 
-Class names to be added to site logo `<img>`tag.
+Filters the logo `<img>` tag classes.
 
 ```php
 apply_filters( 'mv_trellis_site_title_logo_classes', array $image_classes, bool $link )
@@ -1730,7 +1805,7 @@ apply_filters( 'mv_trellis_site_title_logo_classes', array $image_classes, bool 
 
 ### mv_trellis_site_title_shortcode
 
-Adjusts the HTML string for the site title displayed in the site footer. Defaults to the site name.
+Filters the site title shortcode output displayed in the site footer.
 
 ```php
 apply_filters( 'mv_trellis_site_title_shortcode', string $output, array $atts )
@@ -1743,13 +1818,23 @@ apply_filters( 'mv_trellis_site_title_shortcode', string $output, array $atts )
 **Arguments**
 
 - $output `string` Site title output.
+
 - $atts `array` Site title shortcode attributes.
+
+  ```php
+  [
+  	'after' => '',
+  	'before' => ''
+  ]
+  ```
+
+  
 
 ------
 
 ### mv_trellis_site_title_text_classes
 
-Adjusts classes for the site title markup.
+Filters the site title tag classes.
 
 ```php
 apply_filters( 'mv_trellis_site_title_text_classes', array $value, bool $link )
@@ -1766,9 +1851,27 @@ apply_filters( 'mv_trellis_site_title_text_classes', array $value, bool $link )
 
 ------
 
+### mv_trellis_skip_eagerload_classes
+
+Filters a list of image classes that will not be eager loaded.
+
+```php
+apply_filters( 'mv_trellis_skip_eagerload_classes', array $value )
+```
+
+**Default**
+
+- Empty
+
+**Arguments**
+
+- $value `array` A list of image classes that can skip eager loading.
+
+------
+
 ### mv_trellis_sw_ignore
 
-Lists the paths to be ignored by the PWA service worker.
+Filters the paths to be ignored by the service worker.
 
 ```php
 apply_filters( 'mv_trellis_sw_ignore', array $ignore_paths )
@@ -1786,7 +1889,7 @@ apply_filters( 'mv_trellis_sw_ignore', array $ignore_paths )
 
 ### mv_trellis_the_title
 
-Adjusts the current page/post title.
+Filters the page title.
 
 ```php
 apply_filters( 'mv_trellis_the_title', string $title, string $before, string $after )
@@ -1806,7 +1909,7 @@ apply_filters( 'mv_trellis_the_title', string $title, string $before, string $af
 
 ### mv_trellis_top_breadcrumbs_placement
 
-Adjusts the hook targeted to output YOAST SEO breadcrumbs.
+Filters the action hook called for the breadcrumb output near the top of pages.
 
 ```php
 apply_filters( 'mv_trellis_top_breadcrumbs_placement', string $default_header_breadcrumb_hook )
@@ -1824,7 +1927,7 @@ apply_filters( 'mv_trellis_top_breadcrumbs_placement', string $default_header_br
 
 ### mv_trellis_web_stories_compatibility_styles
 
-Adjusts the CSS styles applied to the Web Story archive pages.
+Filters the Web Stories compatibility style overrides.
 
 ```php
 apply_filters( 'mv_trellis_web_stories_compatibility_styles', string $story_archive_styles )
@@ -1850,7 +1953,7 @@ apply_filters( 'mv_trellis_web_stories_compatibility_styles', string $story_arch
 
 ### mv_trellis_wordpress_link_shortcode
 
-Adjusts the HTML string for the link to WordPress in the site footer.
+Filters the HTML string for the link to WordPress in the site footer.
 
 ```php
 apply_filters( 'mv_trellis_wordpress_link_shortcode', string $output, array $atts )
@@ -1866,3 +1969,47 @@ apply_filters( 'mv_trellis_wordpress_link_shortcode', string $output, array $att
 
 - $output `string` WordPress link output.
 - $atts `array` WordPress link shortcode attributes.
+  ```php
+  [
+  	'after' => '',
+  	'before' => ''
+  ]
+  ```
+
+------
+
+### mvt_processing_css_status_timeout
+
+Filters the expiration timestamp for when a Critical CSS request process should timeout.
+
+```php
+apply_filters( 'mvt_processing_css_status_timeout', int $value)
+```
+
+**Default**
+
+- Current time + 7200 seconds (2 hours).
+
+**Arguments**
+
+- $value `int` timestamp + 7200 seconds.
+
+------
+
+### mvt_requires_default_wp_fields
+
+**Description**
+
+Filters whether default WordPress Core comment fields should be used in the `comments_form` call in comments.php. If Trellis Comments are enabled, WordPress comment fields are not used.
+
+```php
+apply_filters('mvt_requires_default_wp_fields', bool $value)
+```
+
+**Default**
+
+- False if Trellis Comments are enabled, True if Trellis Comments are disabled.
+
+**Arguments**
+
+- $value `bool` Whether to use default WordPress comment fields.

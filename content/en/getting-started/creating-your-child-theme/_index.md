@@ -3,7 +3,7 @@ title: "Creating Your Child Theme"
 type: docs
 weight: 40
 description: >
-  Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience, you’ll want to make a child theme.
+  Trellis Core provides a solid foundation of templates and stylesheets for fast WordPress sites. However, to create a truly unique experience you’ll want to make a child theme.
 ---
 This document will walk you through the pieces and parts of a Trellis child theme.
 
@@ -21,7 +21,7 @@ Trellis child themes follow the same basic structure as any WordPress child them
 | assets | (optional) | A place to store your child theme’s images, CSS, and JavaScript files. |
 | template-parts | article<br />content<br />header | A location to store parts of templates that will be used when serving content. Trellis will cache the location of these template parts to serve content faster. |
 
-3. Add a 1200 x 900px screenshot.png file in your child theme folder. This screenshot will be shown on the **Appearance > Themes** page in your WordPress dashboard.
+3. Add a 1200 x 900 px screenshot.png file to your child theme folder. This screenshot will be shown on the **Appearance > Themes** page in your WordPress dashboard.
 
 ## Add CSS Files
 
@@ -30,31 +30,43 @@ Trellis child themes follow the same basic structure as any WordPress child them
 1. Create a new file called style.css in your child theme folder.
 2. Add the following code, replacing the boilerplate text with your own content:
 
-```css
+```text
 /*
-Theme Name: <Your Child Theme Name>
+Theme Name: {Your Child Theme Name}
 Template: mediavine-trellis
-Theme URI: <URL to your child theme's documentation.>
-Author: <Your Name or Company Name>
-Author URI: <URL to your personal or company website.>
-Description: <A short description of your child theme.>
+Theme URI: {URL to your child theme's documentation.}
+Author: {Your Name or Company Name}
+Author URI: {URL to your personal or company website.}
+Description: {A short description of your child theme.}
 Requires at least: 5.2.0
-Version: <Your Child Theme Version (e.g. 0.0.1)>
+Version: {Your Child Theme Version (e.g. 0.0.1)}
 Text Domain: mediavine
 */
 ```
 
 The fields are used in the following ways:
 
+| Field | Description |
+| --- | --- |
+| Theme Name | The name of your child theme. This is shown on the **Appearance > Themes** page in your WordPress dashboard and also in Theme Details. |
+| Template | The parent theme directory associated with your child theme.<br /><br />**Warning**: To be a Trellis child theme, this must be set to `mediavine-trellis`. |
+| Theme URI | A web address for more information about your theme or for documentation. |
+| Author | The name of the author or company that created the child theme. This is shown on the Theme Details page. |
+| Author URI | A web address for more information about you or the company that created the child theme. |
+| Description | A short description of the child theme. This is shown on the Theme Details page. |
+| Requires at least | The minimum WordPress version required to use the child theme. This should be no earlier than 5.2.0, as this is the oldest version of WordPress supported by Trellis. |
+| Version | The version number used to identify the iteration of your child theme. |
+| Text Domain | Used to support translations. Normally this is set to `mediavine`. If you use your own text domain, be sure to follow the instructions in WordPress’ [Child Theme Internationalization](https://developer.wordpress.org/themes/advanced-topics/child-themes/#internationalization) documentation. |
+
 ### Add Custom CSS Files
 
 You can choose to add your custom CSS to the `style.css` file or you can create separate CSS files for inclusion in your child theme.
 
 {{% alert title="Note" %}}
-We recommend having separate CSS files that are stored in your child theme’s assets folder as a best practice.
+As a best practice, we recommend having separate CSS files that are stored in your child theme’s assets folder.
 {{% /alert %}}
 
-Your custom CSS file can be any name you choose, but we recommend including the child theme version number in the name. This ensures that any CSS changes you make will refresh the browser cache whenever the child theme is upgraded. You’ll define the name and location of your CSS file in your child theme’s functions.php file.
+Your custom CSS file can be any name you choose, but we recommend including the child theme version number in the name. This ensures that any CSS changes you make will bust the cache whenever the child theme is upgraded (and its version number changed). You’ll define the name and location of your CSS file in your child theme’s functions.php file.
 
 1. Add a custom CSS file to your child theme’s assets folder.
 
@@ -62,7 +74,7 @@ Your custom CSS file can be any name you choose, but we recommend including the 
 wp-content/themes/my-child-theme-name/assets/
 ```
 
-1. Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file index.0.0.1.css.
+2. Add your child theme version to the name of your custom CSS file. For example, if your child theme’s version is 0.0.1, name your CSS file index.0.0.1.css.
 
 {{% alert title="Note" %}}
 Adding CSS selectors to your child theme’s CSS file will override any matching selectors in Trellis Core’s default CSS stylesheet. If you’d like to start from scratch, you can add code to completely disable Trellis’ default CSS styling. For more information, see [Using CSS Variables]({{< ref "using-css-variables" >}}) in Advanced Topics.
@@ -84,16 +96,16 @@ Your child theme’s functions.php file will hold custom functions that change h
  * Use mv_trellis_child_set_options() to define the child theme version and other necessary settings. .
  * Options::set_multiple will enqueue stylesheets and scripts.
  * 
- * To learn more about functions available to Trellis child themes, see: https://mediavine.github.io/trellis-docs/docs/functions-php/
- * To learn more about settings available to Trellis child themes, see: https://mediavine.github.io/trellis-docs/docs/settings/
+ * To learn more about functions available to Trellis child themes, see: https://mediavine.github.io/trellis-docs/reference/functions/
+ * To learn more about settings available to Trellis child themes, see: https://mediavine.github.io/trellis-docs/getting-started/trellis-settings/
  */
 
 function mv_trellis_child_set_options() {
-    $child_version = '<replace with your child theme version number>';
+    $child_version = '{replace with your child theme version number}';
 
     \Mediavine\Trellis\Options::set_multiple(
         [
-            'child_name'    => '<replace with your child theme name>',
+            'child_name'    => '{replace with your child theme name}',
             'child_version' => $child_version,
             'child_css'     => get_stylesheet_directory_uri() . "/assets/index.$child_version.css",
         ]
@@ -104,23 +116,9 @@ add_action( 'mv_trellis_parent_loaded', 'mv_trellis_child_set_options' );
 
 The `$child_version` variable represents the version number of your child theme. We recommend defining it in a variable so that you can reuse it in other places of your child theme code.
 
-The other options you set are described in the table below:
-
-| Field | Description |
-| --- | --- |
-| Theme Name | The name of your child theme. This is shown on the Appearance > Themes page in your WordPress dashboard and also in Theme Details. |
-| Template | The parent theme directory associated with your child theme. To be a Trellis child theme, this must be set to mediavine-trellis. |
-| Theme URI | A web address for more information about your theme or for documentation. |
-| Author | The name of the author or company that created the child theme. This is shown on the Theme Details page. |
-| Author URI | A web address for more information about you or the company that created the child theme. |
-| Description | A short description of the child theme. This is shown on the Theme Details page. |
-| Requires at least | The minimum WordPress version required to use the child theme. This should be no earlier than 5.2.0, as this is the oldest version of WordPress supported by Trellis. |
-| Version | The version number used to identify the iteration of your child theme. |
-| Text Domain | Used to support translations. Normally this is set to mediavine. If you use your own text domain, be sure to follow the instructions in WordPress’ Child Theme Internationalization documentation. |
-
 ### (Optional) Add Theme Support Options
 
-Add the following code after `Options::set_multiple` to allow the publisher to set accent colors and heading styles using the Mediavine Trellis Dashboard. See [Trellis Settings]({{< ref "trellis-settings" >}}) for information on how to connect your code to the settings in your child theme.
+Add the following code after `Options::set_multiple` to allow the publisher to set accent colors and heading styles in Trellis Settings. See [Trellis Settings]({{< ref "trellis-settings" >}}) for information on how to connect your code to the settings in your child theme.
 
 ```php
 /** Accent Color and Headings Support **
@@ -174,13 +172,13 @@ Trellis Core provides the following templates out of the box:
 
 ### Bamboo, Birch, and Wisteria Child Themes
 
-If you’ve installed the Bamboo, Birch, and Wisteria child themes, you’ll find that each one builds upon Trellis Core’s default templates and stylesheets. Some of the child themes have support for accent colors and heading settings, while others don’t. Be sure to activate and look through these child themes for ideas on how to create your own child theme.
+If you’ve installed the Bamboo, Birch, and Wisteria child themes, you’ll find that each one builds upon Trellis Core’s default templates and stylesheets. Some of the child themes have support for accent colors and heading settings while others don’t. Be sure to activate these child themes and look through them for ideas on how to create your own child theme.
 
 ### Trellis Template Markup
 
-Trellis also receives higher SEO scores by using [semantic HTML markup](https://www.w3schools.com/html/html5_semantic_elements.asp) in all of its templates. While there’s traditional markup mixed in, large blocks are coded with semantic HTML. Semantic HTML makes it easier for Google’s bots to index your site. It also increases web page accessibility.
+Trellis also receives higher SEO scores by using [semantic HTML markup](https://www.w3schools.com/html/html5_semantic_elements.asp) in all of its templates. While there’s traditional markup mixed in, large blocks are coded with semantic HTML. Semantic HTML makes it easier for Google’s bots to index your site and also increases web page accessibility.
 
-Here are some resources to help you understand Trellis’ default markup:
+Here's a resource to help you understand Trellis’ default markup:
 
 - [Trellis Visual Markup Guide]({{< ref "visual-markup-guide" >}})
 
@@ -188,4 +186,4 @@ Here are some resources to help you understand Trellis’ default markup:
 
 - Learn how to [test your Trellis child theme]({{< ref "testing-your-child-theme" >}})
 - Read more about [Trellis Hooks]({{< ref "hooks" >}})
-- Read more about [Trellis Filters]({{< ref "filters-summary" >}})
+- Read more about [Trellis Filters]({{< ref "/reference/filters" >}})

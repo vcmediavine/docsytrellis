@@ -8,7 +8,21 @@ description: >
 
 ## Changelog
 
+### 0.7.1 (04/25/2023)
+
+- FIXED: Added a comma to the logo source tag's srcset attribute. The first image URL in the srcset was missing a comma, which could result in a blurred image.
+
+### 0.7.0 (04/03/2023)
+
+- NEW: Trellis Images 0.7.0 now requires a minimum version of Trellis 0.18.0 and a minimum PHP version of 7.3 to run.
+- NEW: Swapping legacy images for WebP versions is now handled by Trellis Images. Previously, Trellis Images only produced new WebP images while Trellis Core handled the swapping functions.
+- NEW: Added a new mv_trellis_images_stop_process filter to terminate image processing.
+- NEW: Added a link to the Mediavine Marketplace in the Trellis Images plugin page.
+- CHANGED: Added the ability to serve a WebP version of a specific image size if it already exists. Previously, all image sizes had to be converted before a WebP version was served.
+- FIXED: Added code to exclude WebP processing for images hosted on a CloudFlare CDN (these are recognized by cdn-cgi in the URL). Previously, images would appear broken after processing due to how CloudFlare operates.
+
 ### 0.6.0 (05/26/2021)
+
 - FEATURE: Trellis Images no longer uses transients for throttling.
 - FIX: A logo with an optimized src but no srcset will now be swapped to use its webp version.
 
