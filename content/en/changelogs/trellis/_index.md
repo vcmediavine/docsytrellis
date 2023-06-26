@@ -8,7 +8,7 @@ description: >
 
 ## Changelog
 
-### 0.18.1(05/24/2023)
+### 0.18.1 (05/24/2023)
 
 - NEW: Added a new `mv_trellis_skip_eagerload_classes` filter to let developers stop images from being eager loaded.
 - FIXED: Addressed an issue where the first image on feed and archive pages was not eager loaded, which could cause LCP to fail.
