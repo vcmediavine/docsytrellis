@@ -13,63 +13,89 @@ To view the complete function, look for it within Trellis Core’s functions.php
 
 ---
 
-### mv_trellis_get_child_theme
+### mv_trellis_entry_author
 
-Gets the name of the child theme.
-
-{{% alert title="Note" %}}
-Use this function when checking for the existence of Trellis.
-{{% /alert %}}
-
-**Return**
-
-- `string|null` Name of the child theme or null if the name is not found.
-
----
-
-### mv_trellis_is_core
-
-Returns whether Trellis Core is the active theme.
-
-{{% alert title="Note" %}}
-Using the WP Core function `is_child_theme()` is more reliable and is available earlier.
-{{% /alert %}}
-
-**Return**
-
-- `bool` True if Trellis Core is the active theme, False if a Trellis child theme is active.
-
----
-
-### mv_trellis_get_template_part
-
-Loads the found template part.
+Outputs the entry’s author.
 
 **Parameters**
 
-- $slug `string` Template file (including path) to search for.
-- $name `string|array` The `mv_trellis_template_type` will search through the Trellis template hierarchy for the matching template name. Including an array will limit the files to search from what is specified in the array.
+- None
 
 **Return**
 
-- `string` The HTML of the matching template part.
+- `string` The author name.
 
 ---
 
-### mv_trellis_nav_menu
+### mv_trellis_entry_content_class
 
-Outputs the nav menu with toggle button support.
+Outputs a class attribute for the entry-content container. Includes classes specified by the `mv_trellis_entry_content_classes` filter.
 
 **Parameters**
 
-- $args `array` Arguments to be used in the core `wp_nav_menu` function.
-- $toggle_btn `bool` Displays the toggle button. Defaults to False.
-- $toggle_text `string` Text string to be used in the toggle button. Defaults to “Menu.”
-- $toggle_template_part `string` Template part to be used for the toggle button. This overrides `$toggle_text`. Defaults to null.
+- $class `string|array` A string or array of additional classes to be added to the entry-content class attribute.
 
 **Return**
 
-- `string` The HTML containing the navigation menu.
+- `string` Complete list of classes to be added to the entry-content class attribute.
+
+---
+
+### mv_trellis_entry_date
+
+Outputs the entry publish date or updated date (if the entry has been updated).
+
+**Parameters**
+
+- None
+
+**Return**
+
+- `string` Publish date or updated date of the entry.
+
+---
+
+### mv_trellis_entry_tags
+
+Outputs a list of tags, if they exist, with optional content before or after the list.
+
+**Parameters**
+
+- $before `string` The content to display before the tags. Defaults to empty.
+- $sep `string` The separator to use between the returned tags. Defaults to comma.
+- $after `string` The content to display after the tags. Defaults to empty.
+
+**Return**
+
+- `string` A list of tags with appended and prepended content, using specified separators.
+
+---
+
+### mv_trellis_entry_taxonomies
+
+Returns a list of taxonomies, if they exist.
+
+**Parameters**
+
+- $sep `string` The separator to use for the taxonomies. Defaults to comma.
+
+**Return**
+
+- `string` A list of taxonomies with the separator between them.
+
+---
+
+### mv_trellis_get_asset_url
+
+Returns the absolute path of an asset.
+
+**Parameters**
+
+- $asset_path `string` An optional relative path to the asset. Defaults to empty.
+
+**Return**
+
+- `string` The absolute path to the asset.
 
 ---
 
@@ -91,36 +117,17 @@ Returns the best resolution image in an `<img>` tag with srcset data.
 
 ---
 
-### mv_trellis_the_attachment_image_tag
+### mv_trellis_get_child_theme
 
-Echoes the best resolution image in an `<img>` tag with srcset data.
+Gets the name of the child theme.
 
-**Parameters**
-
-- $img_id `int|string` The image attachment ID.
-- $img_size `string` The image size.
-- $attributes `array` A Key/value array of attributes added (such as class).
-- $highest_res `string` The max resolution allowed.
-- $lazy_load `bool` Whether lazy loaded markup is added to the image.
+{{% alert title="Note" %}}
+Use this function when checking for the existence of Trellis.
+{{% /alert %}}
 
 **Return**
 
-- `string|null` The HTML `<img>` tag or null if no image is available.
-
----
-
-### mv_trellis_set_data
-
-Sets data that can be used across template parts.
-
-**Parameters**
-
-- $data_key `string` Key of the data.
-- $data_value `mixed` Value of the data.
-
-**Return**
-
-- Not applicable. Sets data for retrieval using `mv_trellis_get_data`.
+- `string|null` Name of the child theme or null if the name is not found.
 
 ---
 
@@ -142,59 +149,19 @@ Gets data that has been previously set using the `mv_trellis_set_data` function.
 
 ---
 
-### mv_trellis_remove_data
+### mv_trellis_get_featured_image_tag
 
-Removes data from an array that was set using the `mv_trellis_set_data` function. Data in the array is available across template parts.
-
-**Parameters**
-
-- $data_key `string` The key of the data to remove.
-
-**Return**
-
-- Not applicable.
-
----
-
-### mv_trellis_site_title
-
-Outputs the HTML of the site title and logo.
+Gets the HTML tag of the featured image.
 
 **Parameters**
 
-- $link `bool` Whether to display the site title and logo wrapped in an anchor tag. Defaults to True.
+- $post_id `int` Optional post ID.
+- $attr `array` Attributes array. Defaults to empty.
+- $echo `bool` Whether to echo the tag or return. Optional, but defaults to True.
 
 **Return**
 
-- `string` HTML of the site title and logo.
-
----
-
-### mv_trellis_is_plugin_active
-
-Checks to see if a plugin is active based on a specified slug.
-
-**Parameters**
-
-- $plugin_slug `string|array` Slug of the plugin or an array of slugs to check.
-
-**Return**
-
-- `bool` True if the plugin is active, false if the plugin is not found.
-
----
-
-### mv_trellis_get_term_description
-
-Gets the specified term description. Checks for Genesis data if no description is found.
-
-**Parameters**
-
-- $term_id `int` ID of the term. Looks for the current term if an ID is not provided.
-
-**Return**
-
-- `string` HTML of the term description.
+- `string|null`  HTML of the featured image or null if `$echo` is false.
 
 ---
 
@@ -212,32 +179,46 @@ Gets the ID of the featured/sticky post displayed on the home page.
 
 ---
 
-### mv_trellis_the_term_description
+### mv_trellis_get_template_part
 
-Echos the term description with optional content before and after. Checks for Genesis data if no description is found.
+Loads the found template part.
 
 **Parameters**
 
-- $before `string` Content to prepend to the term description. Defaults to empty.
-- $after `string` Content to append to the term description. Defaults to empty.
+- $slug `string` Template file (including path) to search for.
+- $name `string|array` The `mv_trellis_template_type` will search through the Trellis template hierarchy for the matching template name. Including an array will limit the files to search from what is specified in the array.
 
 **Return**
 
-- `string` The term description, complete with any specified before or after content.
+- `string` The HTML of the matching template part.
 
 ---
 
-### mv_trellis_get_asset_url
+### mv_trellis_get_term_description
 
-Returns the absolute path of an asset.
+Gets the specified term description. Checks for Genesis data if no description is found.
 
 **Parameters**
 
-- $asset_path `string` An optional relative path to the asset. Defaults to empty.
+- $term_id `int` ID of the term. Looks for the current term if an ID is not provided.
 
 **Return**
 
-- `string` The absolute path to the asset.
+- `string` HTML of the term description.
+
+---
+
+### mv_trellis_get_wp_kses_post_with_images
+
+Adds image and style related tags (including attributes) to the default list for posts. Used to sanitize Trellis DOM manipulations and image handling.
+
+**Parameters**
+
+- None
+
+**Return**
+
+- `array` A list of image and style tags.
 
 ---
 
@@ -255,47 +236,17 @@ Returns whether any specified flags are found in the URL.
 
 ---
 
-### mv_trellis_entry_taxonomies
+### mv_trellis_is_core
 
-Returns a list of taxonomies, if they exist.
+Returns whether Trellis Core is the active theme.
 
-**Parameters**
-
-- $sep `string` The separator to use for the taxonomies. Defaults to comma.
-
-**Return**
-
-- `string` A list of taxonomies with the separator between them.
-
----
-
-### mv_trellis_entry_tags
-
-Outputs a list of tags, if they exist, with optional content before or after the list.
-
-**Parameters**
-
-- $before `string` The content to display before the tags. Defaults to empty.
-- $sep `string` The separator to use between the returned tags. Defaults to comma.
-- $after `string` The content to display after the tags. Defaults to empty.
+{{% alert title="Note" %}}
+Using the WP Core function `is_child_theme()` is more reliable and is available earlier.
+{{% /alert %}}
 
 **Return**
 
-- `string` A list of tags with appended and prepended content, using specified separators.
-
----
-
-### mv_trellis_entry_author
-
-Outputs the entry’s author.
-
-**Parameters**
-
-- None
-
-**Return**
-
-- `string` The author name.
+- `bool` True if Trellis Core is the active theme, False if a Trellis child theme is active.
 
 ---
 
@@ -314,61 +265,34 @@ Checks to see if a meta option (like category count or author) is selected in a 
 
 ---
 
-### mv_trellis_yoast_breadcrumbs
+### mv_trellis_is_plugin_active
 
-Outputs Yoast Breadcrumbs markup if Yoast SEO is available.
+Checks to see if a plugin is active based on a specified slug.
 
 **Parameters**
 
-- None
+- $plugin_slug `string|array` Slug of the plugin or an array of slugs to check.
 
 **Return**
 
-- `string` HTML markup of Yoast breadcrumb data.
+- `bool` True if the plugin is active, false if the plugin is not found.
 
 ---
 
-### mv_trellis_entry_date
+### mv_trellis_nav_menu
 
-Outputs the entry publish date or updated date (if the entry has been updated).
-
-**Parameters**
-
-- None
-
-**Return**
-
-- `string` Publish date or updated date of the entry.
-
----
-
-### mv_trellis_the_posts_pagination
-
-Displays archive/feed pagination controls using arguments passed by the `mv_trellis_pages_pagination_args` filter.
+Outputs the nav menu with toggle button support.
 
 **Parameters**
 
-- Customize arguments in your functions.php file by using the `mv_trellis_pages_pagination_args` filter. See Filters for more information.
+- $args `array` Arguments to be used in the core `wp_nav_menu` function.
+- $toggle_btn `bool` Displays the toggle button. Defaults to False.
+- $toggle_text `string` Text string to be used in the toggle button. Defaults to “Menu.”
+- $toggle_template_part `string` Template part to be used for the toggle button. This overrides `$toggle_text`. Defaults to null.
 
 **Return**
 
-- `string` HTML output of the pagination links.
-
----
-
-### mv_trellis_the_title
-
-Outputs a title (page, author, category, etc.) with optional content before or after.
-
-**Parameters**
-
-- $before `string` Content or markup to be output before the title. Defaults to empty.
-- $after `string` Content or markup to be output after the title. Defaults to empty.
-- $echo `bool` Whether the title content will be echoed. Defaults to True.
-
-**Return**
-
-- `string` The title, complete with optional content before or after.
+- `string` The HTML containing the navigation menu.
 
 ---
 
@@ -383,50 +307,6 @@ Outputs the sidebars. Content is first run through the `mv_trellis_sidebar_conte
 **Return**
 
 - `string` HTML content of the specified sidebar.
-
----
-
-### mv_trellis_get_featured_image_tag
-
-Gets the HTML tag of the featured image.
-
-**Parameters**
-
-- $post_id `int` Optional post ID.
-- $attr `array` Attributes array. Defaults to empty.
-- $echo `bool` Whether to echo the tag or return. Optional, but defaults to True.
-
-**Return**
-
-- `string|null`  HTML of the featured image or null if `$echo` is false.
-
----
-
-### mv_trellis_get_wp_kses_post_with_images
-
-Adds image and style related tags (including attributes) to the default list for posts. Used to sanitize Trellis DOM manipulations and image handling.
-
-**Parameters**
-
-- None
-
-**Return**
-
-- `array` A list of image and style tags.
-
----
-
-### mv_trellis_entry_content_class
-
-Outputs a class attribute for the entry-content container. Includes classes specified by the `mv_trellis_entry_content_classes` filter.
-
-**Parameters**
-
-- $class `string|array` A string or array of additional classes to be added to the entry-content class attribute.
-
-**Return**
-
-- `string` Complete list of classes to be added to the entry-content class attribute.
 
 ---
 
@@ -459,6 +339,126 @@ Deletes Critical CSS files for a specific post or page.
 
 ---
 
+### mv_trellis_remove_data
+
+Removes data from an array that was set using the `mv_trellis_set_data` function. Data in the array is available across template parts.
+
+**Parameters**
+
+- $data_key `string` The key of the data to remove.
+
+**Return**
+
+- Not applicable.
+
+---
+
+### mv_trellis_set_data
+
+Sets data that can be used across template parts.
+
+**Parameters**
+
+- $data_key `string` Key of the data.
+- $data_value `mixed` Value of the data.
+
+**Return**
+
+- Not applicable. Sets data for retrieval using `mv_trellis_get_data`.
+
+---
+
+### mv_trellis_site_title
+
+Outputs the HTML of the site title and logo.
+
+**Parameters**
+
+- $link `bool` Whether to display the site title and logo wrapped in an anchor tag. Defaults to True.
+
+**Return**
+
+- `string` HTML of the site title and logo.
+
+---
+
+### mv_trellis_the_attachment_image_tag
+
+Echoes the best resolution image in an `<img>` tag with srcset data.
+
+**Parameters**
+
+- $img_id `int|string` The image attachment ID.
+- $img_size `string` The image size.
+- $attributes `array` A Key/value array of attributes added (such as class).
+- $highest_res `string` The max resolution allowed.
+- $lazy_load `bool` Whether lazy loaded markup is added to the image.
+
+**Return**
+
+- `string|null` The HTML `<img>` tag or null if no image is available.
+
+---
+
+### mv_trellis_the_posts_pagination
+
+Displays archive/feed pagination controls using arguments passed by the `mv_trellis_pages_pagination_args` filter.
+
+**Parameters**
+
+- Customize arguments in your functions.php file by using the `mv_trellis_pages_pagination_args` filter. See Filters for more information.
+
+**Return**
+
+- `string` HTML output of the pagination links.
+
+---
+
+### mv_trellis_the_term_description
+
+Echos the term description with optional content before and after. Checks for Genesis data if no description is found.
+
+**Parameters**
+
+- $before `string` Content to prepend to the term description. Defaults to empty.
+- $after `string` Content to append to the term description. Defaults to empty.
+
+**Return**
+
+- `string` The term description, complete with any specified before or after content.
+
+---
+
+### mv_trellis_the_title
+
+Outputs a title (page, author, category, etc.) with optional content before or after.
+
+**Parameters**
+
+- $before `string` Content or markup to be output before the title. Defaults to empty.
+- $after `string` Content or markup to be output after the title. Defaults to empty.
+- $echo `bool` Whether the title content will be echoed. Defaults to True.
+
+**Return**
+
+- `string` The title, complete with optional content before or after.
+
+---
+
+### mv_trellis_yoast_breadcrumbs
+
+Outputs Yoast Breadcrumbs markup if Yoast SEO is available.
+
+**Parameters**
+
+- None
+
+**Return**
+
+- `string` HTML markup of Yoast breadcrumb data.
+
+---
+
 ### mvt_adjust_excerpt_image_orientation_res
 
 Returns the specified resolution size for excerpt featured images.
@@ -473,21 +473,7 @@ Returns the specified resolution size for excerpt featured images.
 
 ---
 
-### mvt_adjust_featured_post_image_orientation_res
-
-Returns the specificed resolution size of the excerpt featured image for the featured post.
-
-**Parameters**
-
-- $orientation `string` The selected orientation for the image.
-
-**Return**
-
-- `string` The resolution size.
-
----
-
-### mvt_adjust_excerpt_image_sizes( string $sizes )
+### mvt_adjust_excerpt_image_sizes
 
 Adjusts the sizes attribute value for excerpt thumbnail images.
 
@@ -502,6 +488,20 @@ Adjusts the sizes attribute value for excerpt thumbnail images.
 **Return**
 
 - `string` The adjusted sizes attribute value.
+
+---
+
+### mvt_adjust_featured_post_image_orientation_res
+
+Returns the specificed resolution size of the excerpt featured image for the featured post.
+
+**Parameters**
+
+- $orientation `string` The selected orientation for the image.
+
+**Return**
+
+- `string` The resolution size.
 
 ---
 

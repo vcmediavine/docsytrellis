@@ -8,6 +8,46 @@ description: >
 
 ## Changelog
 
+### 0.18.1(05/24/2023)
+
+- NEW: Added a new `mv_trellis_skip_eagerload_classes` filter to let developers stop images from being eager loaded.
+- FIXED: Addressed an issue where the first image on feed and archive pages was not eager loaded, which could cause LCP to fail.
+- FIXED: Stopped eager loading hidden Pinterest images, which prevented the first displayed image from getting eager loaded.
+- FIXED: Resolved some Lighthouse errors reported for PWA icons. The “all” attribute for purpose was changed to “any” in the manifest.json file.
+- FIXED: Resolved cURL 28 errors on Non-Critical CSS files which would prevent them from downloading. This could occur on servers with a lot of CSS markup where the timeout of cURL requests is too short.
+
+### 0.18.0 (04/03/2023)
+
+- NEW: When adding custom HTML to Hooks in Settings, Trellis will perform a validation after clicking Save. If unsupported or improperly formatted HTML is detected, a popup window will appear alerting the publisher. Buttons allow the publisher to go back to edit the HTML or have Trellis remove it.
+- NEW: A “Purchase Trellis” message now appears in the Trellis pane of the WordPress Editor if an active license is missing. A link will take the publisher to the Mediavine Marketplace.
+- CHANGED: The Purge Page Critical CSS button will now only appear in the WordPress Editor if the Critical CSS status is Success.
+- CHANGED: The Schema Type control in the WordPress Editor will no longer appear if Trellis SEO is disabled. Trellis only outputs schema information when a site is using Trellis SEO.
+- CHANGED: Replaced the hand icon used for the Hooks setting with an actual hook icon.
+- CHANGED: Added help text to the Trellis pane in the WordPress Editor if Critical CSS is disabled in Trellis Settings. Previously, Critical CSS functions in the editor would just disappear, which could confuse the user.
+- CHANGED: Added BlinkMacSystemFont to Trellis’ default font stack. Previously, some Chrome users could see Helvetica appear, which is not a web-safe font.
+- CHANGED: Hid the “Hide Featured Image from Small Screens” setting when the “Display Featured Images” setting is disabled.
+- CHANGED: Adjusted copy in Advanced Settings > Trellis SEO for Article Schema Type so that publishers will understand that it only applies to new posts when enabled. Publishers can change the Schema Type on existing posts in the WordPress Editor.
+- CHANGED: Critical CSS is now cleared when a user adds or updates CSS in the Customizer, and when a license is activated.
+- CHANGED: Added a “Critical CSS - License Required” status when a site is missing an active Trellis license. Critical CSS is only served with an active license. The new status is a link that takes the user to the License tab of Trellis Settings.
+- CHANGED: Improved copy in the Posts/Page Exclusions table of Trellis Settings. A better explanation is now shown for posts where Critical CSS was disabled in Trellis versions older than 0.17.0.
+- CHANGED: Adjusted lazy loading code so that the first image in a post is eager loaded.
+- CHANGED: Moved WebP image swapping code from Trellis Core to Trellis Images.
+- CHANGED: Improved copy for the Heading Font and Body Font settings in Trellis Settings. A link to a Help Desk article will explain what fonts will be used if a web-safe font is not available.
+- FIXED: Improved accessibility on feed pages for keyboard and screenreader users by adjusting HTML on the “Read More” link.
+- FIXED: Removed unnecessary spacing that appeared after clicking the button in the Regenerate Images section of Display Settings.
+- FIXED: Resolved HTML validation errors with post tag links. Previously, <p> tags could appear within <span> tags, which was incorrect. The <span> was changed to a <div>.
+- FIXED: Added code to prevent unbalanced HTML tags that could appear in legacy child themes when using Trellis Comments.
+- FIXED: Adjusted a query for Trellis Comments to only get approved comments that populate a hidden div used for SEO purposes.
+- FIXED: Improved compatibility when using WP Rocket. Previously, some changes to Trellis Settings would not take effect until WP Rocket’s cache was cleared.
+- FIXED: Adjusted code so that the `can_dismiss` property of Admin Notices works properly. Previously, Admin Notices could always be dismissed even when the property was set to false.
+- FIXED: Updated how Trellis applies user-specified CSS on images due to recent changes in WordPress Core. User-specified CSS classes entered on images in the WordPress Editor should appear in the immediate parent tag. They were being added to a tag above the parent tag.
+- FIXED: Resolved `preg_match` and `strip_tag` deprecation notices when using PHP 8.1.
+
+### 0.17.2 (02/28/2023)
+
+- FIXED: Replaces absolute path stored in compatibility class options with relative path.
+- FIXED: Adds check to ensure that file exists before attempting to load compatibility classes.
+
 ### 0.17.1 (02/09/2023)
 
 - FIXED: Ensures that Trellis' local model script is not optimized by WP Rocket.
@@ -15,7 +55,7 @@ description: >
 ### 0.17.0 (01/30/2023)
 
 - NEW: Trellis 0.17.0 now requires PHP version 7.3 or higher.
-- NEW: Critical CSS settings and features are now available in a separate Critical CSS tab in the Mediavine Trellis Dashboard. Publishers can enable/disable Critical CSS, purge Critical CSS files, add or remove selectors from the Critical and Non-Critical CSS files, and see any Critical CSS issues that have been identified by Trellis. 
+- NEW: Critical CSS settings and features are now available in a separate Critical CSS tab in Trellis Settings. Publishers can enable/disable Critical CSS, purge Critical CSS files, add or remove selectors from the Critical and Non-Critical CSS files, and see any Critical CSS issues that have been identified by Trellis. 
 - NEW: The Critical CSS tab now features a Post/Page Exclusion table showing any posts or pages where Critical CSS has been disabled. Publishers can re-enable Critical CSS for individual posts or pages using an Enable button.
 - NEW: A Purge All Critical CSS button is now available in the Critical CSS tab. This button removes all existing Critical CSS files. New Critical CSS files will be generated as readers visit the site’s pages.
 - NEW: A status indicator is now shown on the Trellis icon (Block editor only) and more descriptive text in the Trellis Settings sidebar in the WordPress Editor. This informs publishers if there are any detected Critical CSS issues.
@@ -25,7 +65,7 @@ description: >
 - NEW: A Purge Critical CSS button is now available in the WordPress Editor. This lets publishers delete the Critical CSS associated with a single page or post. It will be regenerated when a reader visits the page.
 - NEW: A Display Tag Links toggle in Trellis Settings > Display > Layout now controls whether tag links are shown after a post. The default is to show tag links.
 - NEW: Publishers can now control whether to show a Next/Previous link on posts via an Article Navigation setting in Trellis Settings. The default is to show the Next/Previous link.
-- NEW: Removed Trellis Settings from the WordPress Customizer. Settings are more easily displayed (along with additional configuration options) in the Mediavine Trellis Dashboard.
+- NEW: Removed Trellis Settings from the WordPress Customizer. Settings are more easily displayed (along with additional configuration options) in Trellis Settings.
 - NEW: Publishers can now use a Hide Page Title control on any page in the Page editor.
 - NEW: For child theme developers, two new functions were added to the Trellis Core front page template (header-content-front-page.php) for static front pages:
     - `mvt_title_before()` fires off the `tha_title_before` hook before the page title output (as long as the title isn’t hidden).
@@ -683,3 +723,4 @@ FEATURE Added filter mv_trellis_grow_sidebar_compatibility_styles to overwrite t
 - FIX: long words not breaking and extending outside of the container
 - FIX: support for IE11
 - FIX: error caused by old version of LIBXML on server
+

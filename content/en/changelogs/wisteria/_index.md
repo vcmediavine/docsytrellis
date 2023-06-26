@@ -8,9 +8,14 @@ description: >
 
 ## Changelog
 
+### 1.0.2 (04/11/2023)
+
+- FIX: Prevents layout shift when logo loads in header
+
 ### 1.0.1 (11/09/2022)
-FIX: Fixes issue where large horizontal logos were constraining the header navigation area
-FIX: Fixes CLS issue after Critical CSS is generated
+
+- FIX: Fixes issue where large horizontal logos were constraining the header navigation area
+- FIX: Fixes CLS issue after Critical CSS is generated
 
 ### 1.0.0 (10/26/2022)
 - FEATURE: Adds theme support for "Hide page title" setting to Wisteria

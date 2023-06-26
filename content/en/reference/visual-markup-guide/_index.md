@@ -20,10 +20,10 @@ These markup diagrams show the layout and classes applied from the Trellis Core 
 
 Click on a link to view the diagram.
 
-- [Home-Latest Posts Page](Trellis-Visual-Markup-Guide-Latest-Posts.png)
 - [Feed Page (Category/Archive)](Trellis-Visual-Markup-Guide-Feed.png)
-- [Single Page/Post](Trellis-Visual-Markup-Guide-Single.png)
 - [Full-Width Page](Trellis-Visual-Markup-Guide-Full-Width-Page.png)
+- [Home-Latest Posts Page](Trellis-Visual-Markup-Guide-Latest-Posts.png)
+- [Single Page/Post](Trellis-Visual-Markup-Guide-Single.png)
 
 ## What’s Next?
 

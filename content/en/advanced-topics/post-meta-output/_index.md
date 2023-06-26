@@ -6,10 +6,10 @@ weight: 30
 description: >
   Post Meta is information that can appear at the top or bottom of every post in Trellis Core and the included Bamboo, Birch, and Wisteria child themes. 
 ---
-Publishers can control Post Meta settings using the Mediavine Trellis Dashboard, selecting what information appears. Available meta information includes: Author, Breadcrumbs (if the Yoast SEO plugin is active), Categories, Comment Count, and Date (Published, Modified, or both).
+Publishers can configure Post Meta in Trellis Settings, selecting what information appears on a post. Available meta information includes: Author, Breadcrumbs (if the Yoast SEO plugin is active), Categories, Comment Count, and Date (Published, Modified, or both).
 
 {{% alert title="Note" %}}
-Trellis templates provided by Mediavine limit Comment Count to the top of a post. If you’d like to add the Comment Count to the bottom of a post, refer to the code in the Additional Information section.
+Trellis templates provided by Mediavine limit Comment Count to the top of a post. If you’d like to add the Comment Count to the bottom of a post, refer to the code in the Additional Information section below.
 {{% /alert %}}
 
 The image below shows the default Post Meta information as rendered by the Trellis Core theme with Yoast SEO installed.
@@ -20,19 +20,19 @@ The image below shows the default Post Meta information as rendered by the Trell
 
 ## Settings
 
-Publishers can control the Post Meta information and where it gets displayed via the Mediavine Trellis Dashboard. These settings store values that can be accessed by various filters and functions. Template parts contain logic to render the information.
+Publishers can control the Post Meta information and where it gets displayed in Trellis Settings. These values are then accessed by various filters and functions. Template parts contain logic to render the information.
 
-<img src="settings-post-meta.png" alt="Post Meta options in Trellis Settings." width="600px"/>
+<img src="settings-post-meta_v2.png" alt="Post Meta options in Trellis Settings." width="600px"/>
 
 | Setting Name | Description | Usage |
 | --- | --- | --- |
 | Post Meta Display - Top | Select which post meta to display in the post header. Options include: Comment Count, Author, Date, and Categories.<br /><br />If Yoast SEO is installed, you can show Yoast breadcrumbs. | Refer to the article-meta-header template part in Trellis Core to see how this is implemented.<br /><br />Location: mediavine-trellis/template-parts/article/article-meta-header.php |
 | Post Meta Display - Bottom | Select which post meta to display in the post footer. Options include: Author, Date, and Categories.<br /><br />If Yoast SEO is installed, you can show Yoast breadcrumbs. | Refer to the article-meta-footer template part in Trellis Core to see how this is implemented.<br /><br />Location: mediavine-trellis/template-parts/article/article-meta-footer.php |
-| Post Meta Date Display | Determine the date to display in the post header. Options include: Display Modified, Display Published, or Display Both. | Created by the `mv_trellis_entry_date()` function. Refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference. |
+| Post Meta Date Display | Select the date to display in the post header. Options include: Display Modified, Display Published, or Display Both. | Created by the `mv_trellis_entry_date()` function. See [Functions]({{< ref "/reference/functions" >}}) for more information. You can also refer to the article-meta-header or article-meta-footer template parts in Trellis Core for reference. |
 
 ## Functions
 
-The selected settings in the Mediavine Trellis Dashboard can be accessed via the `mv_trellis_is_meta_item_enabled()` function. Individual options are queried by their slug to determine if the publisher has them set. Available Post Meta slugs include:
+The configuration in Trellis Settings can be accessed via the `mv_trellis_is_meta_item_enabled()` function. Individual options are queried by their slug to determine if the publisher has them set. Available Post Meta slugs include:
 
 - author
 - breadcrumbs (only available if Yoast SEO is installed)
@@ -82,7 +82,7 @@ if ( $display_author ) {
 
 One filter is available to adjust breadcrumb placement if Yoast SEO is installed:
 
-- `mv_trellis_top_breadcrumbs_placement`: Specifies the hook where the Post Meta breadcrumbs value is placed. The default is `tha_aside_before_entry_content`, which is output by `mvt_entry_before()` in the Trellis Core templates. See [Hooks]({{< ref "hooks" >}}) in the Reference section for a list of all available hooks.
+- [mv_trellis_top_breadcrumbs_placement]({{< ref "/reference/filters/filters-detail#mv_trellis_top_breadcrumbs_placement" >}}): Filters the action hook called for the breadcrumb output near the top of pages. The default is `tha_aside_before_entry_content`, which is output by `mvt_entry_before()` in the Trellis Core templates. See [Hooks]({{< ref "hooks" >}}) in the Reference section for a list of all available hooks.
 
 ## Additional Information
 
@@ -94,7 +94,7 @@ If you’d like to display the Comment Count at the bottom of a post, you’ll n
 
 **Functions.php**
 
-This code will add the Comment Count as an option to the Post Meta setting in the Mediavine Trellis Dashboard:
+This code will add the Comment Count as an option to Post Meta in Trellis Settings:
 
 ```php
 /**
@@ -112,14 +112,16 @@ This code will add the Comment Count as an option to the Post Meta setting in th
 
 **Article-meta-footer.php**
 
-You’ll need to add code to three places in the article-meta-footer.php template part. First, you’ll want to check if the Comment Count has been enabled for the footer:
+You’ll need to add three pieces of code in the article-meta-footer.php template part.
+
+1. Check if the Comment Count has been enabled for the footer:
 
 ```php
 // Check if the Comment Count is set for the bottom of Post Meta
 $mv_trellis_display_comment_count = ( ( comments_open( $mv_trellis_post_id ) || get_comments_number() ) && ! post_password_required() && mv_trellis_is_meta_item_enabled( 'comment_count', 'post_meta_bottom' ) );
 ```
 
-Next, you’ll want to modify the post’s check for meta output to include the Comment Count:
+2. Modify the post’s check for meta output to include the Comment Count:
 
 ```php
 // If we don't have any meta output, get out
@@ -128,7 +130,7 @@ if ( ! $mv_trellis_display_author && ! $mv_trellis_display_date && ! $mv_trellis
 }
 ```
 
-Finally, enter code to render the Comment Count:
+3. Add code to render the Comment Count:
 
 ```php+HTML
 // Comments.
